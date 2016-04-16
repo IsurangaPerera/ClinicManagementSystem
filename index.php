@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +22,7 @@
 	<div style="background: transparent url('http://demo-hms.eu5.org/public/img/new/hms_logo.png') no-repeat center; height:111px; margin-bottom:-50px; padding-top:120px;"></div>
 	<div class="account-container">
 		<div class="content clearfix" >
-			<form action="http://demo-hms.eu5.org/login/validate_login" method="post" id="frmLogin" name="frmLogin">
+			<form action="include/config/login.php" method="post" id="frmLogin" name="frmLogin">
 				<h1>Login</h1>		
 				<div class="login-fields">
 					<p>Please provide your details</p>
@@ -37,7 +36,7 @@
 							<input type="password" name="password" class="login password-field" placeholder="Password" required value="" />
 						</div> <!-- /password -->
 						<div class="field">
-							<button class="button btn btn-primary btn-large">Log In</button>
+							<button class="button btn btn-primary btn-large" type="submit" name="submit">Log In</button>
 						</div>
 					</div>
 					<!-- /login-fields -->
