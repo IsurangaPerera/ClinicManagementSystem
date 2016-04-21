@@ -1,16 +1,23 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	
 	<meta charset="utf-8">
 	<meta name="robots" content="noindex">
-	<title>Main Hospital | Log in</title>
+	<title>CentralChest Clinic | Log in</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes"> 
+	
 	<link href="css/common.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
 	<link href="css/login/signin.css" rel="stylesheet" type="text/css">
 	<link href="css/login/login.css" rel="stylesheet" type="text/css">
+
 </head>
 <body bgcolor="#FFFFFF">	
 	<script language="javascript">
@@ -19,7 +26,7 @@
 	</script>
 	<div style="background: #FFFFFF url('images/login/background.png'); 
 	background-position: center; background-size:cover; ">
-	<div style="background: transparent url('http://demo-hms.eu5.org/public/img/new/hms_logo.png') no-repeat center; height:111px; margin-bottom:-50px; padding-top:120px;"></div>
+	<div style="background: transparent url('images/logo.png') no-repeat center; height:111px; margin-bottom:-50px; padding-top:120px;"></div>
 	<div class="account-container">
 		<div class="content clearfix" >
 			<form action="include/config/login.php" method="post" id="frmLogin" name="frmLogin">
