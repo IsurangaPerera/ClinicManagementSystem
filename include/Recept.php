@@ -48,7 +48,7 @@ require('header.php');
       <li ><a href="http://demo-hms.eu5.org/myprofile"><i class="fa fa-angle-double-right"></i>My Profile</a></li>
       <li ><a href="http://demo-hms.eu5.org/myprofile/editprofile"><i class="fa fa-angle-double-right"></i>Edit Profile</a></li>
       <li ><a href="http://demo-hms.eu5.org/myprofile/changepwd"><i class="fa fa-angle-double-right"></i>Change Password</a></li>
-      <li><a href="http://demo-hms.eu5.org/login/logout"><i class="fa fa-angle-double-right"></i>Logout</a></li>
+      <li><a href="config/logout.php"><i class="fa fa-angle-double-right"></i>Logout</a></li>
     </ul>
   </li>
   <!--END OF USER PROFILE-->
