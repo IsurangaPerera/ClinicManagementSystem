@@ -6,7 +6,12 @@ require('../security/security1.php');
 $user_name = test_input($_POST['username']);
 $password = test_input($_POST['password']);
 
-$sql = "select type, name from user where Password='$password' AND Username='$user_name'";
+$sql = "select user_login.type, user_name.firstname, user_name.lastname ".
+	   "FROM user_name ".
+	   "JOIN user_login ".
+	   "ON user_name.nic = user_login.nic ".
+	   "WHERE user_login.username='$user_name' AND user_login.password='$password'";
+
 $rs=$db->query($sql);
 
 if($rs === false) {
@@ -20,7 +25,7 @@ if($rows_returned > 0){
 	$row = $rs->fetch_assoc();
 	$_SESSION['login_user'] = $user_name;
 	$_SESSION['user_type'] = $row['type'];
-	$_SESSION['user_name'] = $row['name'];
+	$_SESSION['user_name'] = $row['firstname']." ".$row['lastname'];
 	require('usertype.php');
 } else {
 	header("location: ../../index.php");
