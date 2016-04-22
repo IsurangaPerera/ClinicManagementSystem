@@ -1,9 +1,4 @@
-<style>
-.manage_appointments, .dash_board_non, .search_patient, .patient_registration{
-  display: none;
-}
 
-</style>
 
 <div class="dash_board">
 

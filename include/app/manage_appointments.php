@@ -1,8 +1,11 @@
- <style>
- .dash_board, .dash_board_non, .search_patient, .patient_registration{
-  display: none;
-}
+ <?php
+require('hidden_right.php');
+?>
 
+<style>
+.manage_appointments{
+    display: block;
+}
 </style>
 
 <!-- Content Header (Page header) -->

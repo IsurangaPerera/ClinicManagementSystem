@@ -1,8 +1,11 @@
-<style>
-.dash_board, .dash_board_non, .search_patient, .manage_appointments{
-  display: none;
-}
+<?php
+require('hidden_right.php');
+?>
 
+<style>
+.patient_registration{
+    display: block;
+}
 </style>
 
 <div class="patient_registration">

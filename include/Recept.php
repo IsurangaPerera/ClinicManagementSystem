@@ -47,8 +47,8 @@ require('header.php');
     <ul class="treeview-menu">
       <li ><a href="http://demo-hms.eu5.org/myprofile"><i class="fa fa-angle-double-right"></i>My Profile</a></li>
       <li ><a href="http://demo-hms.eu5.org/myprofile/editprofile"><i class="fa fa-angle-double-right"></i>Edit Profile</a></li>
-      <li ><a href="http://demo-hms.eu5.org/myprofile/changepwd"><i class="fa fa-angle-double-right"></i>Change Password</a></li>
-      <li><a href="config/logout.php"><i class="fa fa-angle-double-right"></i>Logout</a></li>
+      <li ><a href="?change_password"><i class="fa fa-angle-double-right"></i>Change Password</a></li>
+      <li ><a href="config/logout.php"><i class="fa fa-angle-double-right"></i>Logout</a></li>
     </ul>
   </li>
   <!--END OF USER PROFILE-->
@@ -65,7 +65,7 @@ require('header.php');
   <section class="content-header" >
     <h1>Dashboard</h1>
   </section>
-  <?php include('app/dash_board_non_css.php'); ?>
+  <?php include('app/dash_board.php'); ?>
 
   <?php
   if(isset($_GET['manage_appointments'])) {
@@ -81,7 +81,21 @@ require('header.php');
   }
 
   if(isset($_GET['dash_board'])) {
-    include('app/dash_board.php');
+    require('app/hidden_right.php');
+  ?>
+
+  <style>
+    .dash_board{
+      display: block;
+    }
+  </style>
+  
+  <?php
+
+  }
+
+  if(isset($_GET['change_password'])) {
+    include('app/change_password.php');
   }
 
   ?>

@@ -37,7 +37,7 @@ session_start();
 					<div class="field">
 						<label for="username">Username</label>
 
-						<input type="text" name="username" value="" class='login username-field' placeholder='Username' required />                </div> <!-- /field -->
+						<input type="text" name="username" value="" class='login username-field' placeholder='Username' required autofocus />                </div> <!-- /field -->
 						<div class="field">
 							<label for="password">Password:</label>
 							<input type="password" name="password" class="login password-field" placeholder="Password" required value="" />
