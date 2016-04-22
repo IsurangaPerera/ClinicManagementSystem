@@ -29,15 +29,15 @@ require('hidden_right.php');
                    </script>
                    <form method="post" action="http://demo-hms.eu5.org/myprofile/savepwd" onSubmit="return confirm('Are you sure you want to Change Password');" >
                        <div class="form-group">
-                          <label for="exampleInputEmail1">Old Password</label>
+                          <label for="exampleInputEmail1">Old Password <font color="#FF0000">*</font></label>
                           <input class="form-control input-sm" name="oldPwd" id="oldPwd" type="password" placeholder="Old Password" style="width: 350px;" required>
                       </div>
                       <div class="form-group">
-                          <label for="exampleInputEmail1">New Password</label>
+                          <label for="exampleInputEmail1">New Password <font color="#FF0000">*</font></label>
                           <input class="form-control input-sm" onKeyUp="copy()" name="newPwd" id="newPwd" type="password" placeholder="New Password" style="width: 350px;" required>
                       </div>
                       <div class="form-group">
-                          <label for="exampleInputEmail1">Confirm Password</label>
+                          <label for="exampleInputEmail1">Confirm Password <font color="#FF0000">*</font></label>
                           <input class="form-control input-sm" name="conPwd" id="conPwd" type="password" placeholder="Confirm Password" style="width: 350px;" required>
                       </div>
                       <div class="form-group">
