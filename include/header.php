@@ -1,3 +1,7 @@
+<?php
+$nic = $_SESSION['nic'];
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,7 +50,7 @@
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header bg-light-blue">
-               <img src="http://demo-hms.eu5.org/public/user_picture/img139.jpg" class="img-circle" alt="User Image" />
+               <img src="<?php echo "../images/$nic"; ?>" class="img-circle" alt="User Image" />
                <p>
                 <?php echo $_SESSION['user_name']; ?> <br /> <?php echo $_SESSION['user_type']; ?> 
               </p>                                   </p>
@@ -54,7 +58,7 @@
             <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-left">
-                <a href="http://demo-hms.eu5.org/myprofile" class="btn btn-default btn-flat">Profile</a>
+                <a href="" class="btn btn-default btn-flat">Profile</a>
               </div>
               <div class="pull-right">
                 <a href="config/logout.php" class="btn btn-default btn-flat">Sign out</a>
@@ -74,7 +78,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="http://demo-hms.eu5.org/public/user_picture/img139.jpg" class="img-circle" alt="User Image" />
+          <img src="<?php echo "../images/$nic"; ?>" class="img-circle" alt="User Image" />
 
         </div>
         <div class="pull-left info">

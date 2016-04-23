@@ -6,7 +6,7 @@ require('../security/security1.php');
 $user_name = test_input($_POST['username']);
 $password = test_input($_POST['password']);
 
-$sql = "select user_login.type, user_name.firstname, user_name.lastname ".
+$sql = "SELECT user_login.type, user_login.nic, user_name.firstname, user_name.lastname ".
 	   "FROM user_name ".
 	   "JOIN user_login ".
 	   "ON user_name.nic = user_login.nic ".
@@ -26,6 +26,7 @@ if($rows_returned > 0){
 	$_SESSION['login_user'] = $user_name;
 	$_SESSION['user_type'] = $row['type'];
 	$_SESSION['user_name'] = $row['firstname']." ".$row['lastname'];
+	$_SESSION['nic'] =  $row['nic'];
 	require('usertype.php');
 } else {
 	header("location: ../../index.php");

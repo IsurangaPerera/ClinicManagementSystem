@@ -45,8 +45,8 @@ require('header.php');
       <i class="fa fa-angle-left pull-right"></i>
     </a>
     <ul class="treeview-menu">
-      <li ><a href="http://demo-hms.eu5.org/myprofile"><i class="fa fa-angle-double-right"></i>My Profile</a></li>
-      <li ><a href="http://demo-hms.eu5.org/myprofile/editprofile"><i class="fa fa-angle-double-right"></i>Edit Profile</a></li>
+      <li ><a href="?my_profile"><i class="fa fa-angle-double-right"></i>My Profile</a></li>
+      <li ><a href="?edit_profile"><i class="fa fa-angle-double-right"></i>Edit Profile</a></li>
       <li ><a href="?change_password"><i class="fa fa-angle-double-right"></i>Change Password</a></li>
       <li ><a href="config/logout.php"><i class="fa fa-angle-double-right"></i>Logout</a></li>
     </ul>
@@ -72,6 +72,14 @@ require('header.php');
     include('app/manage_appointments.php');
   } 
 
+  if(isset($_GET['my_profile'])) {
+    include('app/my_profile.php');
+  }
+
+  if(isset($_GET['edit_profile'])) {
+    include('app/edit_profile.php');
+  }
+
   if(isset($_GET['search_patient'])) {
     include('app/search_patient.php');
   }
@@ -82,15 +90,15 @@ require('header.php');
 
   if(isset($_GET['dash_board'])) {
     require('app/hidden_right.php');
-  ?>
+    ?>
 
-  <style>
+    <style>
     .dash_board{
       display: block;
     }
-  </style>
-  
-  <?php
+    </style>
+    
+    <?php
 
   }
 

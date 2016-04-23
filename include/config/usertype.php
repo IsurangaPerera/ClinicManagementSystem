@@ -1,7 +1,7 @@
 <?php 
 
-if(strcmp($_SESSION['user_type'],"Recept")==0){
-	header("location: ../Recept.php");}
+if(strcmp($_SESSION['user_type'],"Receptionist")==0){
+	header("location: ../Receptionist.php");}
 elseif(strcmp($_SESSION['user_type'],"Doctor")==0){
 	header("location: ../OPD.php");}
 elseif(strcmp($_SESSION['user_type'],"Pharmacist")==0){
