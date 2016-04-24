@@ -12,16 +12,18 @@ if(isset($_POST['submit'])) {
 
   if(in_array($file_ext,$expensions)=== false){
    $errors[]="extension not allowed, please choose a JPEG or PNG file.";
-}
+ }
 
-if($file_size > 2097152){
+ if($file_size > 2097152){
    $errors[]='File size must be excately 2 MB';
-}
+ }
 
-if(empty($errors)==true){
-   move_uploaded_file($file_tmp,"../../images/".$_SESSION['nic']);
+ if(empty($errors)==true){
+  $file = "../../images/".$_SESSION['nic'];
+  unlink($file);
+  move_uploaded_file($file_tmp,"../../images/".$_SESSION['nic']);
 }else{
-   print_r($errors);
+ print_r($errors);
 }
 }
 ?>
@@ -44,24 +46,24 @@ if(empty($errors)==true){
 </head>
 
 <body>
-    <table cellpadding="5" cellspacing="5">
-        <tr>
-           <td>
+  <table cellpadding="5" cellspacing="5">
+    <tr>
+     <td>
 
-            <img src="../../images/noavatar.png" class="img-rounded" width="150" height="150">
-        </td>
-        <td valign="top">
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" accept-charset="utf-8" enctype="multipart/form-data">    
-                <input type="hidden" name="user_id" value="00010">
-                <fieldset>
-                   <legend> CHANGE PICTURE </legend>
-                   <input type="file" name="image" size="20" />
-                   <br />
-                   <input type="submit" name="submit" value="upload" />
-               </fieldset>
-           </form>    </td>
-       </tr>
-   </table>
+      <img src="../../images/noavatar.png" class="img-rounded" width="150" height="150">
+    </td>
+    <td valign="top">
+      <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" accept-charset="utf-8" enctype="multipart/form-data">    
+        <input type="hidden" name="user_id" value="00010">
+        <fieldset>
+         <legend> CHANGE PICTURE </legend>
+         <input type="file" name="image" size="20" />
+         <br />
+         <input type="submit" name="submit" value="upload" />
+       </fieldset>
+     </form>    </td>
+   </tr>
+ </table>
 
 </body>
 </html>
