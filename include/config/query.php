@@ -114,6 +114,24 @@ class Query {
 		} 
 
 	}
+
+	function changePassword($old, $new) {
+		$nic = $this->nic;
+		$db = $this->db;
+
+		$sql = "UPDATE user_login ".
+			   "SET password = '$new' ".
+			   "WHERE password = '$old' AND nic = '$nic'";
+
+		if($db->query($sql) === false) {
+			trigger_error('Wrong SQL: ' . $sql . ' Error: ' . $db->error, E_USER_ERROR);
+		} else {
+
+			$affected_rows = $db->affected_rows;
+		}
+
+		return $affected_rows;
+    }
 }
 
 ?>
