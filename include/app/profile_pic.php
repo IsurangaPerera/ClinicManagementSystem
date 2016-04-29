@@ -20,8 +20,13 @@ if(isset($_POST['submit'])) {
 
  if(empty($errors)==true){
   $file = "../../images/".$_SESSION['nic'];
-  unlink($file);
-  move_uploaded_file($file_tmp,"../../images/".$_SESSION['nic']);
+  echo $file;
+ 
+    unlink($file);
+    move_uploaded_file($file_tmp,"../../images/".$_SESSION['nic']);
+  
+
+
 }else{
  print_r($errors);
 }

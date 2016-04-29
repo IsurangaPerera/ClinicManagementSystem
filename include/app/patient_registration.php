@@ -8,6 +8,21 @@ require('hidden_right.php');
 }
 </style>
 
+<?php
+if(isset($_POST['submit'])) {
+  $object = array();
+  echo "before copying";
+  $object = $_POST;
+  echo "Before require";
+  $root = realpath($_SERVER["DOCUMENT_ROOT"]);
+  require("$root/include/patient_module/patient_query.php");
+  $make_query = new Query();
+  $make_query->addPatient($object);
+
+}
+
+?>
+
 <div class="patient_registration">
   <section class="content">
     <div class="row">
@@ -18,7 +33,7 @@ require('hidden_right.php');
             <div class="box-footer clearfix">
 
               <a href="http://demo-hms.eu5.org/app/patient" class="btn btn-default">Cancel</a>
-              <button class="btn btn-primary" name="btnSubmit" id="btnSubmit" type="submit"><i class="fa fa-save"></i> Save</button>        
+              <button class="btn btn-primary" name="submit" id="submit" type="submit"><i class="fa fa-save"></i> Save</button>        
             </div>
             <div class="box-body table-responsive">
               <div class="nav-tabs-custom">
@@ -32,7 +47,7 @@ require('hidden_right.php');
                   <tr>
                    <td colspan="2">Required fields  <font color="#FF0000">*</font></td>
                  </tr>
-                 <tR>
+                 <tR9
                    <td colspan="2">
 
                    </td>
@@ -40,7 +55,11 @@ require('hidden_right.php');
                  <input type="hidden" name="userID2" value="60">
                  <tr>
                    <td width="12%">Patient ID</td>
-                   <td width="88%"><input class="form-control input-sm" name="patientID" id="patientID" type="text" style="width: 100px;" required readonly value="000060"></td>
+                   <td width="88%"><input class="form-control input-sm" name="patientID" id="patientID" type="text" style="width: 100px;" required readonly value="19"></td>
+                 </tr>
+                 <tr>
+                   <td width="12%">NIC</td>
+                   <td width="88%"><input class="form-control input-sm" name="nic" id="nic" type="text" style="width: 100px;" placeholder="NIC" value=""></td>
                  </tr>
                  <tr>
                    <td width="12%">Title <font color="#FF0000">*</font></td>
@@ -58,7 +77,7 @@ require('hidden_right.php');
                  </tr>
                  <tr>
                   <td width="12%">Last Names </td>
-                   <td width="88%">
+                  <td width="88%">
                     <input type="text" name="lastname" value="" id="lastname" class="form-control input-sm" placeholder="Last Name" style="width: 250px;" />                                                        </td>
                   </tr>
                   <tr>
@@ -135,7 +154,7 @@ require('hidden_right.php');
              <tr>
                <td width="14%">Address1</td>
                <td width="86%">
-                <input type="text" name="noofhouse" value="" id="noofhouse" class="form-control input-sm" placeholder="Address1" style="width: 250px;" />                                                        <input type="hidden" name="brgy" value="" />
+                <input type="text" name="address1" value="" id="address1" class="form-control input-sm" placeholder="Address1" style="width: 250px;" />                                                        <input type="hidden" name="brgy" value="" />
               </td>
             </tr>
             <tr>
@@ -146,7 +165,7 @@ require('hidden_right.php');
             <tr>
              <td width="14%">City</td>
              <td width="86%"> 
-              <input type="text" name="province" value="" id="province" class="form-control input-sm" placeholder="City" style="width: 250px;" />                                                        </td>
+              <input type="text" name="city" value="" id="city" class="form-control input-sm" placeholder="City" style="width: 250px;" />                                                        </td>
             </tr>
             <tr>
              <td width="14%">Phone No (Office)</td>
@@ -156,12 +175,12 @@ require('hidden_right.php');
             <tr>
              <td width="14%">Phone No (Home)</td>
              <td width="86%">
-              <input type="text" name="phone" value="" id="phone" class="form-control input-sm" placeholder="Phone No (Work)" style="width: 250px;" />                                                        </td>
+              <input type="text" name="phone_home" value="" id="phone_home" class="form-control input-sm" placeholder="Phone No (Work)" style="width: 250px;" />                                                        </td>
             </tr>
             <tr>
              <td width="14%">Phone No (Mobile)</td>
              <td width="86%"> 
-              <input type="text" name="mobile" value="" id="mobile" class="form-control input-sm" placeholder="Phone No (Mobile)" style="width: 250px;" />                                                        </td>
+              <input type="text" name="phone_mobile" value="" id="phone_mobile" class="form-control input-sm" placeholder="Phone No (Mobile)" style="width: 250px;" />                                                        </td>
             </tr>
 
             <tr>
