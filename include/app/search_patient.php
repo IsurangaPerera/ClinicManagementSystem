@@ -2,9 +2,13 @@
 require('hidden_right.php');
 ?>
 
+<section class="content-header" >
+  <h1>Search Patient</h1> 
+</section>
+
 <style>
 .search_patient{
-    display: block;
+  display: block;
 }
 </style>
 
@@ -29,7 +33,7 @@ require('hidden_right.php');
                   }
                 }
                 </script>
-                <form method="post" action="http://demo-hms.eu5.org/app/nurse_module/medication" onSubmit="return validate();">
+                <form method="post" action="" onSubmit="return validate();">
                   <table cellpadding="5" cellspacing="5" align="center">
                     <tr>
                       <td align="center">Select Patient</td>

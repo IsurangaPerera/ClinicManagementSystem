@@ -39,12 +39,12 @@ require('header.php');
   <!--END OF Patient Management-->
 
   <!--START OF USER PROFILE-->
-  <li class="treeview ">
+  <li id="lst" class="treeview ">
     <a href="#">
       <i class="fa fa-user"></i> <span>User Profile</span>
       <i class="fa fa-angle-left pull-right"></i>
     </a>
-    <ul class="treeview-menu">
+    <ul id="slst" class="treeview-menu">
       <li ><a href="?my_profile"><i class="fa fa-angle-double-right"></i>My Profile</a></li>
       <li ><a href="?edit_profile"><i class="fa fa-angle-double-right"></i>Edit Profile</a></li>
       <li ><a href="?change_password"><i class="fa fa-angle-double-right"></i>Change Password</a></li>
@@ -62,9 +62,10 @@ require('header.php');
 <aside class="right-side" >
 
   <!-- Content Header (Page header) -->
-  <section class="content-header" >
-    <h1>Dashboard</h1>
-  </section>
+  <!--<section class="content-header" >
+    <h1>DashBoard</h1> 
+  </section>-->
+
   <?php include('app/dash_board.php'); ?>
 
   <?php
@@ -93,7 +94,7 @@ require('header.php');
     ?>
 
     <style>
-    .dash_board{
+    .dash_board, .opt{
       display: block;
     }
     </style>
@@ -134,5 +135,7 @@ require('header.php');
             });
             </script>
             <!-- END BDAY -->
-          </body>
-          </html>
+
+
+</body>
+</html>

@@ -2,6 +2,10 @@
 require('hidden_right.php');
 ?>
 
+<section class="content-header" >
+  <h1>Edit Profile</h1> 
+</section>
+
 <style>
 .edit_profile{
   display: block;

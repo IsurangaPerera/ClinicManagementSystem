@@ -2,6 +2,10 @@
 require('hidden_right.php');
 ?>
 
+<section class="content-header" >
+  <h1>Patient Registration</h1> 
+</section>
+
 <style>
 .patient_registration{
   display: block;
@@ -97,7 +101,7 @@ if(isset($_POST['submit'])) {
                   <tr>
                    <td>Birthday <font color="#FF0000">*</font></td>
                    <td>
-                    <input type="text" name="birthday" value="" id="birthday" class="form-control input-sm" placeholder="Birthday" style="width: 150px;" required /> 
+                    <input type="text" name="birthday" value="" id="cFrom" class="form-control input-sm" placeholder="Birthday" style="width: 150px;" required /> 
                   </td>
                 </tr>
                 <tr>

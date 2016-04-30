@@ -1,4 +1,7 @@
 
+<section class="content-header opt" >
+  <h1>DashBoard</h1> 
+</section>
 
 <div class="dash_board">
 

@@ -2,6 +2,10 @@
 require('hidden_right.php');
 ?>
 
+<section class="content-header" >
+  <h1>Manage Appointments</h1> 
+</section>
+
 <style>
 .manage_appointments{
     display: block;

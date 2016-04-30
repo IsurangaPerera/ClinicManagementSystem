@@ -2,6 +2,10 @@
 require('hidden_right.php');
 ?>
 
+<section class="content-header" >
+  <h1>Change Password</h1> 
+</section>
+
 <style>
 .change_password{
   display: block;
