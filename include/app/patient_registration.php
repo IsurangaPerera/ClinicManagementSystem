@@ -19,6 +19,10 @@ if(isset($_POST['submit'])) {
   $make_query = new Query();
   $make_query->addPatient($object);
 
+  if(isset($_POST['cancel'])) {
+    header("Refresh:0");
+}
+
 }
 
 ?>
@@ -32,7 +36,7 @@ if(isset($_POST['submit'])) {
 
             <div class="box-footer clearfix">
 
-              <a href="http://demo-hms.eu5.org/app/patient" class="btn btn-default">Cancel</a>
+              <a href="?cancel" class="btn btn-default">Cancel</a>
               <button class="btn btn-primary" name="submit" id="submit" type="submit"><i class="fa fa-save"></i> Save</button>        
             </div>
             <div class="box-body table-responsive">
