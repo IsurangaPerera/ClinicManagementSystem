@@ -52,11 +52,23 @@ require("$root/include/header.php");
 	</div>
 	<!-- END Modal -->
 
-	<li class="header" style="text-align: center; padding: 7px;">Patient Details</li>
+	<li class="header" style="text-align: center; padding: 10px; margin-bottom: 5px; border: none;">Patient Details</li>
 
 	<li>
 		<a href="?patient_profile">
 			<i class="fa ion-person-stalker"></i><span>Patient Profile</span>
+		</a>
+	</li>
+
+	<li>
+		<a href="?visiting_history">
+			<i class="fa ion-person-stalker"></i><span>Visiting History</span>
+		</a>
+	</li>
+
+	<li>
+		<a href="?prescription_history">
+			<i class="fa ion-person-stalker"></i><span>Prescription History</span>
 		</a>
 	</li>
 
@@ -68,6 +80,31 @@ require("$root/include/header.php");
 <aside class="right-side"><!--Start of Right Side-->
 
 <?php include("app/patient_profile.php"); ?>
+
+<?php
+
+if(isset($_GET['visiting_history'])) {
+	require('app/visiting_history.php');
+}
+
+if(isset($_GET['prescription_history'])) {
+	require('app/prescription_history.php');
+}
+
+if(isset($_GET['patient_profile'])) {
+	require('app/hidden_right.php');
+?>
+ 
+ <style>
+    .patient_profile, .opt{
+      display: block;
+    }
+ </style>
+    
+<?php
+}
+
+?>
 
 
 </aside><!--End Of Right Side-->
