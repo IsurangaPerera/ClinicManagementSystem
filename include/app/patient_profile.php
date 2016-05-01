@@ -1,5 +1,5 @@
 
-<section class="content-header" >
+<section class="content-header opt" >
   <h1>Patient Profile</h1> 
 </section>
 
@@ -16,7 +16,7 @@
    <div class="panel-body">
      <div class="row">
       <div class="col-md-6">
-       <table cellpadding="3" cellspacing="3" width="60%">
+       <table cellpadding="3" cellspacing="3" width="60%" >
         <tr>
          <td>Full Name :</td>
          <td>Isuranga Perera</td>
