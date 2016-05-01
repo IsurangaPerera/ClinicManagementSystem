@@ -16,7 +16,7 @@ require('header.php');
   </li>     
 
  <li>
-    <a href="?dash_board">
+    <a href="patient_management.php">
       <i class="fa fa-dashboard"></i> <span>Patient Management</span>
     </a>
   </li> 
@@ -44,11 +44,6 @@ require('header.php');
 
 <!-- Right side column. Contains the navbar and content of the page -->
 <aside class="right-side" >
-
-  <!-- Content Header (Page header) -->
-  <!--<section class="content-header" >
-    <h1>DashBoard</h1> 
-  </section>-->
 
   <?php include('app/dash_board.php'); ?>
 
