@@ -11,13 +11,13 @@ require('header.php');
 
   <li>
     <a href="?dash_board">
-      <i class="fa fa-dashboard"></i> <span><strong>Dashboard</strong></span>
+      <i class="fa fa-dashboard"></i> <span>Dashboard</span>
     </a>
   </li>     
 
  <li>
     <a href="?dash_board">
-      <i class="fa fa-dashboard"></i> <span><strong>Patient Management</strong></span>
+      <i class="fa fa-dashboard"></i> <span>Patient Management</span>
     </a>
   </li> 
 
@@ -25,7 +25,7 @@ require('header.php');
   <!--START OF USER PROFILE-->
   <li id="lst" class="treeview ">
     <a href="#">
-      <i class="fa fa-user"></i> <span><strong>User Profile</strong></span>
+      <i class="fa fa-user"></i> <span>User Profile</span>
       <i class="fa fa-angle-left pull-right"></i>
     </a>
     <ul id="slst" class="treeview-menu">
