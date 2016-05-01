@@ -2,8 +2,8 @@
 
 if(strcmp($_SESSION['user_type'],"Receptionist")==0){
 	header("location: ../Receptionist.php");}
-elseif(strcmp($_SESSION['user_type'],"Doctor")==0){
-	header("location: ../OPD.php");}
+elseif(strcmp($_SESSION['user_type'],"OPD Doctor")==0){
+	header("location: ../opd_doctor.php");}
 elseif(strcmp($_SESSION['user_type'],"Pharmacist")==0){
 	header("location: Pharmacy.php");}
 elseif(strcmp($_SESSION['user_type'],"LabAssistant")==0){
