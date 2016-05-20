@@ -46,13 +46,13 @@ require('hidden_right.php');
         <table class="table table-hover table-striped">
           <thead>
             <tr>
-              <th>Date</th><th>Drug</th><th>Dosage</th><th>Period</th><th>Doctor</th><th>Status</th><th>Remarks</th>
+              <th>Date</th><th>Drug</th><th>Dosage</th><th>Period</th><th>Doctor</th><th>Status</th>
             </tr>
           </thead>
 
           <tbody>
             <tr>
-              <td>2015-09-09</td><td>Paracetomol</td><td>20mg</td><td>4 weeks</td><td>Nisali De Silva</td><td>In Progress</td><td>Not that Bad</td>
+              <td>2015-09-09</td><td>Paracetomol</td><td>20mg</td><td>4 weeks</td><td>Nisali De Silva</td><td>In Progress</td>
             </tr>
           </tbody>
         </table>                                

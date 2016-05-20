@@ -47,7 +47,7 @@ require('hidden_right.php');
         <table class="table table-hover table-striped">
           <thead>
             <tr>
-              <th>Date</th><th>Time</th><th>Doctor</th><th>Type of Visit</th><th>Remarks</th>
+              <th>Date</th><th>Time</th><th>Doctor</th><th>Type of Visit</th><th>Impression</th>
             </tr>
           </thead>
 

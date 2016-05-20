@@ -72,6 +72,12 @@ require("$root/include/header.php");
 		</a>
 	</li>
 
+	<li>
+		<a href="?patient_diagnosis">
+			<i class="fa ion-person-stalker"></i><span>Patient Diagnosis</span>
+		</a>
+	</li>
+
 
 </ul>
 </section>
@@ -85,6 +91,10 @@ require("$root/include/header.php");
 
 if(isset($_GET['visiting_history'])) {
 	require('app/visiting_history.php');
+}
+
+if(isset($_GET['patient_diagnosis'])) {
+	require('app/patient_diagnosis.php');
 }
 
 if(isset($_GET['prescription_history'])) {

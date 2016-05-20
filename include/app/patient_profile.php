@@ -81,7 +81,7 @@
             <th>Time</th>
             <th>Doctor</th>
             <th>Type of Visit</th>
-            <th>Remarks</th>
+            <th>Impression</th>
           </tr>
         </thead>
         <tbody>
@@ -116,7 +116,6 @@
             <th>Dosage</th>
             <th>Period</th>
             <th>Doctor</th>
-            <th>Remarks</th>
           </tr>
         </thead>
         <tbody>
@@ -126,7 +125,6 @@
             <td>20mg</td>
             <td>4 weeks</td>
             <td>Nisali De Silva</td>
-            <td>Not So bad</td>
           </tr>
         </tbody>
       </table>
