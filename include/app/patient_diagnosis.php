@@ -337,6 +337,18 @@ require('hidden_right.php');
 				</div>
 			</div>
 		</div>
+		 <div class="bottomright">
+             <img src="../images/add.png" alt="AddButton" width="100" height="100">
+           </div>
+
+           <style>
+           .bottomright {
+             position: fixed;
+             right : 10px;
+             bottom : 10px;
+
+           }
+           </style>
 
 	</section><!-- /.content -->
 

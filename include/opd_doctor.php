@@ -15,7 +15,7 @@ require('header.php');
     </a>
   </li>     
 
- <li>
+  <li>
     <a href="patient_management.php">
       <i class="fa fa-dashboard"></i> <span>Patient Management</span>
     </a>
@@ -114,7 +114,8 @@ require('header.php');
             });
             </script>
             <!-- END BDAY -->
+            
 
 
-</body>
-</html>
+          </body>
+          </html>
