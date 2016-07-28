@@ -123,6 +123,7 @@ if(isset($_GET['patient_profile'])) {
 <script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ="   crossorigin="anonymous"></script>
 <script src="../css/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>     
 <script src="../js/app.js" type="text/javascript"></script>
+<script src="../js/modal.js" type="text/javascript"></script>
 
 <!-- BDAY -->
 <script src="../../dp/js/dp.js"></script>

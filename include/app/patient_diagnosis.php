@@ -337,19 +337,42 @@ require('hidden_right.php');
 				</div>
 			</div>
 		</div>
-		 <div class="bottomright">
-             <img src="../images/add.png" alt="AddButton" width="100" height="100">
-           </div>
+		<div class="bottomright">
+			<a href="#" data-toggle="modal" data-target="#bfmodal" id="modali">
+				<img src="../images/add.png" alt="AddButton" width="100" height="100">
+			</a>
+		</div>
 
-           <style>
-           .bottomright {
-             position: fixed;
-             right : 10px;
-             bottom : 10px;
+		<style>
 
-           }
-           </style>
+		.bottomright {
+			position: fixed;
+			right : 10px;
+			bottom : 10px;
+		}
 
+		</style>
+
+		<!-- Modal -->
+		<div class="modal fade" id="bfmodal" tabindex="-1" role="dialog" aria-labelledby="bfmodal" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="bfmodal">Modal title</h4>
+					</div>
+					<div class="modal-body">
+						...
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section><!-- /.content -->
 
 </div>
