@@ -100,9 +100,9 @@ require('hidden_right.php');
 					<div class="tab-content">
 						<div class="tab-pane active" id="tab_1">
 
-							<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Add Complaints</a>
+							<a href="#" id="btn_complaints" class="btn btn-primary" data-toggle="modal" data-target="#complaints"><i class="fa fa-plus"></i> Add Complaints</a>
 
-							<a href="http://demo-hms.eu5.org/app/ipd_print/print_vital/IP-000023/000014" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
+							<a href="#" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
 							<table class="table table-hover table-striped">
 								<thead>
 									<tr>
@@ -122,7 +122,7 @@ require('hidden_right.php');
 										<td>2 days</td>
 										
 										<td>
-											<a href="http://demo-hms.eu5.org/app/nurse_module/delete_vital/23/IP-000023/000014" onClick="return confirm('Are you sure you want to remove?');">Remove</a>
+											<a href="#" onClick="return confirm('Are you sure you want to remove?');">Remove</a>
 
 										</td>
 									</tr>
@@ -139,9 +139,9 @@ require('hidden_right.php');
 						
 						<div class="tab-pane" id="tab_2">
 							<!--Tab 2 Code goes here-->
-							<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Add Clinical Observations</a>
+							<a href="#" id="btn_observations" class="btn btn-primary" data-toggle="modal" data-target="observations"><i class="fa fa-plus"></i> Add Clinical Observations</a>
 
-							<a href="http://demo-hms.eu5.org/app/ipd_print/print_vital/IP-000023/000014" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
+							<a href="#" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
 							<table class="table table-hover table-striped">
 								<thead>
 									<tr>
@@ -161,7 +161,7 @@ require('hidden_right.php');
 										<td>2 days</td>
 										
 										<td>
-											<a href="http://demo-hms.eu5.org/app/nurse_module/delete_vital/23/IP-000023/000014" onClick="return confirm('Are you sure you want to remove?');">Remove</a>
+											<a href="#" onClick="return confirm('Are you sure you want to remove?');">Remove</a>
 
 										</td>
 									</tr>
@@ -178,9 +178,9 @@ require('hidden_right.php');
 						</div>
 						<div class="tab-pane" id="tab_3">
 
-							<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Add Medications</a>
+							<a href="#" id="btn_medications" class="btn btn-primary" data-toggle="modal" data-target="medications"><i class="fa fa-plus"></i> Add Medications</a>
 
-							<a href="http://demo-hms.eu5.org/app/ipd_print/print_vital/IP-000023/000014" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
+							<a href="#" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
 							<table class="table table-hover table-striped">
 								<thead>
 									<tr>
@@ -199,7 +199,7 @@ require('hidden_right.php');
 										<td>20mg</td>
 										
 										<td>
-											<a href="http://demo-hms.eu5.org/app/nurse_module/delete_vital/23/IP-000023/000014" onClick="return confirm('Are you sure you want to remove?');">Remove</a>
+											<a href="#" onClick="return confirm('Are you sure you want to remove?');">Remove</a>
 
 										</td>
 									</tr>
@@ -215,9 +215,9 @@ require('hidden_right.php');
 						</div>
 						<div class="tab-pane" id="tab_4">
 
-							<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Add Investigations</a>
+							<a href="#" id="btn_investigations" class="btn btn-primary" data-toggle="modal" data-target="investigations"><i class="fa fa-plus"></i> Add Investigations</a>
 
-							<a href="http://demo-hms.eu5.org/app/ipd_print/print_vital/IP-000023/000014" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
+							<a href="#" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
 							<table class="table table-hover table-striped">
 								<thead>
 									<tr>
@@ -237,7 +237,7 @@ require('hidden_right.php');
 										<td>2 days</td>
 										
 										<td>
-											<a href="http://demo-hms.eu5.org/app/nurse_module/delete_vital/23/IP-000023/000014" onClick="return confirm('Are you sure you want to remove?');">Remove</a>
+											<a href="#" onClick="return confirm('Are you sure you want to remove?');">Remove</a>
 
 										</td>
 									</tr>
@@ -354,14 +354,15 @@ require('hidden_right.php');
 		</style>
 
 		<!-- Modal -->
-		<div class="modal fade" id="bfmodal" tabindex="-1" role="dialog" aria-labelledby="bfmodal" aria-hidden="true">
+		<!-- Presenting Complaints -->
+		<div class="modal fade" id="complaints" tabindex="-1" role="dialog" aria-labelledby="complaints" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
-						<h4 class="modal-title" id="bfmodal">Modal title</h4>
+						<h4 class="modal-title" id="complaints">Modal title</h4>
 					</div>
 					<div class="modal-body">
 						...
@@ -373,6 +374,72 @@ require('hidden_right.php');
 				</div>
 			</div>
 		</div>
-	</section><!-- /.content -->
 
+	<!-- Modal -->
+	<!-- Clinical Observtions -->
+	<div class="modal fade" id="observations" tabindex="-1" role="dialog" aria-labelledby="observaions" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="observations">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- Modal -->
+<!-- Medications -->
+<div class="modal fade" id="medications" tabindex="-1" role="dialog" aria-labelledby="medications" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="medications">Modal title</h4>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal -->
+<!-- Investigations -->
+<div class="modal fade" id="investigations" tabindex="-1" role="dialog" aria-labelledby="investigations" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="investigations">Modal title</h4>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+</section><!-- /.content -->
 </div>
