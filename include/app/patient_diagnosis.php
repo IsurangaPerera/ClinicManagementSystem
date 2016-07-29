@@ -375,7 +375,7 @@ require('hidden_right.php');
 								</tr>
 								<tr>
 									<td>
-										<input id="in00" list="complaints1" name="complaint" class="form-control input-sm" style="height: 100%; cursor:pointer;" autofocus placeholder="Cough">
+										<input id="in00" list="complaints1" name="complaint" class="form-control input-sm" onchange="setEnable(this.id)" style="height: 100%; cursor:pointer;" autofocus placeholder="Complaint">
 										<datalist id="complaints1"></option>
 											<option value="Cough"></option>
 											<option value="Sputum"></option>
@@ -391,11 +391,11 @@ require('hidden_right.php');
 									</td>
 
 									<td>
-										<input id="in01" type="text" class="form-control input-sm" style="height: 100%; cursor:pointer;" placeholder="24" disabled>
+										<input id="in01" type="text" class="form-control input-sm" style="height: 100%; cursor:pointer;" placeholder="Duration(eg.24)" disabled>
 									</td>
 
 									<td>
-										<input id="in02" list="days" name="complaint" class="form-control input-sm" style="height: 100%; cursor:pointer;" placeholder="Days" disabled>
+										<input id="in02" list="days" name="complaint" class="form-control input-sm" style="height: 100%; cursor:pointer;" placeholder="Days/Weeks/Months/Years" disabled>
 										<datalist id="days">
 											<option value="Days"></option>
 											<option value="Weeks"></option>
