@@ -7,7 +7,7 @@ require('hidden_right.php');
 	<ol class="breadcrumb">
 		<li><a href=""><i class="fa fa-dashboard"></i> Home</a></li>
 		<li><a href="#">Patient Appointment</a></li>
-		<li class="active">Add Appointment</li>
+		<li class="active">Add Appointment</li>									
 	</ol>
 </section>
 
@@ -20,10 +20,6 @@ require('hidden_right.php');
 <div class="patient_diagnosis">
 	<!-- Main content -->
 	<section class="content">
-
-
-
-
 
 		<div class="row">
 
@@ -56,6 +52,7 @@ require('hidden_right.php');
 						</table>
 					</div>
 					<div class="box-footer clearfix">
+
 						<table class="table">
 							<tr>
 								<td><u>Age</u></td>
@@ -419,50 +416,125 @@ require('hidden_right.php');
 			</div>
 		</div>
 		<!-- END Modal -->
+		
 		<!-- Modal -->
-		<!-- Clinical Observtions -->
-		<div class="modal fade" id="observations" tabindex="-1" role="dialog" aria-labelledby="observaions" aria-hidden="true">
-			<div class="modal-dialog" role="document">
+		<!-- Clinical Observations -->
+		<div class="modal fade" id="observations" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
 				<div class="modal-content">
 					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<h4 class="modal-title" id="observations">Modal title</h4>
+						<button type="button" class="close" data-dismiss="modal">×</button>
+						<h4 class="modal-title">Clinical Observations</h4>
 					</div>
 					<div class="modal-body">
-						...
+
+						<!--From Start-->
+						<form role="form">
+							<table cellpadding="5" cellspacing="5" align="center" class="table table-striped table-inverse" id="tble1">
+								<tr>
+									<td>Complaints</td>
+									<td>Duration</td>
+									<td></td>
+								</tr>
+								<tr>
+
+									<td>
+										<input id="in00" list="complaints1" name="complaint" class="form-control input-sm" onchange="setEnable(this.id)" style="height: 100%; cursor:pointer;" autofocus placeholder="Complaint">
+										<datalist id="complaints1"></option>
+											<option value="Cough"></option>
+											<option value="Sputum"></option>
+											<option value="Haemoptysis"></option>
+											<option value="Shortness of Breath"></option>
+											<option value="Wheeze"></option>
+											<option value="Fever"></option>
+											<option value="Night Sweats"></option>
+											<option value="Loss of Apetite"></option>
+											<option value="Loss of Weight"></option>
+											<option value="Chest Pain"></option>
+										</datalist>
+									</td>
+
+									<td>
+										<input id="in01" type="text" class="form-control input-sm" style="height: 100%; cursor:pointer;" placeholder="Duration(eg.24)" disabled>
+									</td>
+
+									<td>
+										<input id="in02" list="days" name="complaint" class="form-control input-sm" style="height: 100%; cursor:pointer;" placeholder="Days/Weeks/Months/Years" disabled>
+										<datalist id="days">
+											<option value="Days"></option>
+											<option value="Weeks"></option>
+											<option value="Months"></option>
+											<option value="Years"></option>
+										</datalist>
+									</td>
+								</tr>
+							</table>
+
+							<button type="button" id="addmore" onclick="addRow()" class="btn btn-primary" style="width: 100px; float: right; top: 10px;">Add More</button>
+
+						</form>
+						<!--Form End-->
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save changes</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					</div>
 				</div>
+
 			</div>
 		</div>
+		<!-- END Modal -->
 
 		<!-- Modal -->
-		<!-- Medications -->
-		<div class="modal fade" id="medications" tabindex="-1" role="dialog" aria-labelledby="medications" aria-hidden="true">
-			<div class="modal-dialog" role="document">
+		<!-- Presenting Complaints -->
+		<div class="modal fade" id="medications" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
 				<div class="modal-content">
 					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<h4 class="modal-title" id="medications">Modal title</h4>
+						<button type="button" class="close" data-dismiss="modal">×</button>
+						<h4 class="modal-title">Medications</h4>
 					</div>
 					<div class="modal-body">
-						...
+						<!--From Start-->
+						<form role="form">
+							<table cellpadding="5" cellspacing="5" align="center" class="table table-striped table-inverse" id="tble3">
+								<tr>
+									<td>Medication</td>
+									<td>Dosage</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										<input id="im00" type="text" class="form-control input-sm" onchange="setEnable2(this.id)" style="height: 100%; cursor:pointer;" placeholder="Medication">
+									</td>
+
+									<td>
+										<input id="im01" list="dose" name="dose" class="form-control input-sm" style="height: 100%; cursor:pointer;" placeholder="Dosage" disabled>
+										<datalist id="dose">
+											<option value="Dose 0"></option>
+											<option value="Dose 1"></option>
+											<option value="Dose 2"></option>
+										</datalist>
+									</td>
+								</tr>
+							</table>
+
+							<button type="button" id="addmore" onclick="addRow2()" class="btn btn-primary" style="width: 100px; float: right; top: 10px;">Add More</button>
+
+						</form>
+						<!--Form End-->
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save changes</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					</div>
 				</div>
+
 			</div>
 		</div>
-
+		<!-- END Modal -->
 		<!-- Modal -->
 		<!-- Investigations -->
 		<div class="modal fade" id="investigations" tabindex="-1" role="dialog" aria-labelledby="investigations" aria-hidden="true">

@@ -56,3 +56,31 @@ function setEnable(id){
 }
 
 addRow.curId = 1;
+
+function setEnable2(id){
+	var id1 = '#'+id.substring(0, id.length-1)+'1';
+	$(id1).prop("disabled", false).focus();
+}
+
+function addRow2(){
+	var table = document.getElementById("tble3");
+	var row = table.insertRow(table.rows.length);
+	var cell1 = row.insertCell(0);
+	var cell2 = row.insertCell(1);
+
+	ide1 = 'im' + addRow2.curId + '0';
+	ide2 = 'im' + addRow2.curId + '1';
+
+	var newElement1 = '<input id="'+ide1+'" type="text" class="form-control input-sm"'
+							+ 'onchange="setEnable2(this.id)" style="height: 100%; cursor:pointer;" placeholder="Medication">';
+
+	var newElement2 = '<input id="'+ide2+'" list="dose" name="dose" class="form-control input-sm"'
+							+ 'style="height: 100%; cursor:pointer;" placeholder="Dosage" disabled>';
+
+	cell1.innerHTML = newElement1 + cell1.innerHTML;
+	cell2.innerHTML = newElement2 + cell2.innerHTML;
+
+	addRow2.curId += 1;
+}
+
+addRow2.curId = 1;
