@@ -8,6 +8,12 @@ $usr->verifyUser($_SESSION['user_type'], $_SESSION['user_type']);
 require("$root/include/header.php");
 ?>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+<script src="https://code.jquery.com/jquery-2.2.3.min.js" defer></script>
+<script src="dist/js/bootstrap-checkbox.min.js" defer></script> 
+<script src="../js/modal.js" type="text/javascript"></script>
+
 <ul class="sidebar-menu">
 
 	<!-- Modal -->
@@ -85,45 +91,45 @@ require("$root/include/header.php");
 
 <aside class="right-side"><!--Start of Right Side-->
 
-<?php include("app/patient_profile.php"); ?>
+	<?php include("app/patient_profile.php"); ?>
 
-<?php
+	<?php
 
-if(isset($_GET['visiting_history'])) {
-	require('app/visiting_history.php');
-}
+	if(isset($_GET['visiting_history'])) {
+		require('app/visiting_history.php');
+	}
 
-if(isset($_GET['patient_diagnosis'])) {
-	require('app/patient_diagnosis.php');
-}
+	if(isset($_GET['patient_diagnosis'])) {
+		require('app/patient_diagnosis.php');
+	}
 
-if(isset($_GET['prescription_history'])) {
-	require('app/prescription_history.php');
-}
+	if(isset($_GET['prescription_history'])) {
+		require('app/prescription_history.php');
+	}
 
-if(isset($_GET['patient_profile'])) {
-	require('app/hidden_right.php');
-?>
- 
- <style>
-    .patient_profile, .opt{
-      display: block;
-    }
- </style>
-    
-<?php
-}
+	if(isset($_GET['patient_profile'])) {
+		require('app/hidden_right.php');
+		?>
 
-?>
+		<style>
+		.patient_profile, .opt{
+			display: block;
+		}
+		</style>
+
+		<?php
+	}
+
+	?>
 
 
 </aside><!--End Of Right Side-->
 
 </div>
 <script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ="   crossorigin="anonymous"></script>
-<script src="../css/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>     
+<script src="../css/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>  
+
 <script src="../js/app.js" type="text/javascript"></script>
-<script src="../js/modal.js" type="text/javascript"></script>
 
 <!-- BDAY -->
 <script src="../../dp/js/dp.js"></script>

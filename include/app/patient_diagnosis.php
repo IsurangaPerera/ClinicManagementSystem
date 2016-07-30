@@ -136,7 +136,7 @@ require('hidden_right.php');
 
 						<div class="tab-pane" id="tab_2">
 							<!--Tab 2 Code goes here-->
-							<a href="#" id="btn_observations" class="btn btn-primary" data-toggle="modal" data-target="observations"><i class="fa fa-plus"></i> Add Clinical Observations</a>
+							<a href="#" id="btn_observations" class="btn btn-primary" data-toggle="modal" data-target="#observations"><i class="fa fa-plus"></i> Add Clinical Observations</a>
 
 							<a href="#" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
 							<table class="table table-hover table-striped">
@@ -175,7 +175,7 @@ require('hidden_right.php');
 						</div>
 						<div class="tab-pane" id="tab_3">
 
-							<a href="#" id="btn_medications" class="btn btn-primary" data-toggle="modal" data-target="medications"><i class="fa fa-plus"></i> Add Medications</a>
+							<a href="#" id="btn_medications" class="btn btn-primary" data-toggle="modal" data-target="#medications"><i class="fa fa-plus"></i> Add Medications</a>
 
 							<a href="#" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
 							<table class="table table-hover table-striped">
@@ -212,7 +212,7 @@ require('hidden_right.php');
 						</div>
 						<div class="tab-pane" id="tab_4">
 
-							<a href="#" id="btn_investigations" class="btn btn-primary" data-toggle="modal" data-target="investigations"><i class="fa fa-plus"></i> Add Investigations</a>
+							<a href="#" id="btn_investigations" class="btn btn-primary" data-toggle="modal" data-target="#investigations"><i class="fa fa-plus"></i> Add Investigations</a>
 
 							<a href="#" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
 							<table class="table table-hover table-striped">
@@ -286,6 +286,7 @@ require('hidden_right.php');
 											<td width="21%" valign="top">Please Specify</td>
 											<td width="79%"><textarea name="reason_admission" id="reason_admission" class="form-control input-sm" style="width: 60%;" rows="3"></textarea></td>
 										</tr>
+										
 										<tr>
 											<td valign="top">Plan From OPD</td>
 											<td>
@@ -403,7 +404,11 @@ require('hidden_right.php');
 								</tr>
 							</table>
 
-							<button type="button" id="addmore" onclick="addRow()" class="btn btn-primary" style="width: 100px; float: right; top: 10px;">Add More</button>
+							<div class="bottomright" style="bottom: 80px; right: 20px">
+								<a href="#" id="addmore" onclick="addRow()">
+									<img src="../images/addmore.png" alt="AddButton" width="30" height="30">
+								</a>
+							</div>
 
 						</form>
 						<!--Form End-->
@@ -430,52 +435,335 @@ require('hidden_right.php');
 					</div>
 					<div class="modal-body">
 
-						<!--From Start-->
-						<form role="form">
-							<table cellpadding="5" cellspacing="5" align="center" class="table table-striped table-inverse" id="tble1">
-								<tr>
-									<td>Complaints</td>
-									<td>Duration</td>
-									<td></td>
-								</tr>
-								<tr>
+						<div class="panel-group">
+							
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<input type="checkbox" id="cachexia"/>
+									<label for="cachexia">Cachexia</label>
+								</div>
+							</div>
+							
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<input type="checkbox" id="clubbing"/>
+									<label for="clubbing">Clubbing</label>
+								</div>
+							</div>
+							
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<input type="checkbox" id="lymphadenopathy" name="lymphadenopathy" onclick="changeOptions(this.id)"/>
+									<label for="lymphadenopathy">Lymphadenopathy</label>
+								</div>
+								<div class="panel-body" id="lymphadenopathyoptions" hidden="true">
+									<table class="table">
+										<tr>
+											<td>
+												<input type="checkbox" id="rcervical" />
+												<label for="cachexia">Right Cervical</label>
+											</td>
+											<td>
+												<input type="checkbox" id="lcervical" />
+												<label for="cachexia">Left Cervical</label>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<input type="checkbox" id="rauxiiliary" />
+												<label for="cachexia">Right Axilliary</label>
+											</td>
+											<td>
+												<input type="checkbox" id="lauxilliary" />
+												<label for="cachexia">Left Axilliary</label>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
 
-									<td>
-										<input id="in00" list="complaints1" name="complaint" class="form-control input-sm" onchange="setEnable(this.id)" style="height: 100%; cursor:pointer;" autofocus placeholder="Complaint">
-										<datalist id="complaints1"></option>
-											<option value="Cough"></option>
-											<option value="Sputum"></option>
-											<option value="Haemoptysis"></option>
-											<option value="Shortness of Breath"></option>
-											<option value="Wheeze"></option>
-											<option value="Fever"></option>
-											<option value="Night Sweats"></option>
-											<option value="Loss of Apetite"></option>
-											<option value="Loss of Weight"></option>
-											<option value="Chest Pain"></option>
-										</datalist>
-									</td>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<input type="checkbox" id="reducedchestexpansion"onclick="changeOptions(this.id)"/>
+									<label for="reducedchestexpansion">Reduced Chest Expansion</label>
+								</div> 
+								<div class="panel-body" id="reducedchestexpansionoptions" hidden="true">
+									<table class="table">
+										<tr>
+											<td>
+												<input type="checkbox" id="right" />
+												<label for="right">Right</label>
+											</td>
+											<td>
+												<input type="checkbox" id="left" />
+												<label for="left">Left</label>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
 
-									<td>
-										<input id="in01" type="text" class="form-control input-sm" style="height: 100%; cursor:pointer;" placeholder="Duration(eg.24)" disabled>
-									</td>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<input type="checkbox" id="vbs"/>
+									<label for="vbs">Vesicular Breath Sounds</label>
+								</div>
+							</div>
 
-									<td>
-										<input id="in02" list="days" name="complaint" class="form-control input-sm" style="height: 100%; cursor:pointer;" placeholder="Days/Weeks/Months/Years" disabled>
-										<datalist id="days">
-											<option value="Days"></option>
-											<option value="Weeks"></option>
-											<option value="Months"></option>
-											<option value="Years"></option>
-										</datalist>
-									</td>
-								</tr>
-							</table>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<input type="checkbox" id="rhonchi" onclick="changeOptions(this.id)"/>
+									<label for="rhonchi">Rhonchi</label>
+								</div>
+								<div class="panel-body" id="rhonchioptions" hidden="true">
+									<table class="table">
+										<tr>
+											<td>
+												<input type="checkbox" id="rlz" />
+												<label for="rlz">Right Lower Zone</label>
+											</td>
+											<td>
+												<select class="selectpicker">
+													<option value="Inspiratory">Inspiratory</option>
+													<option value="Expiratory">Expiratory</option>
+													<option value="Monophonic">Monophonic</option>
+													<option value="Polyphonic">Polyphonic</option>
+												</select>
+											</td>
+											<td>
+												<input type="checkbox" id="llz" />
+												<label for="llz">Left Lower Zone</label>
+											</td>
+											<td>
+												<select class="selectpicker">
+													<option value="Inspiratory">Inspiratory</option>
+													<option value="Expiratory">Expiratory</option>
+													<option value="Monophonic">Monophonic</option>
+													<option value="Polyphonic">Polyphonic</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<input type="checkbox" id="rmz" />
+												<label for="rmz">Right Mid Zone</label>
+											</td>
+											<td>
+												<select class="selectpicker">
+													<option value="Inspiratory">Inspiratory</option>
+													<option value="Expiratory">Expiratory</option>
+													<option value="Monophonic">Monophonic</option>
+													<option value="Polyphonic">Polyphonic</option>
+												</select>
+											</td>
+											<td>
+												<input type="checkbox" id="lmz" />
+												<label for="lmz">Left Mid Zone</label>
+											</td>
+											<td>
+												<select class="selectpicker">
+													<option value="Inspiratory">Inspiratory</option>
+													<option value="Expiratory">Expiratory</option>
+													<option value="Monophonic">Monophonic</option>
+													<option value="Polyphonic">Polyphonic</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<input type="checkbox" id="ruz" />
+												<label for="ruz">Right Upper Zone</label>
+											</td>
+											<td>
+												<select class="selectpicker">
+													<option value="Inspiratory">Inspiratory</option>
+													<option value="Expiratory">Expiratory</option>
+													<option value="Monophonic">Monophonic</option>
+													<option value="Polyphonic">Polyphonic</option>
+												</select>
+											</td>
+											<td>
+												<input type="checkbox" id="luz" />
+												<label for="luz">Left Upper Zone</label>
+											</td>
+											<td>
+												<select class="selectpicker">
+													<option value="Inspiratory">Inspiratory</option>
+													<option value="Expiratory">Expiratory</option>
+													<option value="Monophonic">Monophonic</option>
+													<option value="Polyphonic">Polyphonic</option>
+												</select>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
 
-							<button type="button" id="addmore" onclick="addRow()" class="btn btn-primary" style="width: 100px; float: right; top: 10px;">Add More</button>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<input type="checkbox" id="ic" onclick="changeOptions(this.id)"/>
+									<label for="ic">Inpiratory Crepitations</label>
+								</div>
+							
+								<div class="panel-body" id="icoptions" hidden="true">
+									<table class="table">
+										<tr>
+											<td>
+												<input type="checkbox" id="rlz" />
+												<label for="rlz">Right Lower Zone</label>
+											</td>
+											<td>
+												<select class="selectpicker">
+													<option value="Fine">Fine</option>
+													<option value="Corse">Corse</option>
+												</select>
+											</td>
+											<td>
+												<input type="checkbox" id="llz" />
+												<label for="llz">Left Lower Zone</label>
+											</td>
+											<td>
+												<select class="selectpicker">
+													<option value="Fine">Fine</option>
+													<option value="Corse">Corse</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<input type="checkbox" id="rmz" />
+												<label for="rmz">Right Mid Zone</label>
+											</td>
+											<td>
+												<select class="selectpicker">
+													<option value="Fine">Fine</option>
+													<option value="Corse">Corse</option>
+												</select>
+											</td>
+											<td>
+												<input type="checkbox" id="lmz" />
+												<label for="lmz">Left Mid Zone</label>
+											</td>
+											<td>
+												<select class="selectpicker">
+													<option value="Fine">Fine</option>
+													<option value="Corse">Corse</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<input type="checkbox" id="ruz" />
+												<label for="ruz">Right Upper Zone</label>
+											</td>
+											<td>
+												<select class="selectpicker">
+													<option value="Fine">Fine</option>
+													<option value="Corse">Corse</option>
+												</select>
+											</td>
+											<td>
+												<input type="checkbox" id="luz" />
+												<label for="luz">Left Upper Zone</label>
+											</td>
+											<td>
+												<select class="selectpicker">
+													<option value="Fine">Fine</option>
+													<option value="Corse">Corse</option>
+												</select>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
 
-						</form>
-						<!--Form End-->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<input type="checkbox" id="ap" onclick="changeOptions(this.id)"/>
+									<label for="ap">Abnormal Percussion</label>
+								</div>
+							
+								<div class="panel-body" id="apoptions" hidden="true">
+									<table class="table">
+										<tr>
+											<td>
+												<input type="checkbox" id="rlz" />
+												<label for="rlz">Right Lower Zone</label>
+											</td>
+											<td>
+												<select class="selectpicker">
+													<option value="Hyper-Resonant">Hyper-Resonant</option>
+													<option value="dull">Dull</option>
+													<option value="Stony Dull">Stony Dull</option>
+												</select>
+											</td>
+											<td>
+												<input type="checkbox" id="llz" />
+												<label for="llz">Left Lower Zone</label>
+											</td>
+											<td>
+												<select class="selectpicker">
+													<option value="Hyper-Resonant">Hyper-Resonant</option>
+													<option value="dull">Dull</option>
+													<option value="Stony Dull">Stony Dull</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<input type="checkbox" id="rmz" />
+												<label for="rmz">Right Mid Zone</label>
+											</td>
+											<td>
+												<select class="selectpicker">
+													<option value="Hyper-Resonant">Hyper-Resonant</option>
+													<option value="dull">Dull</option>
+													<option value="Stony Dull">Stony Dull</option>
+												</select>
+											</td>
+											<td>
+												<input type="checkbox" id="lmz" />
+												<label for="lmz">Left Mid Zone</label>
+											</td>
+											<td>
+												<select class="selectpicker">
+													<option value="Hyper-Resonant">Hyper-Resonant</option>
+													<option value="dull">Dull</option>
+													<option value="Stony Dull">Stony Dull</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<input type="checkbox" id="ruz" />
+												<label for="ruz">Right Upper Zone</label>
+											</td>
+											<td>
+												<select class="selectpicker">
+													<option value="Hyper-Resonant">Hyper-Resonant</option>
+													<option value="dull">Dull</option>
+													<option value="Stony Dull">Stony Dull</option>
+												</select>
+											</td>
+											<td>
+												<input type="checkbox" id="luz" />
+												<label for="luz">Left Upper Zone</label>
+											</td>
+											<td>
+												<select class="selectpicker">
+													<option value="Hyper-Resonant">Hyper-Resonant</option>
+													<option value="dull">Dull</option>
+													<option value="Stony Dull">Stony Dull</option>
+												</select>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						
+						
+						</div>
+
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -504,7 +792,6 @@ require('hidden_right.php');
 								<tr>
 									<td>Medication</td>
 									<td>Dosage</td>
-									<td></td>
 								</tr>
 								<tr>
 									<td>
@@ -522,8 +809,11 @@ require('hidden_right.php');
 								</tr>
 							</table>
 
-							<button type="button" id="addmore" onclick="addRow2()" class="btn btn-primary" style="width: 100px; float: right; top: 10px;">Add More</button>
-
+							<div class="bottomright" style="bottom: 80px; right: 20px">
+								<a href="#" id="addmore" onclick="addRow2()">
+									<img src="../images/addmore.png" alt="AddButton" width="30" height="30">
+								</a>
+							</div>
 						</form>
 						<!--Form End-->
 					</div>
@@ -558,4 +848,5 @@ require('hidden_right.php');
 		</div>
 
 	</section><!-- /.content -->
+
 </div>

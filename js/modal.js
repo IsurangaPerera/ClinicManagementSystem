@@ -1,3 +1,5 @@
+
+
 $(function(){
 	$('#btn_complaints').click(function(){
 		$('#complaints').modal({backdrop: "static"});
@@ -84,3 +86,10 @@ function addRow2(){
 }
 
 addRow2.curId = 1;
+
+function changeOptions(id){
+	var id1 = '#' + id + 'options';
+	$(id1).prop("hidden", false).focus();
+}
+
+
