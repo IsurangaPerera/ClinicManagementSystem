@@ -827,8 +827,8 @@ require('hidden_right.php');
 		<!-- END Modal -->
 		<!-- Modal -->
 		<!-- Investigations -->
-		<div class="modal fade" id="investigations" tabindex="-1" role="dialog" aria-labelledby="investigations" aria-hidden="true">
-			<div class="modal-dialog" role="document">
+		<div class="modal fade" id="investigations" role="dialog">
+			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -837,7 +837,162 @@ require('hidden_right.php');
 						<h4 class="modal-title" id="investigations">Modal title</h4>
 					</div>
 					<div class="modal-body">
-						...
+						<!--Start Of Panel Group-->
+						<div class="panel-group">
+							<!--Start Of Panel-->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<input type="checkbox" id="xray" onclick="changeOptions(this.id)"/>
+									<label for="xray">Chest X-Ray</label>
+								</div>
+								<div class="panel-body" id="xrayoptions" hidden="true">
+									<table class="table">
+										<tr>
+											<td>
+												<input type="checkbox" id="pa"/>
+												<label for="pa">PA</label>
+											</td>
+											<td>
+												<input type="checkbox" id="rl"/>
+												<label for="rl">Right Lateral</label>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<input type="checkbox" id="ll"/>
+												<label for="l">Left Lateral</label>
+											</td>
+											<td>
+												<input type="checkbox" id="apical"/>
+												<label for="apical">Apical</label>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<!--End Of Panel-->
+
+							<!--Start Of Panel-->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<input type="checkbox" id="sputum" onclick="changeOptions(this.id)"/>
+									<label for="sputum">Sputum</label>
+								</div>
+								<div class="panel-body" id="sputumoptions" hidden="true">
+									<table class="table">
+										<tr>
+											<td>
+												<input type="checkbox" id="pyogenicculture"/>
+												<label for="pyogenicculture">Pyogenic Culture</label>
+											</td>
+											<td>
+												<input type="checkbox" id="afbsmear3"/>
+												<label for="afbsmear3">AFB Smear (x3 Morning)</label>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<input type="checkbox" id="afbsmear"/>
+												<label for="afbsmear">AFB Smear</label>
+											</td>
+											<td>
+												<input type="checkbox" id="fungalculture"/>
+												<label for="fungalculture">Fungal Culture</label>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<!--End Of Panel-->
+
+							<!--Start Of Panel-->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<input type="checkbox" id="blood" onclick="changeOptions(this.id)"/>
+									<label for="blood">Blood</label>
+								</div>
+								<div class="panel-body" id="bloodoptions" hidden="true">
+									<table class="table">
+										<tr>
+											<td>
+												<input type="checkbox" id="fbc"/>
+												<label for="fbc">FBC</label>
+											</td>
+											<td>
+												<input type="checkbox" id="esr"/>
+												<label for="esr">ESR</label>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<!--End Of Panel-->
+
+							<!--Start Of Panel-->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<input type="checkbox" id="lfunction" onclick="changeOptions(this.id)"/>
+									<label for="lfunction">Lung Function</label>
+								</div>
+								<div class="panel-body" id="lfunctionoptions" hidden="true">
+									<table class="table">
+										<tr>
+											<td>
+												<input type="checkbox" id="fev1"/>
+												<label for="fev1">FEV1</label>
+											</td>
+											<td>
+												<input type="checkbox" id="fvc"/>
+												<label for="fvc">FVC</label>
+											</td>
+											<td>
+												<input type="checkbox" id="dlco"/>
+												<label for="dlco">DLCO</label>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<!--End Of Panel-->
+
+							<!--Start Of Panel-->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<input type="checkbox" id="resting"/>
+									<label for="resting">Resting SP02</label>
+								</div>
+							</div>
+							<!--End Of Panel-->
+
+							<!--Start Of Panel-->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<input type="checkbox" id="walking"/>
+									<label for="walking">Six Minute Walking Test</label>
+								</div>
+							</div>
+							<!--End Of Panel-->
+
+							<!--Start Of Panel-->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<input type="checkbox" id="mantoux"/>
+									<label for="mantoux">Mantoux</label>
+								</div>
+							</div>
+							<!--End Of Panel-->
+
+							<!--Start Of Panel-->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<input type="checkbox" id="weight"/>
+									<label for="weight">Body Weight</label>
+								</div>
+							</div>
+							<!--End Of Panel-->
+
+						</div>
+						<!--End Of Panel Group-->
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
