@@ -89,7 +89,27 @@ addRow2.curId = 1;
 
 function changeOptions(id){
 	var id1 = '#' + id + 'options';
-	$(id1).prop("hidden", false).focus();
+	if(document.getElementById(id).checked === true){
+		$(id1).prop("hidden", false).focus();
+	} else {
+		$(id1).prop("hidden", true).focus();
+	}
 }
 
+function showText(id){
+	var id1 = '#' + id;
+	if($(id1).val() == "15"){
+		$('#txtother').prop("hidden", false).focus();
+	} else {
+		$('#txtother').prop("hidden", true).focus();
+	}
+}
 
+function assignConsultant(id){
+	var id1 = '#' + id;
+	if($(id1).val() == "3"){
+		$('#consultants').prop("hidden", false).focus();
+	} else {
+		$('#consultants').prop("hidden", true).focus();
+	}
+}

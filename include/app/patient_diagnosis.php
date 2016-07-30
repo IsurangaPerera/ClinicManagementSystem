@@ -261,7 +261,7 @@ require('hidden_right.php');
 
 												<td width="79%">
 
-													<select class="form-control input-sm" id="sel1" style="width: 60%;">
+													<select class="form-control input-sm" id="sel1" style="width: 60%;" onchange="showText(this.id)">
 														<option value="0">Non specific symptoms</option>
 														<option value="1">Upper respiratory tract infection</option>
 														<option value="2">Lower respiratory tract infection</option>
@@ -282,7 +282,7 @@ require('hidden_right.php');
 												</td>
 											</div>
 										</tr>
-										<tr hidden="True">
+										<tr hidden="true" id="txtother">
 											<td width="21%" valign="top">Please Specify</td>
 											<td width="79%"><textarea name="reason_admission" id="reason_admission" class="form-control input-sm" style="width: 60%;" rows="3"></textarea></td>
 										</tr>
@@ -290,7 +290,7 @@ require('hidden_right.php');
 										<tr>
 											<td valign="top">Plan From OPD</td>
 											<td>
-												<select name="condition" id="condition" class="form-control input-sm" style="width: 60%;" required>
+												<select id="condition" class="form-control input-sm" style="width: 60%;" onchange="assignConsultant(this.id)" required>
 													<option value="1">Discharge from OPD</option>
 													<option value="2">Follow up OPD</option>
 													<option value="3" id="refRoom">Referral to TB Section</option>
@@ -299,13 +299,14 @@ require('hidden_right.php');
 												</select>
 											</td>
 										</tr>
-										<tr hidden="True">
+										<tr hidden="true" id="consultants">
 											<td valign="top">Consultant</td>
 											<td>
-												<select name="condition" id="condition" class="form-control input-sm" style="width: 60%;" required>
-													<option value="Dr Kirthi Gunasekara">Dr Kirthi Gunasekara</option>
-													<option value="Dr Amitha Fernando">Dr Amitha Fernando</option>
-												</select>
+												<input id="condition" list="doctors" class="form-control input-sm"style="height: 100%; width: 60%; cursor:pointer;" placeholder="Consultant">
+												<datalist id="doctors">
+													<option value="Dr Kirthi Gunasekara"></option>
+													<option value="Dr Amitha Fernando"></option>
+												</datalist>
 											</td>
 										</tr>
 										<tr>
@@ -414,7 +415,8 @@ require('hidden_right.php');
 						<!--Form End-->
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" onclick="save(this.id)">Save changes</button>
 					</div>
 				</div>
 
@@ -461,21 +463,21 @@ require('hidden_right.php');
 										<tr>
 											<td>
 												<input type="checkbox" id="rcervical" />
-												<label for="cachexia">Right Cervical</label>
+												<label for="rcervical">Right Cervical</label>
 											</td>
 											<td>
 												<input type="checkbox" id="lcervical" />
-												<label for="cachexia">Left Cervical</label>
+												<label for="lcervical">Left Cervical</label>
 											</td>
 										</tr>
 										<tr>
 											<td>
-												<input type="checkbox" id="rauxiiliary" />
-												<label for="cachexia">Right Axilliary</label>
+												<input type="checkbox" id="raxilliary" />
+												<label for="raxilliary">Right Axilliary</label>
 											</td>
 											<td>
-												<input type="checkbox" id="lauxilliary" />
-												<label for="cachexia">Left Axilliary</label>
+												<input type="checkbox" id="laxilliary" />
+												<label for="laxilliary">Left Axilliary</label>
 											</td>
 										</tr>
 									</table>
@@ -604,7 +606,7 @@ require('hidden_right.php');
 									<input type="checkbox" id="ic" onclick="changeOptions(this.id)"/>
 									<label for="ic">Inpiratory Crepitations</label>
 								</div>
-							
+
 								<div class="panel-body" id="icoptions" hidden="true">
 									<table class="table">
 										<tr>
@@ -682,7 +684,7 @@ require('hidden_right.php');
 									<input type="checkbox" id="ap" onclick="changeOptions(this.id)"/>
 									<label for="ap">Abnormal Percussion</label>
 								</div>
-							
+
 								<div class="panel-body" id="apoptions" hidden="true">
 									<table class="table">
 										<tr>
@@ -760,13 +762,14 @@ require('hidden_right.php');
 									</table>
 								</div>
 							</div>
-						
-						
+
+
 						</div>
 
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" onclick="save(this.id)">Save changes</button>
 					</div>
 				</div>
 
@@ -818,7 +821,8 @@ require('hidden_right.php');
 						<!--Form End-->
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" onclick="save(this.id)">Save changes</button>
 					</div>
 				</div>
 
@@ -996,7 +1000,7 @@ require('hidden_right.php');
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save changes</button>
+						<button type="button" class="btn btn-primary" onclick="save(this.id)">Save changes</button>
 					</div>
 				</div>
 			</div>
