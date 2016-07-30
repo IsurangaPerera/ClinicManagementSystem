@@ -834,7 +834,7 @@ require('hidden_right.php');
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
-						<h4 class="modal-title" id="investigations">Modal title</h4>
+						<h4 class="modal-title" id="investigations">Investigations</h4>
 					</div>
 					<div class="modal-body">
 						<!--Start Of Panel Group-->
