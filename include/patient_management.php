@@ -8,8 +8,10 @@ $usr->verifyUser($_SESSION['user_type'], $_SESSION['user_type']);
 require("$root/include/header.php");
 ?>
 
+<!--
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+-->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js" defer></script>
 <script src="dist/js/bootstrap-checkbox.min.js" defer></script> 
 <script src="../js/modal.js" type="text/javascript"></script>

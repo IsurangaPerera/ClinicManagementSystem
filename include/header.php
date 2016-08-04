@@ -51,7 +51,7 @@ $nic = $_SESSION['nic'];
               <!-- User image -->
               <li class="user-header bg-light-blue">
                <img src="<?php echo "../images/$nic"; ?>" class="img-circle" alt="User Image" />
-               <p>
+               <p id="usrname">
                 <?php echo $_SESSION['user_name']; ?> <br /> <?php echo $_SESSION['user_type']; ?> 
               </p>                                   </p>
             </li>

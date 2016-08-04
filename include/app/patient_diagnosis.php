@@ -30,7 +30,7 @@ require('hidden_right.php');
 						<table width="100%" cellpadding="3" cellspacing="3">
 							<tr>
 								<td width="15%" valign="top" align="center">
-									<img src="../images/patient.png" class="img-rounded" width="86" height="88">
+									<img src="../images/patient.png" class="img-rounded" width="86" height="81">
 								</td>
 								<td>
 									<table width="100%">
@@ -100,35 +100,15 @@ require('hidden_right.php');
 							<a href="#" id="btn_complaints" class="btn btn-primary" data-toggle="modal" data-target="#complaints"><i class="fa fa-plus"></i> Add Complaints</a>
 
 							<a href="#" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
-							<table class="table table-hover table-striped">
-								<thead>
+							<table class="table table-striped table-inverse" id="comtable">
 									<tr>
 										<th>Date</th>
-										<th>Time</th>
 										<th>Complaint</th>
 										<th>Period</th>
-
+										<th>Prepared By</th>
 										<th></th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>May 19, 2016</td>
-										<td>02:55:00 PM</td>
-										<td>Haemoptysis</td>
-										<td>2 days</td>
-
-										<td>
-											<a href="#" onClick="return confirm('Are you sure you want to remove?');">Remove</a>
-
-										</td>
-									</tr>
-
-								</tbody>
+									</tr>		
 							</table>
-
-
-
 							<br><br><br><br><br><br><br>
 							<br><br><br><br><br><br><br>
 							<br><br><br><br><br><br><br>
@@ -138,35 +118,17 @@ require('hidden_right.php');
 							<!--Tab 2 Code goes here-->
 							<a href="#" id="btn_observations" class="btn btn-primary" data-toggle="modal" data-target="#observations"><i class="fa fa-plus"></i> Add Clinical Observations</a>
 
-							<a href="#" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
-							<table class="table table-hover table-striped">
-								<thead>
+							<a href="#" class="btn btn-default" target="_blank"><i class="fa fa-print"></i>Print</a>
+							<table class="table table-hover table-striped" id="obstable">
 									<tr>
 										<th>Date</th>
-										<th>Time</th>
-										<th>Complaint</th>
-										<th>Period</th>
-
+										<th>Observation</th>
+										<th></th>
+										<th></th>
+										<th>Prepared By</th>
 										<th></th>
 									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>May 19, 2016</td>
-										<td>02:55:00 PM</td>
-										<td>Haemoptysis</td>
-										<td>2 days</td>
-
-										<td>
-											<a href="#" onClick="return confirm('Are you sure you want to remove?');">Remove</a>
-
-										</td>
-									</tr>
-
-								</tbody>
 							</table>
-
-
 
 							<br><br><br><br><br><br><br>
 							<br><br><br><br><br><br><br>
@@ -178,33 +140,15 @@ require('hidden_right.php');
 							<a href="#" id="btn_medications" class="btn btn-primary" data-toggle="modal" data-target="#medications"><i class="fa fa-plus"></i> Add Medications</a>
 
 							<a href="#" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
-							<table class="table table-hover table-striped">
-								<thead>
+							<table class="table table-hover table-striped"  id="medtable">
 									<tr>
 										<th>Date</th>
-										<th>Time</th>
 										<th>Drug</th>
 										<th>Dosage</th>
+										<th>Prepared By</th>
 										<th></th>
 									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>May 19, 2016</td>
-										<td>02:55:00 PM</td>
-										<td>Paraetomol</td>
-										<td>20mg</td>
-
-										<td>
-											<a href="#" onClick="return confirm('Are you sure you want to remove?');">Remove</a>
-
-										</td>
-									</tr>
-
-								</tbody>
 							</table>
-
-
 
 							<br><br><br><br><br><br><br>
 							<br><br><br><br><br><br><br>
@@ -258,9 +202,7 @@ require('hidden_right.php');
 										<tr>
 											<div class="form-group">
 												<td width="21%" valign="top">Clinical Impression</td>
-
 												<td width="79%">
-
 													<select class="form-control input-sm" id="sel1" style="width: 60%;" onchange="showText(this.id)">
 														<option value="0">Non specific symptoms</option>
 														<option value="1">Upper respiratory tract infection</option>
@@ -286,14 +228,13 @@ require('hidden_right.php');
 											<td width="21%" valign="top">Please Specify</td>
 											<td width="79%"><textarea name="reason_admission" id="reason_admission" class="form-control input-sm" style="width: 60%;" rows="3"></textarea></td>
 										</tr>
-										
 										<tr>
 											<td valign="top">Plan From OPD</td>
 											<td>
 												<select id="condition" class="form-control input-sm" style="width: 60%;" onchange="assignConsultant(this.id)" required>
-													<option value="1">Discharge from OPD</option>
-													<option value="2">Follow up OPD</option>
-													<option value="3" id="refRoom">Referral to TB Section</option>
+													<option value="0">Discharge from OPD</option>
+													<option value="1">Follow up OPD</option>
+													<option value="2" id="refRoom">Referral to TB Section</option>
 													<option value="3" id="refRoom">Referral to Respiratory Consultant</option>
 
 												</select>
@@ -302,8 +243,8 @@ require('hidden_right.php');
 										<tr hidden="true" id="consultants">
 											<td valign="top">Consultant</td>
 											<td>
-												<input id="condition" list="doctors" class="form-control input-sm"style="height: 100%; width: 60%; cursor:pointer;" placeholder="Consultant">
-												<datalist id="doctors">
+												<input id="consultantin" list="doctorss" class="form-control input-sm"style="height: 100%; width: 60%; cursor:pointer;" placeholder="Consultant">
+												<datalist id="doctorss">
 													<option value="Dr Kirthi Gunasekara"></option>
 													<option value="Dr Amitha Fernando"></option>
 												</datalist>
@@ -316,7 +257,7 @@ require('hidden_right.php');
 
 										<tr>
 											<td colspan="2">
-												<button class="btn btn-primary" name="btnSubmit" id="btnSubmit" type="submit"><i class="fa fa-save"></i> Save</button>
+												<button class="btn btn-primary" onclick="save(this.id)" id="plan"><i class="fa fa-save"></i> Save</button>
 
 												<a href="" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
 											</td>
@@ -374,7 +315,7 @@ require('hidden_right.php');
 								</tr>
 								<tr>
 									<td>
-										<input id="in00" list="complaints1" name="complaint" class="form-control input-sm" onchange="setEnable(this.id)" style="height: 100%; cursor:pointer;" autofocus placeholder="Complaint">
+										<input id="in00" list="complaints1" name="complaints1" class="form-control input-sm" onchange="setEnable(this.id)" style="height: 100%; cursor:pointer;" autofocus placeholder="Complaint">
 										<datalist id="complaints1"></option>
 											<option value="Cough"></option>
 											<option value="Sputum"></option>
@@ -394,7 +335,7 @@ require('hidden_right.php');
 									</td>
 
 									<td>
-										<input id="in02" list="days" name="complaint" class="form-control input-sm" style="height: 100%; cursor:pointer;" placeholder="Days/Weeks/Months/Years" disabled>
+										<input id="in02" list="days" name="days" class="form-control input-sm" style="height: 100%; cursor:pointer;" placeholder="Days/Weeks/Months/Years" disabled>
 										<datalist id="days">
 											<option value="Days"></option>
 											<option value="Weeks"></option>
@@ -416,7 +357,7 @@ require('hidden_right.php');
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary" onclick="save(this.id)">Save changes</button>
+						<button type="button" id="btncomplaints" class="btn btn-primary" onclick="save(this.id)">Save changes</button>
 					</div>
 				</div>
 
@@ -525,7 +466,7 @@ require('hidden_right.php');
 												<label for="rlz">Right Lower Zone</label>
 											</td>
 											<td>
-												<select class="selectpicker">
+												<select class="selectpicker" id="rlzs">
 													<option value="Inspiratory">Inspiratory</option>
 													<option value="Expiratory">Expiratory</option>
 													<option value="Monophonic">Monophonic</option>
@@ -533,11 +474,11 @@ require('hidden_right.php');
 												</select>
 											</td>
 											<td>
-												<input type="checkbox" id="llz" />
+												<input type="checkbox" id="llz"/>
 												<label for="llz">Left Lower Zone</label>
 											</td>
 											<td>
-												<select class="selectpicker">
+												<select class="selectpicker" id="llzs">
 													<option value="Inspiratory">Inspiratory</option>
 													<option value="Expiratory">Expiratory</option>
 													<option value="Monophonic">Monophonic</option>
@@ -551,7 +492,7 @@ require('hidden_right.php');
 												<label for="rmz">Right Mid Zone</label>
 											</td>
 											<td>
-												<select class="selectpicker">
+												<select class="selectpicker" id="rmzs">
 													<option value="Inspiratory">Inspiratory</option>
 													<option value="Expiratory">Expiratory</option>
 													<option value="Monophonic">Monophonic</option>
@@ -563,7 +504,7 @@ require('hidden_right.php');
 												<label for="lmz">Left Mid Zone</label>
 											</td>
 											<td>
-												<select class="selectpicker">
+												<select class="selectpicker" id="lmzs">
 													<option value="Inspiratory">Inspiratory</option>
 													<option value="Expiratory">Expiratory</option>
 													<option value="Monophonic">Monophonic</option>
@@ -577,7 +518,7 @@ require('hidden_right.php');
 												<label for="ruz">Right Upper Zone</label>
 											</td>
 											<td>
-												<select class="selectpicker">
+												<select class="selectpicker" id="ruzs">
 													<option value="Inspiratory">Inspiratory</option>
 													<option value="Expiratory">Expiratory</option>
 													<option value="Monophonic">Monophonic</option>
@@ -589,7 +530,7 @@ require('hidden_right.php');
 												<label for="luz">Left Upper Zone</label>
 											</td>
 											<td>
-												<select class="selectpicker">
+												<select class="selectpicker" id="luzs">
 													<option value="Inspiratory">Inspiratory</option>
 													<option value="Expiratory">Expiratory</option>
 													<option value="Monophonic">Monophonic</option>
@@ -611,43 +552,21 @@ require('hidden_right.php');
 									<table class="table">
 										<tr>
 											<td>
-												<input type="checkbox" id="rlz" />
-												<label for="rlz">Right Lower Zone</label>
+												<input type="checkbox" id="rlz2" />
+												<label for="rlz2">Right Lower Zone</label>
 											</td>
 											<td>
-												<select class="selectpicker">
+												<select class="selectpicker" id="rlz2s">
 													<option value="Fine">Fine</option>
 													<option value="Corse">Corse</option>
 												</select>
 											</td>
 											<td>
-												<input type="checkbox" id="llz" />
-												<label for="llz">Left Lower Zone</label>
+												<input type="checkbox" id="llz2" />
+												<label for="llz2">Left Lower Zone</label>
 											</td>
 											<td>
-												<select class="selectpicker">
-													<option value="Fine">Fine</option>
-													<option value="Corse">Corse</option>
-												</select>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<input type="checkbox" id="rmz" />
-												<label for="rmz">Right Mid Zone</label>
-											</td>
-											<td>
-												<select class="selectpicker">
-													<option value="Fine">Fine</option>
-													<option value="Corse">Corse</option>
-												</select>
-											</td>
-											<td>
-												<input type="checkbox" id="lmz" />
-												<label for="lmz">Left Mid Zone</label>
-											</td>
-											<td>
-												<select class="selectpicker">
+												<select class="selectpicker" id="llz2s">
 													<option value="Fine">Fine</option>
 													<option value="Corse">Corse</option>
 												</select>
@@ -655,21 +574,43 @@ require('hidden_right.php');
 										</tr>
 										<tr>
 											<td>
-												<input type="checkbox" id="ruz" />
-												<label for="ruz">Right Upper Zone</label>
+												<input type="checkbox" id="rmz2" />
+												<label for="rmz2">Right Mid Zone</label>
 											</td>
 											<td>
-												<select class="selectpicker">
+												<select class="selectpicker" id="rmz2s">
 													<option value="Fine">Fine</option>
 													<option value="Corse">Corse</option>
 												</select>
 											</td>
 											<td>
-												<input type="checkbox" id="luz" />
-												<label for="luz">Left Upper Zone</label>
+												<input type="checkbox" id="lmz2" />
+												<label for="lmz2">Left Mid Zone</label>
 											</td>
 											<td>
-												<select class="selectpicker">
+												<select class="selectpicker" id="lmz2s">
+													<option value="Fine">Fine</option>
+													<option value="Corse">Corse</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<input type="checkbox" id="ruz2" />
+												<label for="ruz2">Right Upper Zone</label>
+											</td>
+											<td>
+												<select class="selectpicker" id="ruz2s">
+													<option value="Fine">Fine</option>
+													<option value="Corse">Corse</option>
+												</select>
+											</td>
+											<td>
+												<input type="checkbox" id="luz2" />
+												<label for="luz2">Left Upper Zone</label>
+											</td>
+											<td>
+												<select class="selectpicker" id="luz2s">
 													<option value="Fine">Fine</option>
 													<option value="Corse">Corse</option>
 												</select>
@@ -689,46 +630,22 @@ require('hidden_right.php');
 									<table class="table">
 										<tr>
 											<td>
-												<input type="checkbox" id="rlz" />
-												<label for="rlz">Right Lower Zone</label>
+												<input type="checkbox" id="rlz3" />
+												<label for="rlz3">Right Lower Zone</label>
 											</td>
 											<td>
-												<select class="selectpicker">
+												<select class="selectpicker" id="rlz3s">
 													<option value="Hyper-Resonant">Hyper-Resonant</option>
 													<option value="dull">Dull</option>
 													<option value="Stony Dull">Stony Dull</option>
 												</select>
 											</td>
 											<td>
-												<input type="checkbox" id="llz" />
-												<label for="llz">Left Lower Zone</label>
+												<input type="checkbox" id="llz3" />
+												<label for="llz3">Left Lower Zone</label>
 											</td>
 											<td>
-												<select class="selectpicker">
-													<option value="Hyper-Resonant">Hyper-Resonant</option>
-													<option value="dull">Dull</option>
-													<option value="Stony Dull">Stony Dull</option>
-												</select>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<input type="checkbox" id="rmz" />
-												<label for="rmz">Right Mid Zone</label>
-											</td>
-											<td>
-												<select class="selectpicker">
-													<option value="Hyper-Resonant">Hyper-Resonant</option>
-													<option value="dull">Dull</option>
-													<option value="Stony Dull">Stony Dull</option>
-												</select>
-											</td>
-											<td>
-												<input type="checkbox" id="lmz" />
-												<label for="lmz">Left Mid Zone</label>
-											</td>
-											<td>
-												<select class="selectpicker">
+												<select class="selectpicker" id="llz3s">
 													<option value="Hyper-Resonant">Hyper-Resonant</option>
 													<option value="dull">Dull</option>
 													<option value="Stony Dull">Stony Dull</option>
@@ -737,22 +654,46 @@ require('hidden_right.php');
 										</tr>
 										<tr>
 											<td>
-												<input type="checkbox" id="ruz" />
-												<label for="ruz">Right Upper Zone</label>
+												<input type="checkbox" id="rmz3" />
+												<label for="rmz3">Right Mid Zone</label>
 											</td>
 											<td>
-												<select class="selectpicker">
+												<select class="selectpicker" id="rmz3s">
 													<option value="Hyper-Resonant">Hyper-Resonant</option>
 													<option value="dull">Dull</option>
 													<option value="Stony Dull">Stony Dull</option>
 												</select>
 											</td>
 											<td>
-												<input type="checkbox" id="luz" />
-												<label for="luz">Left Upper Zone</label>
+												<input type="checkbox" id="lmz3" />
+												<label for="lmz3">Left Mid Zone</label>
 											</td>
 											<td>
-												<select class="selectpicker">
+												<select class="selectpicker" id="lmz3s">
+													<option value="Hyper-Resonant">Hyper-Resonant</option>
+													<option value="dull">Dull</option>
+													<option value="Stony Dull">Stony Dull</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<input type="checkbox" id="ruz3" />
+												<label for="ruz3">Right Upper Zone</label>
+											</td>
+											<td>
+												<select class="selectpicker" id="ruz3s">
+													<option value="Hyper-Resonant">Hyper-Resonant</option>
+													<option value="dull">Dull</option>
+													<option value="Stony Dull">Stony Dull</option>
+												</select>
+											</td>
+											<td>
+												<input type="checkbox" id="luz3" />
+												<label for="luz3">Left Upper Zone</label>
+											</td>
+											<td>
+												<select class="selectpicker" id="luz3s">
 													<option value="Hyper-Resonant">Hyper-Resonant</option>
 													<option value="dull">Dull</option>
 													<option value="Stony Dull">Stony Dull</option>
@@ -769,7 +710,7 @@ require('hidden_right.php');
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary" onclick="save(this.id)">Save changes</button>
+						<button type="button" class="btn btn-primary" id="btnobservations" onclick="save(this.id)">Save changes</button>
 					</div>
 				</div>
 
@@ -822,7 +763,7 @@ require('hidden_right.php');
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary" onclick="save(this.id)">Save changes</button>
+						<button type="button" id="btnmedications" class="btn btn-primary" onclick="save(this.id)">Save changes</button>
 					</div>
 				</div>
 
