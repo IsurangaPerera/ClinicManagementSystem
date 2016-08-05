@@ -6,8 +6,7 @@ require('hidden_right.php');
 	<h1>Patient Diagnosis</h1> 
 	<ol class="breadcrumb">
 		<li><a href=""><i class="fa fa-dashboard"></i> Home</a></li>
-		<li><a href="#">Patient Appointment</a></li>
-		<li class="active">Add Appointment</li>									
+		<li class="active">Patient Diagnosis</li>									
 	</ol>
 </section>
 
@@ -101,13 +100,13 @@ require('hidden_right.php');
 
 							<a href="#" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
 							<table class="table table-striped table-inverse" id="comtable">
-									<tr>
-										<th>Date</th>
-										<th>Complaint</th>
-										<th>Period</th>
-										<th>Prepared By</th>
-										<th></th>
-									</tr>		
+								<tr>
+									<th>Date</th>
+									<th>Complaint</th>
+									<th>Period</th>
+									<th>Prepared By</th>
+									<th></th>
+								</tr>		
 							</table>
 							<br><br><br><br><br><br><br>
 							<br><br><br><br><br><br><br>
@@ -120,14 +119,14 @@ require('hidden_right.php');
 
 							<a href="#" class="btn btn-default" target="_blank"><i class="fa fa-print"></i>Print</a>
 							<table class="table table-hover table-striped" id="obstable">
-									<tr>
-										<th>Date</th>
-										<th>Observation</th>
-										<th></th>
-										<th></th>
-										<th>Prepared By</th>
-										<th></th>
-									</tr>
+								<tr>
+									<th>Date</th>
+									<th>Observation</th>
+									<th></th>
+									<th></th>
+									<th>Prepared By</th>
+									<th></th>
+								</tr>
 							</table>
 
 							<br><br><br><br><br><br><br>
@@ -141,13 +140,13 @@ require('hidden_right.php');
 
 							<a href="#" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
 							<table class="table table-hover table-striped"  id="medtable">
-									<tr>
-										<th>Date</th>
-										<th>Drug</th>
-										<th>Dosage</th>
-										<th>Prepared By</th>
-										<th></th>
-									</tr>
+								<tr>
+									<th>Date</th>
+									<th>Drug</th>
+									<th>Dosage</th>
+									<th>Prepared By</th>
+									<th></th>
+								</tr>
 							</table>
 
 							<br><br><br><br><br><br><br>
@@ -159,34 +158,15 @@ require('hidden_right.php');
 							<a href="#" id="btn_investigations" class="btn btn-primary" data-toggle="modal" data-target="#investigations"><i class="fa fa-plus"></i> Add Investigations</a>
 
 							<a href="#" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
-							<table class="table table-hover table-striped">
-								<thead>
-									<tr>
-										<th>Date</th>
-										<th>Time</th>
-										<th>Complaint</th>
-										<th>Period</th>
-
-										<th></th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>May 19, 2016</td>
-										<td>02:55:00 PM</td>
-										<td>Haemoptysis</td>
-										<td>2 days</td>
-
-										<td>
-											<a href="#" onClick="return confirm('Are you sure you want to remove?');">Remove</a>
-
-										</td>
-									</tr>
-
-								</tbody>
+							<table class="table table-hover table-striped" id="investable">
+								<tr>
+									<th>Date</th>
+									<th>Investigation</th>
+									<th></th>
+									<th>Requested By</th>
+									<th></th>
+								</tr>
 							</table>
-
-
 
 							<br><br><br><br><br><br><br>
 							<br><br><br><br><br><br><br>
@@ -805,7 +785,7 @@ require('hidden_right.php');
 										<tr>
 											<td>
 												<input type="checkbox" id="ll"/>
-												<label for="l">Left Lateral</label>
+												<label for="ll">Left Lateral</label>
 											</td>
 											<td>
 												<input type="checkbox" id="apical"/>
@@ -941,7 +921,7 @@ require('hidden_right.php');
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary" onclick="save(this.id)">Save changes</button>
+						<button type="button" class="btn btn-primary" id="btninvestigations" onclick="save(this.id)">Save changes</button>
 					</div>
 				</div>
 			</div>

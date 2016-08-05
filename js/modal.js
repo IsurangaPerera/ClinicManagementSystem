@@ -3,6 +3,7 @@ var numMedications = 0;
 var numRows = 1;
 var numRowMed = 1;
 var numRowObs = 1;
+var numRowInves = 1;
 var curIdComplaints = 1;
 var curIdMedications = 1;
 var tempC = 0;
@@ -13,6 +14,7 @@ var objecto = {
 	"complaints": [],
 	"observations" : [],
 	"medications": [],
+	"investigations" : [],
 	"treatmentplan": []
 };
 
@@ -136,8 +138,10 @@ function save(id) {
 		handleMedications();
 	} else if(id == "plan"){
 		handlePlan();
-	}else if(id == "btnobservations"){
+	} else if(id == "btnobservations"){
 		handleObservations();
+	} else if(id == "btninvestigations"){
+		handleInvestigations();
 	}
 }
 
@@ -213,10 +217,20 @@ function removeRow(id){
 		if ( !table )
 			return;
 		table.deleteRow(row.rowIndex);
-		if(findAndRemove(objecto.complaints, 'complaint', complaintVal))
-			numRows--;
-		else if(findAndRemove(objecto.observations, 'observation', complaintVal))
+		alert(table.id);
+		if(table.id === 'obstable'){
+			findAndRemove(objecto.observations, 'observation', complaintVal);
 			numRowObs--;
+		} else if(table.id === 'medtable'){
+			findAndRemove(objecto.medications, 'drug', complaintVal);
+			numRowMed--;
+		} else if(table.id === 'comtable'){
+			findAndRemove(objecto.complaints, 'complaint', complaintVal);
+			numRows--;
+		} else if(table.id === 'investable'){
+			findAndRemove(objecto.investigations, 'investigation', complaintVal);
+			numRowInves--;
+		}
 	}
 }
 
@@ -462,3 +476,88 @@ function contains(array, element){
 	return false;
 }
 
+function handleInvestigations(){
+	var investigation1 = [
+		"xray", "sputum", "blood", "lfunction", "resting",
+		"walking", "mantoux", "weight"
+		];
+
+	var investigation2 = {
+		"xray" : ["pa", "rl", "ll", "apical"],
+		"sputum" : ["pyogenicculture", "afbsmear3",	"afbsmear", "fungalculture"],
+		"blood" : ["fbc", "esr"],
+		"lfunction" : ["fev1", "fvc", "dlco"]
+		};
+
+	var inves, spec1;
+	var table = document.getElementById('investable');
+
+	for(var i = 0; i < investigation1.length; i++){
+		inves = "";
+		spec1 = [];
+
+		var inv = investigation1[i];
+		var opt = document.getElementById(inv);
+
+		if(opt.checked === true){
+			var id = "label[for="+inv+"]";
+			inves = $(id).text();
+
+			var arr = Object.keys(investigation2);
+			if(contains(arr, inv)){
+				var tempArray = investigation2[inv];
+				for(var j = 0; j < tempArray.length; j++){
+					var chkId = document.getElementById(tempArray[j]);
+					if(chkId.checked === true){
+						var lbl = "label[for="+tempArray[j]+"]";
+						spec1.push($(lbl).text());
+					}
+				}
+			}
+			if(inves != ""){
+				var arr = objecto.investigations;
+				var flag = true;
+				for(var j = 0; j < arr.length; j++){
+					var obj = arr[j];
+					if(obj["investigation"] == inves){
+						flag = false;
+						break;
+					}
+				}
+
+				if(flag){
+
+					objecto.investigations.push({
+						"date" : getDate(),
+						"investigation" : inves,
+						"spec1" : spec1,
+						"prepared" : prepared
+					});
+
+					var d = new Date();
+					var t = d.getTime().toString();
+					t = t.substring(t.length-4, t.length);
+					var row = table.insertRow(numRowInves);
+					row.setAttribute('id', ('row'+t+tempC));
+
+					var cell1 = row.insertCell(0);
+					var cell2 = row.insertCell(1);
+					var cell3 = row.insertCell(2);
+					var cell4 = row.insertCell(3);
+					var cell5 = row.insertCell(4);
+					cell1.innerHTML = getDate() + cell1.innerHTML;
+					var tempId = 'rem'+ t +tempC;
+					cell2.innerHTML = cell2.innerHTML + inves;
+					for(var j = 0; j < spec1.length; j++){
+						cell3.innerHTML = cell3.innerHTML + spec1[j] + '<br/>';
+					}
+					cell4.innerHTML = cell4.innerHTML + prepared;
+					var newElement = '<a href="#" id="'+tempId+'" onClick="removeRow(this.id)">Remove</a>';
+					cell5.innerHTML = cell5.innerHTML + newElement;
+					numRowInves++;
+					tempC++;
+				}
+			}
+		}			
+	}
+}
