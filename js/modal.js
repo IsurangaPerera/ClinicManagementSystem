@@ -217,7 +217,6 @@ function removeRow(id){
 		if ( !table )
 			return;
 		table.deleteRow(row.rowIndex);
-		alert(table.id);
 		if(table.id === 'obstable'){
 			findAndRemove(objecto.observations, 'observation', complaintVal);
 			numRowObs--;
