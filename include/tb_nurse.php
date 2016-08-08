@@ -106,6 +106,7 @@ require('header.php');
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 <script src="../../dp/js/dp.js"></script>
 <script src="../js/app.js" type="text/javascript"></script>
-<script src="../css/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>  
+<script src="../css/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../js/tb_registration.js" type="text/javascript"></script>
 
 </html>

@@ -22,7 +22,7 @@ require('hidden_right.php');
             <div class="box-footer clearfix">
 
               <a href="?cancel" class="btn btn-default">Cancel</a>
-              <button class="btn btn-primary" name="submit" id="submit" type="submit"><i class="fa fa-save" onclick="save()"></i> Save</button>        
+              <button class="btn btn-primary" onclick="save()"><i class="fa fa-save"></i> Save</button>        
             </div>
             <div class="box-body table-responsive">
               <div class="nav-tabs-custom">
@@ -110,6 +110,27 @@ require('hidden_right.php');
                  </select>
                </td>
              </tr>
+             <tr>
+               <td width="12%">Religion <font color="#FF0000">*</font></td>
+               <td width="88%">
+                <input type="text" name="religion" value="" id="religion" class="form-control input-sm" placeholder="Religion" style="width: 150px;" required />                                                        </td>
+              </tr>
+              <tr>
+               <td width="12%">Blood Group </td>
+               <td width="88%">
+                 <select name="bloodGroup" id="bloodGroup" class="form-control input-sm" style="width: 125px;">
+                   <option value="">- Blood Group -</option>
+                   <option value="31" >A+</option>
+                   <option value="32" >A-</option>
+                   <option value="35" >AB+</option>
+                   <option value="36" >AB-</option>
+                   <option value="33" >B+</option>
+                   <option value="34" >B-</option>
+                   <option value="29" >O+</option>
+                   <option value="30" >O-</option>
+                 </select>
+               </td>
+             </tr>
            </table>
          </div>
 
@@ -121,13 +142,13 @@ require('hidden_right.php');
            <tr>
              <td width="14%">Address1</td>
              <td width="86%">
-              <input type="text" name="address1" value="" id="address1" class="form-control input-sm" placeholder="Address1" style="width: 250px;" />                                                        <input type="hidden" name="brgy" value="" />
+              <input type="text" name="address1" value="" id="address1" class="form-control input-sm" placeholder="Address1" style="width: 250px;" />
             </td>
           </tr>
           <tr>
            <td width="14%">Address2</td>
            <td width="86%">
-            <input type="text" name="address2" value="" id="address2" class="form-control input-sm" placeholder="Address2" style="width: 250px;" />                                                        </td>
+            <input type="text" name="address2" value="" id="address2" class="form-control input-sm" placeholder="Address2" style="width: 250px;" /></td>
           </tr>
           <tr>
            <td width="14%">City</td>
@@ -163,7 +184,7 @@ require('hidden_right.php');
           <tr>
             <td width="14%">Central Tb Reg. No.</td>
             <td width="86%"> 
-              <input type="text" name="tbNo" value="" id="fileNo" class="form-control input-sm" placeholder="Central  TB No" style="width: 250px;" /></td>
+              <input type="text" name="tbNo" value="" id="tbNo" class="form-control input-sm" placeholder="Central  TB No" style="width: 250px;" /></td>
             </tr>
             <tr>
              <td width="14%">File No.</td>
@@ -280,9 +301,15 @@ require('hidden_right.php');
      </td>
    </tr>
    <tr>
+       <td width="14%">Occupation</td>
+       <td width="86%"> 
+        <input type="text" id="occupation" class="form-control input-sm " placeholder="Occupation" style="width: 75px;"/>
+      </td>
+    </tr>
+   <tr>
      <td width="14%">Education Qualification</td>
      <td width="88%">
-       <select name="smoking" id="smoking" class="form-control input-sm" style="width: 250px;">
+       <select name="education" id="education" class="form-control input-sm" style="width: 250px;">
          <option value="">- Education Qualification -</option>
          <option value="1" >No Formal Education</option>
          <option value="2" >Grade 1-5</option>
@@ -302,11 +329,11 @@ require('hidden_right.php');
   <tr>
    <td width="14%">Co-morbidies</td>
    <td width="86%">
-    <label class="checkbox-inline"><input type="checkbox" value="DM">DM</label>
-    <label class="checkbox-inline"><input type="checkbox" value="COPD">COPD</label>
-    <label class="checkbox-inline"><input type="checkbox" value="BA">BA</label>
-    <label class="checkbox-inline"><input type="checkbox" value="HIV">HIV</label>
-    <label class="checkbox-inline"><input type="checkbox" value="other">Other</label>
+    <label class="checkbox-inline"><input type="checkbox" id="dm" value="DM">DM</label>
+    <label class="checkbox-inline"><input type="checkbox" id="copd" value="COPD">COPD</label>
+    <label class="checkbox-inline"><input type="checkbox" id="ba" value="BA">BA</label>
+    <label class="checkbox-inline"><input type="checkbox" id="hiv" value="HIV">HIV</label>
+    <label class="checkbox-inline"><input type="checkbox" id="oth" value="other" onclick="showOther()">Other</label>
   </td>
 </tr>
 <tr id="otherId" hidden="true">
