@@ -16,6 +16,8 @@ $nic = $_SESSION['nic'];
   <link href="../css/AdminLTE.css" rel="stylesheet" type="text/css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.11/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
 
+  <script src="../js/profile.js"></script>
+
 </head>
 
 <body class="skin-blue">
@@ -42,8 +44,8 @@ $nic = $_SESSION['nic'];
         <ul class="nav navbar-nav">
 
           <!-- User Account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <li id="headc" class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" onclick="openBar()">
               <i class="glyphicon glyphicon-user"></i>
               <span><?php echo $_SESSION['user_name']; ?><i class="caret"></i></span>
             </a>
