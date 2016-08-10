@@ -1,19 +1,33 @@
-var objecto = {
-	"patient_name" : [],
-	"patient_address" : [],
-	"patient_contact" : [],
-	"patient_data" : [],
-	"case_info" : [],
-	"tb_contact_person" : [],
-	"tb_patient_data" :[],
-	"comorbidies" : []
-	};
-
+var objecto;
 var patientId;
+var jsonData;
 
 function save(){
+	createObject();
 	patientId = $("#patientID").val();
+	getName();
+	getAddress();
+	getContact();
+	getData();
+	getCaseInfo();
+	getContactPerson();
+	getTbData();
 	getComorbidies();
+	jsonData = JSON.stringify(objecto);
+	postData();
+}
+
+function createObject(){
+	objecto = {
+		"patient_name" : [],
+		"patient_address" : [],
+		"patient_contact" : [],
+		"patient_data" : [],
+		"case_info" : [],
+		"tb_contact_person" : [],
+		"tb_patient_data" :[],
+		"comorbidies" : []
+	};
 }
 
 function getName(){
@@ -124,4 +138,22 @@ function showOther(){
 		$("#otherId").prop("hidden", false);
 	else
 		$("#otherId").prop("hidden", true);
+}
+
+function postData(){
+	console.log("addPerson");
+	var burl = "../patient/tb/register";
+	$.ajax({
+		type: "POST",
+		url: burl,
+		data: jsonData,
+		success: function( data, textStatus, jQxhr ){
+			alert("Success");
+		},
+		error: function( jqXhr, textStatus, errorThrown ){
+			alert( errorThrown );
+			alert(jqXhr);
+			alert(textStatus);
+		}
+	});
 }

@@ -16,7 +16,7 @@ require('hidden_right.php');
   <section class="content">
     <div class="row">
       <div class="col-md-12">
-        <form role="form" method="post" action="" onsubmit="return validate()">
+        <div>
           <div class="box">
 
             <div class="box-footer clearfix">
@@ -387,7 +387,7 @@ require('hidden_right.php');
 </div>
 </div>
 </div>
-</form>
+</div>
 </div>
 </section><!-- /.content -->
 </div>
