@@ -141,19 +141,15 @@ function showOther(){
 }
 
 function postData(){
-	console.log("addPerson");
-	var burl = "../patient/tb/register";
 	$.ajax({
 		type: "POST",
-		url: burl,
+		url: "../patient/tb/register",
 		data: jsonData,
 		success: function( data, textStatus, jQxhr ){
 			alert("Success");
 		},
 		error: function( jqXhr, textStatus, errorThrown ){
 			alert( errorThrown );
-			alert(jqXhr);
-			alert(textStatus);
 		}
 	});
 }

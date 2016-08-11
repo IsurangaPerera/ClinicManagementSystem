@@ -18,6 +18,7 @@ $app->post('/register',function(Request $request, Response $response){
 	$query = "";
 	$query2 = "VALUES (";
 	$a = array();
+	$curKey = 0;
 
 	foreach ($jsonIterator as $key => $val) {
 
@@ -31,19 +32,32 @@ $app->post('/register',function(Request $request, Response $response){
 						$query .= ")";
 						$query2 .= ")";
 						$temp = $query." ".$query2;
-
 						addPatient($temp, $a);
 						$a = array();
+						$curKey = 0;
 					}
 					
 					$query = "";
 					$query2 = "";
 					$query2 = "VALUES (";
 					$query .= "INSERT INTO $tableName (";
+				
 				} else {
-
 				}
+
+			} elseif($key > 0 && $curKey != $key) {
+				$curKey = $key;
+				$query .= ")";
+				$query2 .= ")";
+				$temp = $query." ".$query2;
+				addPatient($temp, $a);
+				$a = array();
+				$query = "";
+				$query2 = "";
+				$query2 = "VALUES (";
+				$query .= "INSERT INTO $tableName (";
 			}
+
 		}
 
 		else {
@@ -68,6 +82,7 @@ $app->run();
 
 function addPatient($sql_data, $a_bind_params){
 	print_r($a_bind_params);
+	//print_r($sql_data);
 	$server_name = "localhost";
 	$user_name = "root";
 	$password = "Tally456";
