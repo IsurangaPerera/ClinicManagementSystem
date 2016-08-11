@@ -16,6 +16,8 @@ require('hidden_right.php');
 }
 </style>
 
+<script src="../../js/modal.js" type="text/javascript"></script>
+
 <div class="patient_diagnosis">
 	<!-- Main content -->
 	<section class="content">
@@ -258,7 +260,7 @@ require('hidden_right.php');
 			</div>
 		</div>
 		<div class="bottomright">
-			<a href="#" data-toggle="modal" data-target="#bfmodal" id="modali">
+			<a href="#" onclick="postData()">
 				<img src="../images/add.png" alt="AddButton" width="100" height="100">
 			</a>
 		</div>
@@ -272,7 +274,7 @@ require('hidden_right.php');
 		}
 
 		</style>
-
+		
 		<!-- Modal -->
 		<!-- Presenting Complaints -->
 		<div class="modal fade" id="complaints" role="dialog">

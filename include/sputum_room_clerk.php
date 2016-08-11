@@ -15,12 +15,22 @@ require('header.php');
     </a>
   </li>     
 
-  <li>
-    <a href="patient_management.php">
-      <i class="fa fa-dashboard"></i> <span>Patient Management</span>
-    </a>
-  </li> 
 
+  <!--START OF Current Requests-->
+  <li>
+    <a href="?current_requests">
+      <i class="fa ion-person-add "></i> <span>Current Requests</span>
+    </a>
+  </li>
+  <!--START OF Current Requests-->
+
+  <!--START OF Sample Collection-->
+  <li>
+    <a href="?sample_collection">
+      <i class="fa ion-person-add "></i> <span>Sample Collection</span>
+    </a>
+  </li>
+  <!--START OF Sample Colection-->
 
   <!--START OF USER PROFILE-->
   <li id="lst" class="treeview">
@@ -48,8 +58,8 @@ require('header.php');
   <?php include('app/dash_board.php'); ?>
 
   <?php
-  if(isset($_GET['manage_appointments'])) {
-    include('app/manage_appointments.php');
+  if(isset($_GET['current_requests'])) {
+    include('app/current_requests.php');
   } 
 
   if(isset($_GET['my_profile'])) {
@@ -60,12 +70,8 @@ require('header.php');
     include('app/edit_profile.php');
   }
 
-  if(isset($_GET['search_patient'])) {
-    include('app/search_patient.php');
-  }
-
-  if(isset($_GET['patient_registration'])) {
-    include('app/patient_registration.php');
+  if(isset($_GET['sample_collection'])) {
+    include('app/sample_collection.php');
   }
 
   if(isset($_GET['dash_board'])) {

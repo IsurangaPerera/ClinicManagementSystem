@@ -9,13 +9,16 @@ var curIdMedications = 1;
 var tempC = 0;
 var prepared = document.getElementById('usrname').innerHTML.trim().split("<br>")[0];
 var tflag = true;
+var patientId = "20";
 
 var objecto = {
-	"complaints": [],
-	"observations" : [],
-	"medications": [],
-	"investigations" : [],
-	"treatmentplan": []
+	"complaint"          : [],
+	"observation"        : [],
+	"observation_type"   : [],
+	"medication"         : [],
+	"investigation"      : [],
+	"investigation_type" : [],
+	"treatmentplan"      : []
 };
 
 $(function(){
@@ -163,7 +166,7 @@ function handleComplaints(){
 		+ "   " + document.getElementById(ide3).value;
 
 		if(complaint != ""){
-			var arr = objecto.complaints;
+			var arr = objecto.complaint;
 			var flag = true;
 
 			for(var j = 0; j < arr.length; j++){
@@ -175,11 +178,12 @@ function handleComplaints(){
 			}
 
 			if(flag){
-				objecto.complaints.push({ 
-					"date" : date,
+				objecto.complaint.push({ 
+					"patientId" : patientId,
+					"date" 	    : date,
 					"complaint" : complaint,
-					"period" : period,
-					"prepared" : prepared
+					"period"    : period,
+					"prepared"  : prepared
 				});
 
 				var row = table.insertRow(numRows);
@@ -208,7 +212,7 @@ function removeRow(id){
 	var conf = confirm('Confirm your action!');
 	var cId = 'row' + id.substring(3, id.length);
 	var row = document.getElementById(cId);
-	var complaintVal = row.cells[1].innerHTML;
+	var complaintVal = row.cells[2].innerHTML;
 	
 	if(conf === true){
 		var table = row.parentNode;
@@ -218,16 +222,16 @@ function removeRow(id){
 			return;
 		table.deleteRow(row.rowIndex);
 		if(table.id === 'obstable'){
-			findAndRemove(objecto.observations, 'observation', complaintVal);
+			findAndRemove(objecto.observation, 'observation', complaintVal);
 			numRowObs--;
 		} else if(table.id === 'medtable'){
-			findAndRemove(objecto.medications, 'drug', complaintVal);
+			findAndRemove(objecto.medication, 'drug', complaintVal);
 			numRowMed--;
 		} else if(table.id === 'comtable'){
-			findAndRemove(objecto.complaints, 'complaint', complaintVal);
+			findAndRemove(objecto.complaint, 'complaint', complaintVal);
 			numRows--;
 		} else if(table.id === 'investable'){
-			findAndRemove(objecto.investigations, 'investigation', complaintVal);
+			findAndRemove(objecto.investigation, 'investigation', complaintVal);
 			numRowInves--;
 		}
 	}
@@ -274,7 +278,7 @@ function handleMedications(){
 		var dosage = document.getElementById(ide2).value;
 
 		if(drug != ""){
-			var arr = objecto.medications;
+			var arr = objecto.medication;
 			var flag = true;
 
 			for(var j = 0; j < arr.length; j++){
@@ -286,11 +290,12 @@ function handleMedications(){
 			}
 
 			if(flag){
-				objecto.medications.push({ 
-					"date" : date,
-					"drug" : drug,
-					"dosage" : dosage,
-					"prepared" : prepared
+				objecto.medication.push({
+					"patientId" : patientId, 
+					"date" 	    : date,
+					"drug"      : drug,
+					"dosage"    : dosage,
+					"prepared"  : prepared
 				});
 
 				var row = table.insertRow(numRowMed);
@@ -347,12 +352,13 @@ function handlePlan(){
 	var comments = document.getElementById('admitting_impression').value;
 
 	objecto.treatmentplan.push({
-		"date" : date,
-		"impression" : impression,
+		"patientId"     : patientId,
+		"date"          : date,
+		"impression"    : impression,
 		"plan_from_opd" : planFromOpd,
-		"consultant" : consultant,
-		"comments" : comments,
-		"prepared" : prepared
+		"consultant"    : consultant,
+		"comment"      : comments,
+		"prepared"      : prepared
 	});
 	if(tflag){		
 		tflag = false;
@@ -412,7 +418,7 @@ function handleObservations(){
 		}
 
 		if(obs != ""){
-			var arr = objecto.observations;
+			var arr = objecto.observation;
 			var flag = true;
 
 			for(var j = 0; j < arr.length; j++){
@@ -424,13 +430,34 @@ function handleObservations(){
 			}
 			if(flag){
 
-				objecto.observations.push({
-					"date" : getDate(),
+				objecto.observation.push({
+					"patientId"   : patientId,
+					"date"        : getDate(),
 					"observation" : obs,
-					"spec1" : spec1,
-					"spec2" : spec2,
-					"prepared" : prepared
+					"prepared"    : prepared
 				});
+
+				for(var j = 0; j < spec1.length; j++){
+					if(spec2.length == 0){
+						objecto.observation_type.push({
+							"patientId"   : patientId,
+							"date"        : getDate(),
+							"observation" : obs,
+							"spec1"       : spec1[j],
+							"spec2"       : ''	
+						});
+					} else{
+						for(var k = 0; k < spec2.length; k++){
+							objecto.observation_type.push({
+								"patientId"   : patientId,
+								"date"        : getDate(),
+								"observation" : obs,
+								"spec1"       : spec1[k],
+								"spec2"       : spec2[k]		
+							});
+						}
+					}
+				}
 
 				var d = new Date();
 				var t = d.getTime().toString();
@@ -514,7 +541,7 @@ function handleInvestigations(){
 				}
 			}
 			if(inves != ""){
-				var arr = objecto.investigations;
+				var arr = objecto.investigation;
 				var flag = true;
 				for(var j = 0; j < arr.length; j++){
 					var obj = arr[j];
@@ -526,12 +553,21 @@ function handleInvestigations(){
 
 				if(flag){
 
-					objecto.investigations.push({
-						"date" : getDate(),
+					objecto.investigation.push({
+						"patientId"     : patientId,
+						"date"          : getDate(),
 						"investigation" : inves,
-						"spec1" : spec1,
-						"prepared" : prepared
+						"prepared"      : prepared
 					});
+
+					for(var j = 0; j < spec1.length; j++){
+						objecto.investigation_type.push({
+							"patientId"     : patientId,
+							"date"          : getDate(),
+							"investigation" : inves,
+							"spec1"         : spec1[j]
+						});
+					}
 
 					var d = new Date();
 					var t = d.getTime().toString();
@@ -560,3 +596,18 @@ function handleInvestigations(){
 		}			
 	}
 }
+
+function postData(){
+	$.ajax({
+		type: "POST",
+     	url: "../patient/tb/register",
+		data: JSON.stringify(objecto),
+		success: function( data, textStatus, jQxhr ){
+			alert("Success");
+		},
+		error: function( jqXhr, textStatus, errorThrown ){
+			alert( errorThrown );
+		}
+	});
+}
+

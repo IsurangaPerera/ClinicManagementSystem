@@ -27,7 +27,7 @@ require('header.php');
 
   <!--START OF USER PROFILE-->
   <li id="lst" class="treeview">
-    <a href="#" onclick="openHidden()">
+    <a href="#">
       <i class="fa fa-user"></i> <span>User Profile</span>
       <i class="fa fa-angle-left pull-right"></i>
     </a>
@@ -56,9 +56,6 @@ require('header.php');
   <?php include('app/dash_board.php'); ?>
 
   <?php
-  if(isset($_GET['manage_appointments'])) {
-    include('app/manage_appointments.php');
-  } 
 
   if(isset($_GET['my_profile'])) {
     include('app/my_profile.php');
@@ -66,10 +63,6 @@ require('header.php');
 
   if(isset($_GET['edit_profile'])) {
     include('app/edit_profile.php');
-  }
-
-  if(isset($_GET['search_patient'])) {
-    include('app/search_patient.php');
   }
 
   if(isset($_GET['tb_patient_registration'])) {
@@ -99,11 +92,7 @@ require('header.php');
 </aside><!-- /.right-side -->
 </div><!-- ./wrapper -->
 
-<!--<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>-->
-
-<!--<script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script>-->
-
-<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script>
 <script src="../../dp/js/dp.js"></script>
 <script src="../js/app.js" type="text/javascript"></script>
 <script src="../css/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>

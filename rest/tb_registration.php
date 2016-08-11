@@ -41,8 +41,6 @@ $app->post('/register',function(Request $request, Response $response){
 					$query2 = "";
 					$query2 = "VALUES (";
 					$query .= "INSERT INTO $tableName (";
-				
-				} else {
 				}
 
 			} elseif($key > 0 && $curKey != $key) {
@@ -57,7 +55,6 @@ $app->post('/register',function(Request $request, Response $response){
 				$query2 = "VALUES (";
 				$query .= "INSERT INTO $tableName (";
 			}
-
 		}
 
 		else {
@@ -81,7 +78,7 @@ $app->post('/register',function(Request $request, Response $response){
 $app->run();
 
 function addPatient($sql_data, $a_bind_params){
-	print_r($a_bind_params);
+	//print_r($a_bind_params);
 	//print_r($sql_data);
 	$server_name = "localhost";
 	$user_name = "root";
@@ -97,7 +94,6 @@ function addPatient($sql_data, $a_bind_params){
 	if($stmt === false) {		
 		trigger_error('Wrong SQL: ' . $sql_data . ' Error: ' . $db->error, E_USER_ERROR);
 	}
-
 	
 	$a_params = array();
 
@@ -113,7 +109,6 @@ function addPatient($sql_data, $a_bind_params){
 		$a_params[] = & $a_bind_params[$i];
 	}
 
-
 	call_user_func_array(array($stmt, 'bind_param'), $a_params);
 
 	if (!$stmt->execute()) {
@@ -123,7 +118,5 @@ function addPatient($sql_data, $a_bind_params){
 	$stmt->close();
 	
 }
-
-
 
 ?>
