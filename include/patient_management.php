@@ -8,11 +8,6 @@ $usr->verifyUser($_SESSION['user_type'], $_SESSION['user_type']);
 require("$root/include/header.php");
 ?>
 
-<!--
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
--->
-
 <ul class="sidebar-menu">
 
 	<!-- Modal -->
@@ -34,9 +29,7 @@ require("$root/include/header.php");
 							</tr>
 							<tr>
 								<td>
-
 									<input type="text" id="patient_no" data-toggle="modal" data-target="#patientListModal" placeholder="Enter Patient ID" class="form-control input-sm" style="width: 100%; cursor:pointer;" required autofocus>
-
 								</td>
 							</tr>
 							<tr>
@@ -130,26 +123,23 @@ require("$root/include/header.php");
 
 <script src="../js/app.js" type="text/javascript"></script>
 
-<!-- BDAY -->
 <script src="../../dp/js/dp.js"></script>
 
+<?php
+$_SESSION['patientId'];
+?>
+
 <script type="text/javascript">
-            // When the document is ready
-            $(document).ready(function () {
 
-            	$("#myModal3").modal({backdrop: "static"});
+var checkit = '<?php echo $_SESSION['patientId'] ;?>';
+window.onload = function(e) {
+    if(checkit === ""){ //file never entered. the global var was not set.
+        $("#myModal3").modal({backdrop: "static"});   
+	}
+	else {
+	}
+}
+</script>
 
-            	$('#cFrom').datepicker({
-                    //format: "dd/mm/yyyy"
-                    format: "yyyy-mm-dd"
-                });  
-
-            	$('#cTo').datepicker({
-                    //format: "dd/mm/yyyy"
-                    format: "yyyy-mm-dd"
-                });  
-            });
-            </script>
-            <!-- END BDAY -->
-        </body>
-        </html>
+</body>
+</html>

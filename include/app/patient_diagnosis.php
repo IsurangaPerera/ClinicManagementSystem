@@ -39,7 +39,7 @@ require('hidden_right.php');
 											<td><u>Patient No.</u></td>
 										</tr>
 										<tr>
-											<td>000014</td>
+											<td><?php echo $_SESSION['patientId']; ?></td>
 										</tr>
 										<tr>
 											<td><u>Patient Name</u></td>

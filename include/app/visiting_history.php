@@ -5,9 +5,9 @@ require('hidden_right.php');
 <section class="content-header" >
   <h1>Visiting History</h1> 
   <ol class="breadcrumb">
-    <li><a href="http://demo-hms.eu5.org/app/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a href="#">Patient Appointment</a></li>
-    <li class="active">Add Appointment</li>
+    <li><a href=""><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a href="#">Patient Management</a></li>
+    <li class="active">Visiting History</li>
   </ol>
 </section>
 
@@ -27,9 +27,9 @@ require('hidden_right.php');
     <div class="col-md-12">
 
      <div class="box">
-      <form class="form-search" method="post" action="http://demo-hms.eu5.org/app/appointment/addAppointmentList">
+      <form class="form-search" method="post" action="">
         <div class="box-header">
-          <h3 class="box-title"><a href="http://demo-hms.eu5.org/app/appointment/addPatient" class="btn btn-primary"><i class="fa fa-plus"></i> Add New Patient</a></h3>
+          <h3 class="box-title"><a href="" class="btn btn-primary"><i class="fa fa-plus"></i> Add New Patient</a></h3>
 
           <div class="box-tools">
             <div class="input-group">
@@ -53,7 +53,7 @@ require('hidden_right.php');
 
           <tbody>
             <tr>
-              <td><a href="http://demo-hms.eu5.org/app/patient/view/000043">2016-09-09</a></td>
+              <td><a href="">2016-09-09</a></td>
               <td>4:29 pm</td><td>Nisali De Silva</td><td>Follow Up</td><td>Not that bad</td></tr>
             </tbody>
           </table>                                

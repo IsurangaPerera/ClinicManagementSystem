@@ -1,67 +1,72 @@
+var dataLength; 
+var baseURL = "../patient/investigations/sputum";
+var patientId;
 
-var xmlHttp = createXmlHttpRequestObject();
-
-function createXmlHttpRequestObject(){
-	var xmlHttp;
-	// if running Internet Explorer 6 or older
-	if(window.ActiveXObject){
-
-		try {
-			xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-		}
-		catch (e) {
-			xmlHttp = false;
-		}
-	}
-	// if running Mozilla or other browsers
-	else{
-		try {
-			xmlHttp = new XMLHttpRequest();
-		}
-		catch (e) {
-			xmlHttp = false;
-		}
-	}
-
-	if (!xmlHttp)
-		alert("Error creating the XMLHttpRequest object.");
-	else
-		return xmlHttp;
+function process(id){
+    if(id === undefined)
+        patientId = $('#patient_no').val();
+    else
+        patientId = id;
+    
+	uri = baseURL + "/" + patientId;	
+	$.ajax({
+    type: "GET",
+    url: uri,
+    success: function (data) {
+    	data = JSON.parse(data);
+        dataLength = data.length;
+        if(data.length > 0){
+        	for(i = 0; i < 4; i++){
+                id1 = "#investg_raw" + (i+1);
+                id2 = "#inv_raw" + (i+1) + "_cell1";
+                id3 = "#inv_raw" + (i+1) + "_cell2";
+                id4 = "#inv_raw" + (i+1) + "_cell3 option:selected";
+                if(i < dataLength){
+        		    $(id1).prop("hidden", false);
+        		    $(id2).html(data[i]);
+                } else{
+                    $(id1).prop("hidden", true);
+                    $(id2).html("");
+                    $(id3).val("");
+                    $(id4).val("");
+                }
+        	}
+        	$("#modal_sputum").modal({backdrop: "static"});   
+        }
+    }
+	});
 }
 
-function process(){
-	if (xmlHttp.readyState == 4 || xmlHttp.readyState == 0){	
-		id = encodeURIComponent(
-		document.getElementById("patient_no").value);
-		xmlHttp.open("GET", "patient/sputum/" + id, true);
-		xmlHttp.onreadystatechange = handleServerResponse;
-		xmlHttp.send(null);
-	
-	} else
-		setTimeout('process()', 1000);
+function save(){
+    for(i = 0; i < dataLength; i++){
+        id2 = "#inv_raw" + (i+1) + "_cell1";
+        spec1 = $(id2).html();
+        id3 = "#inv_raw" + (i+1) + "_cell2";
+        sample_index = $(id3).val();
+        id4 = "#inv_raw" + (i+1) + "_cell3 option:selected";
+        status = $(id4).val();
+
+        if(sample_index !== "" && status !== "Pending"){
+            objecto = {
+                "patientId"    : patientId,
+                "spec1"        : spec1,
+                "sample_index" : sample_index,
+                "status"       : status
+            };
+
+            $.ajax({
+                type: "POST",
+                url: baseURL,
+                data : JSON.stringify(objecto),
+                success : function(data){
+                    patientId = undefined;
+                }
+            });
+        }
+    }
+
+    $('#patient_no').val("");
+    $('#patient_no').focus();
+    $('#modal_sputum').modal('hide');
 }
 
-function handleServerResponse(){
-	// move forward only if the transaction has completed
-	if (xmlHttp.readyState == 4){
-		// status of 200 indicates the transaction completed
-		//successfully
-		if (xmlHttp.status == 200){	
-			// extract the XML retrieved from the server
-			xmlResponse = xmlHttp.responseXML;
-			// obtain the document element (the root element) of the XML
-			//structure
-			xmlDocumentElement = xmlResponse.documentElement;
-			// get the text message, which is in the first child of
-			// the the document element
-			helloMessage = xmlDocumentElement.firstChild.data;
-
-			setTimeout('process()', 1000);
-		}
-		// a HTTP status different than 200 signals an error
-		else{
-			alert("There was a problem accessing the server: " +
-			xmlHttp.statusText);
-		}
-	}
-}
