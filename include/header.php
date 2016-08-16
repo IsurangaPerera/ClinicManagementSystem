@@ -15,7 +15,19 @@ $nic = $_SESSION['nic'];
   <link href="../css/ionicons.css" rel="stylesheet" type="text/css" />
   <link href="../css/AdminLTE.css" rel="stylesheet" type="text/css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.11/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
-
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiG5zHJHBBrQ-K2mIkn4wYSm6jC9xsd0s&callback=initMap"
+  type="text/javascript"></script>
+  <script>
+  function initialize() {
+    var mapProp = {
+      center:new google.maps.LatLng(51.508742,-0.120850),
+      zoom:5,
+      mapTypeId:google.maps.MapTypeId.ROADMAP
+    };
+    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
 </head>
 
 <body class="skin-blue">
@@ -78,7 +90,7 @@ $nic = $_SESSION['nic'];
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="<?php echo "../images/$nic"; ?>" class="img-circle" alt="User Image" />
+          <img src="<?php echo "../images/$nic"; ?>" class="img-rounded" alt="User Image" />
 
         </div>
         <div class="pull-left info">

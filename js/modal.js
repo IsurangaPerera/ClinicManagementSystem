@@ -9,7 +9,9 @@ var curIdMedications = 1;
 var tempC = 0;
 var prepared = document.getElementById('usrname').innerHTML.trim().split("<br>")[0];
 var tflag = true;
-var patientId = "20";
+
+if(sessionStorage.getItem("patientId") !== null)
+	var patientId = sessionStorage.getItem("patientId");
 
 var objecto = {
 	"complaint"          : [],
@@ -604,6 +606,8 @@ function postData(){
 		data: JSON.stringify(objecto),
 		success: function( data, textStatus, jQxhr ){
 			alert("Success");
+			sessionStorage.setItem("patientId", null);
+			window.location.href = "../include/patient_management.php?n=1";
 		},
 		error: function( jqXhr, textStatus, errorThrown ){
 			alert( errorThrown );

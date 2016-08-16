@@ -3,8 +3,7 @@
 class Query {
 	private $nic;
 	private $db;
-	
-	
+
 	function __construct() {
 
 		$this->nic = $_SESSION['nic'];		

@@ -260,7 +260,7 @@ require('hidden_right.php');
 			</div>
 		</div>
 		<div class="bottomright">
-			<a href="#" onclick="postData()">
+			<a onclick="postData()">
 				<img src="../images/add.png" alt="AddButton" width="100" height="100">
 			</a>
 		</div>

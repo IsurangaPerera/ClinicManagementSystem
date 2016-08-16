@@ -17,12 +17,11 @@ require("$root/include/header.php");
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">×</button>
 					<h4 class="modal-title">Search Patient</h4>
 				</div>
 				<div class="modal-body">
 					<!--From Start-->
-					<form method="post" action="" onSubmit="return validate();">
+					<form>
 						<table cellpadding="5" cellspacing="5" align="center">
 							<tr>
 								<td align="center">Select Patient</td>
@@ -34,7 +33,7 @@ require("$root/include/header.php");
 							</tr>
 							<tr>
 								<td>
-									<input type="submit" value="Submit" class="btn btn-primary" style="width: 250px;" name="btnSubmit">
+									<input value="Submit" class="btn btn-primary" style="width: 250px;" onclick="getResult()">
 								</td>
 							</tr>
 						</table>
@@ -42,7 +41,7 @@ require("$root/include/header.php");
 					<!--Form End-->
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					
 				</div>
 			</div>
 
@@ -124,20 +123,14 @@ require("$root/include/header.php");
 <script src="../js/app.js" type="text/javascript"></script>
 
 <script src="../../dp/js/dp.js"></script>
-
-<?php
-$_SESSION['patientId'];
-?>
+<script src="../js/patientProfile.js"></script>
 
 <script type="text/javascript">
-
-var checkit = '<?php echo $_SESSION['patientId'] ;?>';
 window.onload = function(e) {
-    if(checkit === ""){ //file never entered. the global var was not set.
+    if(sessionStorage.getItem("patientId") === null || sessionStorage.getItem("patientId") === ""){
         $("#myModal3").modal({backdrop: "static"});   
-	}
-	else {
-	}
+	} else
+		getResult();
 }
 </script>
 

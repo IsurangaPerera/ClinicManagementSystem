@@ -27,7 +27,7 @@ require('hidden_right.php');
     <div class="col-md-12">
 
      <div class="box">
-      <form class="form-search" method="post" action="">
+      <form class="form-search">
         <div class="box-header">
           <h3 class="box-title"><a href="" class="btn btn-primary"><i class="fa fa-plus"></i> Add New Patient</a></h3>
 
@@ -47,27 +47,28 @@ require('hidden_right.php');
         <table class="table table-hover table-striped">
           <thead>
             <tr>
-              <th>Date</th><th>Time</th><th>Doctor</th><th>Type of Visit</th><th>Impression</th>
+              <th>Date</th>
+              <th>Impression</th>
+              <th>Plan From OPD</th>
+              <th>Consultant</th>
+              <th>Comment</th>
+              <th>Prepared By</th>
             </tr>
           </thead>
+          <tbody id="tblePlan2">
+          </tbody>
+        </table>                                
+      </div>
 
-          <tbody>
-            <tr>
-              <td><a href="">2016-09-09</a></td>
-              <td>4:29 pm</td><td>Nisali De Silva</td><td>Follow Up</td><td>Not that bad</td></tr>
-            </tbody>
-          </table>                                
-        </div>
-        
-        <div class="box-footer clearfix">
-          <ul class="pagination pagination no-margin pull-right"><li class="active"><a href="">1</a></li><li class="page"><a href="http://demo-hms.eu5.org/app/appointment/addAppointmentList/10">2</a></li><li class="page"><a href="http://demo-hms.eu5.org/app/appointment/addAppointmentList/20">3</a></li><li class="next page"><a href="http://demo-hms.eu5.org/app/appointment/addAppointmentList/10">Next &rarr;</a></li><li class="next page"><a href="http://demo-hms.eu5.org/app/appointment/addAppointmentList/50">Last &raquo;</a></li></ul><!--pagination-->                               
-           </div>
-        </div>
+      <div class="box-footer clearfix">
+        <ul class="pagination pagination no-margin pull-right"><li class="active"><a href="">1</a></li><li class="page"><a href="">2</a></li><li class="page"><a href="">3</a></li><li class="next page"><a href="">Next &rarr;</a></li><li class="next page"><a href="">Last &raquo;</a></li></ul><!--pagination-->                               
       </div>
     </div>
+  </div>
+</div>
 
 
-  </section><!-- /.content -->
+</section><!-- /.content -->
 
 </div><!--End Of Patient Profile-->
 

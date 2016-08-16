@@ -1,0 +1,731 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="chestclinic">
+	<table_data name="case_info">
+	<row>
+		<field name="patientId">19</field>
+		<field name="tbregno"></field>
+		<field name="fileno"></field>
+		<field name="notification_date">0000-00-00</field>
+		<field name="nature_of_case">- Nature Of Case-</field>
+		<field name="type">- Type Of TB -</field>
+		<field name="start_date">0000-00-00</field>
+		<field name="end_date">0000-00-00</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="tbregno"></field>
+		<field name="fileno"></field>
+		<field name="notification_date">0000-00-00</field>
+		<field name="nature_of_case">- Nature Of Case-</field>
+		<field name="type">- Type Of TB -</field>
+		<field name="start_date">0000-00-00</field>
+		<field name="end_date">0000-00-00</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="tbregno"></field>
+		<field name="fileno"></field>
+		<field name="notification_date">0000-00-00</field>
+		<field name="nature_of_case">- Nature Of Case-</field>
+		<field name="type">- Type Of TB -</field>
+		<field name="start_date">0000-00-00</field>
+		<field name="end_date">0000-00-00</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="tbregno"></field>
+		<field name="fileno"></field>
+		<field name="notification_date">0000-00-00</field>
+		<field name="nature_of_case">- Nature Of Case-</field>
+		<field name="type">- Type Of TB -</field>
+		<field name="start_date">0000-00-00</field>
+		<field name="end_date">0000-00-00</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="tbregno"></field>
+		<field name="fileno"></field>
+		<field name="notification_date">0000-00-00</field>
+		<field name="nature_of_case">- Nature Of Case-</field>
+		<field name="type">- Type Of TB -</field>
+		<field name="start_date">0000-00-00</field>
+		<field name="end_date">0000-00-00</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="tbregno"></field>
+		<field name="fileno"></field>
+		<field name="notification_date">0000-00-00</field>
+		<field name="nature_of_case">- Nature Of Case-</field>
+		<field name="type">- Type Of TB -</field>
+		<field name="start_date">0000-00-00</field>
+		<field name="end_date">0000-00-00</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="tbregno"></field>
+		<field name="fileno"></field>
+		<field name="notification_date">0000-00-00</field>
+		<field name="nature_of_case">- Nature Of Case-</field>
+		<field name="type">- Type Of TB -</field>
+		<field name="start_date">0000-00-00</field>
+		<field name="end_date">0000-00-00</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="tbregno"></field>
+		<field name="fileno"></field>
+		<field name="notification_date">0000-00-00</field>
+		<field name="nature_of_case">- Nature Of Case-</field>
+		<field name="type">- Type Of TB -</field>
+		<field name="start_date">0000-00-00</field>
+		<field name="end_date">0000-00-00</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="tbregno"></field>
+		<field name="fileno"></field>
+		<field name="notification_date">0000-00-00</field>
+		<field name="nature_of_case">- Nature Of Case-</field>
+		<field name="type">- Type Of TB -</field>
+		<field name="start_date">0000-00-00</field>
+		<field name="end_date">0000-00-00</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="tbregno"></field>
+		<field name="fileno"></field>
+		<field name="notification_date">0000-00-00</field>
+		<field name="nature_of_case">- Nature Of Case-</field>
+		<field name="type">- Type Of TB -</field>
+		<field name="start_date">0000-00-00</field>
+		<field name="end_date">0000-00-00</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="tbregno"></field>
+		<field name="fileno"></field>
+		<field name="notification_date">0000-00-00</field>
+		<field name="nature_of_case">- Nature Of Case-</field>
+		<field name="type">- Type Of TB -</field>
+		<field name="start_date">0000-00-00</field>
+		<field name="end_date">0000-00-00</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="tbregno"></field>
+		<field name="fileno"></field>
+		<field name="notification_date">0000-00-00</field>
+		<field name="nature_of_case">- Nature Of Case-</field>
+		<field name="type">- Type Of TB -</field>
+		<field name="start_date">0000-00-00</field>
+		<field name="end_date">0000-00-00</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="tbregno"></field>
+		<field name="fileno"></field>
+		<field name="notification_date">0000-00-00</field>
+		<field name="nature_of_case">- Nature Of Case-</field>
+		<field name="type">- Type Of TB -</field>
+		<field name="start_date">0000-00-00</field>
+		<field name="end_date">0000-00-00</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="tbregno"></field>
+		<field name="fileno"></field>
+		<field name="notification_date">0000-00-00</field>
+		<field name="nature_of_case">- Nature Of Case-</field>
+		<field name="type">- Type Of TB -</field>
+		<field name="start_date">0000-00-00</field>
+		<field name="end_date">0000-00-00</field>
+	</row>
+	</table_data>
+	<table_data name="comorbidies">
+	<row>
+		<field name="patientId"></field>
+		<field name="comorbidies"></field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="comorbidies">BA</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="comorbidies">COPD</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="comorbidies">DM</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="comorbidies">fsdfsdf</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="comorbidies">HIV</field>
+	</row>
+	</table_data>
+	<table_data name="complaint">
+	<row>
+		<field name="patientId"></field>
+		<field name="date"></field>
+		<field name="complaint"></field>
+		<field name="period"></field>
+		<field name="prepared"></field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="date">12-8-2016</field>
+		<field name="complaint">0</field>
+		<field name="period">34   Weeks</field>
+		<field name="prepared">0</field>
+	</row>
+	<row>
+		<field name="patientId">20</field>
+		<field name="date">12-8-2016</field>
+		<field name="complaint">Haemoptysis</field>
+		<field name="period">3   Weeks</field>
+		<field name="prepared">Nisali De Silva </field>
+	</row>
+	<row>
+		<field name="patientId">20</field>
+		<field name="date">12-8-2016</field>
+		<field name="complaint">Loss of Apetite</field>
+		<field name="period">23   Months</field>
+		<field name="prepared">Nisali De Silva </field>
+	</row>
+	<row>
+		<field name="patientId">20</field>
+		<field name="date">12-8-2016</field>
+		<field name="complaint">Night Sweats</field>
+		<field name="period">12   Years</field>
+		<field name="prepared">Nisali De Silva </field>
+	</row>
+	<row>
+		<field name="patientId">570V</field>
+		<field name="date">15-8-2016</field>
+		<field name="complaint">Shortness of Breath</field>
+		<field name="period">34   Months</field>
+		<field name="prepared">Nisali De Silva </field>
+	</row>
+	</table_data>
+	<table_data name="full blood count">
+	</table_data>
+	<table_data name="interruption">
+	</table_data>
+	<table_data name="investigation">
+	<row>
+		<field name="patientId"></field>
+		<field name="date"></field>
+		<field name="investigation"></field>
+		<field name="prepared"></field>
+	</row>
+	<row>
+		<field name="patientId">20</field>
+		<field name="date">August 12, 2016</field>
+		<field name="investigation">Sputum</field>
+		<field name="prepared">Nisali De Silva </field>
+	</row>
+	<row>
+		<field name="patientId">9007689RTY</field>
+		<field name="date">October 4, 2016</field>
+		<field name="investigation">Sputum</field>
+		<field name="prepared">Dr. Rahul De Silva</field>
+	</row>
+	</table_data>
+	<table_data name="investigation_type">
+	<row>
+		<field name="patientId"></field>
+		<field name="date"></field>
+		<field name="investigation"></field>
+		<field name="spec1"></field>
+		<field name="status">pending</field>
+		<field name="sample_index" xsi:nil="true" />
+	</row>
+	<row>
+		<field name="patientId">20</field>
+		<field name="date">August 12, 2016</field>
+		<field name="investigation">Sputum</field>
+		<field name="spec1">AFB Smear</field>
+		<field name="status">Pending</field>
+		<field name="sample_index" xsi:nil="true" />
+	</row>
+	<row>
+		<field name="patientId">20</field>
+		<field name="date">August 12, 2016</field>
+		<field name="investigation">Sputum</field>
+		<field name="spec1">AFB Smear (x3 Morning)</field>
+		<field name="status">Pending</field>
+		<field name="sample_index" xsi:nil="true" />
+	</row>
+	<row>
+		<field name="patientId">20</field>
+		<field name="date">August 12, 2016</field>
+		<field name="investigation">Sputum</field>
+		<field name="spec1">Fungal Culture</field>
+		<field name="status">Pending</field>
+		<field name="sample_index" xsi:nil="true" />
+	</row>
+	<row>
+		<field name="patientId">20</field>
+		<field name="date">August 12, 2016</field>
+		<field name="investigation">Sputum</field>
+		<field name="spec1">Pyogenic Culture</field>
+		<field name="status">Pending</field>
+		<field name="sample_index" xsi:nil="true" />
+	</row>
+	<row>
+		<field name="patientId">9007689RTY</field>
+		<field name="date">October 4, 2016</field>
+		<field name="investigation">Sputum</field>
+		<field name="spec1">Fungal</field>
+		<field name="status">Pending</field>
+		<field name="sample_index">Check678VC</field>
+	</row>
+	</table_data>
+	<table_data name="medication">
+	<row>
+		<field name="patientId"></field>
+		<field name="date"></field>
+		<field name="drug"></field>
+		<field name="dosage"></field>
+		<field name="prepared"></field>
+	</row>
+	<row>
+		<field name="patientId">570V</field>
+		<field name="date">2016-5-7</field>
+		<field name="drug">Paracetomol</field>
+		<field name="dosage">20mg</field>
+		<field name="prepared">Dr. Rahul De Silva</field>
+	</row>
+	</table_data>
+	<table_data name="observation">
+	<row>
+		<field name="patientId"></field>
+		<field name="date"></field>
+		<field name="observation"></field>
+		<field name="prepared"></field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="date">August 12, 2016</field>
+		<field name="observation">Cachexia</field>
+		<field name="prepared">Nisali De Silva </field>
+	</row>
+	</table_data>
+	<table_data name="observation_type">
+	<row>
+		<field name="patientId"></field>
+		<field name="date"></field>
+		<field name="observation"></field>
+		<field name="spec1"></field>
+		<field name="spec2"></field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="date">August 12, 2016</field>
+		<field name="observation">Lymphadenopathy</field>
+		<field name="spec1">Right Axilliary</field>
+		<field name="spec2"></field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="date">August 12, 2016</field>
+		<field name="observation">Lymphadenopathy</field>
+		<field name="spec1">Right Cervical</field>
+		<field name="spec2"></field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="date">August 12, 2016</field>
+		<field name="observation">Rhonchi</field>
+		<field name="spec1">Right Lower Zone</field>
+		<field name="spec2">Expiratory</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="date">August 12, 2016</field>
+		<field name="observation">Rhonchi</field>
+		<field name="spec1">Right Lower Zone</field>
+		<field name="spec2">Inspiratory</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="date">August 12, 2016</field>
+		<field name="observation">Rhonchi</field>
+		<field name="spec1">Right Lower Zone</field>
+		<field name="spec2">Polyphonic</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="date">August 12, 2016</field>
+		<field name="observation">Rhonchi</field>
+		<field name="spec1">Right Mid Zone</field>
+		<field name="spec2">Expiratory</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="date">August 12, 2016</field>
+		<field name="observation">Rhonchi</field>
+		<field name="spec1">Right Mid Zone</field>
+		<field name="spec2">Inspiratory</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="date">August 12, 2016</field>
+		<field name="observation">Rhonchi</field>
+		<field name="spec1">Right Mid Zone</field>
+		<field name="spec2">Polyphonic</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="date">August 12, 2016</field>
+		<field name="observation">Rhonchi</field>
+		<field name="spec1">Right Upper Zone</field>
+		<field name="spec2">Expiratory</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="date">August 12, 2016</field>
+		<field name="observation">Rhonchi</field>
+		<field name="spec1">Right Upper Zone</field>
+		<field name="spec2">Inspiratory</field>
+	</row>
+	<row>
+		<field name="patientId">19</field>
+		<field name="date">August 12, 2016</field>
+		<field name="observation">Rhonchi</field>
+		<field name="spec1">Right Upper Zone</field>
+		<field name="spec2">Polyphonic</field>
+	</row>
+	<row>
+		<field name="patientId">3</field>
+		<field name="date">v</field>
+		<field name="observation">v</field>
+		<field name="spec1">v</field>
+		<field name="spec2">m</field>
+	</row>
+	<row>
+		<field name="patientId">3</field>
+		<field name="date">v</field>
+		<field name="observation">v</field>
+		<field name="spec1">v</field>
+		<field name="spec2">q</field>
+	</row>
+	</table_data>
+	<table_data name="patient_address">
+	<row>
+		<field name="patientId">570V</field>
+		<field name="address1">No 1/3, Meegahakovila Road</field>
+		<field name="address2">Pinwatta</field>
+		<field name="city">Panadura</field>
+	</row>
+	</table_data>
+	<table_data name="patient_contact">
+	<row>
+		<field name="patientId">570V</field>
+		<field name="phone_office">087878787</field>
+		<field name="phone_home">342421890</field>
+		<field name="phone_mobile">343434342</field>
+		<field name="email">nisalperera@gmail.com</field>
+	</row>
+	</table_data>
+	<table_data name="patient_data">
+	<row>
+		<field name="nic">89767956V</field>
+		<field name="patientId">570V</field>
+		<field name="dob">2016-08-17</field>
+		<field name="title">Mr.</field>
+		<field name="birth_place">Colombo</field>
+		<field name="gender">Male</field>
+		<field name="civilstatus">Married</field>
+		<field name="religion">Buddhist</field>
+		<field name="blood_group">O+</field>
+	</row>
+	</table_data>
+	<table_data name="patient_name">
+	<row>
+		<field name="patientId">570V</field>
+		<field name="firstname">Nisal</field>
+		<field name="middlename">Chamodh</field>
+		<field name="lastname">Perera</field>
+	</row>
+	</table_data>
+	<table_data name="report">
+	</table_data>
+	<table_data name="sample">
+	<row>
+		<field name="SampleIndex">1</field>
+		<field name="Time">12:00:00</field>
+		<field name="CollectionDate">2015-11-17</field>
+		<field name="Type">xrPA</field>
+		<field name="VisitNo">1</field>
+	</row>
+	<row>
+		<field name="SampleIndex">2</field>
+		<field name="Time">12:00:00</field>
+		<field name="CollectionDate">2015-11-13</field>
+		<field name="Type">pyCul</field>
+		<field name="VisitNo">1</field>
+	</row>
+	<row>
+		<field name="SampleIndex">3</field>
+		<field name="Time">14:52:00</field>
+		<field name="CollectionDate">2015-11-03</field>
+		<field name="Type">afb3Smear</field>
+		<field name="VisitNo">1</field>
+	</row>
+	<row>
+		<field name="SampleIndex">4</field>
+		<field name="Time">12:00:00</field>
+		<field name="CollectionDate">2015-11-19</field>
+		<field name="Type">mantoux</field>
+		<field name="VisitNo">1</field>
+	</row>
+	<row>
+		<field name="SampleIndex">5</field>
+		<field name="Time">12:00:00</field>
+		<field name="CollectionDate">2015-11-11</field>
+		<field name="Type">fbc</field>
+		<field name="VisitNo">2</field>
+	</row>
+	<row>
+		<field name="SampleIndex">6</field>
+		<field name="Time">15:10:00</field>
+		<field name="CollectionDate">2015-11-03</field>
+		<field name="Type">esr</field>
+		<field name="VisitNo">2</field>
+	</row>
+	<row>
+		<field name="SampleIndex">7</field>
+		<field name="Time">14:55:00</field>
+		<field name="CollectionDate">2015-11-03</field>
+		<field name="Type">xrAPI</field>
+		<field name="VisitNo">1</field>
+	</row>
+	<row>
+		<field name="SampleIndex">8</field>
+		<field name="Time" xsi:nil="true" />
+		<field name="CollectionDate" xsi:nil="true" />
+		<field name="Type">funCul</field>
+		<field name="VisitNo">5</field>
+	</row>
+	<row>
+		<field name="SampleIndex">9</field>
+		<field name="Time">14:54:00</field>
+		<field name="CollectionDate">2015-11-03</field>
+		<field name="Type">fbc</field>
+		<field name="VisitNo">5</field>
+	</row>
+	<row>
+		<field name="SampleIndex">10</field>
+		<field name="Time" xsi:nil="true" />
+		<field name="CollectionDate" xsi:nil="true" />
+		<field name="Type">xrLL</field>
+		<field name="VisitNo">6</field>
+	</row>
+	<row>
+		<field name="SampleIndex">11</field>
+		<field name="Time">12:56:00</field>
+		<field name="CollectionDate">2015-11-16</field>
+		<field name="Type">fbc</field>
+		<field name="VisitNo">6</field>
+	</row>
+	<row>
+		<field name="SampleIndex">12</field>
+		<field name="Time" xsi:nil="true" />
+		<field name="CollectionDate" xsi:nil="true" />
+		<field name="Type">afb3Smear</field>
+		<field name="VisitNo">1</field>
+	</row>
+	</table_data>
+	<table_data name="sputum">
+	</table_data>
+	<table_data name="tb_contact_person">
+	<row>
+		<field name="patientId">19</field>
+		<field name="name"></field>
+		<field name="address"></field>
+		<field name="nic"></field>
+		<field name="telephone"></field>
+		<field name="mobile"></field>
+	</row>
+	</table_data>
+	<table_data name="tb_patient_data">
+	<row>
+		<field name="patientId">19</field>
+		<field name="weight">0</field>
+		<field name="height">0</field>
+		<field name="bmi">0</field>
+		<field name="fbs">0</field>
+		<field name="smoking">- Smo</field>
+		<field name="alcholism">- Alc</field>
+		<field name="drug_use">- Dru</field>
+		<field name="residence">- Residenc</field>
+		<field name="education">- Education Qualification -</field>
+		<field name="lwf">No</field>
+		<field name="occupation"></field>
+	</row>
+	</table_data>
+	<table_data name="tbtreatment">
+	</table_data>
+	<table_data name="treatmentplan">
+	<row>
+		<field name="patientId"></field>
+		<field name="date"></field>
+		<field name="impression"></field>
+		<field name="plan_from_opd"></field>
+		<field name="consultant"></field>
+		<field name="comment"></field>
+		<field name="prepared"></field>
+	</row>
+	<row>
+		<field name="patientId">570V</field>
+		<field name="date">2014-6-9</field>
+		<field name="impression">Upper respiratory tract infection</field>
+		<field name="plan_from_opd">Follow up OPD</field>
+		<field name="consultant"></field>
+		<field name="comment"></field>
+		<field name="prepared">Dr. Rahul De Silva</field>
+	</row>
+	</table_data>
+	<table_data name="user_address">
+	</table_data>
+	<table_data name="user_contact">
+	</table_data>
+	<table_data name="user_data">
+	</table_data>
+	<table_data name="user_login">
+	<row>
+		<field name="nic">932790089V</field>
+		<field name="type">Sputum Room Clerk</field>
+		<field name="username">sclerk</field>
+		<field name="password">sclerk</field>
+	</row>
+	<row>
+		<field name="nic">932790090V</field>
+		<field name="type">TB Nurse</field>
+		<field name="username">tbnurse</field>
+		<field name="password">tbnurse</field>
+	</row>
+	<row>
+		<field name="nic">932790091V</field>
+		<field name="type">OPD Doctor</field>
+		<field name="username">opddoctor</field>
+		<field name="password">opddoctor</field>
+	</row>
+	<row>
+		<field name="nic">932790092V</field>
+		<field name="type">Receptionist</field>
+		<field name="username">receptionist</field>
+		<field name="password">receptionist</field>
+	</row>
+	</table_data>
+	<table_data name="user_name">
+	<row>
+		<field name="nic">932790089V</field>
+		<field name="firstname">Eranda</field>
+		<field name="middlename">Akila</field>
+		<field name="lastname">Abeydeera</field>
+	</row>
+	<row>
+		<field name="nic">932790090V</field>
+		<field name="firstname">Chamodhi</field>
+		<field name="middlename">Hasara</field>
+		<field name="lastname">Perera</field>
+	</row>
+	<row>
+		<field name="nic">932790091V</field>
+		<field name="firstname">Nisali</field>
+		<field name="middlename"></field>
+		<field name="lastname">De Silva</field>
+	</row>
+	<row>
+		<field name="nic">932790092V</field>
+		<field name="firstname">Isuranga</field>
+		<field name="middlename">Madumal</field>
+		<field name="lastname">Perera</field>
+	</row>
+	</table_data>
+	<table_data name="visit">
+	<row>
+		<field name="VisitNo">1</field>
+		<field name="VisitType">1</field>
+		<field name="Date">2015-09-27</field>
+		<field name="Time">15:04:00</field>
+		<field name="Username">user1</field>
+		<field name="PrescriptionIndex">1</field>
+		<field name="PatientID">0</field>
+		<field name="Comments">Testing</field>
+		<field name="Impression">Pulmonary tuberculosis</field>
+		<field name="Plan">Dr Kirthi Gunasekara</field>
+	</row>
+	<row>
+		<field name="VisitNo">2</field>
+		<field name="VisitType">2</field>
+		<field name="Date">2015-10-14</field>
+		<field name="Time">15:01:00</field>
+		<field name="Username">user5</field>
+		<field name="PrescriptionIndex">3</field>
+		<field name="PatientID">0</field>
+		<field name="Comments">This is a test</field>
+		<field name="Impression">Community acquired pneumonia</field>
+		<field name="Plan">Dr Amitha Fernando</field>
+	</row>
+	<row>
+		<field name="VisitNo">3</field>
+		<field name="VisitType">1</field>
+		<field name="Date">2015-10-15</field>
+		<field name="Time">08:04:00</field>
+		<field name="Username">user1</field>
+		<field name="PrescriptionIndex" xsi:nil="true" />
+		<field name="PatientID">0</field>
+		<field name="Comments"></field>
+		<field name="Impression">Non specific</field>
+		<field name="Plan">Discharge</field>
+	</row>
+	<row>
+		<field name="VisitNo">4</field>
+		<field name="VisitType">1</field>
+		<field name="Date">2015-10-20</field>
+		<field name="Time">21:06:00</field>
+		<field name="Username">user1</field>
+		<field name="PrescriptionIndex">4</field>
+		<field name="PatientID">0</field>
+		<field name="Comments"></field>
+		<field name="Impression">Non specific</field>
+		<field name="Plan">Discharge</field>
+	</row>
+	<row>
+		<field name="VisitNo">5</field>
+		<field name="VisitType">1</field>
+		<field name="Date">2015-10-21</field>
+		<field name="Time">12:21:00</field>
+		<field name="Username">user1</field>
+		<field name="PrescriptionIndex">5</field>
+		<field name="PatientID">1</field>
+		<field name="Comments">these are some notes</field>
+		<field name="Impression">Non specific</field>
+		<field name="Plan">Follow Up</field>
+	</row>
+	<row>
+		<field name="VisitNo">6</field>
+		<field name="VisitType">1</field>
+		<field name="Date">2015-11-03</field>
+		<field name="Time">14:47:00</field>
+		<field name="Username">user1</field>
+		<field name="PrescriptionIndex">6</field>
+		<field name="PatientID">0</field>
+		<field name="Comments">a note</field>
+		<field name="Impression">Community acquired pneumonia</field>
+		<field name="Plan">Dr Kirthi Gunasekara</field>
+	</row>
+	</table_data>
+	<table_data name="x-ray">
+	</table_data>
+</database>
+</mysqldump>
