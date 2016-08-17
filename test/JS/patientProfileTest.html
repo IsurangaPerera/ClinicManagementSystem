@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Patient Profile Testing</title>
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.0.1.css">
+	<script src="https://code.jquery.com/qunit/qunit-2.0.1.js"></script>
+	<script src="../../js/patientProfile.js"></script>
+	
+	<script>
+
+	QUnit.test("getResult", function(assert) {
+		var done = assert.async();
+		sessionStorage.setItem('patientId', '570V');
+		getResult();
+		setTimeout(function(){
+			assert.equal($('#pname').html(), 'Nisal Chamodh Perera');
+			assert.equal($('#pgender').html(), 'Male');
+			done();
+		}, 100);
+		
+	});
+	</script>
+</head>
+<body>
+	<div id="qunit"></div>
+	<div id="qunit-fixture">
+		<div class="modal fade" id="myModal3" role="dialog">
+			<div class="modal-dialog">
+				<input type="text" id="patient_no"/>
+			</div>
+		</div>
+		<table>
+			<tr>
+				<td id="pname"></td>
+				<td id="pdob"></td>
+				<td id="pgender"></td>
+				<td id="paddress"></td>
+				<td id="pid"></td>
+				<td id="nic"></td>
+				<td id="religion"></td>
+				<td id="blood"></td>
+				<td id="phone"></td>
+			</tr>
+		</table>
+		<table class="table table-striped table-hover">
+			<tbody id="tblePlan">
+			</tbody>
+		</table>
+
+		<table class="table table-striped table-hover">
+			<tbody id="tblePres">
+			</tbody>
+		</table>
+	</div>
+</div>
+</body>
+</html>

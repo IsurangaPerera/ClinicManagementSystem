@@ -1,5 +1,5 @@
 var patientId;
-var baseURL = "../patient/profile/"
+var baseURL = "../../patient/profile/";
 
 function getResult(){
 	if(sessionStorage.getItem("patientId") === null || sessionStorage.getItem("patientId") === ""){
@@ -24,7 +24,10 @@ function getResult(){
                 	setValues(data);
                 	setTreatmentPlan(data);
                 }
-            }
+            },
+            error: function(jqXHR, textStatus, errorThrown){
+				alert(jqXHR.status);
+			}  
         });
 	}
 }
