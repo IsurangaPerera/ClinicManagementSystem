@@ -18,6 +18,10 @@
 		setTimeout(function(){
 			assert.equal($('#pname').html(), 'Nisal Chamodh Perera');
 			assert.equal($('#pgender').html(), 'Male');
+			rows = $('#tblePres').find('td');//document.getElementById('tblePres').getElementsByTagName('td');
+			for(i = 0; i < rows.length; i++){
+				alert($(rows).eq(i).html());
+			}
 			done();
 		}, 100);
 		

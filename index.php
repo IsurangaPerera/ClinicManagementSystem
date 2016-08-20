@@ -20,10 +20,6 @@ session_start();
 
 </head>
 <body bgcolor="#FFFFFF">	
-	<script language="javascript">
-		$(document).ready(function(){
-		});
-	</script>
 	<div style="background: #FFFFFF url('images/login/background.png'); 
 	background-position: center; background-size:cover; ">
 	<div style="background: transparent url('images/logo.png') no-repeat center; height:111px; margin-bottom:-50px; padding-top:120px;"></div>

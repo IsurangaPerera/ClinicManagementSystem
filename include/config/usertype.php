@@ -8,8 +8,8 @@ elseif(strcmp($_SESSION['user_type'],"TB Nurse")==0){
 	header("location: ../tb_nurse.php");}
 elseif(strcmp($_SESSION['user_type'],"Pharmacist")==0){
 	header("location: Pharmacy.php");}
-elseif(strcmp($_SESSION['user_type'],"LabAssistant")==0){
-	header("location: Laboratory.php");}
+elseif(strcmp($_SESSION['user_type'],"Laboratory Assistant")==0){
+	header("location: ../laboratory_assistant.php");}
 elseif(strcmp($_SESSION['user_type'],"XRayRoomClerk")==0){
 	header("location: XRayRoom.php");}
 elseif(strcmp($_SESSION['user_type'],"Sputum Room Clerk")==0){

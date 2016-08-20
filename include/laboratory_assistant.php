@@ -15,26 +15,17 @@ require('header.php');
     </a>
   </li>     
 
-  <!--START OF Registration-->
-  <li>
-    <a id="p_reg">
-      <i class="fa ion-person-add "></i> <span>Patient Registration</span>
-    </a>
-  </li>
-  <!--END OF Registration-->
-
-  <!--START OF Patient Management-->
-  <li class="treeview">
+  <!--START OF INVESTIGATION RESULTS-->
+  <li id="lst" class="treeview">
     <a href="#">
-      <i class="fa fa fa-wheelchair"></i> <span>Patient Management</span>
+      <i class="fa fa-user"></i> <span>Investigation Results</span>
       <i class="fa fa-angle-left pull-right"></i>
     </a>
-    <ul class="treeview-menu">
-      <li><a id="m_app"><i class="fa fa-angle-double-right"></i>Manage Appointments</a></li>
-      <li><a id="s_pat"><i class="fa fa-angle-double-right"></i>Search Patient</a></li>
+    <ul id="slst" class="treeview-menu">
+      <li ><a id="inv_fbs"><i class="fa fa-angle-double-right"></i><span>FBS</span></a></li>
     </ul>
   </li>
-  <!--END OF Patient Management-->
+  <!--END OF INVESTIGATION RESULTS-->
 
   <!--START OF USER PROFILE-->
   <li id="lst" class="treeview">
@@ -63,21 +54,15 @@ require('header.php');
 </aside><!-- /.right-side -->
 </div><!-- ./wrapper -->
 
+<script src="../js/fbs.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function(){
   $('#r_side').load('app/dash_board.php');
 
-  $("#p_reg").click(function(event){
-    $('#r_side').load('app/patient_registration.php');
-  });
-
-  $("#m_app").click(function(event){
-    $('#r_side').load('app/manage_appointments.php');
-  });
-
-  $("#s_pat").click(function(event){
-    $('#r_side').load('app/search_patient.php');
-  });
+  
+  $('#inv_fbs').click(function(event){
+    $('#r_side').load('app/inv_fbs.php');
+  })
 
   $("#m_prof").click(function(event){
     $('#r_side').load('app/my_profile.php');

@@ -15,19 +15,15 @@ $nic = $_SESSION['nic'];
   <link href="../css/ionicons.css" rel="stylesheet" type="text/css" />
   <link href="../css/AdminLTE.css" rel="stylesheet" type="text/css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.11/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiG5zHJHBBrQ-K2mIkn4wYSm6jC9xsd0s&callback=initMap"
-  type="text/javascript"></script>
-  <script>
-  function initialize() {
-    var mapProp = {
-      center:new google.maps.LatLng(51.508742,-0.120850),
-      zoom:5,
-      mapTypeId:google.maps.MapTypeId.ROADMAP
-    };
-    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-  }
-  google.maps.event.addDomListener(window, 'load', initialize);
-  </script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.8.0/css/alertify.min.css"/>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.8.0/css/themes/default.min.css"/>
+  
+  <script src="//cdn.jsdelivr.net/alertifyjs/1.8.0/alertify.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script>
+  <script src="../css/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>     
+  <script src="../js/app.js" type="text/javascript"></script>
+  <script src="../js/date.js" type="text/javascript"></script>
+
 </head>
 
 <body class="skin-blue">
