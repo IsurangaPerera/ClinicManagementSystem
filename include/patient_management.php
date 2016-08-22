@@ -52,85 +52,86 @@ require("$root/include/header.php");
 	<li class="header" style="text-align: center; padding: 10px; margin-bottom: 5px; border: none;">Patient Details</li>
 
 	<li>
-		<a href="?patient_profile">
+		<a id="p_profile">
 			<i class="fa ion-person-stalker"></i><span>Patient Profile</span>
 		</a>
 	</li>
 
 	<li>
-		<a href="?visiting_history">
+		<a id="v_history">
 			<i class="fa ion-person-stalker"></i><span>Visiting History</span>
 		</a>
 	</li>
 
 	<li>
-		<a href="?prescription_history">
+		<a id="p_history">
 			<i class="fa ion-person-stalker"></i><span>Prescription History</span>
 		</a>
 	</li>
 
 	<li>
-		<a href="?patient_diagnosis">
-			<i class="fa ion-person-stalker"></i><span>Patient Diagnosis</span>
+		<a id="i_results">
+			<i class="fa fa-dashboard"></i> <span>Investigation Results</span>
 		</a>
 	</li>
 
+	<li>
+		<a id="p_diagnosis">
+			<i class="fa ion-person-stalker"></i><span>Patient Diagnosis</span>
+		</a>
+	</li>
 
 </ul>
 </section>
 </aside>
 
-<aside class="right-side"><!--Start of Right Side-->
-
-	<?php include("app/patient_profile.php"); ?>
-
-	<?php
-
-	if(isset($_GET['visiting_history'])) {
-		require('app/visiting_history.php');
-	}
-
-	if(isset($_GET['patient_diagnosis'])) {
-		require('app/patient_diagnosis.php');
-	}
-
-	if(isset($_GET['prescription_history'])) {
-		require('app/prescription_history.php');
-	}
-
-	if(isset($_GET['patient_profile'])) {
-		require('app/hidden_right.php');
-		?>
-
-		<style>
-		.patient_profile, .opt{
-			display: block;
-		}
-		</style>
-
-		<?php
-	}
-
-	?>
-
-
+<aside class="right-side" id="r_side"><!--Start of Right Side-->
 </aside><!--End Of Right Side-->
 
 </div>
-<script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script>
-<script src="../css/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>  
 
-<script src="../js/app.js" type="text/javascript"></script>
-
-<script src="../../dp/js/dp.js"></script>
 <script src="../js/patientProfile.js"></script>
 
 <script type="text/javascript">
 window.onload = function(e) {
-    if(sessionStorage.getItem("patientId") === null || sessionStorage.getItem("patientId") === ""){
-        $("#myModal3").modal({backdrop: "static"});   
+	if(sessionStorage.getItem("patientId") === null || sessionStorage.getItem("patientId") === ""){
+		$("#myModal3").modal({backdrop: "static"});   
 	} else
-		getResult();
+	getResult();
+}
+
+$(document).ready(function(){
+  $('#r_side').load('app/patient_profile.php');
+
+  $("#p_profile").click(function(event){
+    $('#r_side').load('app/patient_profile.php');
+    docReady();
+  });
+
+  $("#p_history").click(function(event){
+    $('#r_side').load('app/prescription_history.php');
+    docReady();
+  });
+
+  $("#v_history").click(function(event){
+    $('#r_side').load('app/visiting_history.php');
+    docReady();
+  });
+
+  $("#p_diagnosis").click(function(event){
+    $('#r_side').load('app/patient_diagnosis.php');
+  });
+
+  $("#i_results").click(function(event){
+    $('#r_side').load('app/investigation_results.php');
+  });
+});
+
+function docReady(){
+	if(sessionStorage.getItem("patientId") === null || sessionStorage.getItem("patientId") === ""){
+		$("#myModal3").modal({backdrop: "static"});   
+	} else
+	getResult();
 }
 </script>
 

@@ -7,23 +7,23 @@ require '../vendor/autoload.php';
 
 $app = new \Slim\App;
 
-$app->get('/sputum/{id}',function(Request $request, Response $response){
+$app->get('/blood/{id}',function(Request $request, Response $response){
 	header('Content-type: application/json');
 	$id = $request->getAttribute('id');
-	getSputumData($id);
+	getBloodData($id);
 });
 
-$app->get('/sputum',function(Request $request, Response $response){
+$app->get('/blood',function(Request $request, Response $response){
 	getAllData();
 });
 
-$app->post('/sputum',function(Request $request, Response $response){
+$app->post('/blood',function(Request $request, Response $response){
 	$json = $request->getBody();
 	$json = json_decode($json, TRUE);
-	updateSputumData($json);
+	updateBloodData($json);
 });
 
-function getSputumData($id) {
+function getBloodData($id) {
 	$json = array();
 	$server_name = "localhost";
 	$user_name = "root";
@@ -43,7 +43,7 @@ function getSputumData($id) {
 		trigger_error('Wrong SQL: ' . $sql_data . ' Error: ' . $db->error, E_USER_ERROR);
 	}
 
-	$sp = "Sputum";
+	$sp = "Blood";
 
 	if(!$stmt->bind_param('ss',$id, $sp)) {
 		echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
@@ -64,7 +64,7 @@ function getSputumData($id) {
 	$stmt->close();
 }
 
-function updateSputumData($json){
+function updateBloodData($json){
 	$server_name = "localhost";
 	$user_name = "root";
 	$password = "Tally456";
@@ -87,7 +87,7 @@ function updateSputumData($json){
 		trigger_error('Wrong SQL: ' . $sql_data . ' Error: ' . $db->error, E_USER_ERROR);
 	}
 
-	$sp = "Sputum";
+	$sp = "Blood";
 
 	if(!$stmt->bind_param('sssss', $json['status'], $json['sample_index'], $json['patientId'], $sp, $json['spec1'])) {
 		echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
@@ -127,7 +127,7 @@ function getAllData() {
 	}
 
 	$pending = "Pending";
-	$invest = "Sputum";
+	$invest = "Blood";
 
 	if(!$stmt->bind_param('ss', $pending, $invest)) {
 		echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;

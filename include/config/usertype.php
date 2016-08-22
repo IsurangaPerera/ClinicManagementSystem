@@ -14,8 +14,8 @@ elseif(strcmp($_SESSION['user_type'],"XRayRoomClerk")==0){
 	header("location: XRayRoom.php");}
 elseif(strcmp($_SESSION['user_type'],"Sputum Room Clerk")==0){
 	header("location: ../sputum_room_clerk.php");}
-elseif(strcmp($_SESSION['user_type'],"BRoomClerk")==0){
-	header("location: Bleeding.php");}
+elseif(strcmp($_SESSION['user_type'],"Bleeding Room Nurse")==0){
+	header("location: ../bleeding_nurse.php");}
 elseif(strcmp($_SESSION['user_type'],"Admin")==0){
 	header("location: Admin.php");}
 else{

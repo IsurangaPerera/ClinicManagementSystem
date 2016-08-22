@@ -50,7 +50,7 @@ require('hidden_right.php');
               <th></th>
             </tr>
           </thead>
-          <tbody id="sputum_req_table">
+          <tbody id="blood_req_table">
           </tbody>
         </table>                                
       
@@ -70,7 +70,7 @@ require('hidden_right.php');
 
 </section><!-- /.content -->
 
-<script src="../js/current_requests.js" type="text/javascript"></script>
+<script src="../js/current_blood_requests.js" type="text/javascript"></script>
 <script type="text/javascript">
 
 $(document).ready(function(){

@@ -59,7 +59,7 @@ require('header.php');
 </div><!-- ./wrapper -->
 
 <!-- Modal -->
-  <div class="modal fade" id="modal_sputum" role="dialog">
+  <div class="modal fade" id="modal_blood" role="dialog">
     <div class="modal-dialog">
 
       <!-- Modal content-->
@@ -70,7 +70,7 @@ require('header.php');
 
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 id="investg">Investigations/Sputum</h3>
+              <h3 id="investg">Investigations/Blood Test</h3>
             </div>
             <div class="panel-body">
               <table id="investg_table" cellpadding="7px">
@@ -117,48 +117,6 @@ require('header.php');
                   </td>
                 </tr>
                 
-                <tr id="investg_raw3" hidden="true">
-                  <td width="30%">
-                    <label id="inv_raw3_cell1"></label>
-                  </td>
-                  <td>
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Sample Index"  id="inv_raw3_cell2" aria-describedby="addon3">
-                      <span class="input-group-addon" id="addon3">Index</span>
-                    </div>
-                  </td>
-                  <td>
-                    <div>
-                      <select class="form-control" id="inv_raw3_cell3">
-                        <option>Pending</option>
-                        <option>Completed</option>
-                        <option>Canceled</option>
-                      </select>          
-                    </div>
-                  </td>
-                </tr>
-
-                <tr id="investg_raw4" hidden="true">
-                  <td width="30%">
-                    <label id="inv_raw4_cell1"></label>
-                  </td>
-                  <td>
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Sample Index"  id="inv_raw4_cell2" aria-describedby="addon4">
-                      <span class="input-group-addon" id="addon4">Index</span>
-                    </div>
-                  </td>
-                  <td>
-                    <div>
-                      <select class="form-control" id="inv_raw4_cell3">
-                        <option>Pending</option>
-                        <option>Completed</option>
-                        <option>Canceled</option>
-                      </select>          
-                    </div>
-                  </td>
-                </tr>
-
               </table>
             </div>
           </div>
@@ -172,14 +130,15 @@ require('header.php');
       </div>
     </div>
     <!-- END Modal -->
-<script src="../js/s_clerk.js" type="text/javascript"></script>
+<script src="../js/b_nurse.js" type="text/javascript"></script>
+
 <script type="text/javascript">
 $(document).ready(function(){
   $('#r_side').load('app/dash_board.php');
 
   
   $('#cur_request').click(function(event){
-    $('#r_side').load('app/current_requests.php');
+    $('#r_side').load('app/current_blood_requests.php');
   });
 
   $('#s_collection').click(function(event){

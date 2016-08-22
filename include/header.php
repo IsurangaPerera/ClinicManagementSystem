@@ -17,10 +17,13 @@ $nic = $_SESSION['nic'];
   <link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.11/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.8.0/css/alertify.min.css"/>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.8.0/css/themes/default.min.css"/>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
   
   <script src="//cdn.jsdelivr.net/alertifyjs/1.8.0/alertify.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script>
-  <script src="../css/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>     
+  <script src="../css/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>    
   <script src="../js/app.js" type="text/javascript"></script>
   <script src="../js/date.js" type="text/javascript"></script>
 

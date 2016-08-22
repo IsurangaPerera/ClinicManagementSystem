@@ -65,6 +65,8 @@ function setValues(data){
 		var tble = ["tblePres", "tblePres2"];
 		for(i = 0; i < tble.length; i++){
 			var table = document.getElementById(tble[i]);
+			if(table === null)
+				continue;
 			var row = table.insertRow(table.rows.length);
 			var cell1 = row.insertCell(0);
 			var cell2 = row.insertCell(1);
@@ -87,6 +89,8 @@ function setTreatmentPlan(data){
 		var tbt = ["tblePlan", "tblePlan2"];
 		for(i = 0; i < tbt.length; i++){
 			var table = document.getElementById(tbt[i]);
+			if(table === null)
+				continue;
 			var row = table.insertRow(table.rows.length);
 			var cell1 = row.insertCell(0);
 			var cell2 = row.insertCell(1);
