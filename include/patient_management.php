@@ -49,35 +49,39 @@ require("$root/include/header.php");
 	</div>
 	<!-- END Modal -->
 
-	<li class="header" style="text-align: center; padding: 10px; margin-bottom: 5px; border: none;">Patient Details</li>
-
 	<li>
-		<a id="p_profile">
+		<a href="#" id="p_profile">
 			<i class="fa ion-person-stalker"></i><span>Patient Profile</span>
 		</a>
 	</li>
 
 	<li>
-		<a id="v_history">
+		<a href="#" id="v_history">
 			<i class="fa ion-person-stalker"></i><span>Visiting History</span>
 		</a>
 	</li>
 
 	<li>
-		<a id="p_history">
+		<a href="#" id="p_history">
 			<i class="fa ion-person-stalker"></i><span>Prescription History</span>
 		</a>
 	</li>
 
 	<li>
-		<a id="i_results">
-			<i class="fa fa-dashboard"></i> <span>Investigation Results</span>
+		<a href="#" id="i_results">
+			<i class="fa ion-arrow-graph-up-right"></i> <span>Investigation Results</span>
 		</a>
 	</li>
 
 	<li>
-		<a id="p_diagnosis">
+		<a href="#" id="p_diagnosis">
 			<i class="fa ion-person-stalker"></i><span>Patient Diagnosis</span>
+		</a>
+	</li>
+
+	<li>
+		<a href="opd_doctor.php" onclick="setSession()">
+			<i class="fa ion-android-home"></i><span>Home</span>
 		</a>
 	</li>
 
@@ -91,6 +95,8 @@ require("$root/include/header.php");
 </div>
 
 <script src="../js/patientProfile.js"></script>
+<script src="../js/modal.js" type="text/javascript"></script>
+
 
 <script type="text/javascript">
 window.onload = function(e) {
@@ -132,6 +138,10 @@ function docReady(){
 		$("#myModal3").modal({backdrop: "static"});   
 	} else
 	getResult();
+}
+
+function setSession(){
+	sessionStorage.setItem("patientId", "");
 }
 </script>
 

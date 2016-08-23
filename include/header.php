@@ -14,6 +14,7 @@ $nic = $_SESSION['nic'];
   <link href="../css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
   <link href="../css/ionicons.css" rel="stylesheet" type="text/css" />
   <link href="../css/AdminLTE.css" rel="stylesheet" type="text/css" />
+  <link href="../css/style.css" rel="stylesheet" type="text/css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.11/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.8.0/css/alertify.min.css"/>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.8.0/css/themes/default.min.css"/>
@@ -26,6 +27,7 @@ $nic = $_SESSION['nic'];
   <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>    
   <script src="../js/app.js" type="text/javascript"></script>
   <script src="../js/date.js" type="text/javascript"></script>
+  <script src="../js/mouseover_popup.js" type="text/javascript"></script>
 
 </head>
 
@@ -89,7 +91,9 @@ $nic = $_SESSION['nic'];
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="<?php echo "../images/$nic"; ?>" class="img-rounded" alt="User Image" />
+          <div style="display: none; position: absolute; z-index: 110; left: 400; top: 100; width: 15; height: 15" id="preview_div"></div>
+
+          <img src="../images/noavatar.png" class="img-rounded" onmouseover="showtrail('../images/noavatar.png','',400,400)" onmouseout="hidetrail()"/>
 
         </div>
         <div class="pull-left info">

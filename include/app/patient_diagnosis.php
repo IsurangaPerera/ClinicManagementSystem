@@ -6,6 +6,7 @@ require('hidden_right.php');
 	<h1>Patient Diagnosis</h1> 
 	<ol class="breadcrumb">
 		<li><a href=""><i class="fa fa-dashboard"></i> Home</a></li>
+		<li>Patient Management</li>
 		<li class="active">Patient Diagnosis</li>									
 	</ol>
 </section>
@@ -15,8 +16,6 @@ require('hidden_right.php');
 	display: block;
 }
 </style>
-
-<script src="../../js/modal.js" type="text/javascript"></script>
 
 <div class="patient_diagnosis">
 	<!-- Main content -->
@@ -85,178 +84,186 @@ require('hidden_right.php');
 				</div>
 			</div>
 
-			<div class="col-md-9"> 
-				<div class="nav-tabs-custom">
-					<ul class="nav nav-tabs">
-						<li class="active"><a href="#tab_1" data-toggle="tab">Presenting Complaints</a></li>
-						<li><a href="#tab_2" data-toggle="tab">Clinical Observations</a></li>
-						<li><a href="#tab_3" data-toggle="tab">Medications</a></li>
-						<li><a href="#tab_4" data-toggle="tab">Investigations</a></li>
-						<li><a href="#tab_5" data-toggle="tab">Treatment Plan</a></li>
-
-					</ul>
-					<div class="tab-content">
-						<div class="tab-pane active" id="tab_1">
-
-							<a href="#" id="btn_complaints" class="btn btn-primary" data-toggle="modal" data-target="#complaints"><i class="fa fa-plus"></i> Add Complaints</a>
-
-							<a href="#" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
-							<table class="table table-striped table-inverse" id="comtable">
-								<tr>
-									<th>Date</th>
-									<th>Complaint</th>
-									<th>Period</th>
-									<th>Prepared By</th>
-									<th></th>
-								</tr>		
-							</table>
-							<br><br><br><br><br><br><br>
-							<br><br><br><br><br><br><br>
-							<br><br><br><br><br><br><br>
-						</div>
-
-						<div class="tab-pane" id="tab_2">
-							<!--Tab 2 Code goes here-->
-							<a href="#" id="btn_observations" class="btn btn-primary" data-toggle="modal" data-target="#observations"><i class="fa fa-plus"></i> Add Clinical Observations</a>
-
-							<a href="#" class="btn btn-default" target="_blank"><i class="fa fa-print"></i>Print</a>
-							<table class="table table-hover table-striped" id="obstable">
-								<tr>
-									<th>Date</th>
-									<th>Observation</th>
-									<th></th>
-									<th></th>
-									<th>Prepared By</th>
-									<th></th>
-								</tr>
-							</table>
-
-							<br><br><br><br><br><br><br>
-							<br><br><br><br><br><br><br>
-							<br><br><br><br><br><br><br>
-
-						</div>
-						<div class="tab-pane" id="tab_3">
-
-							<a href="#" id="btn_medications" class="btn btn-primary" data-toggle="modal" data-target="#medications"><i class="fa fa-plus"></i> Add Medications</a>
-
-							<a href="#" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
-							<table class="table table-hover table-striped"  id="medtable">
-								<tr>
-									<th>Date</th>
-									<th>Drug</th>
-									<th>Dosage</th>
-									<th>Prepared By</th>
-									<th></th>
-								</tr>
-							</table>
-
-							<br><br><br><br><br><br><br>
-							<br><br><br><br><br><br><br>
-							<br><br><br><br><br><br><br>
-						</div>
-						<div class="tab-pane" id="tab_4">
-
-							<a href="#" id="btn_investigations" class="btn btn-primary" data-toggle="modal" data-target="#investigations"><i class="fa fa-plus"></i> Add Investigations</a>
-
-							<a href="#" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
-							<table class="table table-hover table-striped" id="investable">
-								<tr>
-									<th>Date</th>
-									<th>Investigation</th>
-									<th></th>
-									<th>Requested By</th>
-									<th></th>
-								</tr>
-							</table>
-
-							<br><br><br><br><br><br><br>
-							<br><br><br><br><br><br><br>
-							<br><br><br><br><br><br><br>
-						</div>
-						<div class="tab-pane" id="tab_5">
-
-							<form method="post" action="" onSubmit="return confirm('Are you sure you want to save?');">
-								<input type="hidden" name="opd_no" value="IP-000017">
-								<input type="hidden" name="patient_no" value="000005">
-								<table class="table table-hover">
-									<tbody>
-										<tr>
-											<div class="form-group">
-												<td width="21%" valign="top">Clinical Impression</td>
-												<td width="79%">
-													<select class="form-control input-sm" id="sel1" style="width: 60%;" onchange="showText(this.id)">
-														<option value="0">Non specific symptoms</option>
-														<option value="1">Upper respiratory tract infection</option>
-														<option value="2">Lower respiratory tract infection</option>
-														<option value="3">Community Acquired Pneumonia</option>
-														<option value="4">Pulmonary tuberculosis</option>
-														<option value="5">Extrapulmonary tuberculosis</option>
-														<option value="6">Asthma</option>
-														<option value="7">COPD</option>
-														<option value="8">Interstitial lung disease</option>
-														<option value="9">Bronchiectasis</option>
-														<option value="10">Lung malignancy</option>
-														<option value="11">Chronic cough</option>
-														<option value="12">Pleural effusion</option>
-														<option value="13">Pneumothorax</option>
-														<option value="14">Sleep disordered breathing</option>
-														<option value="15" id="other">Other</option>
-													</select>
-												</td>
-											</div>
-										</tr>
-										<tr hidden="true" id="txtother">
-											<td width="21%" valign="top">Please Specify</td>
-											<td width="79%"><textarea name="reason_admission" id="reason_admission" class="form-control input-sm" style="width: 60%;" rows="3"></textarea></td>
-										</tr>
-										<tr>
-											<td valign="top">Plan From OPD</td>
-											<td>
-												<select id="condition" class="form-control input-sm" style="width: 60%;" onchange="assignConsultant(this.id)" required>
-													<option value="0">Discharge from OPD</option>
-													<option value="1">Follow up OPD</option>
-													<option value="2" id="refRoom">Referral to TB Section</option>
-													<option value="3" id="refRoom">Referral to Respiratory Consultant</option>
-
-												</select>
-											</td>
-										</tr>
-										<tr hidden="true" id="consultants">
-											<td valign="top">Consultant</td>
-											<td>
-												<input id="consultantin" list="doctorss" class="form-control input-sm"style="height: 100%; width: 60%; cursor:pointer;" placeholder="Consultant">
-												<datalist id="doctorss">
-													<option value="Dr Kirthi Gunasekara"></option>
-													<option value="Dr Amitha Fernando"></option>
-												</datalist>
-											</td>
-										</tr>
-										<tr>
-											<td width="21%" valign="top">Aditional Notes</td>
-											<td width="79%"><textarea name="admitting_impression" id="admitting_impression" class="form-control input-sm" style="width: 60%;" rows="3"></textarea></td>
-										</tr>
-
-										<tr>
-											<td colspan="2">
-												<button class="btn btn-primary" onclick="save(this.id)" id="plan"><i class="fa fa-save"></i> Save</button>
-
-												<a href="" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</form>
-
-							<br><br><br><br><br><br><br>
-							<br><br><br><br><br><br><br>
-							<br><br><br><br><br><br><br>
-						</div>
-					</div>
+			<div class="col-md-9">
+				<div class="box">
 					<div class="box-footer clearfix">
 
+						<a href="?cancel" class="btn btn-default">Cancel</a>
+						<button class="btn btn-primary" name="submit" id="submit" type="submit"><i class="fa fa-save"></i> Save</button>        
 					</div>
-				</div>
+
+					<div class="nav-tabs-custom">
+						<ul class="nav nav-tabs">
+							<li class="active"><a href="#tab_1" data-toggle="tab">Presenting Complaints</a></li>
+							<li><a href="#tab_2" data-toggle="tab">Clinical Observations</a></li>
+							<li><a href="#tab_3" data-toggle="tab">Medications</a></li>
+							<li><a href="#tab_4" data-toggle="tab">Investigations</a></li>
+							<li><a href="#tab_5" data-toggle="tab">Treatment Plan</a></li>
+
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane active" id="tab_1">
+
+								<a href="#" id="btn_complaints" class="btn btn-primary" data-toggle="modal" data-target="#complaints"><i class="fa fa-plus"></i> Add Complaints</a>
+
+								<a href="#" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
+								<table class="table table-striped table-inverse" id="comtable">
+									<tr>
+										<th>Date</th>
+										<th>Complaint</th>
+										<th>Period</th>
+										<th>Prepared By</th>
+										<th></th>
+									</tr>		
+								</table>
+								<br><br><br><br><br><br><br>
+								<br><br><br><br><br><br><br>
+								<br><br><br><br><br><br><br>
+							</div>
+
+							<div class="tab-pane" id="tab_2">
+								<!--Tab 2 Code goes here-->
+								<a href="#" id="btn_observations" class="btn btn-primary" data-toggle="modal" data-target="#observations"><i class="fa fa-plus"></i> Add Clinical Observations</a>
+
+								<a href="#" class="btn btn-default" target="_blank"><i class="fa fa-print"></i>Print</a>
+								<table class="table table-hover table-striped" id="obstable">
+									<tr>
+										<th>Date</th>
+										<th>Observation</th>
+										<th></th>
+										<th></th>
+										<th>Prepared By</th>
+										<th></th>
+									</tr>
+								</table>
+
+								<br><br><br><br><br><br><br>
+								<br><br><br><br><br><br><br>
+								<br><br><br><br><br><br><br>
+
+							</div>
+							<div class="tab-pane" id="tab_3">
+
+								<a href="#" id="btn_medications" class="btn btn-primary" data-toggle="modal" data-target="#medications"><i class="fa fa-plus"></i> Add Medications</a>
+
+								<a href="#" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
+								<table class="table table-hover table-striped"  id="medtable">
+									<tr>
+										<th>Date</th>
+										<th>Drug</th>
+										<th>Dosage</th>
+										<th>Prepared By</th>
+										<th></th>
+									</tr>
+								</table>
+
+								<br><br><br><br><br><br><br>
+								<br><br><br><br><br><br><br>
+								<br><br><br><br><br><br><br>
+							</div>
+							<div class="tab-pane" id="tab_4">
+
+								<a href="#" id="btn_investigations" class="btn btn-primary" data-toggle="modal" data-target="#investigations"><i class="fa fa-plus"></i> Add Investigations</a>
+
+								<a href="#" class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
+								<table class="table table-hover table-striped" id="investable">
+									<tr>
+										<th>Date</th>
+										<th>Investigation</th>
+										<th></th>
+										<th>Requested By</th>
+										<th></th>
+									</tr>
+								</table>
+
+								<br><br><br><br><br><br><br>
+								<br><br><br><br><br><br><br>
+								<br><br><br><br><br><br><br>
+							</div>
+							<div class="tab-pane" id="tab_5">
+
+								<form>
+									<input type="hidden" name="opd_no" value="IP-000017">
+									<input type="hidden" name="patient_no" value="000005">
+									<table class="table table-hover">
+										<tbody>
+											<tr>
+												<div class="form-group">
+													<td width="21%" valign="top">Clinical Impression</td>
+													<td width="79%">
+														<select class="form-control input-sm" id="sel1" style="width: 60%;" onchange="showText(this.id)">
+															<option value="0">Non specific symptoms</option>
+															<option value="1">Upper respiratory tract infection</option>
+															<option value="2">Lower respiratory tract infection</option>
+															<option value="3">Community Acquired Pneumonia</option>
+															<option value="4">Pulmonary tuberculosis</option>
+															<option value="5">Extrapulmonary tuberculosis</option>
+															<option value="6">Asthma</option>
+															<option value="7">COPD</option>
+															<option value="8">Interstitial lung disease</option>
+															<option value="9">Bronchiectasis</option>
+															<option value="10">Lung malignancy</option>
+															<option value="11">Chronic cough</option>
+															<option value="12">Pleural effusion</option>
+															<option value="13">Pneumothorax</option>
+															<option value="14">Sleep disordered breathing</option>
+															<option value="15" id="other">Other</option>
+														</select>
+													</td>
+												</div>
+											</tr>
+											<tr hidden="true" id="txtother">
+												<td width="21%" valign="top">Please Specify</td>
+												<td width="79%"><textarea name="reason_admission" id="reason_admission" class="form-control input-sm" style="width: 60%;" rows="3"></textarea></td>
+											</tr>
+											<tr>
+												<td valign="top">Plan From OPD</td>
+												<td>
+													<select id="condition" class="form-control input-sm" style="width: 60%;" onchange="assignConsultant(this.id)" required>
+														<option value="0">Discharge from OPD</option>
+														<option value="1">Follow up OPD</option>
+														<option value="2" id="refRoom">Referral to TB Section</option>
+														<option value="3" id="refRoom">Referral to Respiratory Consultant</option>
+
+													</select>
+												</td>
+											</tr>
+											<tr hidden="true" id="consultants">
+												<td valign="top">Consultant</td>
+												<td>
+													<input id="consultantin" list="doctorss" class="form-control input-sm"style="height: 100%; width: 60%; cursor:pointer;" placeholder="Consultant">
+													<datalist id="doctorss">
+														<option value="Dr Kirthi Gunasekara"></option>
+														<option value="Dr Amitha Fernando"></option>
+													</datalist>
+												</td>
+											</tr>
+											<tr>
+												<td width="21%" valign="top">Aditional Notes</td>
+												<td width="79%"><textarea name="admitting_impression" id="admitting_impression" class="form-control input-sm" style="width: 60%;" rows="3"></textarea></td>
+											</tr>
+
+											<tr>
+												<td colspan="2">
+													<button class="btn btn-primary" onclick="save(this.id)" id="plan"><i class="fa fa-save"></i> Save</button>
+
+													<a class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</form>
+
+								<br><br><br><br><br><br><br>
+								<br><br><br><br><br><br><br>
+								<br><br><br><br><br><br><br>
+							</div>
+						</div>
+						<div class="box-footer clearfix">
+
+						</div>
+					</div>
+				</div><!--ENF OF NAV TABS-->
 			</div>
 		</div>
 		<div class="bottomright">
@@ -288,7 +295,7 @@ require('hidden_right.php');
 					</div>
 					<div class="modal-body">
 						<!--From Start-->
-						<form method="post" action="" onSubmit="return validate();">
+						<form>
 							<table cellpadding="5" cellspacing="5" align="center" class="table table-striped table-inverse" id="tble1">
 								<tr>
 									<td>Complaints</td>

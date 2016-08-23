@@ -25,15 +25,9 @@ $app->post('/sputum',function(Request $request, Response $response){
 
 function getSputumData($id) {
 	$json = array();
-	$server_name = "localhost";
-	$user_name = "root";
-	$password = "Tally456";
-	$db_name = "chestclinic";
-
-	$db = new mysqli($server_name, $user_name, $password, $db_name);
-	if($db->connect_errno > 0){
-		die('Unable to connect to database [' . $db->connect_error . ']');
-	}
+	
+	require_once 'db_connection.php';
+ 	$db = db_connect();
 
 	$sql_data = 'SELECT spec1 FROM investigation_type WHERE '.
 				'patientId = ? AND investigation = ?';
@@ -65,15 +59,8 @@ function getSputumData($id) {
 }
 
 function updateSputumData($json){
-	$server_name = "localhost";
-	$user_name = "root";
-	$password = "Tally456";
-	$db_name = "chestclinic";
-
-	$db = new mysqli($server_name, $user_name, $password, $db_name);
-	if($db->connect_errno > 0){
-		die('Unable to connect to database [' . $db->connect_error . ']');
-	}
+	require_once 'db_connection.php';
+  	$db = db_connect();
 
 	$sql_data = 'UPDATE investigation_type '.
 				'SET status = ?,'.
@@ -102,15 +89,8 @@ function updateSputumData($json){
 
 function getAllData() {
 	$json = array();
-	$server_name = "localhost";
-	$user_name = "root";
-	$password = "Tally456";
-	$db_name = "chestclinic";
-
-	$db = new mysqli($server_name, $user_name, $password, $db_name);
-	if($db->connect_errno > 0){
-		die('Unable to connect to database [' . $db->connect_error . ']');
-	}
+	require_once 'db_connection.php';
+  	$db = db_connect();
 
 	$sql_data = 'SELECT DISTINCT investigation.* '.
 				'FROM investigation '.

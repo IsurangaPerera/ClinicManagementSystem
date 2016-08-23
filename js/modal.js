@@ -142,6 +142,7 @@ function save(id) {
 	} else if(id == "btnmedications"){
 		handleMedications();
 	} else if(id == "plan"){
+		alert("HELLO");
 		handlePlan();
 	} else if(id == "btnobservations"){
 		handleObservations();
@@ -182,7 +183,7 @@ function handleComplaints(){
 			if(flag){
 				objecto.complaint.push({ 
 					"patientId" : patientId,
-					"date" 	    : date,
+					"date" 	    : getDate(),
 					"complaint" : complaint,
 					"period"    : period,
 					"prepared"  : prepared
@@ -294,7 +295,7 @@ function handleMedications(){
 			if(flag){
 				objecto.medication.push({
 					"patientId" : patientId, 
-					"date" 	    : date,
+					"date" 	    : getDate(),
 					"drug"      : drug,
 					"dosage"    : dosage,
 					"prepared"  : prepared
@@ -355,18 +356,18 @@ function handlePlan(){
 
 	objecto.treatmentplan.push({
 		"patientId"     : patientId,
-		"date"          : date,
+		"date"          : getDate(),
 		"impression"    : impression,
 		"plan_from_opd" : planFromOpd,
 		"consultant"    : consultant,
 		"comment"      : comments,
 		"prepared"      : prepared
 	});
-	if(tflag){		
+	/*if(tflag){		
 		tflag = false;
 	} else{
 		objecto.treatmentplan.splice(0,1);
-	}
+	}*/
 }
 
 function handleObservations(){
@@ -600,6 +601,7 @@ function handleInvestigations(){
 }
 
 function postData(){
+	handlePlan();
 	$.ajax({
 		type: "POST",
      	url: "../patient/tb/register",

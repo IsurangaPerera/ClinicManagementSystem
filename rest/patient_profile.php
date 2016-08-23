@@ -14,16 +14,12 @@ $app->get('/general/{id}',function(Request $request, Response $response){
 });
 
 function getGeneralData($id){
-	$server_name = "localhost";
-	$user_name = "root";
-	$password = "Tally456";
-	$db_name = "chestclinic";
-
-	$db = new mysqli($server_name, $user_name, $password, $db_name);
-	if($db->connect_errno > 0)
-		die('Unable to connect to database [' . $db->connect_error . ']');
+  require_once 'db_connection.php';
+  $db = db_connect();
 
     $tables = array("name", "address", "contact", "data", "medication", "treatmentplan");
+    $results = array("name"=> array(), "address"=> array(), "contact"=> array(), "data"=> array(), "medication"=> array(), "treatmentplan"=> array());
+
     foreach($tables as $table){
     	if($table == "medication" || $table == "treatmentplan")
     		$sql_data = 'SELECT * FROM '.$table.
@@ -48,11 +44,13 @@ function getGeneralData($id){
  
    		call_user_func_array(array($stmt, 'bind_result'), $parameters);
 
+
     	while ( $stmt->fetch() ) {
         	$x = array();
         	foreach( $row as $key => $val )
         		$x[$key] = $val;
-        	$results[$table] = $x;
+        	//$results[$table] = $x;
+		array_push($results[$table], $x);
   	    }
   	    $parameters = array();
   	    $row = array();
