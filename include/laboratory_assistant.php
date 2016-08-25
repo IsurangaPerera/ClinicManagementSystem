@@ -23,6 +23,8 @@ require('header.php');
     </a>
     <ul id="slst" class="treeview-menu">
       <li ><a id="inv_fbs"><i class="fa fa-angle-double-right"></i><span>FBS</span></a></li>
+      <li ><a id="inv_fbc"><i class="fa fa-angle-double-right"></i><span>FBC</span></a></li>
+      <li ><a id="inv_sputum"><i class="fa fa-angle-double-right"></i><span>Sputum</span></a></li>
     </ul>
   </li>
   <!--END OF INVESTIGATION RESULTS-->
@@ -55,6 +57,8 @@ require('header.php');
 </div><!-- ./wrapper -->
 
 <script src="../js/fbs.js" type="text/javascript"></script>
+<script src="../js/inv_fbc.js" type="text/javascript"></script>
+
 <script type="text/javascript">
 $(document).ready(function(){
   $('#r_side').load('app/dash_board.php');
@@ -62,6 +66,14 @@ $(document).ready(function(){
   
   $('#inv_fbs').click(function(event){
     $('#r_side').load('app/inv_fbs.php');
+  });
+
+  $('#inv_fbc').click(function(event){
+    $('#r_side').load('app/inv_fbc.php');
+  })
+
+  $('#inv_sputum').click(function(event){
+    $('#r_side').load('app/inv_sputum.php');
   })
 
   $("#m_prof").click(function(event){

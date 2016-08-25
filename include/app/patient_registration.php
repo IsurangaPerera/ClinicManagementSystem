@@ -1,47 +1,19 @@
-<?php
-require('hidden_right.php');
-?>
 
 <section class="content-header" >
   <h1>Patient Registration</h1> 
 </section>
 
-<style>
-.patient_registration{
-  display: block;
-}
-</style>
-
-<?php
-if(isset($_POST['submit'])) {
-  $object = array();
-  echo "before copying";
-  $object = $_POST;
-  echo "Before require";
-  $root = realpath($_SERVER["DOCUMENT_ROOT"]);
-  require("$root/include/patient_module/patient_query.php");
-  $make_query = new Query();
-  $make_query->addPatient($object);
-
-  if(isset($_POST['cancel'])) {
-    header("Refresh:0");
-}
-
-}
-
-?>
-
 <div class="patient_registration">
   <section class="content">
     <div class="row">
       <div class="col-md-12">
-        <form role="form" method="post" action="" onsubmit="return validate()">
+        <div>
           <div class="box">
 
             <div class="box-footer clearfix">
 
               <a href="?cancel" class="btn btn-default">Cancel</a>
-              <button class="btn btn-primary" name="submit" id="submit" type="submit"><i class="fa fa-save"></i> Save</button>        
+              <button class="btn btn-primary" onclick="saveData()"><i class="fa fa-save"></i> Save</button>        
             </div>
             <div class="box-body table-responsive">
               <div class="nav-tabs-custom">
@@ -204,7 +176,7 @@ if(isset($_POST['submit'])) {
   </div>
 </div>
 </div>
-</form>
+</div>
 </div>
 </section><!-- /.content -->
 </div>

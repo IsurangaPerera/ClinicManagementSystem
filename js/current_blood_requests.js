@@ -6,29 +6,30 @@ var arr = new Map();
 
 function processData(){
 	$.ajax({
-    type: "GET",
-    url: baseURL,
-    success: function (data) {
-    	try{
-    		data = JSON.parse(data);
-        	dataLength = data.length;
-        } catch(err){
-        	
-        }
-        if(data.length > 0){
-        	for(i = 0; i < dataLength; i++){
-        		patientId = data[i]['patientId'];
-        		date = data[i]['date'];
-        		investigation = data[i]['investigation'];
-        		prepared = data[i]['prepared'];
+		type: "GET",
+		url: baseURL,
+		success: function (data) {
+			try{
+				data = JSON.parse(data);
+				dataLength = data.length;
+				
+				if(data.length > 0){
+					for(i = 0; i < dataLength; i++){
+						patientId = data[i]['patientId'];
+						date = data[i]['date'];
+						investigation = data[i]['investigation'];
+						prepared = data[i]['prepared'];
 
-        		if(arr.get(patientId) != 1){
-        			arr.set(patientId, 1);
-        			createTable();
-        		}
-        	}
-        }
-    }
+						if(arr.get(date) != 1){
+							arr.set(date, 1);
+							createTable();
+						}
+					}
+				}
+			} catch(err){
+				
+			}
+		}
 	});
 	setTimeout('processData()', 10000);
 }

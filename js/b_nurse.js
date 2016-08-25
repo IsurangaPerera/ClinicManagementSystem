@@ -8,34 +8,37 @@ function process(id){
     else
         patientId = id;
     
-	uri = baseURL + "/" + patientId;	
-	$.ajax({
-    type: "GET",
-    url: uri,
-    success: function (data) {
-    	data = JSON.parse(data);
-        dataLength = data.length;
-        if(data.length > 0){
-        	for(i = 0; i < 2; i++){
-                id1 = "#investg_raw" + (i+1);
-                id2 = "#inv_raw" + (i+1) + "_cell1";
-                id3 = "#inv_raw" + (i+1) + "_cell2";
-                id4 = "#inv_raw" + (i+1) + "_cell3 option:selected";
-                if(i < dataLength){
-        		    $(id1).prop("hidden", false);
-        		    $(id2).html(data[i]);
-                } else{
-                    $(id1).prop("hidden", true);
-                    $(id2).html("");
-                    $(id3).val("");
-                    $(id4).val("");
+    uri = baseURL + "/" + patientId;	
+    $.ajax({
+        type: "GET",
+        url: uri,
+        success: function (data) {
+            data = JSON.parse(data);
+            if(data !== null){
+                dataLength = data.length;
+                if(data.length > 0){
+                    for(i = 0; i < 2; i++){
+                        id1 = "#investg_raw" + (i+1);
+                        id2 = "#inv_raw" + (i+1) + "_cell1";
+                        id3 = "#inv_raw" + (i+1) + "_cell2";
+                        id4 = "#inv_raw" + (i+1) + "_cell3 option:selected";
+                        if(i < dataLength){
+                            $(id1).prop("hidden", false);
+                            $(id2).html(data[i]);
+                        } else{
+                            $(id1).prop("hidden", true);
+                            $(id2).html("");
+                            $(id3).val("");
+                            $(id4).val("");
+                        }
+                    }
                 }
-        	}
-        	$("#modal_blood").modal({backdrop: "static"});   
+            $("#modal_blood").modal({backdrop: "static"});   
+            }     
         }
-    }
-	});
+    });
 }
+
 
 function save(){
     for(i = 0; i < dataLength; i++){
@@ -68,5 +71,13 @@ function save(){
     $('#patient_no').val("");
     $('#patient_no').focus();
     $('#modal_blood').modal('hide');
+    /*var row = document.getElementById('blood_req_table');
+    var table = row.parentNode;
+    while ( table && table.tagName != 'TABLE' )
+            table = table.parentNode;
+        if ( !table )
+            return;
+        table.deleteRow(row.rowIndex);
+    alertify.success("System Updated");
 }
 

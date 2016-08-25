@@ -91,14 +91,13 @@ function getAllData() {
 	require_once 'db_connection.php';
     $db = db_connect();
 
-	$sql_data = 'SELECT DISTINCT investigation.* '.
+	$sql_data = 'SELECT investigation.* '.
 				'FROM investigation '.
-				'JOIN investigation_type '.
-				'ON investigation.patientId = investigation_type.patientId '.
-				'AND investigation.investigation = investigation_type.investigation '.
-				'AND investigation.date = investigation_type.date '.
-				'WHERE investigation_type.status = ? '.
-				'AND investigation.investigation = ?';
+				'WHERE patientId in ('.
+				'SELECT patientId FROM investigation_type '.
+				'WHERE status = ?) '.
+				'AND investigation = ?';
+				
 	
 	$stmt = $db->prepare($sql_data);
 	if($stmt === false) {		

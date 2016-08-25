@@ -89,7 +89,7 @@ require('hidden_right.php');
 					<div class="box-footer clearfix">
 
 						<a href="?cancel" class="btn btn-default">Cancel</a>
-						<button class="btn btn-primary" name="submit" id="submit" type="submit"><i class="fa fa-save"></i> Save</button>        
+						<button class="btn btn-primary" onclick="postData()"><i class="fa fa-save"></i> Save</button>        
 					</div>
 
 					<div class="nav-tabs-custom">
@@ -266,21 +266,6 @@ require('hidden_right.php');
 				</div><!--ENF OF NAV TABS-->
 			</div>
 		</div>
-		<div class="bottomright">
-			<a onclick="postData()">
-				<img src="../images/add.png" alt="AddButton" width="100" height="100">
-			</a>
-		</div>
-
-		<style>
-
-		.bottomright {
-			position: fixed;
-			right : 10px;
-			bottom : 10px;
-		}
-
-		</style>
 		
 		<!-- Modal -->
 		<!-- Presenting Complaints -->

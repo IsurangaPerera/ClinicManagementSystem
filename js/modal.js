@@ -139,15 +139,18 @@ function assignConsultant(id){
 function save(id) {
 	if(id == "btncomplaints"){
 		handleComplaints();
+		$('#complaints').modal('hide');
 	} else if(id == "btnmedications"){
 		handleMedications();
+		$('#medications').modal('hide');
 	} else if(id == "plan"){
-		alert("HELLO");
 		handlePlan();
 	} else if(id == "btnobservations"){
+		$('#observations').modal('hide');
 		handleObservations();
 	} else if(id == "btninvestigations"){
 		handleInvestigations();
+		$('#investigations').modal('hide');
 	}
 }
 

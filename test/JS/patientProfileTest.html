@@ -10,7 +10,6 @@
 	<script src="../../js/patientProfile.js"></script>
 	
 	<script>
-
 	QUnit.test("getResult", function(assert) {
 		var done = assert.async();
 		sessionStorage.setItem('patientId', '570V');
@@ -19,9 +18,6 @@
 			assert.equal($('#pname').html(), 'Nisal Chamodh Perera');
 			assert.equal($('#pgender').html(), 'Male');
 			rows = $('#tblePres').find('td');
-			for(i = 0; i < rows.length; i++){
-				alert($(rows).eq(i).html());
-			}
 			done();
 		}, 100);
 		

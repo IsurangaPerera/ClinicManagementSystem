@@ -63,6 +63,7 @@ require('header.php');
 </aside><!-- /.right-side -->
 </div><!-- ./wrapper -->
 
+<script src="../js/patient_registration.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function(){
   $('#r_side').load('app/dash_board.php');
