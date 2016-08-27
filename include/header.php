@@ -19,6 +19,7 @@ $nic = $_SESSION['nic'];
   <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.8.0/css/alertify.min.css"/>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.8.0/css/themes/default.min.css"/>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
   
   <script src="//cdn.jsdelivr.net/alertifyjs/1.8.0/alertify.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script>
@@ -28,6 +29,7 @@ $nic = $_SESSION['nic'];
   <script src="../js/app.js" type="text/javascript"></script>
   <script src="../js/date.js" type="text/javascript"></script>
   <script src="../js/mouseover_popup.js" type="text/javascript"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 
 </head>
 
