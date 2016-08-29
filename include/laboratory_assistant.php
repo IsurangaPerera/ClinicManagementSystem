@@ -10,7 +10,7 @@ require('header.php');
 <ul class="sidebar-menu">
 
   <li>
-    <a id="d_board">
+    <a href="#" id="d_board">
       <i class="fa fa-dashboard"></i> <span>Dashboard</span>
     </a>
   </li>     
@@ -22,9 +22,9 @@ require('header.php');
       <i class="fa fa-angle-left pull-right"></i>
     </a>
     <ul id="slst" class="treeview-menu">
-      <li ><a id="inv_fbs"><i class="fa fa-angle-double-right"></i><span>FBS</span></a></li>
-      <li ><a id="inv_fbc"><i class="fa fa-angle-double-right"></i><span>FBC</span></a></li>
-      <li ><a id="inv_sputum"><i class="fa fa-angle-double-right"></i><span>Sputum</span></a></li>
+      <li ><a href="#" id="inv_fbs"><i class="fa fa-angle-double-right"></i><span>FBS</span></a></li>
+      <li ><a href="#" id="inv_fbc"><i class="fa fa-angle-double-right"></i><span>FBC</span></a></li>
+      <li ><a href="#" id="inv_sputum"><i class="fa fa-angle-double-right"></i><span>Sputum</span></a></li>
     </ul>
   </li>
   <!--END OF INVESTIGATION RESULTS-->
@@ -36,9 +36,9 @@ require('header.php');
       <i class="fa fa-angle-left pull-right"></i>
     </a>
     <ul id="slst" class="treeview-menu">
-      <li ><a id="m_prof"><i class="fa fa-angle-double-right"></i>My Profile</a></li>
-      <li ><a id="e_prof"><i class="fa fa-angle-double-right"></i>Edit Profile</a></li>
-      <li ><a id="c_pass"><i class="fa fa-angle-double-right"></i>Change Password</a></li>
+      <li ><a href="#" id="m_prof"><i class="fa fa-angle-double-right"></i>My Profile</a></li>
+      <li ><a href="#" id="e_prof"><i class="fa fa-angle-double-right"></i>Edit Profile</a></li>
+      <li ><a href="#" id="c_pass"><i class="fa fa-angle-double-right"></i>Change Password</a></li>
       <li ><a href="config/logout.php"><i class="fa fa-angle-double-right"></i>Logout</a></li>
     </ul>
   </li>

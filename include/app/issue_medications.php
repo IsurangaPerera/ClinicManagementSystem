@@ -1,4 +1,4 @@
-<section class="content-header" >N
+<section class="content-header" >
   <h1>Issue Medications</h1> 
 </section>
 

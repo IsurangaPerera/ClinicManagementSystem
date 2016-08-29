@@ -16,6 +16,11 @@
               <button class="btn btn-primary" onclick="saveData()"><i class="fa fa-save"></i> Save</button>        
             </div>
             <div class="box-body table-responsive">
+              
+              <div class='alert alert-danger alert-dismissable' hidden="true" id="alert"><i class='fa fa-check'></i>
+                <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+                <span id="err_msg"></span></div> 
+             
               <div class="nav-tabs-custom">
                <ul class="nav nav-tabs">
                 <li class="active"><a href="#tab_1" data-toggle="tab">Personal Information</a></li>
@@ -179,4 +184,12 @@
 </div>
 </div>
 </section><!-- /.content -->
+
+<script type="text/javascript">
+
+$( function() {
+    $( "#cFrom" ).datepicker();
+});
+
+</script>
 </div>

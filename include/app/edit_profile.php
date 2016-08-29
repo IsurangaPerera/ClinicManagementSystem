@@ -182,4 +182,9 @@ $nic = $row['NIC'];
 </form>
 </div>
 </section><!-- /.content -->
+<script type="text/javascript">
+$( function() {
+    $( "#birthdate" ).datepicker();
+  } );
+</script>
 </div>

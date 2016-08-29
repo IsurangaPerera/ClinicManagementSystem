@@ -15,7 +15,7 @@
    <div class="panel-body">
      <div class="row">
       <div class="col-md-4">
-       <table cellpadding="3" cellspacing="3" width="60%" >
+       <table cellpadding="3" cellspacing="3" width="80%" >
         <tr>
          <td>Full Name :</td>
          <td id="pname"></td>

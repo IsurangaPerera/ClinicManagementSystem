@@ -1,0 +1,17 @@
+RewriteEngine on
+RewriteBase /rest/
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^patient/tb/(.*)$ tb_registration.php/$1 [R=307,L]
+RewriteRule ^report/fbs/(.*)$ tb_registration.php/$1 [R=307,L]
+RewriteRule ^patient/new/(.*)$ tb_registration.php/$1 [R=307,L]
+
+RewriteRule ^report/fbc/(.*)$ fbc_data_handler.php/$1 [R=307,L]
+RewriteRule ^patient/investigation_b/(.*)$ blood_collection.php/$1 [R=307,L]
+RewriteRule ^patient/investigations/(.*)$ sputum_collection.php/$1 [R=307,L]
+RewriteRule ^patient/profile/(.*)$ patient_profile.php/$1 [R=307,L]
+RewriteRule ^patient/set_session/(.*)$ set_session.php/$1 [R=307,L]
+RewriteRule ^user/(.*)$ user_login.php/$1 [R=307,L]
+
+RewriteRule ^patient/medication/(.*)$ medications.php/$1 [R=307,L]

@@ -10,14 +10,14 @@ require('header.php');
 <ul class="sidebar-menu">
 
   <li>
-    <a id="d_board">
+    <a href="#" id="d_board">
       <i class="fa fa-dashboard"></i> <span>Dashboard</span>
     </a>
   </li>
 
   <!--START OF Medications-->
   <li>
-    <a id="c_pres">
+    <a href="#" id="c_pres">
       <i class="fa ion-person-add "></i> <span>Current Prescriptions</span>
     </a>
   </li>
@@ -25,7 +25,7 @@ require('header.php');
 
   <!--START OF Medications-->
   <li>
-    <a id="i_medi">
+    <a href="#" id="i_medi">
       <i class="fa ion-person-add "></i> <span>Issue Medications</span>
     </a>
   </li>
@@ -54,9 +54,9 @@ require('header.php');
       <i class="fa fa-angle-left pull-right"></i>
     </a>
     <ul id="slst" class="treeview-menu">
-      <li ><a id="m_prof"><i class="fa fa-angle-double-right"></i>My Profile</a></li>
-      <li ><a id="e_prof"><i class="fa fa-angle-double-right"></i>Edit Profile</a></li>
-      <li ><a id="c_pass"><i class="fa fa-angle-double-right"></i>Change Password</a></li>
+      <li ><a href="#" id="m_prof"><i class="fa fa-angle-double-right"></i>My Profile</a></li>
+      <li ><a href="#" id="e_prof"><i class="fa fa-angle-double-right"></i>Edit Profile</a></li>
+      <li ><a href="#" id="c_pass"><i class="fa fa-angle-double-right"></i>Change Password</a></li>
       <li ><a href="config/logout.php"><i class="fa fa-angle-double-right"></i>Logout</a></li>
     </ul>
   </li>

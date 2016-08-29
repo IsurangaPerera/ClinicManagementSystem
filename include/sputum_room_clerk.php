@@ -10,7 +10,7 @@ require('header.php');
 <ul class="sidebar-menu">
 
   <li>
-    <a id="d_board">
+    <a href="#" id="d_board">
       <i class="fa fa-dashboard"></i> <span>Dashboard</span>
     </a>
   </li>     
@@ -18,7 +18,7 @@ require('header.php');
 
   <!--START OF Current Requests-->
   <li>
-    <a id="cur_request">
+    <a href="#" id="cur_request">
       <i class="fa ion-person-add "></i> <span>Current Requests</span>
     </a>
   </li>
@@ -26,7 +26,7 @@ require('header.php');
 
   <!--START OF Sample Collection-->
   <li>
-    <a id="s_collection">
+    <a href="#" id="s_collection">
       <i class="fa ion-person-add "></i> <span>Sample Collection</span>
     </a>
   </li>
@@ -39,9 +39,9 @@ require('header.php');
       <i class="fa fa-angle-left pull-right"></i>
     </a>
     <ul id="slst" class="treeview-menu">
-      <li ><a id="m_prof"><i class="fa fa-angle-double-right"></i>My Profile</a></li>
-      <li ><a id="e_prof"><i class="fa fa-angle-double-right"></i>Edit Profile</a></li>
-      <li ><a id="c_pass"><i class="fa fa-angle-double-right"></i>Change Password</a></li>
+      <li ><a href="#" id="m_prof"><i class="fa fa-angle-double-right"></i>My Profile</a></li>
+      <li ><a href="#" id="e_prof"><i class="fa fa-angle-double-right"></i>Edit Profile</a></li>
+      <li ><a href="#" id="c_pass"><i class="fa fa-angle-double-right"></i>Change Password</a></li>
       <li ><a href="config/logout.php"><i class="fa fa-angle-double-right"></i>Logout</a></li>
     </ul>
   </li>

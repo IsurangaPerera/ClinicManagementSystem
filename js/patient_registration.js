@@ -6,12 +6,20 @@ var objecto = {
 };
 
 function saveData(){
+	if(!validate()){
+		$('#alert').show('slow');
+		return;
+	} else
+		$('#alert').hide('slow');
+		
 	patientId = $('#patientID').val();
 	firstname = $('#firstname').val();
 	gender = $('#gender option:selected').html();
 
-	if(patientId === "" || firstname === "" || gender === "")
+	if(patientId === "" || firstname === "" || gender === ""){
 		alertify.error("Please Fill Required Fields");
+		return;
+	}
 
 	objecto.patient_name.push({
 		"patientId" : patientId,
@@ -62,4 +70,50 @@ function postData(){
 			alertify.success("An Error Occurred");
 		}
 	});
+}
+
+function validate(){
+	phone_office = $('#phone_office').val();
+	phone_home   = $('#phone_home').val();
+	phone_mobile = $('#phone_mobile').val();
+	email = $('#email').val();
+	nic = $('#nic').val();
+	flag = true;
+
+	if(!checkEmail(email)){
+		$('#err_msg').html("Email not valid");
+		flag = false;
+	}
+
+	if(!checkPhone(phone_office)){
+		msg = $('#err_msg').html() + '<br>' + 'Phone(office) not valid';
+		$('#err_msg').html(msg);
+		flag = false;
+	}
+
+	if(!checkPhone(phone_home)){
+		msg = $('#err_msg').html() + '<br>' + 'Phone(Home) not valid';
+		$('#err_msg').html(msg);
+		flag = false;
+	}
+
+	if(!checkPhone(phone_mobile)){
+		msg = $('#err_msg').html() + '<br>' + 'Phone(Mobile) not valid';
+		$('#err_msg').html(msg);
+		flag = false;
+	}
+
+	return flag;
+}
+
+function checkEmail(mail) {
+	if (mail == "" || /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+		return (true);   
+	return (false);
+}
+
+function checkPhone(phone){
+	if(phone == "" || /^\d{10}$/.test(phone))
+		return true;
+	return false;
 }
