@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Patient Profile Testing</title>
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.0.1.css">
+	<script src="https://code.jquery.com/qunit/qunit-2.0.1.js"></script>
+	<script src="../../js/current_requests.js"></script>
+	
+	<script>
+	QUnit.test("getResult", function(assert) {
+		var done = assert.async();
+		processData();
+		setTimeout(function(){
+			rows = $('#sputum_req_table').find('td');
+			for(i = 0; i < rows.length; i++){
+				assert.ok(rows[i].innerHTML);
+			}
+			
+			done();
+		}, 100);
+		
+	});
+	</script>
+</head>
+<body>
+	<div id="qunit"></div>
+	<div id="qunit-fixture">	
+		<table class="table table-striped table-hover">
+			<tbody id="sputum_req_table">
+			</tbody>
+		</table>
+	</div>
+</div>
+</body>
+</html>

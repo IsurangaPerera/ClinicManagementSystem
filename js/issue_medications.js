@@ -1,4 +1,4 @@
-var baseURL ="../patient/medication/prescription";
+var baseURL ="../../patient/medication/prescription";
 var dataO;
 var pid;
 

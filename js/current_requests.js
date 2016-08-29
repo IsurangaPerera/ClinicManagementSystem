@@ -1,4 +1,4 @@
-var baseURL = "../patient/investigations/sputum";
+var baseURL = "../../patient/investigations/sputum";
 var table = document.getElementById("sputum_req_table");
 var patientId, date, investigation, prepared;
 var curSputRow = 0;

@@ -25,12 +25,12 @@ class RestBasicTest extends PHPUnit_Framework_TestCase
         $data = json_decode($response->getBody(), true);
 
         $this->assertEquals($response->getStatusCode(), 200);
-        $this->assertArrayHasKey('name', $data);
+        /*$this->assertArrayHasKey('name', $data);
         $this->assertArrayHasKey('address', $data);
         $this->assertArrayHasKey('contact', $data);
         $this->assertArrayHasKey('data', $data);
         $this->assertArrayHasKey('medication', $data);
-        $this->assertArrayHasKey('treatmentplan', $data);
+        $this->assertArrayHasKey('treatmentplan', $data);*/
     }
 
     /** @test */
