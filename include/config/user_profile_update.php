@@ -4,7 +4,7 @@ $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 require("$root/include/config/query.php");
 $make_query = new Query();
 
-$user_name['nic'] = $_POST['userid'];
+$user_name['nic'] = $_POST['uid'];
 
 $user_name['firstname'] = $_POST['firstname'];
 $user_name['middlename'] = $_POST['middlename'];

@@ -16,7 +16,7 @@ require('header.php');
   </li>    
 
   <li>
-    <a href="#" href="patient_management.php">
+    <a href="patient_management.php">
       <i class="fa fa-dashboard"></i> <span>Patient Management</span>
     </a>
   </li> 

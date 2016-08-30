@@ -188,7 +188,9 @@
 <script type="text/javascript">
 
 $( function() {
-    $( "#cFrom" ).datepicker();
+    $( "#cFrom" ).datepicker({
+  dateFormat: "yy-mm-dd"
+  });
 });
 
 </script>

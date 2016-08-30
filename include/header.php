@@ -100,6 +100,7 @@ $nic = $_SESSION['nic'];
         </div>
         <div class="pull-left info">
           <p><?php echo $_SESSION['user_name']; ?></p>
+	  <p hidden id="nicc"><?php echo "$nic" ?></p>
 
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
