@@ -73,7 +73,7 @@
   
   <div class="panel-heading">
    <h3 class="panel-title pull-left">Visiting History</h3>
-   <a href="" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> View More</a>
+   <a class="btn btn-primary pull-right" id="vhismore"><i class="fa fa-plus"></i> View More</a>
    <div class="clearfix"></div>
   </div>
  
@@ -101,7 +101,7 @@
   
   <div class="panel-heading">
    <h3 class="panel-title pull-left">Prescription History</h3>
-   <a href="" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> View More</a>
+   <a class="btn btn-primary pull-right" id="phismore"><i class="fa fa-plus"></i> View More</a>
    <div class="clearfix"></div>
   </div>
  
@@ -122,5 +122,20 @@
 </div>
 <!--End Of Prescription History-->
 </div><!--End Of Patient Profile-->
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+  $("#vhismore").click(function(event){
+    $('#r_side').load('app/visiting_history.php');
+  });
+
+  $("#phismore").click(function(event){
+    $('#r_side').load('app/prescription_history.php');
+  });
+});
+
+</script>
+
 
 

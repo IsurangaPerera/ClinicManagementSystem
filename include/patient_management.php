@@ -131,6 +131,7 @@ $(document).ready(function(){
   $("#i_results").click(function(event){
     $('#r_side').load('app/investigation_results.php');
   });
+
 });
 
 function docReady(){
