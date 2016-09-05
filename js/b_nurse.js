@@ -2,12 +2,8 @@ var dataLength;
 var baseURL = "../patient/investigation_b/blood";
 var patientId;
 
-function process(id){
-    if(id === undefined)
-        patientId = $('#patient_no').val();
-    else
-        patientId = id;
-    
+function process(){
+    patientId = $('#patient_no').val().trim();
     uri = baseURL + "/" + patientId;	
     $.ajax({
         type: "GET",
@@ -24,6 +20,7 @@ function process(id){
                         id4 = "#inv_raw" + (i+1) + "_cell3 option:selected";
                         if(i < dataLength){
                             $(id1).prop("hidden", false);
+                            
                             $(id2).html(data[i]);
                         } else{
                             $(id1).prop("hidden", true);
@@ -78,6 +75,6 @@ function save(){
         if ( !table )
             return;
         table.deleteRow(row.rowIndex);
-    alertify.success("System Updated");
+    alertify.success("System Updated");*/
 }
 

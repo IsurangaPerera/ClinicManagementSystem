@@ -19,7 +19,7 @@ function handleData(data){
 
 	for(i = 0; i < data.length; i++){
 		element = '<div class="panel panel-info"><div class="panel-heading"><span>';
-		heading = data[i].date + '</span><button onclick="handleModal(this.id)" class="fa pull-right btn btn-primary"id="'+i
+		heading = data[i].date + '</span><button onclick="handleModal(this.id)" style="padding: 0px;" class="fa pull-right btn btn-primary"id="'+i
 					+'"><i class="ion-android-exit"></i></button>' + '</div>';
 		body = "";
 		end = '</div>';

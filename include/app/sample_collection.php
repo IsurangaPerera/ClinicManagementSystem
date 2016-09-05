@@ -1,16 +1,6 @@
-<?php
-require('hidden_right.php');
-?>
-
 <section class="content-header" >
   <h1>Sample Collection</h1> 
 </section>
-
-<style>
-.sample_collection{
-  display: block;
-}
-</style>
 
 <div class="sample_collection">
   <section class="content">
