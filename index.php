@@ -13,8 +13,8 @@ session_start();
 	<meta name="apple-mobile-web-app-capable" content="yes"> 
 	
 	<link href="css/common.css" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
+	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="css/spec-font.css" rel="stylesheet">
 	<link href="css/login/signin.css" rel="stylesheet" type="text/css">
 	<link href="css/login/login.css" rel="stylesheet" type="text/css">
 
@@ -56,8 +56,8 @@ session_start();
 			</div> <!-- /content -->
 		</div> <!-- /account-container -->
 	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="jquery/jquery.min.js"></script>
+	<script src="css/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="js/login/signin.js"></script>
 </body>
 </html>

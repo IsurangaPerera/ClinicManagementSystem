@@ -18,7 +18,7 @@ require('header.php');
 
   <!--START OF Current Requests-->
   <li>
-    <a href="#" id="cur_request">
+    <a href="#" id="cur_request">SubmitSubmitSubmit
       <i class="fa ion-person-add "></i> <span>Current Requests</span>
     </a>
   </li>

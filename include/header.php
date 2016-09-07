@@ -10,26 +10,26 @@ $nic = $_SESSION['nic'];
   <meta name="robots" content="noindex">
   <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
-  <link href="../css/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-  <link href="../css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-  <link href="../css/ionicons.css" rel="stylesheet" type="text/css" />
-  <link href="../css/AdminLTE.css" rel="stylesheet" type="text/css" />
-  <link href="../css/style.css" rel="stylesheet" type="text/css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.11/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.8.0/css/alertify.min.css"/>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.8.0/css/themes/default.min.css"/>
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+  <link rel="stylesheet"href="../css/bootstrap/dist/css/bootstrap.min.css" type="text/css"/>
+  <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="../css/ionicons.css" type="text/css" />
+  <link rel="stylesheet" href="../css/AdminLTE.css" type="text/css" />
+  <link rel="stylesheet" href="../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../css/dataTables.bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="../css/alertify.min.css"/>
+  <link rel="stylesheet" href="../css/default.min.css"/>
+  <link rel="stylesheet" href="../css/morris.css">
+  <link rel="stylesheet" href="../css/jquery-ui.css">
   
-  <script src="//cdn.jsdelivr.net/alertifyjs/1.8.0/alertify.min.js"></script>
-  <script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script>
-  <script src="../css/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>    
-  <script src="../js/app.js" type="text/javascript"></script>
-  <script src="../js/date.js" type="text/javascript"></script>
-  <script src="../js/mouseover_popup.js" type="text/javascript"></script>
-  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  <script type="text/javascript" src="../jquery/alertify.min.js"></script>
+  <script type="text/javascript" src="../jquery/jquery.min.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../css/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../jquery/raphael-min.js"></script>
+  <script type="text/javascript" src="../jquery/morris.min.js"></script>    
+  <script type="text/javascript" src="../js/app.js"></script>
+  <script type="text/javascript" src="../js/date.js"></script>
+  <script type="text/javascript" src="../js/mouseover_popup.js"></script>
+  <script type="text/javascript" src="../jquery/jquery-ui.js"></script>
 
 </head>
 
