@@ -1,5 +1,9 @@
 <section class="content-header" >
-  <h1>Fasting Blood Sugar (FBS)</h1> 
+  <h1>Full Blood Count (FBC)</h1> 
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a href="#">FBC</a></li>
+  </ol>
 </section>
 
 <div class="fbs_details">

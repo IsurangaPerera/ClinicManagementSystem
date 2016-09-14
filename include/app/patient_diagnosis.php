@@ -677,7 +677,6 @@ require('hidden_right.php');
 									</table>
 								</div>
 							</div>
-
 								<div class="form-group">
 									<label for="imp_other">Other:</label>
 									<textarea class="form-control" rows="5" id="obs_other"></textarea>
