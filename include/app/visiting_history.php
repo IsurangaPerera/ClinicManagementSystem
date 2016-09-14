@@ -1,7 +1,3 @@
-<?php
-require('hidden_right.php');
-?>
-
 <section class="content-header" >
   <h1>Visiting History</h1> 
   <ol class="breadcrumb">
@@ -10,12 +6,6 @@ require('hidden_right.php');
     <li class="active">Visiting History</li>
   </ol>
 </section>
-
-<style>
-.visitng_history{
-  display: block;
-}
-</style>
 
 <div class="visitng_history">
 
@@ -29,7 +19,6 @@ require('hidden_right.php');
      <div class="box">
       <form class="form-search">
         <div class="box-header">
-          <h3 class="box-title"><a href="" class="btn btn-primary"><i class="fa fa-plus"></i> Add New Patient</a></h3>
 
           <div class="box-tools">
             <div class="input-group">

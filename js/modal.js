@@ -243,22 +243,6 @@ function removeRow(id){
 	}
 }
 
-function getDate(){
-	var monthNames = [
-	"January", "February", "March",
-	"April", "May", "June", "July",
-	"August", "September", "October",
-	"November", "December"
-	];
-
-	var date = new Date();
-	var day = date.getDate();
-	var monthIndex = date.getMonth();
-	var year = date.getFullYear();
-
-	return(monthNames[monthIndex] + ' ' + day + ', ' + year);
-}
-
 function findAndRemove(array, property, value) {
   array.forEach(function(result, index) {
     if(result[property] === value) {

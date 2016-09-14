@@ -22,6 +22,7 @@ $nic = $_SESSION['nic'];
   <link rel="stylesheet" href="../css/jquery-ui.css">
   
   <script type="text/javascript" src="../jquery/alertify.min.js"></script>
+  <script type="text/javascript" src="../js/barcode.min.js"></script>
   <script type="text/javascript" src="../jquery/jquery.min.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="../css/bootstrap/dist/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../jquery/raphael-min.js"></script>

@@ -21,10 +21,12 @@ function getResult(){
             		alertify.error("Patient Doesn't Exist");
             		$("#myModal3").modal('show');
             	}
-            	else{            	
-                	setValues(data);
+            	else
+            		setValues(data);
+            	if(data.medication.length > 0)       	
+                	setPrescriptionHistory(data);
+                if(data.treatmentplan.length > 0)
                 	setTreatmentPlan(data);
-                }
             },
             error: function(jqXHR, textStatus, errorThrown){
 				alert(jqXHR.status);
@@ -36,7 +38,6 @@ function getResult(){
 function setValues(data){
 	$("#myModal3").modal('hide');
 
-	try{
 		name = data.name[0]['firstname']+' '+
 			   data.name[0]['middlename']+' '+
 		       data.name[0]['lastname'];
@@ -62,7 +63,10 @@ function setValues(data){
 		$('#religion').html(religion);
 		$('#blood').html(blood);
 		$('#phone').html(phone);
+}
 
+function setPrescriptionHistory(data){
+	try{
 		var tble = ["tblePres", "tblePres2"];
 		for(i = 0; i < tble.length; i++){
 			var table = document.getElementById(tble[i]);

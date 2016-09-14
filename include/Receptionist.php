@@ -64,6 +64,8 @@ require('header.php');
 </div><!-- ./wrapper -->
 
 <script src="../js/patient_registration.js" type="text/javascript"></script>
+<script type="text/javascript" src="../js/patient_id_generator.js"></script>
+
 <script type="text/javascript">
 $(document).ready(function(){
   $('#r_side').load('app/dash_board.php');
