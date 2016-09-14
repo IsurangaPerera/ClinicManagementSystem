@@ -1,21 +1,11 @@
-<?php
-require('hidden_right.php');
-?>
-
 <section class="content-header" >
   <h1>Prescription History</h1> 
   <ol class="breadcrumb">
-    <li><a href="http://demo-hms.eu5.org/app/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a href="#">Patient Appointment</a></li>
-    <li class="active">Add Appointment</li>
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a href="#">Patient Management</a></li>
+    <li class="active">Prescription History</li>
   </ol>
 </section>
-
-<style>
-.prescription_history{
-  display: block;
-}
-</style>
 
 <div class="prescription_history">
 	<!-- Main content -->
