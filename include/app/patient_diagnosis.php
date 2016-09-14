@@ -605,7 +605,7 @@ require('hidden_right.php');
 										<tr>
 											<td>
 												<input type="checkbox" id="rlz3" />
-												<label for="rlz3">Right Lower Zone</label>
+												<label for="rlz3">Right Lower</label>
 											</td>
 											<td>
 												<select class="selectpicker" id="rlz3s">
@@ -616,7 +616,7 @@ require('hidden_right.php');
 											</td>
 											<td>
 												<input type="checkbox" id="llz3" />
-												<label for="llz3">Left Lower Zone</label>
+												<label for="llz3">Left Lower</label>
 											</td>
 											<td>
 												<select class="selectpicker" id="llz3s">
@@ -629,7 +629,7 @@ require('hidden_right.php');
 										<tr>
 											<td>
 												<input type="checkbox" id="rmz3" />
-												<label for="rmz3">Right Mid Zone</label>
+												<label for="rmz3">Right Mid</label>
 											</td>
 											<td>
 												<select class="selectpicker" id="rmz3s">
@@ -640,7 +640,7 @@ require('hidden_right.php');
 											</td>
 											<td>
 												<input type="checkbox" id="lmz3" />
-												<label for="lmz3">Left Mid Zone</label>
+												<label for="lmz3">Left Mid</label>
 											</td>
 											<td>
 												<select class="selectpicker" id="lmz3s">
@@ -653,7 +653,7 @@ require('hidden_right.php');
 										<tr>
 											<td>
 												<input type="checkbox" id="ruz3" />
-												<label for="ruz3">Right Upper Zone</label>
+												<label for="ruz3">Right Upper</label>
 											</td>
 											<td>
 												<select class="selectpicker" id="ruz3s">
@@ -664,7 +664,7 @@ require('hidden_right.php');
 											</td>
 											<td>
 												<input type="checkbox" id="luz3" />
-												<label for="luz3">Left Upper Zone</label>
+												<label for="luz3">Left Upper</label>
 											</td>
 											<td>
 												<select class="selectpicker" id="luz3s">
@@ -678,249 +678,253 @@ require('hidden_right.php');
 								</div>
 							</div>
 
+								<div class="form-group">
+									<label for="imp_other">Other:</label>
+									<textarea class="form-control" rows="5" id="obs_other"></textarea>
+								</div>
+
+							</div>
 
 						</div>
-
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary" id="btnobservations" onclick="save(this.id)">Save changes</button>
-					</div>
-				</div>
-
-			</div>
-		</div>
-		<!-- END Modal -->
-
-		<!-- Modal -->
-		<!-- Presenting Complaints -->
-		<div class="modal fade" id="medications" role="dialog">
-			<div class="modal-dialog">
-
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">×</button>
-						<h4 class="modal-title">Medications</h4>
-					</div>
-					<div class="modal-body">
-						<!--From Start-->
-						<form role="form">
-							<table cellpadding="5" cellspacing="5" align="center" class="table table-striped table-inverse" id="tble3">
-								<tr>
-									<td>Medication</td>
-									<td>Dosage</td>
-								</tr>
-								<tr>
-									<td>
-										<input id="im00" type="text" class="form-control input-sm" onchange="setEnable2(this.id)" style="height: 100%; cursor:pointer;" placeholder="Medication">
-									</td>
-
-									<td>
-										<input id="im01" list="dose" name="dose" class="form-control input-sm" style="height: 100%; cursor:pointer;" placeholder="Dosage" disabled>
-										<datalist id="dose">
-											<option value="Dose 0"></option>
-											<option value="Dose 1"></option>
-											<option value="Dose 2"></option>
-										</datalist>
-									</td>
-								</tr>
-							</table>
-
-							<div class="bottomright" style="bottom: 80px; right: 20px">
-								<a href="#" id="addmore" onclick="addRow2()">
-									<img src="../images/addmore.png" alt="AddButton" width="30" height="30">
-								</a>
-							</div>
-						</form>
-						<!--Form End-->
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" id="btnmedications" class="btn btn-primary" onclick="save(this.id)">Save changes</button>
-					</div>
-				</div>
-
-			</div>
-		</div>
-		<!-- END Modal -->
-		<!-- Modal -->
-		<!-- Investigations -->
-		<div class="modal fade" id="investigations" role="dialog">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<h4 class="modal-title" id="investigations">Investigations</h4>
-					</div>
-					<div class="modal-body">
-						<!--Start Of Panel Group-->
-						<div class="panel-group">
-							<!--Start Of Panel-->
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<input type="checkbox" id="xray" onclick="changeOptions(this.id)"/>
-									<label for="xray">Chest X-Ray</label>
-								</div>
-								<div class="panel-body" id="xrayoptions" hidden="true">
-									<table class="table">
-										<tr>
-											<td>
-												<input type="checkbox" id="pa"/>
-												<label for="pa">PA</label>
-											</td>
-											<td>
-												<input type="checkbox" id="rl"/>
-												<label for="rl">Right Lateral</label>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<input type="checkbox" id="ll"/>
-												<label for="ll">Left Lateral</label>
-											</td>
-											<td>
-												<input type="checkbox" id="apical"/>
-												<label for="apical">Apical</label>
-											</td>
-										</tr>
-									</table>
-								</div>
-							</div>
-							<!--End Of Panel-->
-
-							<!--Start Of Panel-->
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<input type="checkbox" id="sputum" onclick="changeOptions(this.id)"/>
-									<label for="sputum">Sputum</label>
-								</div>
-								<div class="panel-body" id="sputumoptions" hidden="true">
-									<table class="table">
-										<tr>
-											<td>
-												<input type="checkbox" id="pyogenicculture"/>
-												<label for="pyogenicculture">Pyogenic Culture</label>
-											</td>
-											<td>
-												<input type="checkbox" id="afbsmear3"/>
-												<label for="afbsmear3">AFB Smear (x3 Morning)</label>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<input type="checkbox" id="afbsmear"/>
-												<label for="afbsmear">AFB Smear</label>
-											</td>
-											<td>
-												<input type="checkbox" id="fungalculture"/>
-												<label for="fungalculture">Fungal Culture</label>
-											</td>
-										</tr>
-									</table>
-								</div>
-							</div>
-							<!--End Of Panel-->
-
-							<!--Start Of Panel-->
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<input type="checkbox" id="blood" onclick="changeOptions(this.id)"/>
-									<label for="blood">Blood</label>
-								</div>
-								<div class="panel-body" id="bloodoptions" hidden="true">
-									<table class="table">
-										<tr>
-											<td>
-												<input type="checkbox" id="fbc"/>
-												<label for="fbc">FBC</label>
-											</td>
-											<td>
-												<input type="checkbox" id="esr"/>
-												<label for="esr">ESR</label>
-											</td>
-										</tr>
-									</table>
-								</div>
-							</div>
-							<!--End Of Panel-->
-
-							<!--Start Of Panel-->
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<input type="checkbox" id="lfunction" onclick="changeOptions(this.id)"/>
-									<label for="lfunction">Lung Function</label>
-								</div>
-								<div class="panel-body" id="lfunctionoptions" hidden="true">
-									<table class="table">
-										<tr>
-											<td>
-												<input type="checkbox" id="fev1"/>
-												<label for="fev1">FEV1</label>
-											</td>
-											<td>
-												<input type="checkbox" id="fvc"/>
-												<label for="fvc">FVC</label>
-											</td>
-											<td>
-												<input type="checkbox" id="dlco"/>
-												<label for="dlco">DLCO</label>
-											</td>
-										</tr>
-									</table>
-								</div>
-							</div>
-							<!--End Of Panel-->
-
-							<!--Start Of Panel-->
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<input type="checkbox" id="resting"/>
-									<label for="resting">Resting SP02</label>
-								</div>
-							</div>
-							<!--End Of Panel-->
-
-							<!--Start Of Panel-->
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<input type="checkbox" id="walking"/>
-									<label for="walking">Six Minute Walking Test</label>
-								</div>
-							</div>
-							<!--End Of Panel-->
-
-							<!--Start Of Panel-->
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<input type="checkbox" id="mantoux"/>
-									<label for="mantoux">Mantoux</label>
-								</div>
-							</div>
-							<!--End Of Panel-->
-
-							<!--Start Of Panel-->
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<input type="checkbox" id="weight"/>
-									<label for="weight">Body Weight</label>
-								</div>
-							</div>
-							<!--End Of Panel-->
-
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary" id="btnobservations" onclick="save(this.id)">Save changes</button>
 						</div>
-						<!--End Of Panel Group-->
 					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary" id="btninvestigations" onclick="save(this.id)">Save changes</button>
+
+				</div>
+			</div>
+			<!-- END Modal -->
+
+			<!-- Modal -->
+			<!-- Presenting Complaints -->
+			<div class="modal fade" id="medications" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">×</button>
+							<h4 class="modal-title">Medications</h4>
+						</div>
+						<div class="modal-body">
+							<!--From Start-->
+							<form role="form">
+								<table cellpadding="5" cellspacing="5" align="center" class="table table-striped table-inverse" id="tble3">
+									<tr>
+										<td>Medication</td>
+										<td>Dosage</td>
+									</tr>
+									<tr>
+										<td>
+											<input id="im00" type="text" class="form-control input-sm" onchange="setEnable2(this.id)" style="height: 100%; cursor:pointer;" placeholder="Medication">
+										</td>
+
+										<td>
+											<input id="im01" list="dose" name="dose" class="form-control input-sm" style="height: 100%; cursor:pointer;" placeholder="Dosage" disabled>
+											<datalist id="dose">
+												<option value="Dose 0"></option>
+												<option value="Dose 1"></option>
+												<option value="Dose 2"></option>
+											</datalist>
+										</td>
+									</tr>
+								</table>
+
+								<div class="bottomright" style="bottom: 80px; right: 20px">
+									<a href="#" id="addmore" onclick="addRow2()">
+										<img src="../images/addmore.png" alt="AddButton" width="30" height="30">
+									</a>
+								</div>
+							</form>
+							<!--Form End-->
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							<button type="button" id="btnmedications" class="btn btn-primary" onclick="save(this.id)">Save changes</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- END Modal -->
+			<!-- Modal -->
+			<!-- Investigations -->
+			<div class="modal fade" id="investigations" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title" id="investigations">Investigations</h4>
+						</div>
+						<div class="modal-body">
+							<!--Start Of Panel Group-->
+							<div class="panel-group">
+								<!--Start Of Panel-->
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<input type="checkbox" id="xray" onclick="changeOptions(this.id)"/>
+										<label for="xray">Chest X-Ray</label>
+									</div>
+									<div class="panel-body" id="xrayoptions" hidden="true">
+										<table class="table">
+											<tr>
+												<td>
+													<input type="checkbox" id="pa"/>
+													<label for="pa">PA</label>
+												</td>
+												<td>
+													<input type="checkbox" id="rl"/>
+													<label for="rl">Right Lateral</label>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<input type="checkbox" id="ll"/>
+													<label for="ll">Left Lateral</label>
+												</td>
+												<td>
+													<input type="checkbox" id="apical"/>
+													<label for="apical">Apical</label>
+												</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+								<!--End Of Panel-->
+
+								<!--Start Of Panel-->
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<input type="checkbox" id="sputum" onclick="changeOptions(this.id)"/>
+										<label for="sputum">Sputum</label>
+									</div>
+									<div class="panel-body" id="sputumoptions" hidden="true">
+										<table class="table">
+											<tr>
+												<td>
+													<input type="checkbox" id="pyogenicculture"/>
+													<label for="pyogenicculture">Pyogenic Culture</label>
+												</td>
+												<td>
+													<input type="checkbox" id="afbsmear3"/>
+													<label for="afbsmear3">AFB Smear (x3 Morning)</label>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<input type="checkbox" id="afbsmear"/>
+													<label for="afbsmear">AFB Smear</label>
+												</td>
+												<td>
+													<input type="checkbox" id="fungalculture"/>
+													<label for="fungalculture">Fungal Culture</label>
+												</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+								<!--End Of Panel-->
+
+								<!--Start Of Panel-->
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<input type="checkbox" id="blood" onclick="changeOptions(this.id)"/>
+										<label for="blood">Blood</label>
+									</div>
+									<div class="panel-body" id="bloodoptions" hidden="true">
+										<table class="table">
+											<tr>
+												<td>
+													<input type="checkbox" id="fbc"/>
+													<label for="fbc">FBC</label>
+												</td>
+												<td>
+													<input type="checkbox" id="esr"/>
+													<label for="esr">ESR</label>
+												</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+								<!--End Of Panel-->
+
+								<!--Start Of Panel-->
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<input type="checkbox" id="lfunction" onclick="changeOptions(this.id)"/>
+										<label for="lfunction">Lung Function</label>
+									</div>
+									<div class="panel-body" id="lfunctionoptions" hidden="true">
+										<table class="table">
+											<tr>
+												<td>
+													<input type="checkbox" id="fev1"/>
+													<label for="fev1">FEV1</label>
+												</td>
+												<td>
+													<input type="checkbox" id="fvc"/>
+													<label for="fvc">FVC</label>
+												</td>
+												<td>
+													<input type="checkbox" id="dlco"/>
+													<label for="dlco">DLCO</label>
+												</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+								<!--End Of Panel-->
+
+								<!--Start Of Panel-->
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<input type="checkbox" id="resting"/>
+										<label for="resting">Resting SP02</label>
+									</div>
+								</div>
+								<!--End Of Panel-->
+
+								<!--Start Of Panel-->
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<input type="checkbox" id="walking"/>
+										<label for="walking">Six Minute Walking Test</label>
+									</div>
+								</div>
+								<!--End Of Panel-->
+
+								<!--Start Of Panel-->
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<input type="checkbox" id="mantoux"/>
+										<label for="mantoux">Mantoux</label>
+									</div>
+								</div>
+								<!--End Of Panel-->
+
+								<!--Start Of Panel-->
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<input type="checkbox" id="weight"/>
+										<label for="weight">Body Weight</label>
+									</div>
+								</div>
+								<!--End Of Panel-->
+
+							</div>
+							<!--End Of Panel Group-->
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary" id="btninvestigations" onclick="save(this.id)">Save changes</button>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 
-	</section><!-- /.content -->
+		</section><!-- /.content -->
 
-</div>
+	</div>
