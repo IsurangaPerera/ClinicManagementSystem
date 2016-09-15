@@ -61,10 +61,19 @@ function saveData(){
 function postData(){
 	$.ajax({
 		type: "POST",
-     	url: "../patient/tb/register",
+		url: "../patient/tb/register",
 		data: JSON.stringify(objecto),
 		success: function( data, textStatus, jQxhr ){
-			alertify.success("Patient Registered Successfully");
+			$("#err_msg").html("Patient registered successfully");
+			$("#alert").attr("class", "alert alert-success alert-dismissable");
+			$("table tr").each(function () {
+
+				$('td', this).each(function () {
+					$(this).find(":input").val("");
+				});
+			});
+			$("#alert").show(1000).delay(5000).hide(1000);
+			$("#code128").hide("1000");
 		},
 		error: function( jqXhr, textStatus, errorThrown ){
 			alertify.success("An Error Occurred");

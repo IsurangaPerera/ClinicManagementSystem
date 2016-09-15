@@ -90,7 +90,7 @@
                 <input type="text" name="birthplace" value="" id="birthplace" class="form-control input-sm" placeholder="Birth Place" style="width: 250px;" />                                                        </td>
               </tr>
               <tr>
-               <td width="12%">Gender</td>
+               <td width="12%">Gender<font color="#FF0000">*</font></td>
                <td width="88%">
                  <select name="gender" id="gender" class="form-control input-sm" style="width: 250px;">
                    <option value="">- Gender -</option>
@@ -112,7 +112,7 @@
                </td>
              </tr>
              <tr>
-               <td width="12%">Religion <font color="#FF0000">*</font></td>
+               <td width="12%">Religion</td>
                <td width="88%">
                 <input type="text" name="religion" value="" id="religion" class="form-control input-sm" placeholder="Religion" style="width: 250px;" required />                                                        </td>
               </tr>

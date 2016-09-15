@@ -18,6 +18,7 @@ function generateId(birthdate, gender){
 	$("#patientID").val(id);
 	$("#code128").html("");
 	JsBarcode("#code128", id);
+	$("#code128").show(1000);
 }
 
 function randomIntFromInterval(min,max){
