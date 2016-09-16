@@ -73,7 +73,7 @@ function postData(){
 				});
 			});
 			$("#alert").show(1000).delay(5000).hide(1000);
-			$("#code128").hide("1000");
+			$("#barimg").hide("1000");
 		},
 		error: function( jqXhr, textStatus, errorThrown ){
 			alertify.success("An Error Occurred");

@@ -9,16 +9,22 @@ function generateId(birthdate, gender){
 		rand = randomIntFromInterval(0, 49999);
 		rand = pad(rand, 5);
 	}
-	else{
+	else if(gen === 'Male'){
 		rand = randomIntFromInterval(50000, 99999);
 	}
+	else{
+		$("#code128").html("");
+		$("#barimg").hide(1000);
+		return;
+	}
+
 	incremental_val = 1; //temp value
 
 	id = date + rand.toString() + incremental_val.toString();
 	$("#patientID").val(id);
 	$("#code128").html("");
 	JsBarcode("#code128", id);
-	$("#code128").show(1000);
+	$("#barimg").show(1000);
 }
 
 function randomIntFromInterval(min,max){
