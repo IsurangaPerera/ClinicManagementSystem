@@ -242,14 +242,6 @@ require('hidden_right.php');
 												<td width="21%" valign="top">Aditional Notes</td>
 												<td width="79%"><textarea name="admitting_impression" id="admitting_impression" class="form-control input-sm" style="width: 60%;" rows="3"></textarea></td>
 											</tr>
-
-											<tr>
-												<td colspan="2">
-													<button class="btn btn-primary" onclick="save(this.id)" id="plan"><i class="fa fa-save"></i> Save</button>
-
-													<a class="btn btn-default" target="_blank"><i class="fa fa-print"></i> Print</a>
-												</td>
-											</tr>
 										</tbody>
 									</table>
 								</form>
@@ -332,6 +324,7 @@ require('hidden_right.php');
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 						<button type="button" id="btncomplaints" class="btn btn-primary" onclick="save(this.id)">Save changes</button>
+						<button type="button" id="btnnextobs" class="btn btn-secondary" onclick="">Next</button>
 					</div>
 				</div>
 
@@ -688,6 +681,7 @@ require('hidden_right.php');
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 							<button type="button" class="btn btn-primary" id="btnobservations" onclick="save(this.id)">Save changes</button>
+							<button type="button" id="btnnextmed" class="btn btn-secondary" onclick="">Next</button>
 						</div>
 					</div>
 
@@ -741,6 +735,7 @@ require('hidden_right.php');
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 							<button type="button" id="btnmedications" class="btn btn-primary" onclick="save(this.id)">Save changes</button>
+							<button type="button" id="btnnextinves" class="btn btn-secondary" onclick="">Next</button>
 						</div>
 					</div>
 
@@ -925,5 +920,19 @@ require('hidden_right.php');
 			</div>
 
 		</section><!-- /.content -->
+		<script type="text/javascript">
+		$("#btnnextobs").click(function(){
+			$("#complaints").modal('hide');
+			$("#observations").modal('show');
+		});
+		$("#btnnextmed").click(function(){
+			$("#observations").modal('hide');
+			$("#medications").modal('show');
+		});
+		$("#btnnextinves").click(function(){
+			$("#medications").modal('hide');
+			$("#investigations").modal('show');
+		});
+		</script>
 
 	</div>
