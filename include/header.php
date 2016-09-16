@@ -66,7 +66,7 @@ $nic = $_SESSION['nic'];
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header bg-light-blue">
-               <img src="<?php echo "../images/$nic"; ?>" class="img-circle" alt="User Image" />
+               <img src="../images/noavatar.png" class="img-circle" alt="User Image" />
                <p id="usrname">
                 <?php echo $_SESSION['user_name']; ?> <br /> <?php echo $_SESSION['user_type']; ?> 
               </p>                                   </p>
