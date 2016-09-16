@@ -11,7 +11,7 @@ require("$root/include/header.php");
 <ul class="sidebar-menu">
 
 	<!-- Modal -->
-	<div class="modal fade" id="myModal3" role="dialog">
+	<div class="modal fade" id="myModal3" role="dialog" data-keyboard="false">
 		<div class="modal-dialog">
 
 			<!-- Modal content-->
@@ -28,7 +28,7 @@ require("$root/include/header.php");
 							</tr>
 							<tr>
 								<td>
-									<input type="text" id="patient_no" data-toggle="modal" data-target="#patientListModal" placeholder="Enter Patient ID" class="form-control input-sm" style="width: 100%; cursor:pointer;" required autofocus>
+									<input type="text" id="patient_no" data-toggle="modal" data-target="#patientListModal" placeholder="Enter Patient ID" class="form-control input-sm" style="width: 100%; cursor:pointer;" autofocus>
 								</td>
 							</tr>
 							<tr>
@@ -41,7 +41,7 @@ require("$root/include/header.php");
 					<!--Form End-->
 				</div>
 				<div class="modal-footer">
-					
+					<button type="button" class="btn btn-primary" id="rehome">Home</button>
 				</div>
 			</div>
 
@@ -102,8 +102,9 @@ require("$root/include/header.php");
 window.onload = function(e) {
 	if(sessionStorage.getItem("patientId") === null || sessionStorage.getItem("patientId") === ""){
 		$("#myModal3").modal({backdrop: "static"});   
-	} else
-	getResult();
+	} else{
+		getResult();
+	}
 }
 
 $(document).ready(function(){
@@ -132,13 +133,18 @@ $(document).ready(function(){
     $('#r_side').load('app/investigation_results.php');
   });
 
+  $("#rehome").click(function(event){
+    window.location.href = "../include/opd_doctor.php";
+  });
+
 });
 
 function docReady(){
 	if(sessionStorage.getItem("patientId") === null || sessionStorage.getItem("patientId") === ""){
 		$("#myModal3").modal({backdrop: "static"});   
-	} else
-	getResult();
+	} else{
+		getResult();
+	}
 }
 
 function setSession(){

@@ -10,7 +10,7 @@ function getResult(){
 	patientId = sessionStorage.getItem("patientId");
 
 
-	if(patientId !== "" || patientId !== null){
+	if(patientId !== "" && patientId !== null){
 		$.ajax({
             type: "GET",
             url: baseURL + "general/" + patientId,

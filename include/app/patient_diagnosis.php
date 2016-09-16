@@ -1,7 +1,3 @@
-<?php
-require('hidden_right.php');
-?>
-
 <section class="content-header" >
 	<h1>Patient Diagnosis</h1> 
 	<ol class="breadcrumb">
@@ -10,12 +6,6 @@ require('hidden_right.php');
 		<li class="active">Patient Diagnosis</li>									
 	</ol>
 </section>
-
-<style>
-.patient_diagnosis{
-	display: block;
-}
-</style>
 
 <div class="patient_diagnosis">
 	<!-- Main content -->
