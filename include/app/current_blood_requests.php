@@ -1,7 +1,3 @@
-<?php
-require('hidden_right.php');
-?>
-
 <section class="content-header" >
   <h1>Current Requests</h1> 
   <ol class="breadcrumb">
@@ -9,12 +5,6 @@ require('hidden_right.php');
     <li class="active">Current Requests</li>
   </ol>
 </section>
-
-<style>
-.current_requests{
-  display: block;
-}
-</style>
 
 <div class="current_requests">
 
@@ -39,7 +29,7 @@ require('hidden_right.php');
       </form>
       <div class="box-body table-responsive no-padding">
 
-        <table class="table table-hover table-striped" onload="processData()">
+        <table class="table table-hover table-striped">
           <thead>
             <tr>
               <th>Date</th>

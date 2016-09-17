@@ -28,8 +28,9 @@ function getBloodData($id) {
 	require_once 'db_connection.php';
     $db = db_connect();
 
-	$sql_data = 'SELECT spec1 FROM investigation_type WHERE '.
-				'patientId = ? AND investigation = ?';
+	$sql_data = 'SELECT * FROM investigation_type WHERE '.
+				'patientId = ? AND investigation = ? '.
+				'AND sample_index IS NULL';
 	
 	$stmt = $db->prepare($sql_data);
 	if($stmt === false) {		
@@ -46,14 +47,34 @@ function getBloodData($id) {
 		echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
 	}
 
-	$stmt->bind_result($a);
+	$meta = $stmt->result_metadata();
+    while ( $field = $meta->fetch_field() )
+    	$parameters[] = &$row[$field->name]; 
+ 
+    call_user_func_array(array($stmt, 'bind_result'), $parameters);
 
-    while($stmt->fetch()){
-    	array_push($json, $a);
+    while ( $stmt->fetch() ) {
+        $x = array();
+        foreach( $row as $key => $val )
+        	$x[$key] = $val;
+        $results[] = $x;
+    }
+    $fbc = false;
+    $esr = false;
+
+    if(sizeof($results) > 2){
+    	for($x = sizeof($results)-1; $x > -1; $x--){
+			if($results[$x]['spec1'] == "FBC" && $fbc == false)
+    			$fbc = true;
+    		elseif($results[$x]['spec1'] == "ESR" && $esr == false)
+    			$esr = true;
+    		else
+    			unset($results[$x]);
+    	}
+    	$results = array_values($results);
     }
 
-    echo(json_encode($json));
-
+    echo json_encode($results);
 	$stmt->close();
 }
 
@@ -66,7 +87,8 @@ function updateBloodData($json){
 				'sample_index = ? '.
 				'WHERE patientId = ? '.
 				'AND investigation = ? '.
-				'AND spec1 = ?';
+				'AND spec1 = ? '.
+				'AND date = ?';
 	
 	$stmt = $db->prepare($sql_data);
 	if($stmt === false) {		
@@ -75,7 +97,7 @@ function updateBloodData($json){
 
 	$sp = "Blood";
 
-	if(!$stmt->bind_param('sssss', $json['status'], $json['sample_index'], $json['patientId'], $sp, $json['spec1'])) {
+	if(!$stmt->bind_param('ssssss', $json['status'], $json['sample_index'], $json['patientId'], $sp, $json['spec1'], $json['date'])) {
 		echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
 	}
 	
@@ -91,12 +113,13 @@ function getAllData() {
 	require_once 'db_connection.php';
     $db = db_connect();
 
-	$sql_data = 'SELECT investigation.* '.
+	$sql_data = 'SELECT * '.
 				'FROM investigation '.
 				'WHERE patientId in ('.
 				'SELECT patientId FROM investigation_type '.
 				'WHERE status = ?) '.
-				'AND investigation = ?';
+				'AND investigation = ? '.		
+				'GROUP BY patientId DESC';
 				
 	
 	$stmt = $db->prepare($sql_data);
@@ -119,7 +142,7 @@ function getAllData() {
     while ( $field = $meta->fetch_field() )
     	$parameters[] = &$row[$field->name]; 
  
-   call_user_func_array(array($stmt, 'bind_result'), $parameters);
+    call_user_func_array(array($stmt, 'bind_result'), $parameters);
 
     while ( $stmt->fetch() ) {
         $x = array();

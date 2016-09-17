@@ -1,15 +1,20 @@
 var dataLength; 
 var baseURL = "../patient/investigation_b/blood";
 var patientId;
+var dataO;
 
-function process(){
-    patientId = $('#patient_no').val().trim();
+function process(id){
+    if(id == null || id == "")
+        patientId = $("#patient_no").val();
+    else
+        patientId = id;
     uri = baseURL + "/" + patientId;	
     $.ajax({
         type: "GET",
         url: uri,
         success: function (data) {
             data = JSON.parse(data);
+            dataO = data;
             if(data !== null){
                 dataLength = data.length;
                 if(data.length > 0){
@@ -21,7 +26,7 @@ function process(){
                         if(i < dataLength){
                             $(id1).prop("hidden", false);
                             
-                            $(id2).html(data[i]);
+                            $(id2).html(data[i]['spec1']);
                         } else{
                             $(id1).prop("hidden", true);
                             $(id2).html("");
@@ -31,7 +36,9 @@ function process(){
                     }
                 }
             $("#modal_blood").modal({backdrop: "static"});   
-            }     
+            }
+            if(data == null)
+                alertify.error("No requests at the moment");     
         }
     });
 }
@@ -45,13 +52,15 @@ function save(){
         sample_index = $(id3).val();
         id4 = "#inv_raw" + (i+1) + "_cell3 option:selected";
         status = $(id4).val();
+        
 
         if(sample_index !== "" && status !== "Pending"){
             objecto = {
                 "patientId"    : patientId,
                 "spec1"        : spec1,
                 "sample_index" : sample_index,
-                "status"       : status
+                "status"       : status,
+                "date"         : dataO[i]['date']
             };
 
             $.ajax({

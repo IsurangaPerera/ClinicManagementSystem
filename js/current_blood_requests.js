@@ -27,7 +27,6 @@ function processData(){
 					}
 				}
 			} catch(err){
-				
 			}
 		}
 	});

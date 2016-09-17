@@ -23,7 +23,7 @@
                     </tr>
                     <tr>
                       <td>
-                        <input value="Submit" class="btn btn-primary" style="width: 250px;" onclick="process()">
+                        <input value="Submit" class="btn btn-primary" style="width: 250px;" onclick="process(null)">
                       </td>
                     </tr>
                   </table>
