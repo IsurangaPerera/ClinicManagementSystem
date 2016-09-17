@@ -37,8 +37,11 @@ function process(id){
                 }
             $("#modal_blood").modal({backdrop: "static"});   
             }
-            if(data == null)
-                alertify.error("No requests at the moment");     
+            if(data == null){
+                $("#err_msg").html("No requests at the moment");
+                $("#alert").attr('class', 'alert alert-danger alert-dismissable');
+                $("#alert").show(1000).delay(5000).hide(1000);
+            }    
         }
     });
 }
@@ -69,6 +72,9 @@ function save(){
                 data : JSON.stringify(objecto),
                 success : function(data){
                     patientId = undefined;
+                    $("#err_msg").html("Operation Completed Successfully");
+                    $("#alert").attr('class', 'alert alert-success alert-dismissable');
+                    $("#alert").show(1000).delay(5000).hide(1000);
                 }
             });
         }

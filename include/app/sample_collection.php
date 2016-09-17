@@ -2,11 +2,15 @@
   <h1>Sample Collection</h1> 
 </section>
 
-<div class="sample_collection">
-  <section class="content">
-    <div class="row">
+<div class='alert alert-success alert-dismissable' id="alert" hidden><i class='fa fa-check'></i>
+  <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+  <span id="err_msg"></span></div> 
+
+  <div class="sample_collection">
+    <section class="content">
+      <div class="row">
        <div class="col-md-4"></div>
-      <div class="col-md-4">
+       <div class="col-md-4">
         <div class="box">
           <div class="box-body table-responsive">
             <div class="box-body" align="center">
@@ -32,7 +36,7 @@
             </div>
           </div>
         </div>
-    </div>
-  </section><!-- /.content -->
+      </div>
+    </section><!-- /.content -->
 
   </div>
