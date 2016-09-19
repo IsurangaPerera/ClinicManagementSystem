@@ -913,14 +913,17 @@
 		<script type="text/javascript">
 		$("#btnnextobs").click(function(){
 			$("#complaints").modal('hide');
+			save('btncomplaints');
 			$("#observations").modal('show');
 		});
 		$("#btnnextmed").click(function(){
 			$("#observations").modal('hide');
+			save('btnobservations');
 			$("#medications").modal('show');
 		});
 		$("#btnnextinves").click(function(){
 			$("#medications").modal('hide');
+			save('btnmedications');
 			$("#investigations").modal('show');
 		});
 		</script>
