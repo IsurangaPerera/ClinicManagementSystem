@@ -75,6 +75,8 @@ require('header.php');
 </div><!-- ./wrapper -->
 
 <script src="../js/issue_medications.js" type="text/javascript"></script>
+<script src="../js/add_stock.js" type="text/javascript"></script>
+
 <script type="text/javascript">
 $(document).ready(function(){
   $('#r_side').load('app/dash_board.php');
