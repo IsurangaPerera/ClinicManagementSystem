@@ -83,13 +83,7 @@ function save(){
     $('#patient_no').val("");
     $('#patient_no').focus();
     $('#modal_blood').modal('hide');
-    /*var row = document.getElementById('blood_req_table');
-    var table = row.parentNode;
-    while ( table && table.tagName != 'TABLE' )
-            table = table.parentNode;
-        if ( !table )
-            return;
-        table.deleteRow(row.rowIndex);
-    alertify.success("System Updated");*/
+    ids = "#sput" + patientId;
+    $(ids).hide(1000);
 }
 

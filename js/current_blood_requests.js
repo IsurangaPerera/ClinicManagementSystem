@@ -1,7 +1,6 @@
 var baseURL = "../patient/investigation_b/blood";
 var table = document.getElementById("blood_req_table");
 var patientId, date, investigation, prepared;
-var curSputRow = 0;
 var arr = new Map();
 
 function processData(){
@@ -20,8 +19,8 @@ function processData(){
 						investigation = data[i]['investigation'];
 						prepared = data[i]['prepared'];
 
-						if(arr.get(date) != 1){
-							arr.set(date, 1);
+						if(arr.get(patientId) != 1){
+							arr.set(patientId, 1);
 							createTable();
 						}
 					}
@@ -34,8 +33,11 @@ function processData(){
 }
 
 function createTable(){
-	id = "sput" + curSputRow;
-	idbtn = "btnsput" + curSputRow;
+	id = "sput" + patientId;
+	ids = "#sput" + patientId;
+
+	$(ids).show(1000);
+	
 	inHtml = '<a onclick="process(this.id)" class="btn btn-primary" id="' + patientId + '"><i class="fa fa-plus"></i> View Request </a>';
 	inHtml2 = '<span class="label label-danger">  pending  </span>';
 	var row = table.insertRow(table.rows.length);
@@ -53,6 +55,4 @@ function createTable(){
 	cell4.innerHTML = prepared + cell4.innerHTML;
 	cell5.innerHTML = inHtml2 + cell5.innerHTML;
 	cell6.innerHTML = inHtml + cell6.innerHTML;
-
-	curSputRow++;
 }
