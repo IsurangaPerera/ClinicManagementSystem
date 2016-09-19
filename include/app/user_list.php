@@ -9,42 +9,46 @@
 
 <!-- Main content -->
 <section class="content">
- <div class="row">
-  <div class="col-md-12">
+   <div class="row">
+      <div class="col-md-12">
 
-      <div class="box">
-       <form class="form-search">
-           <div class="box-header">
-            <h3 class="box-title"><a href="#" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a></h3>
+          <div class="box">
+             <form class="form-search">
+                 <div class="box-header">
+                    <h3 class="box-title"><a href="#" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a></h3>
 
-            <div class="box-tools">
-                <div class="input-group">
-                    <input type="text" name="search" id="search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
-                    <div class="input-group-btn">
-                        <button class="btn btn-sm btn-default" name="btnSearch" id="btnSearch" type="submit"><i class="fa fa-search"></i></button>
+                    <div class="box-tools">
+                        <div class="input-group">
+                            <input type="text" name="search" id="search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
+                            <div class="input-group-btn">
+                                <button class="btn btn-sm btn-default" name="btnSearch" id="btnSearch" type="submit"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
                     </div>
-                </div>
+
+                </div><!-- /.box-header -->
+            </form>
+            <div class="box-body table-responsive no-padding">
+
+               <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>User ID</th><th>Name</th><th>Designation</th><th>Department</th><th>Email Address</th><th>Status</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody id="u_list">
+
+                    </tbody>
+                </table>                                
             </div>
-
-        </div><!-- /.box-header -->
-    </form>
-    <div class="box-body table-responsive no-padding">
-
-     <table class="table table-hover table-striped">
-        <thead>
-            <tr>
-                <th>User ID</th><th>Name</th><th>Designation</th><th>Department</th><th>Email Address</th><th>Status</th><th>Actions</th></tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="#">00001</a></td><td>Dr. Jaysondg Pecio Sarinodfdf</td><td>System Administrator</td><td>Management Information System</td><td>jaysonsarino27@yahoo.com</td><td>Active</td><td><a href="#">Edit</a>&nbsp|&nbsp;<a href="#" class="delete" onclick="return confirm('Are you sure want to InActive this user?')">InActive</a></td></tr>
-
-                </tbody>
-            </table>                                
-        </div>
-        <div class="box-footer clearfix">
-         <ul class="pagination pagination no-margin pull-right"><li class="active"><a href="">1</a></li><li class="page"><a href="#">2</a></li><li class="page"><a href="#">3</a></li><li class="next page"><a href="#">Next &rarr;</a></li></ul><!--pagination-->                                </div>
-     </div>
- </div>
-</div>
+            <div class="box-footer clearfix">
+               <ul class="pagination pagination no-margin pull-right"><li class="active"><a href="">1</a></li><li class="page"><a href="#">2</a></li><li class="page"><a href="#">3</a></li><li class="next page"><a href="#">Next &rarr;</a></li></ul><!--pagination-->                                </div>
+           </div>
+       </div>
+   </div>
 </section><!-- /.content -->
+
+<script type="text/javascript">
+$(document).ready(function(){
+    getResult();
+});
+</script>

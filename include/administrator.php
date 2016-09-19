@@ -63,6 +63,7 @@ require('header.php');
 </div><!-- ./wrapper -->
 
 <script src="../js/user_registration.js" type="text/javascript"></script>
+<script src="../js/list_users.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 $(document).ready(function(){
