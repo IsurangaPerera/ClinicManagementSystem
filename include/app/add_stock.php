@@ -107,6 +107,10 @@
   <!-- END Modal -->
 
   <script type="text/javascript">
+  $(document).ready(function(){
+    loadStock();
+  });
+
   function openModal(){
     $('#modal_stock').modal({backdrop: "static"});
   }
@@ -116,6 +120,8 @@
     dateFormat: "yy-mm-dd"
   });
  });
+
+
   </script>
 
 </section><!-- /.content -->

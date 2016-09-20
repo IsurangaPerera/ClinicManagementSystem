@@ -28,14 +28,14 @@
       </div><!-- /.box-header -->
     </form>
     <div class="box-body table-responsive no-padding">
-      <div class='alert alert-success alert-dismissable'><i class='fa fa-check'></i><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>Drug Name successfully Deleted!</div>  
+      <div class='alert alert-success alert-dismissable' hidden='true'><i class='fa fa-check'></i><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>Drug Name successfully Deleted!</div>  
 
       <table class="table table-hover table-striped">
         <thead>
           <tr>
-            <th>Product Code</th><th>Product Name</th><th>Formulation</th><th>Dosage</th><th>Batch No</th><th>Quantity</th><th>Expiry</th><th>Action</th></tr>
+            <th>Date</th><th>Product Code</th><th>Product Name</th><th>Formulation</th><th>Dosage</th><th>Batch No</th><th>Quantity</th><th>Expiry</th><th>Action</th></tr>
           </thead>
-          <tbody>
+          <tbody id="expire_stock">
           </tbody>
         </table>                                
       </div>
@@ -44,4 +44,11 @@
      </div>
    </div>
  </div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    loadExpiryStock();
+  });
+</script>
+
 </section><!-- /.content -->
