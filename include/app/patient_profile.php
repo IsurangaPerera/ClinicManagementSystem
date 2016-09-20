@@ -17,19 +17,19 @@
       <div class="col-md-4">
        <table cellpadding="3" cellspacing="3" width="80%" >
         <tr>
-         <td>Full Name :</td>
+         <td>Full Name::</td>
          <td id="pname"></td>
        </tr>
        <tr>
-         <td>Date Of Birth :</td>
+         <td>Date Of Birth::</td>
          <td id="pdob"></td>
        </tr>
        <tr>
-         <td>Gender :</td>
+         <td>Gender::</td>
          <td id="pgender"></td>
        </tr>
        <tr>
-         <td valign="top">Address :</td>
+         <td valign="top">Address::</td>
          <td id="paddress"></td>
        </tr>
      </table>
@@ -37,23 +37,23 @@
    <div class="col-md-4">
      <table cellpadding="3" cellspacing="3" width="60%">
       <tr>
-       <td>Patient Id :</td>
+       <td>Patient Id::</td>
        <td id="pid"></td>
      </tr>
      <tr>
-       <td>National ID :</td>
+       <td>National ID::</td>
        <td id="nic"></td>
      </tr>
      <tr>
-       <td>Religion :</td>
+       <td>Religion::</td>
        <td id="religion"></td>
      </tr>
      <tr>
-       <td>Blood Group :</td>
+       <td>Blood Group::</td>
        <td id="blood"></td>
      </tr>
      <tr>
-       <td valign="top">Phone :</td>
+       <td valign="top">Phone::</td>
        <td id="phone"></td>
      </tr>
    </table>
