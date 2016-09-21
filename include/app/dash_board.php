@@ -8,7 +8,7 @@
  <section class="content">
   <div class="row">
     <section class="col-lg-12 connectedSortable">
-      
+
       <!--Start of Patient Visited-->
       <div class="box box-primary" id="loading-example">
         <div class="box-header">
@@ -50,7 +50,7 @@
 
 <div class="row">
   <section class="col-lg-6 connectedSortable">
-    
+
     <!--Start of New Patient-->
     <div class="box box-primary" id="loading-example">
       <div class="box-header">
@@ -85,7 +85,7 @@
   </section>
   
   <section class="col-lg-6 connectedSortable">
-    
+
     <!--Start of Patient Visited-->
     <div class="box box-primary" id="loading-example">
       <div class="box-header">
@@ -129,7 +129,7 @@
 
 <div class="row">
   <section class="col-lg-6 connectedSortable">
-    
+
     <!--Start of New Patient-->
     <div class="box box-primary" id="loading-example">
       <div class="box-header">
@@ -142,8 +142,19 @@
         <h3 class="box-title">Doctor's IN</h3>
       </div>
       <div class="box-body no-padding">
-        <div class="table-responsive" style="height:350px; overflow-y:scroll;">
-          <div id="doctorIN"></div>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Doctor Name</th>
+                <th>Department</th>
+                <th>Date Time In</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
         </div>
       </div>
       <div class="box-footer">
@@ -154,7 +165,7 @@
   </section>
   
   <section class="col-lg-6 connectedSortable">
-    
+
     <!--Start of Patient Visited-->
     <div class="box box-primary" id="loading-example">
       <div class="box-header">
@@ -166,8 +177,19 @@
         <h3 class="box-title">Doctor's OUT</h3>
       </div>
       <div class="box-body no-padding">
-        <div class="table-responsive" style="height:350px; overflow-y:scroll;">
-          <div id="doctorOUT"></div>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Doctor Name</th>
+                <th>Department</th>
+                <th>Date Time In</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
         </div>
       </div>
       <div class="box-footer">

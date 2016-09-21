@@ -28,13 +28,13 @@
 											<td><u>Patient No.</u></td>
 										</tr>
 										<tr>
-											<td><?php echo $_SESSION['patientId']; ?></td>
+											<td>570V</td>
 										</tr>
 										<tr>
 											<td><u>Patient Name</u></td>
 										</tr>
 										<tr>
-											<td>Mr. Arnold G. Bariring</td>
+											<td>Mr. Nisal Chamodh Perera</td>
 										</tr>
 									</table>
 								</td>
@@ -48,19 +48,19 @@
 								<td><u>Age</u></td>
 							</tr>
 							<tr>
-								<td>23</td>
+								<td>22</td>
 							</tr>
 							<tr>
 								<td><u>Currently Following Medications</u></td>
 							</tr>
 							<tr>
-								<td>Paracetomol</td>
+								<td>Abarelix</td>
 							</tr>
 							<tr>
-								<td>Dollar</td>
+								<td>E-Mycin</td>
 							</tr>
 							<tr>
-								<td>Beco</td>
+								<td>Iferex</td>
 							</tr>
 							<tr>
 								<td><u>Allergies</u></td>
@@ -68,7 +68,12 @@
 							<tr>
 								<td>Gynaecology</td>
 							</tr>
-
+							<tr>
+								<td>Anticonvulsants</td>
+							</tr>
+							<tr>
+								<td>Food Intolerance</td>
+							</tr>
 						</table>
 					</div>
 				</div>

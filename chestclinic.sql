@@ -1,8 +1,8 @@
--- MySQL dump 10.16  Distrib 10.1.16-MariaDB, for Linux (x86_64)
+-- MySQL dump 10.16  Distrib 10.1.17-MariaDB, for Linux (x86_64)
 --
 -- Host: localhost    Database: chestclinic
 -- ------------------------------------------------------
--- Server version	10.1.16-MariaDB
+-- Server version	10.1.17-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -91,7 +91,7 @@ CREATE TABLE `complaint` (
 
 LOCK TABLES `complaint` WRITE;
 /*!40000 ALTER TABLE `complaint` DISABLE KEYS */;
-INSERT INTO `complaint` VALUES ('','','','',''),('19','12-8-2016','0','34   Weeks','0'),('20','12-8-2016','Haemoptysis','3   Weeks','Nisali De Silva '),('20','12-8-2016','Loss of Apetite','23   Months','Nisali De Silva '),('20','12-8-2016','Night Sweats','12   Years','Nisali De Silva '),('570V','15-8-2016','Shortness of Breath','34   Months','Nisali De Silva '),('570V','23-8-2016','Chest Pain','56   Months','Nisali De Silva '),('570V','23-8-2016','Haemoptysis','3   Weeks','Nisali De Silva '),('570V','August 25, 2016','Chest Pain','3   Weeks','Nisali De Silva '),('570V','August 25, 2016','Night Sweats','5   Weeks','Nisali De Silva ');
+INSERT INTO `complaint` VALUES ('570V','2016-9-21','Loss of Apetite','23   Months','Nisali De Silva '),('570V','2016-9-21','Shortness of Breath','3   Days','Nisali De Silva '),('570V','2016-9-21','Sputum','12   Weeks','Nisali De Silva ');
 /*!40000 ALTER TABLE `complaint` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,7 +124,7 @@ CREATE TABLE `fbc` (
 
 LOCK TABLES `fbc` WRITE;
 /*!40000 ALTER TABLE `fbc` DISABLE KEYS */;
-INSERT INTO `fbc` VALUES ('REPORT1',12,11,11,56,78,76,54,34,32,22),('REPORT2',23,34,45,67,54,55,99,77,33,12),('REPORT3',6,34,13,45,78,76,54,34,2,66);
+INSERT INTO `fbc` VALUES ('REPORT_01',45,34,23,67,56,45,34,78,89,34);
 /*!40000 ALTER TABLE `fbc` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -150,32 +150,6 @@ LOCK TABLES `fbs` WRITE;
 /*!40000 ALTER TABLE `fbs` DISABLE KEYS */;
 INSERT INTO `fbs` VALUES ('565',67),('678TIO',45),('YUIO567',78);
 /*!40000 ALTER TABLE `fbs` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `full blood count`
---
-
-DROP TABLE IF EXISTS `full blood count`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `full blood count` (
-  `ReportNo` int(12) NOT NULL,
-  `Red Blood Count` int(11) NOT NULL,
-  `White Blood count` int(11) NOT NULL,
-  `Platelet Count` int(11) NOT NULL,
-  PRIMARY KEY (`ReportNo`),
-  CONSTRAINT `full@0020blood@0020count_ibfk_1` FOREIGN KEY (`ReportNo`) REFERENCES `report` (`ReportNo`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `full blood count`
---
-
-LOCK TABLES `full blood count` WRITE;
-/*!40000 ALTER TABLE `full blood count` DISABLE KEYS */;
-/*!40000 ALTER TABLE `full blood count` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -235,6 +209,36 @@ LOCK TABLES `inventory` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `inventory_data`
+--
+
+DROP TABLE IF EXISTS `inventory_data`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `inventory_data` (
+  `date` date NOT NULL,
+  `p_code` varchar(50) NOT NULL,
+  `p_name` varchar(100) NOT NULL,
+  `formula` varchar(100) NOT NULL,
+  `dose` varchar(50) NOT NULL,
+  `batch_no` varchar(50) NOT NULL,
+  `quantity` varchar(50) NOT NULL,
+  `expiry` date NOT NULL,
+  PRIMARY KEY (`p_code`,`batch_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `inventory_data`
+--
+
+LOCK TABLES `inventory_data` WRITE;
+/*!40000 ALTER TABLE `inventory_data` DISABLE KEYS */;
+INSERT INTO `inventory_data` VALUES ('2016-09-19','gh','ghg','hg','ytyt','v','gcg','2016-09-20'),('2016-09-19','rt','rt','tr','tr','trr','rt','2016-09-23'),('2016-09-19','rtr','45','trr','fd','vg','bh','2016-09-15'),('2016-09-19','trt','rtrtry','vb','vbnvbvbn','hhghgjh','bvbvv','2016-09-15'),('2016-09-19','we','rt','ty','ty','ty','ty','2016-09-15'),('2016-09-19','yuy','tyt','tyt','ty','tyy','ty','2016-09-30'),('2016-09-19','yuy','uy','yuy','uy','yu','uy','2016-09-22');
+/*!40000 ALTER TABLE `inventory_data` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `investigation`
 --
 
@@ -243,7 +247,7 @@ DROP TABLE IF EXISTS `investigation`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `investigation` (
   `patientId` varchar(15) NOT NULL,
-  `date` varchar(15) NOT NULL,
+  `date` date NOT NULL,
   `investigation` varchar(20) NOT NULL,
   `prepared` varchar(60) NOT NULL,
   `sample_index` varchar(20) DEFAULT NULL,
@@ -257,7 +261,7 @@ CREATE TABLE `investigation` (
 
 LOCK TABLES `investigation` WRITE;
 /*!40000 ALTER TABLE `investigation` DISABLE KEYS */;
-INSERT INTO `investigation` VALUES ('20','August 12, 2016','Sputum','Nisali De Silva ',NULL),('570V','August 22, 2016','Blood','Nisali De Silva ',NULL),('570V','August 23, 2016','Blood','Nisali De Silva ',NULL),('570V','August 23, 2016','Six Minute Walking T','Nisali De Silva ',NULL),('570V','August 24, 2016','Blood','Nisali De Silva ',NULL),('9007689RTY','October 4, 2016','Sputum','Dr. Rahul De Silva',NULL);
+INSERT INTO `investigation` VALUES ('570V','2016-09-21','Blood','Nisali De Silva ',NULL);
 /*!40000 ALTER TABLE `investigation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -270,7 +274,7 @@ DROP TABLE IF EXISTS `investigation_type`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `investigation_type` (
   `patientId` varchar(15) NOT NULL,
-  `date` varchar(15) NOT NULL,
+  `date` date NOT NULL,
   `investigation` varchar(30) NOT NULL,
   `spec1` varchar(30) NOT NULL,
   `status` varchar(10) NOT NULL DEFAULT 'pending',
@@ -285,7 +289,7 @@ CREATE TABLE `investigation_type` (
 
 LOCK TABLES `investigation_type` WRITE;
 /*!40000 ALTER TABLE `investigation_type` DISABLE KEYS */;
-INSERT INTO `investigation_type` VALUES ('','','','','pending',NULL),('20','August 12, 2016','Sputum','AFB Smear','Pending',NULL),('20','August 12, 2016','Sputum','AFB Smear (x3 Morning)','Pending',NULL),('20','August 12, 2016','Sputum','Fungal Culture','Pending',NULL),('20','August 12, 2016','Sputum','Pyogenic Culture','Pending',NULL),('570V','August 22, 2016','Blood','FBC','Completed','TEST@9'),('570V','August 23, 2016','Blood','ESR','Completed','TEST@8'),('570V','August 24, 2016','Blood','FBC','Completed','TEST@9'),('9007689RTY','October 4, 2016','Sputum','Fungal','Pending','Check678VC');
+INSERT INTO `investigation_type` VALUES ('570V','2016-09-21','Blood','FBC','Completed','SAMPLE_01');
 /*!40000 ALTER TABLE `investigation_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -298,7 +302,7 @@ DROP TABLE IF EXISTS `medication`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `medication` (
   `patientId` varchar(15) NOT NULL,
-  `date` varchar(15) NOT NULL,
+  `date` date NOT NULL,
   `drug` varchar(30) NOT NULL,
   `dosage` varchar(15) NOT NULL,
   `instruction` varchar(200) DEFAULT NULL,
@@ -314,7 +318,7 @@ CREATE TABLE `medication` (
 
 LOCK TABLES `medication` WRITE;
 /*!40000 ALTER TABLE `medication` DISABLE KEYS */;
-INSERT INTO `medication` VALUES ('570V','August 26, 2016','Abatacept(Orencia)','Dose 0','INS@!','Nisali De Silva ','ISSUED'),('570V','August 29, 2016','Avapro','Dose 0',NULL,'Nisali De Silva ','NOT ISSUED');
+INSERT INTO `medication` VALUES ('570V','2016-09-21','Benadryl','Dose 0','','Nisali De Silva ','ISSUED'),('570V','2016-09-21','Dulcolax','Dose 1','','Nisali De Silva ','ISSUED');
 /*!40000 ALTER TABLE `medication` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -340,7 +344,7 @@ CREATE TABLE `observation` (
 
 LOCK TABLES `observation` WRITE;
 /*!40000 ALTER TABLE `observation` DISABLE KEYS */;
-INSERT INTO `observation` VALUES ('19','August 12, 2016','Cachexia','Nisali De Silva '),('570V','August 22, 2016','Reduced Chest Expansion','Nisali De Silva '),('570V','August 22, 2016','Rhonchi','Nisali De Silva '),('570V','August 22, 2016','Vesicular Breath Sounds','Nisali De Silva '),('570V','August 23, 2016','Abnormal Percussion','Nisali De Silva '),('570V','August 23, 2016','Lymphadenopathy','Nisali De Silva '),('570V','August 23, 2016','Rhonchi','Nisali De Silva ');
+INSERT INTO `observation` VALUES ('570V','2016-9-21','Cachexia','Nisali De Silva '),('570V','2016-9-21','Clubbing','Nisali De Silva '),('570V','2016-9-21','Lymphadenopathy','Nisali De Silva '),('570V','2016-9-21','Reduced Chest Expansion','Nisali De Silva ');
 /*!40000 ALTER TABLE `observation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -353,7 +357,7 @@ DROP TABLE IF EXISTS `observation_type`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `observation_type` (
   `patientId` varchar(15) NOT NULL,
-  `date` varchar(15) NOT NULL,
+  `date` date NOT NULL,
   `observation` varchar(30) NOT NULL,
   `spec1` varchar(30) NOT NULL,
   `spec2` varchar(30) NOT NULL,
@@ -367,7 +371,7 @@ CREATE TABLE `observation_type` (
 
 LOCK TABLES `observation_type` WRITE;
 /*!40000 ALTER TABLE `observation_type` DISABLE KEYS */;
-INSERT INTO `observation_type` VALUES ('','','','',''),('19','August 12, 2016','Rhonchi','Right Lower Zone','Expiratory'),('19','August 12, 2016','Rhonchi','Right Lower Zone','Inspiratory'),('19','August 12, 2016','Rhonchi','Right Lower Zone','Polyphonic'),('19','August 12, 2016','Rhonchi','Right Mid Zone','Expiratory'),('19','August 12, 2016','Rhonchi','Right Mid Zone','Inspiratory'),('19','August 12, 2016','Rhonchi','Right Mid Zone','Polyphonic'),('19','August 12, 2016','Rhonchi','Right Upper Zone','Expiratory'),('19','August 12, 2016','Rhonchi','Right Upper Zone','Inspiratory'),('19','August 12, 2016','Rhonchi','Right Upper Zone','Polyphonic'),('570V','August 22, 2016','Rhonchi','Right Lower Zone','Inspiratory'),('570V','August 22, 2016','Rhonchi','Right Mid Zone','Inspiratory'),('570V','August 22, 2016','Rhonchi','Right Upper Zone','Inspiratory'),('570V','August 23, 2016','Abnormal Percussion','Right Lower Zone','Dull'),('570V','August 23, 2016','Rhonchi','Right Lower Zone','Inspiratory');
+INSERT INTO `observation_type` VALUES ('570V','2016-09-21','Lymphadenopathy','Right Cervical',''),('570V','2016-09-21','Reduced Chest Expansion','Right','');
 /*!40000 ALTER TABLE `observation_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -394,7 +398,7 @@ CREATE TABLE `patient_address` (
 
 LOCK TABLES `patient_address` WRITE;
 /*!40000 ALTER TABLE `patient_address` DISABLE KEYS */;
-INSERT INTO `patient_address` VALUES ('19','','',''),('570V','No 1/3, Meegahakovila Road','Pinwatta','Panadura'),('600','No 6 Temple Road','Nawala',''),('67','','','');
+INSERT INTO `patient_address` VALUES ('0160902343501','','',''),('0160905873361','','',''),('0160906520531','','',''),('0160906567441','','',''),('0160906949371','','',''),('0160907863491','','',''),('0160907875161','','',''),('0160907921801','','',''),('0160910858481','','',''),('0160912859071','','',''),('0160913294811','','',''),('0160914887941','','',''),('0160914917061','','',''),('0160916665181','','',''),('0160917859271','','',''),('0160918004881','','',''),('0160918994841','','',''),('0160919171941','','',''),('0160920201971','','',''),('0160920829591','','',''),('0160924505721','','',''),('0160927912361','','',''),('0160928058111','','',''),('19','','',''),('4200','No 1/3 Meegahakovila Road','Pinwatta','Panadura'),('570V','No 1/3, Meegahakovila Road','Pinwatta','Panadura'),('600','No 6 Temple Road','Nawala',''),('67','','','');
 /*!40000 ALTER TABLE `patient_address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -422,7 +426,7 @@ CREATE TABLE `patient_contact` (
 
 LOCK TABLES `patient_contact` WRITE;
 /*!40000 ALTER TABLE `patient_contact` DISABLE KEYS */;
-INSERT INTO `patient_contact` VALUES ('19','','','','isurangamperera@gmail.com'),('570V','087878787','342421890','343434342','nisalperera@gmail.com'),('600','545345344','','',''),('67','','','','');
+INSERT INTO `patient_contact` VALUES ('0160902343501','','','',''),('0160905873361','','','',''),('0160906520531','','','',''),('0160906567441','','','',''),('0160906949371','','','',''),('0160907863491','','','',''),('0160907875161','','','',''),('0160907921801','','','',''),('0160910858481','','','',''),('0160912859071','','','',''),('0160913294811','','','',''),('0160914887941','','','',''),('0160914917061','','','',''),('0160916665181','','','',''),('0160917859271','','','',''),('0160918004881','','','',''),('0160918994841','','','',''),('0160919171941','','','',''),('0160920201971','','','',''),('0160920829591','','','',''),('0160924505721','','','',''),('0160927912361','','','',''),('0160928058111','','','',''),('19','','','','isurangamperera@gmail.com'),('4200','','0382244492','','isurangamperera@gmail.com'),('570V','038-2244492','038-2237900','0712-986952','nisalperera@gmail.com'),('600','545345344','','',''),('67','','','','');
 /*!40000 ALTER TABLE `patient_contact` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -454,7 +458,7 @@ CREATE TABLE `patient_data` (
 
 LOCK TABLES `patient_data` WRITE;
 /*!40000 ALTER TABLE `patient_data` DISABLE KEYS */;
-INSERT INTO `patient_data` VALUES ('','19','0000-00-00','- Tit','','- Gender -','- Civil St','','- Blo'),('89767956V','570V','2016-08-17','Mr.','Colombo','Male','Married','Buddhist','O+'),('8905678432V','600','0000-00-00','Mr.','','Male','Legal Sepe','Buddhist',''),('77878','67','0000-00-00','Dr.','fdfd','Male','Divorced','dgf','O+');
+INSERT INTO `patient_data` VALUES ('932000V','0160902343501','2016-09-02','Dra.','','Female','- Civil St','','- Blo'),('950094356v','0160905873361','2016-09-05','Dr.','','Male','- Civil St','','- Blo'),('932780096V','0160914917061','2016-09-14','Mr.','','Male','- Civil St','Buddhist','- Blo'),('364564','0160917859271','2016-09-17','Dr.','','Male','Married','efdfdf','B+'),('4567','0160920201971','2016-09-20','Dra.','','Female','- Civil St','','- Blo'),('','19','0000-00-00','- Tit','','- Gender -','- Civil St','','- Blo'),('932790092V','4200','0000-00-00','Mr.','Colombo','Male','Single','Buddhist','O+'),('932560078V','570V','1993-09-17','Mr.','Colombo','Male','Married','Buddhist','O+'),('8905678432V','600','0000-00-00','Mr.','','Male','Legal Sepe','Buddhist',''),('77878','67','0000-00-00','Dr.','fdfd','Male','Divorced','dgf','O+');
 /*!40000 ALTER TABLE `patient_data` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -481,7 +485,7 @@ CREATE TABLE `patient_name` (
 
 LOCK TABLES `patient_name` WRITE;
 /*!40000 ALTER TABLE `patient_name` DISABLE KEYS */;
-INSERT INTO `patient_name` VALUES ('19','','',''),('570V','Nisal','Chamodh','Perera'),('600','Sachin','Eranda','Fernando'),('67','ddfdf','','dfdf');
+INSERT INTO `patient_name` VALUES ('0160902343501','Charith','',''),('0160905873361','Chalith','',''),('0160906520531','tyu','',''),('0160906567441','fg','',''),('0160906949371','DFG','',''),('0160907863491','dh','',''),('0160907875161','Charith','',''),('0160907921801','ccfff','',''),('0160910858481','dscdscdscsd','',''),('0160912859071','Chalith','',''),('0160913294811','Isuranga','',''),('0160914887941','Isuranga','',''),('0160914917061','Isuranga','',''),('0160916665181','fgh','',''),('0160917859271','NNN','','xcvxf'),('0160918004881','vb','',''),('0160918994841','cv','',''),('0160919171941','m','',''),('0160920201971','ty','',''),('0160920829591','TTT','',''),('0160924505721','xc','',''),('0160927912361','ccfff','',''),('0160928058111','m','',''),('4200','Isuranga','Madumal','Perera'),('570V','Nisal','Chamodh','Perera'),('600','Sachin','Eranda','Fernando'),('67','ddfdf','','dfdf');
 /*!40000 ALTER TABLE `patient_name` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -506,7 +510,7 @@ CREATE TABLE `report_details` (
 
 LOCK TABLES `report_details` WRITE;
 /*!40000 ALTER TABLE `report_details` DISABLE KEYS */;
-INSERT INTO `report_details` VALUES ('dfghdf','565','2016-08-22'),('456FBS','678TIO','2016-08-20'),('TEST1','REPORT1','2016-08-22'),('TEST2','REPORT2','2016-08-23'),('TEST3','REPORT3','2016-08-24'),('SAMPLE@1','Test@1','2016-08-24'),('SAMPLE@2','TEST@@','2016-08-24'),('asFBS456','YUIO567','2016-08-20');
+INSERT INTO `report_details` VALUES ('SAMPLE_01','REPORT_01','2016-09-21');
 /*!40000 ALTER TABLE `report_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -680,7 +684,7 @@ CREATE TABLE `treatmentplan` (
 
 LOCK TABLES `treatmentplan` WRITE;
 /*!40000 ALTER TABLE `treatmentplan` DISABLE KEYS */;
-INSERT INTO `treatmentplan` VALUES ('570V','August 23, 2016','Non specific symptoms','Discharge from OPD','Not Assigned','','Nisali De Silva '),('570V','August 23, 2016','Sleep disordered breathing','Discharge from OPD','Not Assigned','','Nisali De Silva '),('570V','August 24, 2016','Non specific symptoms','Discharge from OPD','Not Assigned','','Nisali De Silva '),('570V','August 24, 2016','Pleural effusion','Discharge from OPD','Not Assigned','NOTHING','Isuranga Perera '),('570V','August 25, 2016','Non specific symptoms','Discharge from OPD','Not Assigned','','Nisali De Silva '),('570V','August 26, 2016','Non specific symptoms','Discharge from OPD','Not Assigned','','Nisali De Silva '),('570V','August 29, 2016','Non specific symptoms','Discharge from OPD','Not Assigned','','Nisali De Silva ');
+INSERT INTO `treatmentplan` VALUES ('570V','2016-9-21','Upper respiratory tract infection','Follow up OPD','Not Assigned','','Nisali De Silva ');
 /*!40000 ALTER TABLE `treatmentplan` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -707,6 +711,7 @@ CREATE TABLE `user_address` (
 
 LOCK TABLES `user_address` WRITE;
 /*!40000 ALTER TABLE `user_address` DISABLE KEYS */;
+INSERT INTO `user_address` VALUES ('980067845V',0,0,0),('980076898V',0,0,0),('980078993V',0,0,0);
 /*!40000 ALTER TABLE `user_address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -732,6 +737,7 @@ CREATE TABLE `user_contact` (
 
 LOCK TABLES `user_contact` WRITE;
 /*!40000 ALTER TABLE `user_contact` DISABLE KEYS */;
+INSERT INTO `user_contact` VALUES ('','','','980067845V'),('','','jbjbj@gmail.com','980076898V'),('','','','980078993V');
 /*!40000 ALTER TABLE `user_contact` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -743,7 +749,7 @@ DROP TABLE IF EXISTS `user_data`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user_data` (
-  `nic` int(15) NOT NULL,
+  `nic` varchar(15) NOT NULL,
   `title` varchar(5) NOT NULL,
   `birthdate` date NOT NULL,
   `gender` varchar(10) NOT NULL,
@@ -761,6 +767,7 @@ CREATE TABLE `user_data` (
 
 LOCK TABLES `user_data` WRITE;
 /*!40000 ALTER TABLE `user_data` DISABLE KEYS */;
+INSERT INTO `user_data` VALUES ('932790092V','Mr.','1993-10-05','Male','Single','OPD','Receptionist'),('980067845V','Dr.','0000-00-00','- Gender -','- Civil St','OPD','OPD');
 /*!40000 ALTER TABLE `user_data` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -776,6 +783,7 @@ CREATE TABLE `user_login` (
   `type` varchar(20) NOT NULL,
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
+  `status` varchar(8) NOT NULL DEFAULT 'Active',
   PRIMARY KEY (`nic`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -786,7 +794,7 @@ CREATE TABLE `user_login` (
 
 LOCK TABLES `user_login` WRITE;
 /*!40000 ALTER TABLE `user_login` DISABLE KEYS */;
-INSERT INTO `user_login` VALUES ('890670054V','Laboratory Assistant','lass','lass'),('932790089V','Sputum Room Clerk','sclerk','sclerk'),('932790090V','TB Nurse','tbnurse','tbnurse'),('932790091V','OPD Doctor','opddoctor','opddoctor'),('932790092V','Receptionist','receptionist','receptionist'),('970450091V','Pharmacist','pharmacist','pharmacist'),('990450078V','Bleeding Room Nurse','bnurse','bnurse');
+INSERT INTO `user_login` VALUES ('890670054V','Laboratory Assistant','lass','lass','Active'),('932790089V','Sputum Room Clerk','sclerk','sclerk','Active'),('932790090V','TB Nurse','tbnurse','tbnurse','Active'),('932790091V','OPD Doctor','opddoctor','opddoctor','Active'),('932790092V','Receptionist','receptionist','receptionist','Active'),('940560094V','Administrator','admin','admin','Active'),('970450091V','Pharmacist','pharmacist','pharmacist','Active'),('980067845V','OPD Doctor','pin','','Active'),('990450078V','Bleeding Room Nurse','bnurse','bnurse','Active');
 /*!40000 ALTER TABLE `user_login` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -812,7 +820,7 @@ CREATE TABLE `user_name` (
 
 LOCK TABLES `user_name` WRITE;
 /*!40000 ALTER TABLE `user_name` DISABLE KEYS */;
-INSERT INTO `user_name` VALUES ('890670054V','Sarath','','Fernando'),('932790089V','Eranda','Akila','Abeydeera'),('932790090V','Chamodhi','Hasara','Perera'),('932790091V','Nisali','','De Silva'),('932790092V','Isuranga','Madumal','Perera'),('970450091V','Nishan','','Samarasekara'),('990450078V','Heshan','','Eranga');
+INSERT INTO `user_name` VALUES ('890670054V','Sarath','','Fernando'),('932790089V','Eranda','Akila','Abeydeera'),('932790090V','Chamodhi','Hasara','Perera'),('932790091V','Nisali','','De Silva'),('932790092V','Isuranga','Madumal','Perera'),('940560094V','Charitha','','Mendis'),('970450091V','Nishan','','Samarasekara'),('980067845V','zxc','','OPD Doctor'),('980076898V','UIO','','OPD Doctor'),('980078993V','dfg','','Pharmacist'),('990450078V','Heshan','','Eranga');
 /*!40000 ALTER TABLE `user_name` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -888,4 +896,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-29 19:14:14
+-- Dump completed on 2016-09-21 18:20:37
