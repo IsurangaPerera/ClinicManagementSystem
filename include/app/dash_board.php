@@ -29,7 +29,7 @@
                   <th>Appointment Date</th>
                   <th>Consultant Doctor</th>
                   <th>Entry Date</th>
-                  <th>Rremarks</th>
+                  <th>Remarks</th>
                 </tr>
               </thead>
               <tbody>
