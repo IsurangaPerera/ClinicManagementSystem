@@ -65,6 +65,7 @@ require('header.php');
 
 <script src="../js/patient_registration.js" type="text/javascript"></script>
 <script type="text/javascript" src="../js/patient_id_generator.js"></script>
+<script type="text/javascript" src="../js/search_m_patient.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function(){
