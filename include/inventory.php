@@ -190,16 +190,9 @@
  <div class="box box-primary">
    <div class="box-body">
      <a class="btn btn-app" href="#"><i class="fa fa-refresh"></i> Refresh</a>
-     <a class="btn btn-app" data-toggle="modal" data-target="#doctorListModal"><i class="fa fa-user-md"></i> Doctor's Fee</a>
-     <a class="btn btn-app" data-toggle="modal" data-target="#patientListModal"><i class="fa fa-user"></i> Patient</a>
      <a class="btn btn-app" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Add Item</a>
-     <a href="#" class="btn btn-app" onClick="return getPatientMedication()"><i class="fa fa-hand-o-down"></i> 1-Click Billed</a>
-     <button type="submit" class="btn btn-app"><i class="fa fa-save"></i> Save</button>
-     <a class="btn btn-app" onClick="alert('Please save current transaction to make Payment');"><i class="fa fa-credit-card"></i> Payment</a>
-     <!--<a class="btn btn-app" data-toggle="modal" data-target="#paymentModal"><i class="fa fa-credit-card"></i> Payment</a>-->
-     <a class="btn btn-app" onClick="alert('Please save current transaction to print Invoice');"><i class="fa fa-print"></i> Print Invoice</a>
-     <a class="btn btn-app" onClick="alert('Please save current transaction to print Receipt');"><i class="fa fa-print"></i> Print Receipt</a>
-
+     <a href="#" class="btn btn-app"><i class="fa fa-hand-o-down"></i> View Item</a>
+     <a class="btn btn-app"><i class="fa fa-print"></i> Print</a>
 
    </div>
  </div>
