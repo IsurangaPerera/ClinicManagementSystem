@@ -5,6 +5,7 @@ var objecto = {
 var dataO = null;
 var dataE = null;
 var table;
+
 function saveStock(){
 	p_code   = $("#p_code").val();
 	p_name   = $("#p_name").val();
@@ -32,6 +33,7 @@ function saveStock(){
 	if(warning){
 		$("#alert").attr("class", "alert alert-danger alert-dismissable");
 		$("#alert").show(1000).delay(5000).hide(1000);
+		$('#err_msg').html("");
 		return;
 	} else{
 		objecto.inventory_data.push({
@@ -52,11 +54,13 @@ function saveStock(){
 			success: function( data, textStatus, jQxhr ){
 				$("#err_msg").html("Stock added successfully");
 				$("#alert").attr("class", "alert alert-success alert-dismissable");
-				$("#tble_add_stock tr").each(function () {
-					$('td', this).each(function () {
-						$(this).find(":input").val("");
-					});
-				});
+				$("#p_code").val("");
+				$("#p_name").val("");
+				$("#formula").val("");
+				$("#dose").val("");
+				$("#batch_no").val("");
+				$("#quantity").val("");
+				$("#expiry").val("");
 				$("#alert").show(1000).delay(5000).hide(1000);
 				$('#modal_stock').modal('hide');
 				addToTable(objecto.inventory_data, 'tble_stock');
@@ -111,7 +115,8 @@ function loadStock(){
 			url: "../inventory/getdata",
 			success: function( data, textStatus, jQxhr ){
 				dataO = JSON.parse(data);
-				addToTable(dataO, 'tble_stock');
+				if(dataO != null && dataO.length > 0)
+					addToTable(dataO, 'tble_stock');
 			},
 			error: function( jqXhr, textStatus, errorThrown ){
 				
@@ -128,7 +133,8 @@ function loadExpiryStock(){
 			url: "../inventory/getdata/expiry",
 			success: function( data, textStatus, jQxhr ){
 				dataE = JSON.parse(data);
-				addToTable(dataE, 'expire_stock');
+				if(dataE != null && dataE.length > 0)
+					addToTable(dataE, 'expire_stock');
 			},
 			error: function( jqXhr, textStatus, errorThrown ){
 				
