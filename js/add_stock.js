@@ -143,3 +143,74 @@ function loadExpiryStock(){
 	} else
 		addToTable(dataE, 'expire_stock');
 }
+
+function addProduct() {
+	var formData = new FormData();
+
+	if($("#prod_image")[0].files[0] === null) {
+		formData.append('file', $("#prod_image")[0].files[0]);
+
+		$.ajax({
+			url: '../upload/product',
+			type: 'POST',
+			data: formData,
+			cache: false,
+			processData: false,
+			contentType: false,
+			success: function(data, textStatus, jqXHR)
+			{
+				alert("Success");
+				addInformation(data);
+			},
+			error: function(jqXHR, textStatus, errorThrown)
+			{
+				alert("Failure");
+				alert(jqXHR);
+				alert(textStatus);
+				alert(errorThrown);
+			}
+		});
+	} else {
+		addInformation("");
+	}
+}
+
+function addInformation(data) {
+	name = $("#prod_name").val();
+    code = $("#prod_code").val();
+    form = $("#prod_form").val();
+    cat = $("#medicine_cat option:selected").html();
+    note = $("#note").val();
+
+    objectO = {"inventory_product" : []};
+
+    objectO.inventory_product.push({
+    	"name"        : name,
+    	"code"        : code,
+    	"formulation" :form,
+    	"category"    : cat,
+    	"note"        : note,
+    	"path"        : data
+    });
+
+    $.ajax({
+        url: '../patient/tb/register',
+        type: 'POST',
+        data: JSON.stringify(objectO),
+        success: function(data, textStatus, jqXHR)
+        {
+        	alert("Success");
+        },
+        error: function(jqXHR, textStatus, errorThrown)
+        {
+        	alert("Failure");
+        	alert(jqXHR);
+        	alert(textStatus);
+        	alert(errorThrown);
+        }
+    });
+}
+
+
+
+	

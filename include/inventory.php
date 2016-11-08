@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="../css/default.min.css"/>
   <link rel="stylesheet" href="../css/morris.css">
   <link rel="stylesheet" href="../css/jquery-ui.css">
+  <link rel="stylesheet" href="../css/jasny.min.css">
   
   <script type="text/javascript" src="../jquery/alertify.min.js"></script>
   <script type="text/javascript" src="../js/barcode.min.js"></script>
@@ -28,6 +29,7 @@
   <script type="text/javascript" src="../js/date.js"></script>
   <script type="text/javascript" src="../js/mouseover_popup.js"></script>
   <script type="text/javascript" src="../jquery/jquery-ui.js"></script>
+  <script type="text/javascript" src="../js/jasny.min.js"></script>
 
 </head>   		
 <body>
@@ -213,92 +215,70 @@
         <table class="table table-hover">
           <tbody>
             <tr>
-             <td>Type</td>
+             <td>Product Name</td>
              <td>
-              <select name="bill_category" onChange="showBills(this.value);" id="bill_category" class="form-control input-sm" style="width: 100%;">
-               <option value="particular">Particular Bills</option>
-               <option value="medicine">Medicine Bills</option>
-             </select>	
-           </td>
-         </tr>
-         <tr>
+              <input type="text" id="prod_name" placeholder="Name" class="form-control input-sm" style="width: 100%;">
+            </td>
+          </tr>
+          <tr>
+           <td>Product Code</td>
            <td>
-            <span id="particular">Paricular Category</span>
-            <span id="medicine" style="display: none">Medicine Category</span>
+            <input type="text" id="prod_code" placeholder="Code" class="form-control input-sm" style="width: 100%;">
           </td>
-          <td>
-            <select name="category" onChange="showDrugName(this.value);" id="category" class="form-control input-sm" style="width: 100%;" required>
-             <option value="">- Paricular Category -</option>
-           </select>
-
-           <select name="medicine_cat" onChange="showDrugList(this.value);" id="medicine_cat" class="form-control input-sm" style="width: 100%; display: none;" required>
-             <option value="">- Medicine Category -</option>
-             <option value="1">ANTI-ALLERGIC</option>
-             <option value="2">ANTI-ANXIETY</option>
-             <option value="4">ANTI-ARRHYTHMIA</option>
-             <option value="5">ANTI-ASTHMATIC</option>
-             <option value="6">ANTI-BACTERIAL</option>
-             <option value="7">ANTI-CHOLINERGICS</option>
-             <option value="8">ANTI-CHOLINESTERASES</option>
-             <option value="9">ANTI-HIV</option>
-             <option value="10">ANTI-INFECTIVE</option>
-             <option value="12">SDFGH</option>
-             <option value="13">THTHTYUYU</option>
-             <option value="14">CATEGORY</option>
-           </select>
-         </td>
-       </tr>
-       <tr>
+        </tr>
+        <tr>
+         <td>Formulation</td>
          <td>
-          <span id="particular_item">Paricular Item</span>
-          <span id="drug_name" style="display: none">Drug Name</span>
+          <input type="text" id="prod_form" placeholder="Formulation" class="form-control input-sm" style="width: 100%;">
         </td>
-        <td>
-          <span id="showCategories">
-           <select name="item" id="item" class="form-control input-sm" style="width: 100%;" required>
-            <option value="">- Paricular Item -</option>
-          </select>
-        </span>
+      </tr>
+      <tr>
+       <td>
+        <span id="particular">Category</span>
+      </td>
+      <td>
+       <select id="medicine_cat" class="form-control input-sm" style="width: 100%;" required>
+         <option value="">- Medicine Category -</option>
+         <option value="1">ANTI-ALLERGIC</option>
+         <option value="2">ANTI-ANXIETY</option>
+         <option value="4">ANTI-ARRHYTHMIA</option>
+         <option value="5">ANTI-ASTHMATIC</option>
+         <option value="6">ANTI-BACTERIAL</option>
+         <option value="7">ANTI-CHOLINERGICS</option>
+         <option value="8">ANTI-CHOLINESTERASES</option>
+         <option value="9">ANTI-HIV</option>
+         <option value="10">ANTI-INFECTIVE</option>
+         <option value="12">SDFGH</option>
+         <option value="13">THTHTYUYU</option>
+         <option value="14">CATEGORY</option>
+       </select>
+     </td>
+   </tr>
+   <tr>
+     <td>Note</td>
+     <td><textarea name="note" id="note" placeholder="note" class="form-control input-sm" style="width: 100%;"></textarea></td>
+   </tr>
 
-        <span id="showDrugListItem" style="display: none;">
-         <select name="item2" id="item2" class="form-control input-sm" style="width: 100%;" required>
-          <option value="">- Drug Name List -</option>
-        </select>
-      </span>
+   <tr>
+     <td>Image Upload</td>
+     
+     <td>
+      <div class="fileinput fileinput-new" data-provides="fileinput">
+        <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+        <div>
+          <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" id="prod_image" name="newfile"></span>
+          <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+        </div>
+      </div>   
     </td>
+  
   </tr>
-  <tr>
-   <td>Qty</td>
-   <td><input type="text" onkeypress="return isNumberKey(event)" name="qty" id="qty" value="1" placeholder="Qty" class="form-control input-sm" style="width: 100%;" required></td>
- </tr>
- <tr>
-   <td>Rate</td>
-   <td>
-    <label id="showRate">
-      <input type="text" onkeypress="return isNumberKey(event)" name="rate" id="rate" placeholder="rate" class="form-control input-sm" style="width: 100%;" required>
-    </label>
-
-    <label id="showDrugRate" style="display:none">
-      <input type="text" onkeypress="return isNumberKey(event)" name="drugrate" id="drugrate" placeholder="rate" class="form-control input-sm" style="width: 100%;" required>
-    </label>
-  </td>
-</tr>
-<tr>
- <td>Note</td>
- <td><textarea name="note" id="note" placeholder="note" class="form-control input-sm" style="width: 100%;"></textarea></td>
-</tr>
-
-<tr>
- <td></td>
- <td>
- </td>
-</tr>
 </tbody>
 </table>
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-  <button type="button" class="btn btn-primary" onClick="saveStock()">Add</button>
+  <button type="button" class="btn btn-primary" onClick="addProduct()">Add</button>
 </div>
 
 </div>

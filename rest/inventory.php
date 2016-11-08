@@ -15,6 +15,29 @@ $app->get('/getdata/expiry',function(Request $request, Response $response){
 	getExpiryData();
 });
 
+$app->post('/product',function(Request $request, Response $response){
+	$uploads_dir = '/uploads';
+
+	$files = $request->getUploadedFiles();
+	if (empty($files)) {
+        echo('Expected a newfile');
+    }
+
+    $file = $files['file']->{'file'};
+    $file0 = $files['file']->getClientFileName();
+    $file0 = uniqid().$file0;
+
+    $file0 = $_SERVER['DOCUMENT_ROOT']."/uploads/$file0";
+
+    try{
+    	$files['file']->moveTo($file0);
+    } catch(Exception $e){
+    }
+
+    echo($file0);
+    
+});
+
 
 function getAllData() {
 	require_once 'db_connection.php';
