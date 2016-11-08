@@ -2,148 +2,116 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>EROM-MGH</title>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+  <meta charset="UTF-8">
+  <title>Central Chest Clinic</title>
+  <meta name="robots" content="noindex">
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
-    <link href="http://demo-hms.eu5.org/public/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="http://demo-hms.eu5.org/public/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="http://demo-hms.eu5.org/public/css/ionicons.min.css" rel="stylesheet" type="text/css" />
-    <link href="http://demo-hms.eu5.org/public/css/AdminLTE.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet"href="../css/bootstrap/dist/css/bootstrap.min.css" type="text/css"/>
+  <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="../css/ionicons.css" type="text/css" />
+  <link rel="stylesheet" href="../css/AdminLTE.css" type="text/css" />
+  <link rel="stylesheet" href="../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../css/dataTables.bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="../css/alertify.min.css"/>
+  <link rel="stylesheet" href="../css/default.min.css"/>
+  <link rel="stylesheet" href="../css/morris.css">
+  <link rel="stylesheet" href="../css/jquery-ui.css">
+  
+  <script type="text/javascript" src="../jquery/alertify.min.js"></script>
+  <script type="text/javascript" src="../js/barcode.min.js"></script>
+  <script type="text/javascript" src="../jquery/jquery.min.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../css/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../jquery/raphael-min.js"></script>
+  <script type="text/javascript" src="../jquery/morris.min.js"></script>    
+  <script type="text/javascript" src="../js/app.js"></script>
+  <script type="text/javascript" src="../js/date.js"></script>
+  <script type="text/javascript" src="../js/mouseover_popup.js"></script>
+  <script type="text/javascript" src="../jquery/jquery-ui.js"></script>
 
-    <link href="http://demo-hms.eu5.org/public/css/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+</head>   		
+<body>
 
-    <!-- scrollbar -->
-    <link rel="stylesheet" href="http://demo-hms.eu5.org/public/scrollbar/jquery.mCustomScrollbar.css">
-    <!-- Google CDN jQuery with fallback to local -->
-    <script src="http://demo-hms.eu5.org/public/scrollbar/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="http://demo-hms.eu5.org/public/scrollbar/js/minified/jquery-1.11.0.min.js"><\/script>')</script>
+  <header class="header" style="background: url('../images/header_bar.jpg') repeat-x; background-size: 100% 100%; border-bottom:1px solid #CCC">
+    <a href="#" class="logo">
+      <!-- Add the class icon to your logo image or logo icon to add the margining -->
+      <div class="logo-pms"><img src="../images/logo.png" height="40"></div>
+  </a>
+  <!-- Header Navbar: style can be found in header.less -->
+  <nav class="navbar navbar-static-top" role="navigation" style="background: url('../images/header_bar_02.jpg') repeat-x; background-size: 100% 100%; border-bottom:1px solid #CCC">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </a>
+    <div class="logo2"> Healthcare Management System</div>
 
-    <!-- custom scrollbar plugin -->
-    <link rel="stylesheet" href="http://demo-hms.eu5.org/public/scrollbar/style.css">
-    <script src="http://demo-hms.eu5.org/public/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+</header>  
 
-    <li class="dropdown user user-menu">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <i class="glyphicon glyphicon-user"></i>
-            <span>Admin Administrator<i class="caret"></i></span>
-        </a>
-        <ul class="dropdown-menu">
-            <!-- User image -->
-            <li class="user-header bg-light-blue">
-               <img src="http://demo-hms.eu5.org/public/user_picture/no_avatar.gif" class="img-circle" alt="User Image" />
-               <p>
-                Admin Administrator <br /> System Administrator                                    </p>
-            </li>
-            <!-- Menu Footer-->
-            <li class="user-footer">
-                <div class="pull-left">
-                    <a href="http://demo-hms.eu5.org/myprofile" class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
-                    <a href="http://demo-hms.eu5.org/login/logout" class="btn btn-default btn-flat">Sign out</a>
-                </div>
-            </li>
-        </ul>
-    </li>
-</ul>
-</div>
-</nav>
-</header>        		<form method="post" action="http://demo-hms.eu5.org/app/billing/save_invoice" onSubmit="return validate_form();">
-<input type="hidden" name="patient" id="patient">
+<form method="post" action="http://demo-hms.eu5.org/app/billing/save_invoice" onSubmit="return validate_form();">
+    <input type="hidden" name="patient" id="patient">
 
-<section class="content">
+    <section class="content">
 
-   <div class="row">
-      <div class="col-md-3">
-       <div class="box box-primary">
-        <div class="box-header">
+       <div class="row">
+          <div class="col-md-3">
+           <div class="box box-primary">
+            <div class="box-header">
+                <h3>Add Stock</h3>
+            </div>
+
+            <div class="box-content" style="text-align=center;">  
+           </div>
+           <div class="box-footer">
+
+               <div class="form-group">
+                   <label for="p_code">Product Code</label>
+                   <input type="text" id="p_code" class="form-control input-sm">
+               </div>
+
+               <div class="form-group">
+                   <label for="p_name">Product Name</label>
+                   <input type="text" id="p_name" class="form-control input-sm">
+               </div>
+
+               <div class="form-group">
+                   <label for="exampleInputEmail1">Formulation</label>
+                   <input type="text" id="formula" class="form-control input-sm">
+               </div>
+
+               <div class="form-group">
+                   <label for="dose">Dosage</label>
+                   <input type="text" id="dose" class="form-control input-sm">
+               </div>
+
+               <div class="form-group">
+                   <label for="batch_no">Batch No.</label>
+                   <input type="text" placeholder="6789LO" id="batch_no" class="form-control input-sm">
+               </div>
+
+               <div class="form-group">
+                   <label for="quantity">Quantity</label>
+                   <input type="text" placeholder="6789LO" id="quantity" class="form-control input-sm">
+               </div>
+
+               <div class="form-group">
+                   <label for="expiry">Expiry</label>
+                   <input type="text" placeholder="6789LO" id="expiry" class="form-control input-sm">
+               </div>
+
+               <div class="form-group">
+                   <label for="exampleInputEmail1">Remarks</label>
+                   <textarea placeholder="Remarks" class="form-control input-sm" name="remarks" id="remarks" rows="5"></textarea>
+               </div>
+           </div>
+
+           <div class="box-footer">
+            <button type="button" class="btn btn-default" style="width:100px;">Reset</button>
+            <button type="button" class="btn btn-primary" style="width:100px;" onclick="saveStock()">Save</button>
         </div>
-
-        <div class="box-content"> 
-           <div class="box-body table-responsive no-padding">
-              <span id="patientDetials">
-                  <table width="100%" cellpadding="3" cellspacing="3">
-                    <tr>
-                       <td width="15%" valign="top" align="center">
-                        <img src="http://demo-hms.eu5.org/public/patient_picture/avatar.png" class="img-rounded" width="86" height="81">
-                    </td>
-                    <td>
-                     <table cellpadding="2" width="100%">
-                        <tr>
-                           <td><strong>Patient No.</strong></td>
-                           <td>-</td>
-                       </tr>
-                       <tr>
-                           <td><strong>IOP No.</strong></td>
-                           <td>-</td>
-                       </tr>
-                       <tr>
-                           <td><strong>Patient Name.</strong></td>
-                       </tr>
-                       <tr>
-                           <td>-</td>
-                       </tr>
-                   </table>
-               </td>
-           </tr>
-       </table>
-   </span>
-</div>	
-</div>
-<div class="box-footer">
-
-    <div class="form-group">
-       <label for="exampleInputEmail1">Date</label>
-       <input type="text" value="11/08/2016" readonly name="dDate22222" id="dDate22222" class="form-control input-sm">
-   </div>
-
-   <div class="form-group">
-       <label for="exampleInputEmail1">Invoice No.</label>
-       <input type="text" value="SI-000066" readonly name="invoiceno" id="invoiceno" class="form-control input-sm">
-   </div>
-
-   <div class="form-group">
-       <label for="exampleInputEmail1">Total Items</label>
-       <input type="text" readonly name="hdnrowcnt" id="hdnrowcnt" value="0" class="form-control input-sm">
-   </div>
-
-   <div class="form-group">
-       <label for="exampleInputEmail1">Sub Total</label>
-       <input type="text" readonly name="nGross" id="nGross" placeholder="0.00" class="form-control input-sm">
-   </div>
-
-   <div class="form-group">
-       <label for="exampleInputEmail1">Discount</label>
-       <input type="text" name="discount" id="discount" value="0" onKeyUp="validate_discount(this.value)" class="form-control input-sm" onkeypress="return isNumberKey(event)" >
-   </div>
-
-   <div class="form-group">
-       <label for="exampleInputEmail1">TOTAL AMOUNT</label>
-       <input type="text" placeholder="0.00" readonly name="total_amount" id="total_amount" class="form-control input-sm">
-   </div>
-
-   <div class="form-group">
-       <label for="exampleInputEmail1">Reason for Discount</label>
-       <select name="reason_dicount" id="reason_dicount" class="form-control input-sm">
-           <option value="">- Reason for Discount -</option>
-           <option value="64">Student</option>
-           <option value="65">Senior Citizen</option>
-           <option value="66">Sample Reason here</option>
-           <option value="67">Person with Disablities</option>
-           <option value="68">Management Decision</option>
-           <option value="69">Below Poverty Line</option>
-           <option value="70">Employee</option>
-           <option value="71">Member</option>
-       </select>
-   </div>
-
-   <div class="form-group">
-       <label for="exampleInputEmail1">Remarks</label>
-       <textarea placeholder="Remarks" class="form-control input-sm" name="remarks" id="remarks" rows="5"></textarea>
-   </div>
-</div>
-</div>
+    </div>
 </div>
 
 <div class="col-md-9">
@@ -165,17 +133,17 @@
            <table id="myTable" width="100%" cellpadding="2" cellspacing="2">
             <thead>
                <tr style="border-bottom:1px #999 solid; border-collapse:collapse">
-                   <th width="3%">No.</th>
-                   <th width="42%">Particular Name</th>
-                   <th width="7%">Qty</th>
-                   <th width="10%">Rate</th>
-                   <th width="10%">Amount</th>
-                   <th width="25%">Note</th>
-                   <th width="3%"></th>
+                   <th>Date</th>
+                   <th>Product Code</th>
+                   <th>Product Name</th>
+                   <th>Dosage</th>
+                   <th>Batch No</th>
+                   <th>Quantity</th>
+                   <th>Expiry</th>
+                   <th>Action</th>
                </tr>
            </thead>
        </table>
-
 
    </div>
 </div>
@@ -205,14 +173,6 @@
 </div>
 </section><!-- /.content -->
 </form>
-
-<script src="http://demo-hms.eu5.org/public/js/jquery.min.js"></script>
-<script src="http://demo-hms.eu5.org/public/js/bootstrap.min.js" type="text/javascript"></script>     
-<script src="http://demo-hms.eu5.org/public/js/AdminLTE/app.js" type="text/javascript"></script>
-
-<!-- BDAY -->
-<script src="http://demo-hms.eu5.org/public/datepicker/js/jquery-1.9.1.min.js"></script>
-<script src="http://demo-hms.eu5.org/public/datepicker/js/bootstrap-datepicker.js"></script>
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -351,6 +311,19 @@
 </div>
 
 <!-- /.modal -->   
+
+<script type="text/javascript">
+  /*$(document).ready(function(){
+    loadStock();
+});*/
+
+$( function() {
+ $( "#expiry" ).datepicker({
+    dateFormat: "yy-mm-dd"
+});
+});
+
+</script>
 
 </body>
 </html>
