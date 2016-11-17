@@ -191,7 +191,7 @@
 <div class="col-md-9">
  <div class="box box-primary">
    <div class="box-body">
-     <a class="btn btn-app" href="#"><i class="fa fa-refresh"></i> Refresh</a>
+     <a class="btn btn-app" href=""><i class="fa fa-refresh"></i> Refresh</a>
      <a class="btn btn-app" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Add Item</a>
      <a href="#" class="btn btn-app"><i class="fa fa-hand-o-down"></i> View Item</a>
      <a class="btn btn-app"><i class="fa fa-print"></i> Print</a>
