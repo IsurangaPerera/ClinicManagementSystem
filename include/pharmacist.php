@@ -32,18 +32,10 @@ require('header.php');
   <!--END OF Medications-->
 
   <!--START OF Inventory Management-->
-  <li id="lst" class="treeview">
-    <a href="#">
-      <i class="fa fa-user"></i> <span>Inventory Management</span>
-      <i class="fa fa-angle-left pull-right"></i>
+  <li>
+    <a href="#" id="inventory">
+      <i class="fa ion-person-add "></i> <span>Inventory Management</span>
     </a>
-    <ul id="slst" class="treeview-menu">
-      <li ><a href='#' id="add_stock"><i class="fa fa-angle-double-right"></i>Add Stock</a></li>
-      <li ><a href='#' id="e_prof"><i class="fa fa-angle-double-right"></i>Purchase Order</a></li>
-      <li ><a href='#' id="c_pass"><i class="fa fa-angle-double-right"></i>Purchase Invoice</a></li>
-      <li ><a href='#' id="expired_stock"><i class="fa fa-angle-double-right"></i>Expired Stock</a></li>
-      <li ><a href='#' id=""><i class="fa fa-angle-double-right"></i>View Stock</a></li>
-    </ul>
   </li>
   <!--END OF Inventory Management-->
 
@@ -89,12 +81,8 @@ $(document).ready(function(){
     $('#r_side').load('app/issue_medications.php');
   });
 
-  $("#add_stock").click(function(event){
-    $('#r_side').load('app/add_stock.php');
-  });
-
-  $("#expired_stock").click(function(event){
-    $('#r_side').load('app/expired_stock.php');
+  $("#inventory").click(function(event){
+    $('#r_side').load('inventory.php');
   });
 
   $("#m_prof").click(function(event){

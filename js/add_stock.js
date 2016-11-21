@@ -114,7 +114,7 @@ function loadStock(){
 			type: "GET",
 			url: "../inventory/getdata",
 			success: function( data, textStatus, jQxhr ){
-				dataO = JSON.parse(data);
+				window.dataO = JSON.parse(data);
 				if(dataO != null && dataO.length > 0)
 					addToTable(dataO, 'tble_stock');
 			},
@@ -132,9 +132,10 @@ function loadExpiryStock(){
 			type: "GET",
 			url: "../inventory/getdata/expiry",
 			success: function( data, textStatus, jQxhr ){
-				dataE = JSON.parse(data);
-				if(dataE != null && dataE.length > 0)
+				window.dataE = JSON.parse(data);
+				if(dataE != null && dataE.length > 0){
 					addToTable(dataE, 'expire_stock');
+				}
 			},
 			error: function( jqXhr, textStatus, errorThrown ){
 				
@@ -142,6 +143,46 @@ function loadExpiryStock(){
 		});
 	} else
 		addToTable(dataE, 'expire_stock');
+}
+
+function loadProductItem() {
+	
+	if(dataE === null){
+		$.ajax({
+			type: "GET",
+			url: "../inventory/getdata/product",
+			success: function( data, textStatus, jQxhr ){
+				dataE = JSON.parse(data);
+				if(dataE != null && dataE.length > 0)
+					addToTableProduct(dataE);
+			},
+			error: function( jqXhr, textStatus, errorThrown ){
+				
+			}
+		});
+	} else
+		addToTableProduct(dataP);
+}
+
+function addToTableProduct(dataX){
+	table = document.getElementById('product_item');
+	arr = dataX;
+	console.log(dataX.length);
+	for(i = 0; i < arr.length; i++){
+		var row   = table.insertRow(table.rows.length);
+		var cell1 = row.insertCell(0);
+		var cell2 = row.insertCell(1);
+		var cell3 = row.insertCell(2);
+		var cell4 = row.insertCell(3);
+		var cell5 = row.insertCell(4);
+
+		cell1.innerHTML = arr[i]['p_code'] + cell1.innerHTML;
+		cell2.innerHTML = arr[i]['p_name'] + cell2.innerHTML;
+		cell3.innerHTML = arr[i]['formula'] + cell3.innerHTML;
+		cell4.innerHTML = arr[i]['brand_name'] + cell4.innerHTML;
+		id2 = '<a href="#">View Product</a>';
+		cell5.innerHTML = id2 + cell5.innerHTML;
+	}
 }
 
 function addProduct() {

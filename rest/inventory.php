@@ -15,6 +15,10 @@ $app->get('/getdata/expiry',function(Request $request, Response $response){
 	getExpiryData();
 });
 
+$app->get('/getdata/product',function(Request $request, Response $response){
+    getProductData();
+});
+
 $app->post('/product',function(Request $request, Response $response){
 	$uploads_dir = '/uploads';
 
@@ -37,6 +41,40 @@ $app->post('/product',function(Request $request, Response $response){
     echo($file0);
     
 });
+
+function getProductData() {
+    require_once 'db_connection.php';
+    $db = db_connect();
+
+    $sql_data = "SELECT p_code,p_name,formula,brand_name ".
+                "FROM inventory_data ".
+                "GROUP BY p_code";
+
+    $stmt = $db->prepare($sql_data);
+    if($stmt === false) {       
+        trigger_error('Wrong SQL: ' . $sql_data . ' Error: ' . $db->error, E_USER_ERROR);
+    }
+
+    if (!$stmt->execute()) {
+        echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+    }
+
+    $meta = $stmt->result_metadata();
+    while ( $field = $meta->fetch_field() )
+        $parameters[] = &$row[$field->name]; 
+ 
+   call_user_func_array(array($stmt, 'bind_result'), $parameters);
+
+    while ( $stmt->fetch() ) {
+        $x = array();
+        foreach( $row as $key => $val )
+            $x[$key] = $val;
+        $results[] = $x;
+    }
+
+    echo json_encode($results);
+    $stmt->close();
+}
 
 
 function getAllData() {
