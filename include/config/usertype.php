@@ -10,8 +10,8 @@ elseif(strcmp($_SESSION['user_type'],"Pharmacist")==0){
 	header("location: ../pharmacist.php");}
 elseif(strcmp($_SESSION['user_type'],"Laboratory Assistant")==0){
 	header("location: ../laboratory_assistant.php");}
-elseif(strcmp($_SESSION['user_type'],"XRayRoomClerk")==0){
-	header("location: XRayRoom.php");}
+elseif(strcmp($_SESSION['user_type'],"Radiologist")==0){
+	header("location: ../radiologist.php");}
 elseif(strcmp($_SESSION['user_type'],"Sputum Room Clerk")==0){
 	header("location: ../sputum_room_clerk.php");}
 elseif(strcmp($_SESSION['user_type'],"Bleeding Room Nurse")==0){
