@@ -5,11 +5,16 @@ function checkAvailability() {
 		type: "GET",
      	url: "../patient/xray/get_data/"+id,
 		success: function( data, textStatus, jQxhr ){
-			if(data !== null)
+			try{
 				applyData(JSON.parse(data));
+			} catch(err) {
+				$('#err_msg').html("No requests at the moment");
+				$("#alert").attr("class", "alert alert-danger alert-dismissable");
+				$("#alert").show(1000).delay(5000).hide(1000);
+			}	
 		},
 		error: function( jqXhr, textStatus, errorThrown ){
-			alert( errorThrown );
+			
 		}
 	});
 }
@@ -41,13 +46,13 @@ function addXRay() {
 			success: function(data, textStatus, jqXHR)
 			{
 				$('#myModal').modal({backdrop: "hide"});
+				$('#err_msg').html("Operation Successful");
+				$("#alert").attr("class", "alert alert-success alert-dismissable");
+				$("#alert").show(1000).delay(5000).hide(1000);
 			},
 			error: function(jqXHR, textStatus, errorThrown)
 			{
-				alert("Failure");
-				alert(jqXHR);
-				alert(textStatus);
-				alert(errorThrown);
+
 			}
 		});
 	} else {
