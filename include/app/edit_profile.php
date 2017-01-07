@@ -79,7 +79,7 @@
             <tr>
              <td width="18%">Gender</td>
              <td width="41%">
-              <input type="text" id="gender" value="<?php echo $gender; ?>" class="form-control input-sm" placeholder="Gender" style="width: 100px;" />       
+              <input type="text" id="gender" class="form-control input-sm" placeholder="Gender" style="width: 100px;" />       
             </td>
           </tr>
           <tr>
