@@ -100,7 +100,7 @@
   </div>
 
   <div class="box-footer clearfix" align="right">
-    <button class="btn btn-primary" onclick="location.reload(true);"><i class="fa fa-save"></i>Refresh</button>        
+    <button class="btn btn-primary" onclick="loadFunctions();"><i class="fa fa-save"></i>Refresh</button>        
   </div>
 
 </div>
@@ -155,9 +155,13 @@
 <script type="text/javascript">
 
 $(document).ready(function(){
+  loadFunctions();
+});
+
+function loadFunctions() {
   showGraph();
   loadFbcData();
   loadXRayData();
-});
+}
 
 </script>

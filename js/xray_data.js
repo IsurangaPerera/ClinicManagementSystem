@@ -29,13 +29,6 @@ function handleXRayData(data){
 }
 
 function handleXRayModal(id){
-	for(val in dataO2[id]){
-		if(val === 'date')
-			continue;
-		else{
-			temp = '#' + val;
-			$(temp).html(dataO[id][val]);
-		}
-	}
-	$('#dataModal').modal('show');
+	window.location = "../"+dataO2[id]['sample_index'];
+	//alert(dataO2[id]['sample_index']);
 }

@@ -1,6 +1,7 @@
 var fbs_data = [];
 
 function showGraph(){
+    $("#fbs_chart").html(" ");
     var dataO;
     var dataT = [];
 

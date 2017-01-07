@@ -18,8 +18,6 @@
      <div class="box">
       <form>
         <div class="box-header">
-          <h3 class="box-title"><a href="" class="btn btn-primary"><i class="fa fa-plus"></i> Add New Patient</a></h3>
-
           <div class="box-tools">
             <div class="input-group">
               <input type="text" name="search" id="search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>

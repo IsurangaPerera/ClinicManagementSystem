@@ -18,9 +18,10 @@ $nic = $_SESSION['nic'];
   <link rel="stylesheet" href="../css/dataTables.bootstrap.css" type="text/css" />
   <link rel="stylesheet" href="../css/alertify.min.css"/>
   <link rel="stylesheet" href="../css/default.min.css"/>
-  <link rel="stylesheet" href="../css/morris.css">
-  <link rel="stylesheet" href="../css/jquery-ui.css">
-  <link rel="stylesheet" href="../css/jasny.min.css">
+  <link rel="stylesheet" href="../css/morris.css"/>
+  <link rel="stylesheet" href="../css/jquery-ui.css"/>
+  <link rel="stylesheet" href="../css/jasny.min.css"/>
+  <link href="http://cdn.alloyui.com/3.0.1/aui-css/css/bootstrap.min.css" rel="stylesheet"></link>
   
   <script type="text/javascript" src="../jquery/alertify.min.js"></script>
   <script type="text/javascript" src="../js/barcode.min.js"></script>
@@ -33,6 +34,7 @@ $nic = $_SESSION['nic'];
   <script type="text/javascript" src="../js/mouseover_popup.js"></script>
   <script type="text/javascript" src="../jquery/jquery-ui.js"></script>
   <script type="text/javascript" src="../js/jasny.min.js"></script>
+  <script src="http://cdn.alloyui.com/3.0.1/aui/aui-min.js"></script>
 
 </head>
 
