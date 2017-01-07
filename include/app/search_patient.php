@@ -19,7 +19,7 @@
                 <tr>
                   <td>
 
-                    <input type="text" id="keyword" data-toggle="modal" placeholder="Enter Patient ID" class="form-control input-sm" style="width: 100%; cursor:pointer;" required autofocus>
+                    <input type="text" id="keyword" data-toggle="modal" placeholder="ID/Name/DOB" class="form-control input-sm" style="width: 100%; cursor:pointer;" required autofocus>
 
                   </td>
                 </tr>
@@ -39,7 +39,7 @@
     </section><!-- /.content -->
 
     <!--START OF MODAL-->
-    <div class="modal fade in" id="patientListModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" hidden">
+    <div class="modal fade in" id="patientListModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" hidden>
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -60,7 +60,7 @@
               text-align: left;
               overflow: auto">
               <table class="table table-striped table-hover">
-               
+
                 <thead>
                   <tr>
                     <th>Patient No.</th>
@@ -70,7 +70,7 @@
                     <th></th>
                   </tr>
                 </thead>
-               
+
                 <tbody id="tbleSearch">
                 </tbody>
               </table>
@@ -89,6 +89,20 @@
       <!-- /.modal-dialog -->
       <!-- END OF MODAL -->
 
+      <div id='sample2' hidden>
+        <table border='1' align="center">
+          <tr>
+            <div id="barimg" align="center">
+              <div>
+                <h4><em>Central Chest Clinic</em></h4>
+                <h5><em>Baseline Road, Colombo 08</em></h5>
+                <svg id="code128" style="height: 80px; width: 300px; " align="right"></svg>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+              </div>
+            </tr>
+          </table>
+        </div>
+
+      </div>
     </div>
   </div>
-</div>

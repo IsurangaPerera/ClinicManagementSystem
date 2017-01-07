@@ -31,6 +31,24 @@ function getInformation(url){
 	});
 }
 
+function printm(id){
+	var mywindow = window.open('', 'PRINT', 'height=400,width=600');
+	$("#code128").html("");
+	JsBarcode("#code128", id);
+	mywindow.document.write('<html><body>');
+
+	mywindow.document.write($("#sample2").html());
+	mywindow.document.write('</body></html>');
+
+	mywindow.document.close();
+	mywindow.focus();
+
+	mywindow.print();
+	mywindow.close();
+
+	$("#barimg").show().printElement();
+}
+
 function organizeData(){
 	table = document.getElementById('tbleSearch');
 	$("#tbleSearch").html("");
@@ -47,8 +65,9 @@ function organizeData(){
 		cell2.innerHTML = dataO[i]["firstname"] + " " + dataO[i]["lastname"];
 		cell3.innerHTML = dataO[i]["dob"];
 		cell4.innerHTML = dataO[i]["nic"];
-		cell5.innerHTML = "<a href='#' onclick='print()'>SELECT</a>";
+		cell5.innerHTML = "<a href='#' onclick='printm("+ dataO[i]["patientId"] + ")'>SELECT</a>";
 	}
 
 	$("#patientListModal").modal("show");
 }
+
