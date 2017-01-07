@@ -3,7 +3,7 @@ var dataO2;
 function loadXRayData(){
 	$.ajax({
 		type: "GET",
-     	url: baseUrl + sessionStorage.getItem("patientId"),
+     	url: baseUrl2 + sessionStorage.getItem("patientId"),
 		success: function( data, textStatus, jQxhr ){
 			dataO2 = JSON.parse(data);
 			handleXRayData(dataO2);
