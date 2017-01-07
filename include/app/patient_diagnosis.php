@@ -834,6 +834,10 @@
 													<input type="checkbox" id="esr"/>
 													<label for="esr">ESR</label>
 												</td>
+												<td>
+													<input type="checkbox" id="fbs"/>
+													<label for="fbs">FBS</label>
+												</td>
 											</tr>
 										</table>
 									</div>

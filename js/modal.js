@@ -501,7 +501,7 @@ function handleInvestigations(){
 	var investigation2 = {
 		"xray" : ["pa", "rl", "ll", "apical"],
 		"sputum" : ["pyogenicculture", "afbsmear3",	"afbsmear", "fungalculture"],
-		"blood" : ["fbc", "esr"],
+		"blood" : ["fbc", "esr", "fbs"],
 		"lfunction" : ["fev1", "fvc", "dlco"]
 		};
 
