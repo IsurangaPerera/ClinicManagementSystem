@@ -69,6 +69,30 @@
           </div>
         </div>
 
+        <div class="tab-pane" id="tab_4">
+          <div class="container">
+            <div class="row">
+
+              <div class="col-md-4">
+                <div class="panel-group" id="xray_panel">
+
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="panel-group" id="xray_panel2">
+
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="panel-group" id="xray_panel3">
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
       </div>
 
     </div><!--END OF TABS-->
@@ -125,12 +149,15 @@
 
 <script src="../js/fbs_graph.js" type="text/javascript"></script>
 <script src="../js/fbc_data.js" type="text/javascript"></script>
+<script src="../js/xray_data.js" type="text/javascript"></script>
+
 
 <script type="text/javascript">
 
 $(document).ready(function(){
   showGraph();
   loadFbcData();
+  loadXRayData();
 });
 
 </script>

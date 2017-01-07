@@ -44,6 +44,52 @@ $app->post('/sputum',function(Request $request, Response $response){
 	updateSputumData($json);
 });
 
+$app->get('/get_completed_data/{id}',function(Request $request, Response $response){
+	$id = $request->getAttribute('id');
+	getCompletedData($id);
+});
+
+function getCompletedData($id) {
+	
+	require_once 'db_connection.php';
+ 	$db = db_connect();
+
+	$sql_data = 'SELECT * FROM investigation_type WHERE '.
+				'patientId = ? AND investigation = ? AND status = ?';
+	
+	$stmt = $db->prepare($sql_data);
+	if($stmt === false) {		
+		trigger_error('Wrong SQL: ' . $sql_data . ' Error: ' . $db->error, E_USER_ERROR);
+	}
+
+	$sp = "Chest X-Ray";
+	$status = "completed";
+
+	if(!$stmt->bind_param('sss',$id, $sp, $status)) {
+		echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+	}
+	
+	if (!$stmt->execute()) {
+		echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+	}
+
+	$meta = $stmt->result_metadata();
+    while ( $field = $meta->fetch_field() )
+    	$parameters[] = &$row[$field->name]; 
+ 
+   call_user_func_array(array($stmt, 'bind_result'), $parameters);
+
+    while ( $stmt->fetch() ) {
+        $x = array();
+        foreach( $row as $key => $val )
+        	$x[$key] = $val;
+        $results[] = $x;
+    }
+
+    echo json_encode($results);
+	$stmt->close();
+}
+
 function getXRayData($id) {
 	
 	require_once 'db_connection.php';
