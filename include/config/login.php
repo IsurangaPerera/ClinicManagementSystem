@@ -27,7 +27,9 @@ if($rows_returned > 0){
 	$_SESSION['user_type'] = $row['type'];
 	$_SESSION['user_name'] = $row['firstname']." ".$row['lastname'];
 	$_SESSION['nic'] =  $row['nic'];
-	require('usertype.php');
+
+	$url = "../../login/id/$row[type]/$row[nic]";
+	header("location: $url");
 } else {
 	header("location: ../../index.php");
 }
