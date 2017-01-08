@@ -10,7 +10,10 @@ session_start();
 	<meta name="robots" content="noindex">
 	<title>CentralChest Clinic | Log in</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<meta name="apple-mobile-web-app-capable" content="yes"> 
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta http-equiv="cache-control" content="private, max-age=0, no-cache">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="expires" content="0">
 	
 	<link href="css/common.css" rel="stylesheet" type="text/css" />
 	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -22,6 +25,14 @@ session_start();
 	<script src="css/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="js/login/signin.js"></script>
 
+	<script type = "text/javascript" >
+		function preventBack(){
+			window.history.forward();
+		} 
+		setTimeout("preventBack()", 0); 
+		window.onunload=function(){null}; 
+	</script>
+
 	<script type="text/javascript">
 	
 		$.ajax({
@@ -29,8 +40,10 @@ session_start();
 			async: false,
      		url: "login/",
 			success: function( data, textStatus, jQxhr ){
-				if(data !== "not_logged")
+				if(data !== "not_logged"){
 					window.location.href = data;
+					exit;
+				}		
 			},
 			error: function( jqXhr, textStatus, errorThrown ){
 				
@@ -38,6 +51,8 @@ session_start();
 		});
 
 	</script>
+
+
 
 </head>
 <body bgcolor="#FFFFFF">	

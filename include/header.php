@@ -79,7 +79,7 @@ $nic = $_SESSION['nic'];
                 <a href="" class="btn btn-default btn-flat">Profile</a>
               </div>
               <div class="pull-right">
-                <a href="config/logout.php" class="btn btn-default btn-flat">Sign out</a>
+                <a href="../login/delete/" class="btn btn-default btn-flat">Sign out</a>
               </div>
             </li>
           </ul>

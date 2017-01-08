@@ -76,6 +76,22 @@ $app->get('/', function (Request $request, Response $response) {
 	//return $response->withRedirect($url);
 });
 
+$app->get('/delete/', function (Request $request, Response $response) {
+
+	$cookie = FigRequestCookies::get($request, 'USERID');
+
+	$base = "../../../../";
+    $url = $base . 'index.php';
+
+	$cookieVal = $cookie->getValue();
+	
+	$response = FigResponseCookies::expire($response, 'USERID');
+	
+	deleteCookieData($cookieVal);
+	
+	return $response->withRedirect($url);
+});
+
 function setCookies($name, $value){
 	$setCookie = SetCookie::create($name)
     ->withValue($value)
@@ -103,6 +119,30 @@ function saveCookieData($cookieId, $type){
 	$type = $type;
 
 	if(!$stmt->bind_param('ss', $cid, $type)) {
+		echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+	}
+	
+	if (!$stmt->execute()) {
+		echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+	}
+
+	$stmt->close();
+}
+
+
+function deleteCookieData($value){
+	require_once 'db_connection.php';
+    $db = db_connect();
+
+	$sql_data = 'DELETE FROM session '.
+				'WHERE cookie_id = ?';
+	
+	$stmt = $db->prepare($sql_data);
+	if($stmt === false) {		
+		trigger_error('Wrong SQL: ' . $sql_data . ' Error: ' . $db->error, E_USER_ERROR);
+	}
+
+	if(!$stmt->bind_param('s', $value)) {
 		echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
 	}
 	
