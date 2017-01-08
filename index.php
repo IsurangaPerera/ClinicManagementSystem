@@ -18,6 +18,27 @@ session_start();
 	<link href="css/login/signin.css" rel="stylesheet" type="text/css">
 	<link href="css/login/login.css" rel="stylesheet" type="text/css">
 
+	<script src="jquery/jquery.min.js"></script>
+	<script src="css/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="js/login/signin.js"></script>
+
+	<script type="text/javascript">
+	
+		$.ajax({
+			type: "GET",
+			async: false,
+     		url: "login/",
+			success: function( data, textStatus, jQxhr ){
+				if(data !== "not_logged")
+					window.location.href = data;
+			},
+			error: function( jqXhr, textStatus, errorThrown ){
+				
+			}
+		});
+
+	</script>
+
 </head>
 <body bgcolor="#FFFFFF">	
 	<div style="background: #FFFFFF url('images/login/background.png'); 
@@ -56,8 +77,5 @@ session_start();
 			</div> <!-- /content -->
 		</div> <!-- /account-container -->
 	</div>
-	<script src="jquery/jquery.min.js"></script>
-	<script src="css/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="js/login/signin.js"></script>
 </body>
 </html>
