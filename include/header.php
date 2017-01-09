@@ -34,6 +34,27 @@ $nic = $_SESSION['nic'];
   <script type="text/javascript" src="../jquery/jquery-ui.js"></script>
   <script type="text/javascript" src="../js/jasny.min.js"></script>
 
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $.ajax({
+        type: "GET",
+        url: "../user/header/data",
+        success: function( data, textStatus, jQxhr ){
+          data = JSON.parse(data);
+          name = data[0]['firstname']+"  "+data[0]['lastname'];
+          nameall = name + "<br/>" + data[0]['type'];
+          namea = name + '<i class="caret"></i>';
+          $("#usrname").html(nameall);
+          $("#huname").html(namea);
+          $("#huname2").html(name);
+          $("#nicc").html(data[0]['nic']);
+        },
+        error: function( jqXhr, textStatus, errorThrown ){
+        }
+      });
+    });
+  </script>
+
 </head>
 
 <body class="skin-blue">
@@ -63,15 +84,15 @@ $nic = $_SESSION['nic'];
           <li id="headc" class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="glyphicon glyphicon-user"></i>
-              <span><?php echo $_SESSION['user_name']; ?><i class="caret"></i></span>
+              <span id="huname"></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header bg-light-blue">
                <img src="../images/noavatar.png" class="img-circle" alt="User Image" />
                <p id="usrname">
-                <?php echo $_SESSION['user_name']; ?> <br /> <?php echo $_SESSION['user_type']; ?> 
-              </p>                                   </p>
+                
+              </p>
             </li>
             <!-- Menu Footer-->
             <li class="user-footer">
@@ -102,8 +123,8 @@ $nic = $_SESSION['nic'];
 
         </div>
         <div class="pull-left info">
-          <p><?php echo $_SESSION['user_name']; ?></p>
-	  <p hidden id="nicc"><?php echo "$nic" ?></p>
+          <p id="huname2"></p>
+	  <p hidden id="nicc"></p>
 
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>

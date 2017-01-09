@@ -21,25 +21,24 @@
     <div class="box box-primary" id="loading-example">
       <div class="box-header">
         <div class="pull-right box-tools">
-          <button class="btn btn-primary btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+          <button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#inbody" aria-expanded="false" aria-controls="inbody"><i class="fa fa-minus"></i></button>
           
         </div>
         <i class="fa fa-user-md"></i>
         
-        <h3 class="box-title">Doctor's IN</h3>
+        <h3 class="box-title">Users IN</h3>
       </div>
-      <div class="box-body no-padding">
+      <div class="box-body no-padding collapse" id="inbody">
         <div class="table-responsive">
           <table class="table table-hover">
             <thead>
               <tr>
                 <th>Doctor Name</th>
                 <th>Department</th>
-                <th>Date Time In</th>
-                <th>Action</th>
+                <th>Designation</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="docin">
             </tbody>
           </table>
         </div>
@@ -57,24 +56,23 @@
     <div class="box box-primary" id="loading-example">
       <div class="box-header">
         <div class="pull-right box-tools">
-          <button class="btn btn-primary btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+          <button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#outbody" aria-expanded="false" aria-controls="outbody"><i class="fa fa-minus"></i></button>
           
         </div>
         <i class="fa fa-user-md"></i>
-        <h3 class="box-title">Doctor's OUT</h3>
+        <h3 class="box-title">Users OUT</h3>
       </div>
-      <div class="box-body no-padding">
+      <div class="box-body no-padding collapse" id="outbody">
         <div class="table-responsive">
           <table class="table table-hover">
             <thead>
               <tr>
                 <th>Doctor Name</th>
                 <th>Department</th>
-                <th>Date Time In</th>
-                <th>Action</th>
+                <th>Designation</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="docout">
             </tbody>
           </table>
         </div>
@@ -93,4 +91,12 @@
 </div>
 
   </section>
+
+  <script type="text/javascript" src="../../js/dash_board.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      getAllData();
+      
+    });
+  </script>
 </div>

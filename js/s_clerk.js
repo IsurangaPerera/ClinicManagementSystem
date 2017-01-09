@@ -3,13 +3,16 @@ var baseURL = "../patient/investigations/sputum";
 var patientId;
 
 function process(id){
-    if(id === undefined)
+
+    if(id === undefined || id === null)
         patientId = $('#patient_no').val();
     else
         patientId = id;
     
 	uri = baseURL + "/" + patientId;	
-	$.ajax({
+    alert(uri);
+	
+    $.ajax({
     type: "GET",
     url: uri,
     success: function (data) {
