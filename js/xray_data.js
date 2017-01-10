@@ -29,6 +29,27 @@ function handleXRayData(data){
 }
 
 function handleXRayModal(id){
-	window.location = "../"+dataO2[id]['sample_index'];
-	//alert(dataO2[id]['sample_index']);
+	url = "../"+dataO2[id]['sample_index'];
+	getImageFromUrl(url, createPDF,id);
+}
+
+var getImageFromUrl = function(url, callback,id) {
+    var img = new Image();
+
+    img.onError = function() {
+        alert('Cannot load image: "'+url+'"');
+    };
+    img.onload = function() {
+        callback(img,id);
+    };
+    img.src = url;
+}
+
+var createPDF = function(imgData,id) {
+    var doc = new jsPDF();
+    var width = doc.internal.pageSize.width;    
+	var height = doc.internal.pageSize.height;
+    doc.addImage(imgData, 'JPEG', 0, 0);
+    str = dataO2[id]['patientId'] + " " + dataO2[id]['date']+ " " + dataO2[id]['investigation']+ " " + dataO2[id]['spec1'];
+    doc.save(str);
 }
