@@ -594,12 +594,12 @@ function postData(){
      	url: "../patient/tb/register",
 		data: JSON.stringify(objecto),
 		success: function( data, textStatus, jQxhr ){
-			alert("Success");
+			console.log("Success");
 			sessionStorage.clear();
 			window.location.href = "../include/patient_management.php?n=1";
 		},
 		error: function( jqXhr, textStatus, errorThrown ){
-			alert( errorThrown );
+			console.log( errorThrown );
 		}
 	});
 }
