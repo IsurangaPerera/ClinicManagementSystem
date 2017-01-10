@@ -22,9 +22,9 @@
           <li><a href="#tab_2" data-toggle="tab">FBC</a></li>
           <li><a href="#tab_3" data-toggle="tab">Sputum</a></li>
           <li><a href="#tab_4" data-toggle="tab">X-Ray</a></li>
-          <li><a href="#tab_5" data-toggle="tab">Lung Function</a></li>
+          <!--<li><a href="#tab_5" data-toggle="tab">Lung Function</a></li>
           <li><a href="#tab_6" data-toggle="tab">Resting Sp02</a></li>
-          <li><a href="#tab_7" data-toggle="tab">Other</a></li>
+          <li><a href="#tab_7" data-toggle="tab">Other</a></li>-->
         </ul>
         
         <div class="tab-content">
