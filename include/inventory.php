@@ -19,37 +19,37 @@
 
            <div class="form-group">
              <label for="p_code">Product Code</label>
-             <input type="text" id="p_code" class="form-control input-sm">
+             <input type="text" id="p_code" placeholder="Product Code" class="form-control input-sm">
            </div>
 
            <div class="form-group">
              <label for="p_name">Product Name</label>
-             <input type="text" id="p_name" class="form-control input-sm">
+             <input type="text" id="p_name" placeholder="Product Name" class="form-control input-sm">
            </div>
 
            <div class="form-group">
              <label for="exampleInputEmail1">Formulation</label>
-             <input type="text" id="formula" class="form-control input-sm">
+             <input type="text" id="formula" placeholder="Formulation" class="form-control input-sm">
            </div>
 
-           <div class="form-group">
+           <div class="form-group" hidden="true">
              <label for="dose">Dosage</label>
-             <input type="text" id="dose" class="form-control input-sm">
+             <input type="text" id="dose" placeholder="Dosage" class="form-control input-sm">
            </div>
 
            <div class="form-group">
              <label for="batch_no">Batch No.</label>
-             <input type="text" placeholder="6789LO" id="batch_no" class="form-control input-sm">
+             <input type="text" placeholder="Batch No." id="batch_no" class="form-control input-sm">
            </div>
 
            <div class="form-group">
              <label for="quantity">Quantity</label>
-             <input type="text" placeholder="6789LO" id="quantity" class="form-control input-sm">
+             <input type="text" placeholder="Quantity" id="quantity" class="form-control input-sm">
            </div>
 
            <div class="form-group">
              <label for="expiry">Expiry</label>
-             <input type="text" placeholder="6789LO" id="expiry" class="form-control input-sm">
+             <input type="text" placeholder="Expiry" id="expiry" class="form-control input-sm">
            </div>
 
            <div class="form-group">
@@ -182,6 +182,10 @@
       </div>
 
       <div class="modal-body">
+        <div class='alert alert-success alert-dismissable' id="alert2" hidden><i class='fa fa-check'></i>
+          <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+          <span id="err_msg2"></span>
+        </div>
         <table class="table table-hover">
           <tbody>
             <tr>

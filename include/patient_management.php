@@ -1,10 +1,5 @@
 <?php
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
-/*session_start();
-require("$root/include/config/session_check.php");
-require("$root/include/config/user_common.php");
-$usr = new User();
-$usr->verifyUser($_SESSION['user_type'], $_SESSION['user_type']);*/
 require("$root/include/header.php");
 ?>
 

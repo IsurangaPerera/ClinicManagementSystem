@@ -188,7 +188,7 @@ function addToTableProduct(dataX){
 function addProduct() {
 	var formData = new FormData();
 
-	if($("#prod_image")[0].files[0] === null) {
+	if($("#prod_image")[0].files[0]) {
 		formData.append('file', $("#prod_image")[0].files[0]);
 
 		$.ajax({
@@ -199,16 +199,14 @@ function addProduct() {
 			processData: false,
 			contentType: false,
 			success: function(data, textStatus, jqXHR)
-			{
-				alert("Success");
+			{ 
 				addInformation(data);
 			},
 			error: function(jqXHR, textStatus, errorThrown)
 			{
-				alert("Failure");
-				alert(jqXHR);
-				alert(textStatus);
-				alert(errorThrown);
+				$("#err_msg2").html("Operation Failed");
+            	$("#alert2").attr('class', 'alert alert-danger alert-dismissable');
+            	$("#alert2").show(1000).delay(5000).hide(1000);
 			}
 		});
 	} else {
@@ -240,14 +238,15 @@ function addInformation(data) {
         data: JSON.stringify(objectO),
         success: function(data, textStatus, jqXHR)
         {
-        	alert("Success");
+        	$("#err_msg2").html("Product Added Successfully");
+            $("#alert2").attr('class', 'alert alert-success alert-dismissable');
+            $("#alert2").show(1000).delay(5000).hide(1000);
         },
         error: function(jqXHR, textStatus, errorThrown)
         {
-        	alert("Failure");
-        	alert(jqXHR);
-        	alert(textStatus);
-        	alert(errorThrown);
+        	$("#err_msg2").html("Operation Failed");
+            $("#alert2").attr('class', 'alert alert-danger alert-dismissable');
+            $("#alert2").show(1000).delay(5000).hide(1000);
         }
     });
 }

@@ -1,4 +1,3 @@
-
 <section class="content-header" >
   <h1>Edit Profile</h1> 
 </section>
@@ -11,11 +10,8 @@
         <div class="box">
 
          <div class="box-footer clearfix">
-
           <button class="btn btn-primary" id="btnSubmit" type="submit"><i class="fa fa-save"></i> Save</button>
-
         </div>
-
 
         <div class="box-body table-responsive">
           <div class='alert alert-danger alert-dismissable' hidden="true" id="alert2"><i class='fa fa-check'></i>

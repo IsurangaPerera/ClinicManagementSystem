@@ -1,29 +1,24 @@
 <?php
-session_start();
-require('config/session_check.php');
-include('config/user_common.php');
-$usr = new User();
-$usr->verifyUser($_SESSION['user_type'], $_SESSION['user_type']);
 require('header.php');
 ?>
 
 <ul class="sidebar-menu">
 
+  <!--START OF DASHBOARD-->
   <li>
     <a href="?dash_board">
       <i class="fa fa-dashboard"></i> <span>Dashboard</span>
     </a>
-  </li>     
+  </li>  
+  <!--END OF DASHBOARD-->   
 
-  <!--START OF POS-->
-
-  <!--START OF Registration-->
+  <!--START OF REGISTRATION-->
   <li>
     <a href="?tb_patient_registration">
       <i class="fa ion-person-add "></i> <span>TB Patient Registration</span>
     </a>
   </li>
-  <!--END OF Registration-->
+  <!--END OF REGISTRATION-->
 
   <!--START OF USER PROFILE-->
   <li id="lst" class="treeview">
@@ -32,10 +27,9 @@ require('header.php');
       <i class="fa fa-angle-left pull-right"></i>
     </a>
     <ul id="slst" class="treeview-menu">
-      <li ><a href="?my_profile"><i class="fa fa-angle-double-right"></i>My Profile</a></li>
       <li ><a href="?edit_profile"><i class="fa fa-angle-double-right"></i>Edit Profile</a></li>
       <li ><a href="?change_password"><i class="fa fa-angle-double-right"></i>Change Password</a></li>
-      <li ><a href="config/logout.php"><i class="fa fa-angle-double-right"></i>Logout</a></li>
+      <li ><a href="../login/delete/"><i class="fa fa-angle-double-right"></i>Logout</a></li>
     </ul>
   </li>
   <!--END OF USER PROFILE-->

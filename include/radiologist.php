@@ -1,9 +1,9 @@
 <?php
-session_start();
+/*session_start();
 require('config/session_check.php');
 include('config/user_common.php');
 $usr = new User();
-$usr->verifyUser($_SESSION['user_type'], $_SESSION['user_type']);
+$usr->verifyUser($_SESSION['user_type'], $_SESSION['user_type']);*/
 require('header.php');
 ?>
 

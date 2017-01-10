@@ -13,7 +13,6 @@ function getData(){
 			alertify.error("An error occurred");
 		}
 	});
-
 }
 
 function handleData(data){
@@ -22,7 +21,7 @@ function handleData(data){
 		address = data['user_address'][0];
 		contact = data['user_contact'][0];
 		dt = data['user_data'][0];
-		$('#uid').val(dt['nic']);
+		$('#uid').val(name2['nic']);
 		$('#title').val(dt['title']);
 		$('#designation').val(dt['designation']);
 		$('#firstname').val(name2['firstname']);

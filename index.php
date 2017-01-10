@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +30,6 @@ session_start();
 	</script>
 
 	<script type="text/javascript">
-	
 		$.ajax({
 			type: "GET",
 			async: false,
@@ -46,13 +41,9 @@ session_start();
 				}		
 			},
 			error: function( jqXhr, textStatus, errorThrown ){
-				
 			}
 		});
-
 	</script>
-
-
 
 </head>
 <body bgcolor="#FFFFFF">	

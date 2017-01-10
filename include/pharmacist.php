@@ -1,43 +1,32 @@
 <?php
-session_start();
-require('config/session_check.php');
-include('config/user_common.php');
-$usr = new User();
-$usr->verifyUser($_SESSION['user_type'], $_SESSION['user_type']);
 require('header.php');
 ?>
 
 <ul class="sidebar-menu">
 
+  <!--START OF DASH BOARD-->
   <li>
     <a href="#" id="d_board">
       <i class="fa fa-dashboard"></i> <span>Dashboard</span>
     </a>
-  </li>
+  </li>   
+  <!--END OF DASH BOARD-->  
 
-  <!--START OF Medications-->
-  <li>
-    <a href="#" id="c_pres">
-      <i class="fa ion-person-add "></i> <span>Current Prescriptions</span>
-    </a>
-  </li>
-  <!--END OF Medications-->     
-
-  <!--START OF Medications-->
+  <!--START OF MEDICATIONS-->
   <li>
     <a href="#" id="i_medi">
       <i class="fa ion-person-add "></i> <span>Issue Medications</span>
     </a>
   </li>
-  <!--END OF Medications-->
+  <!--END OF MEDICATIONS-->
 
-  <!--START OF Inventory Management-->
+  <!--START OF INVENTORY-->
   <li>
     <a href="#" id="inventory">
       <i class="fa ion-person-add "></i> <span>Inventory Management</span>
     </a>
   </li>
-  <!--END OF Inventory Management-->
+  <!--END OF INVENTORY-->
 
   <!--START OF USER PROFILE-->
   <li id="lst" class="treeview">
@@ -46,10 +35,9 @@ require('header.php');
       <i class="fa fa-angle-left pull-right"></i>
     </a>
     <ul id="slst" class="treeview-menu">
-      <li ><a href="#" id="m_prof"><i class="fa fa-angle-double-right"></i>My Profile</a></li>
       <li ><a href="#" id="e_prof"><i class="fa fa-angle-double-right"></i>Edit Profile</a></li>
       <li ><a href="#" id="c_pass"><i class="fa fa-angle-double-right"></i>Change Password</a></li>
-      <li ><a href="config/logout.php"><i class="fa fa-angle-double-right"></i>Logout</a></li>
+      <li ><a href="../login/delete/"><i class="fa fa-angle-double-right"></i>Logout</a></li>
     </ul>
   </li>
   <!--END OF USER PROFILE-->
@@ -73,20 +61,12 @@ require('header.php');
 $(document).ready(function(){
   $('#r_side').load('app/dash_board.php');
 
-  $("#c_pres").click(function(event){
-    $('#r_side').load('app/current_prescriptions.php');
-  });
-
   $("#i_medi").click(function(event){
     $('#r_side').load('app/issue_medications.php');
   });
 
   $("#inventory").click(function(event){
     $('#r_side').load('inventory.php');
-  });
-
-  $("#m_prof").click(function(event){
-    $('#r_side').load('app/my_profile.php');
   });
 
   $("#e_prof").click(function(event){

@@ -1,19 +1,16 @@
 <?php
-session_start();
-require('config/session_check.php');
-include('config/user_common.php');
-$usr = new User();
-$usr->verifyUser($_SESSION['user_type'], $_SESSION['user_type']);
 require('header.php');
 ?>
 
 <ul class="sidebar-menu">
 
+  <!--START OF DASHBOARD-->
   <li>
     <a href="#" id="d_board">
       <i class="fa fa-dashboard"></i> <span>Dashboard</span>
     </a>
-  </li>     
+  </li> 
+  <!--END OF DASHBOARD-->    
 
   <!--START OF INVESTIGATION RESULTS-->
   <li id="lst" class="treeview">
@@ -36,10 +33,9 @@ require('header.php');
       <i class="fa fa-angle-left pull-right"></i>
     </a>
     <ul id="slst" class="treeview-menu">
-      <li ><a href="#" id="m_prof"><i class="fa fa-angle-double-right"></i>My Profile</a></li>
       <li ><a href="#" id="e_prof"><i class="fa fa-angle-double-right"></i>Edit Profile</a></li>
       <li ><a href="#" id="c_pass"><i class="fa fa-angle-double-right"></i>Change Password</a></li>
-      <li ><a href="config/logout.php"><i class="fa fa-angle-double-right"></i>Logout</a></li>
+      <li ><a href="../login/delete/"><i class="fa fa-angle-double-right"></i>Logout</a></li>
     </ul>
   </li>
   <!--END OF USER PROFILE-->
@@ -75,10 +71,6 @@ $(document).ready(function(){
   $('#inv_sputum').click(function(event){
     $('#r_side').load('app/inv_sputum.php');
   })
-
-  $("#m_prof").click(function(event){
-    $('#r_side').load('app/my_profile.php');
-  });
 
   $("#e_prof").click(function(event){
     $('#r_side').load('app/edit_profile.php');

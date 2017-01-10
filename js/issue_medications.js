@@ -12,15 +12,38 @@ function process(){
 			url: baseURL+'/'+pid,
 			success: function( data, textStatus, jQxhr ){
 				if((data = JSON.parse(data)) === null)
-					alertify.error("Invlaid Patient Id");
+					process2(pid);
 				else
 					setModal(data);
 			},
 			error: function( jqXhr, textStatus, errorThrown ){
-				alert( errorThrown );
+				console.log( errorThrown );
 			}
 		});
 	}
+}
+
+function process2(id){
+	url = "../../patient/profile/general/check_exist/" + id;
+	$.ajax({
+		type: "GET",
+		url: url,
+		success: function( data, textStatus, jQxhr ){
+			if(data == '1'){
+				$("#err_msg").html("No requests at the moment");
+                $("#alert").attr('class', 'alert alert-danger alert-dismissable');
+                $("#alert").show(1000).delay(5000).hide(1000);
+            }
+			else{
+				$("#err_msg").html("Invalid Patient ID");
+                $("#alert").attr('class', 'alert alert-danger alert-dismissable');
+                $("#alert").show(1000).delay(5000).hide(1000);
+            }
+		},
+		error: function( jqXhr, textStatus, errorThrown ){
+			console.log( errorThrown );
+		}
+	});
 }
 
 function setModal(data){
@@ -75,7 +98,10 @@ function save(){
                 type: "POST",
                 url: baseURL,
                 data : JSON.stringify(json),
-                success : function(data){               
+                success : function(data){
+                	$("#err_msg").html("Operation Completed Successfully");
+                    $("#alert").attr('class', 'alert alert-success alert-dismissable');
+                    $("#alert").show(1000).delay(5000).hide(1000);               
                 }
         });
 	}

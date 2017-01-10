@@ -2,6 +2,11 @@
   <h1>Issue Medications</h1> 
 </section>
 
+<div class='alert alert-success alert-dismissable' id="alert" hidden><i class='fa fa-check'></i>
+  <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+  <span id="err_msg"></span>
+</div>
+
 <section class="content">
   <div class="row">
    <div class="col-md-4"></div>

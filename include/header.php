@@ -1,7 +1,3 @@
-<?php
-$nic = $_SESSION['nic'];
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
