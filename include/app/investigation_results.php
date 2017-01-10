@@ -61,10 +61,25 @@
           </div>
         </div>
 
-        <div class="tab-pane active" id="tab_3">
+        <div class="tab-pane" id="tab_3">
           <div class="container">
             <div class="row">
-              <div></div>
+              
+              <div class="col-md-4">
+                <div class="panel-group" id="sputum_panel">
+                </div>
+              </div>
+              
+              <div class="col-md-4">
+                <div class="panel-group" id="sputum_panel2">
+                </div>
+              </div>
+              
+              <div class="col-md-4">
+                <div class="panel-group" id="sputum_panel3">
+                </div>
+              </div>
+            
             </div>
           </div>
         </div>
@@ -108,7 +123,7 @@
 
 </div>
 
-<!-- Modal -->
+<!-- START OF FBC MODAL -->
 <div id="dataModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
@@ -144,11 +159,45 @@
 
   </div>
 </div>
+<!-- END OF FBC MODAL -->
+
+<!-- START OF SPUTUM MODAL -->
+<div id="dataModalSputum" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" id="reports_id"></h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-hover">
+          <thead>
+            <th>Full Blood Count</th><th>Result</th><th>Reference Range</th>
+          </thead>
+          <tbody>
+            <tr><td>Polygenic Culture</td><td id="pcp"></td><td id="pcn"></td></tr>
+            <tr><td>AFB Smear (x3 Morning)</td><td id="asmp"></td><td id="asmn"></td></tr>
+            <tr><td>AFB Smear</td><td id="asp"></td><td id="asn"></td></tr>
+            <tr><td>Fungal Culture</td><td id="fcp"></td><td id="fcn"></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- END OF SPUTUM MODAL -->
 
 </section>
 
 <script src="../js/fbs_graph.js" type="text/javascript"></script>
 <script src="../js/fbc_data.js" type="text/javascript"></script>
+<script src="../js/sputum_data.js" type="text/javascript"></script>
 <script src="../js/xray_data.js" type="text/javascript"></script>
 
 
@@ -161,6 +210,7 @@ $(document).ready(function(){
 function loadFunctions() {
   showGraph();
   loadFbcData();
+  loadSputumData();
   loadXRayData();
 }
 

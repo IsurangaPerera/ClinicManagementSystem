@@ -13,6 +13,11 @@ $app->get('/sputum/{id}',function(Request $request, Response $response){
 	getSputumData($id);
 });
 
+$app->get('/sputum/all/{id}',function(Request $request, Response $response){
+	$id = $request->getAttribute('id');
+	getAllSputumData($id);
+});
+
 $app->get('/sputum',function(Request $request, Response $response){
 	getAllData();
 });
@@ -110,6 +115,50 @@ function getAllData() {
 	$invest = "Sputum";
 
 	if(!$stmt->bind_param('ss', $pending, $invest)) {
+		echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+	}
+	
+	if (!$stmt->execute()) {
+		echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+	}
+
+	$meta = $stmt->result_metadata();
+    while ( $field = $meta->fetch_field() )
+    	$parameters[] = &$row[$field->name]; 
+ 
+   call_user_func_array(array($stmt, 'bind_result'), $parameters);
+
+    while ( $stmt->fetch() ) {
+        $x = array();
+        foreach( $row as $key => $val )
+        	$x[$key] = $val;
+        $results[] = $x;
+    }
+
+    echo json_encode($results);
+	$stmt->close();
+}
+
+function getAllSputumData($id){
+	require_once 'db_connection.php';
+    $db = db_connect();
+
+	$sql_data = "SELECT sputum.*, investigation_type.date ".
+				"FROM sputum ".
+				"LEFT JOIN report_details ".
+				"ON sputum.report_id = report_details.report_id ".
+				"LEFT JOIN investigation_type ".
+				"ON report_details.sample_index = investigation_type.sample_index ".
+				"WHERE investigation_type.patientId = ? ".
+				"AND !(investigation_type.sample_index = ?)";
+	
+	$stmt = $db->prepare($sql_data);
+	if($stmt === false) {		
+		trigger_error('Wrong SQL: ' . $sql_data . ' Error: ' . $db->error, E_USER_ERROR);
+	}
+
+	$nn = "NULL";
+	if(!$stmt->bind_param('ss', $id, $nn)) {
 		echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
 	}
 	
