@@ -29,7 +29,7 @@
   <script type="text/javascript" src="../js/mouseover_popup.js"></script>
   <script type="text/javascript" src="../jquery/jquery-ui.js"></script>
   <script type="text/javascript" src="../js/jasny.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
+  <script type="text/javascript" src="../js/jspdf-debug.js"></script>
   <script type="text/javascript" src="../js/fileSaver.min.js"></script>
 
   <script type="text/javascript">
