@@ -93,7 +93,7 @@ function addToTable(arr, tName){
 		var cell6 = row.insertCell(5);
 		var cell7 = row.insertCell(6);
 		var cell8 = row.insertCell(7);
-		var cell9 = row.insertCell(8);
+		//var cell9 = row.insertCell(8);
 
 		cell1.innerHTML = arr[i]['date'] + cell1.innerHTML;
 		cell2.innerHTML = arr[i]['p_code'] + cell2.innerHTML;
@@ -103,8 +103,8 @@ function addToTable(arr, tName){
 		cell6.innerHTML = arr[i]['batch_no'] + cell6.innerHTML;
 		cell7.innerHTML = arr[i]['quantity'] + cell7.innerHTML;
 		cell8.innerHTML = arr[i]['expiry'] + cell8.innerHTML;
-		id2 = '<a href="#">Edit</a>&nbsp|&nbsp;<a href="#" class="delete">Remove</a>';
-		cell9.innerHTML = id2 + cell9.innerHTML;
+		//id2 = '<a href="#">Edit</a>&nbsp|&nbsp;<a href="#" class="delete">Remove</a>';
+		//cell9.innerHTML = id2 + cell9.innerHTML;
 	}
 }
 
@@ -174,14 +174,14 @@ function addToTableProduct(dataX){
 		var cell2 = row.insertCell(1);
 		var cell3 = row.insertCell(2);
 		var cell4 = row.insertCell(3);
-		var cell5 = row.insertCell(4);
+		//var cell5 = row.insertCell(4);
 
 		cell1.innerHTML = arr[i]['p_code'] + cell1.innerHTML;
 		cell2.innerHTML = arr[i]['p_name'] + cell2.innerHTML;
 		cell3.innerHTML = arr[i]['formula'] + cell3.innerHTML;
 		cell4.innerHTML = arr[i]['brand_name'] + cell4.innerHTML;
-		id2 = '<a href="#">View Product</a>';
-		cell5.innerHTML = id2 + cell5.innerHTML;
+		//id2 = '<a href="#">View Product</a>';
+		//cell5.innerHTML = id2 + cell5.innerHTML;
 	}
 }
 

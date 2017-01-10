@@ -94,7 +94,7 @@
              <th>Batch No</th>
              <th>Quantity</th>
              <th>Expiry</th>
-             <th>Action</th>
+             <th hidden>Action</th>
            </tr>
          </thead>
          <tbody id="tble_stock"></tbody>
@@ -122,7 +122,7 @@
          <th>Batch No</th>
          <th>Quantity</th>
          <th>Expiry</th>
-         <th>Action</th>
+         <th hidden>Action</th>
        </tr>
      </thead>
      <tbody id="expire_stock"></tbody>
@@ -146,7 +146,7 @@
      <th>Product Name</th>
      <th>Brand Name</th>
      <th>Formulation</th>
-     <th>Action</th>
+     <th hidden>Action</th>
    </tr>
  </thead>
  <tbody id="product_item"></tbody>
@@ -161,10 +161,10 @@
 <div class="col-md-9">
  <div class="box box-primary">
    <div class="box-body">
-     <a class="btn btn-app" href=""><i class="fa fa-refresh"></i> Refresh</a>
+     <!--<a class="btn btn-app" href="#" onclick="refreshAll();"><i class="fa fa-refresh"></i> Refresh</a>-->
      <a class="btn btn-app" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Add Item</a>
      <a class="btn btn-app" data-toggle="modal" data-target="#myModalView"><i class="fa fa-hand-o-down"></i> View Item</a>
-     <a class="btn btn-app" onclick="window.print()"><i class="fa fa-print"></i> Print</a>
+     <!--<a class="btn btn-app" onclick="window.print()"><i class="fa fa-print"></i> Print</a>-->
 
    </div>
  </div>
@@ -260,7 +260,96 @@
 </div>
 <!-- /.modal-dialog -->
 </div>
-<!-- /.modal -->  
+<!-- /.modal -->
+
+<!-- START OF VIEW PRODUCT MODAL -->
+<div class="modal fade" id="myModalView" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">    
+
+      <div class="modal-header">
+
+        <div class='alert alert-success alert-dismissable' id="alert3" hidden><i class='fa fa-check'></i>
+          <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+          <span id="err_msg3"></span>
+        </div>
+        
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <br/>
+        
+        <table cell-padding="10px">
+          <tr>
+            <td>
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Product Code" aria-describedby="addon" id="product_search">
+                <span class="input-group-addon glyphicon glyphicon-search" id="addon"></span>
+              </div>
+            </td>
+            <td>
+              <button type="button" class="btn btn-primary" onClick="searchProduct()">Search</button>
+            </td>
+          </tr>
+        </table>
+      
+      </div>
+
+      <div class="modal-body">
+        <table class="table table-hover">
+          <tbody>
+            <tr>
+             <td>Product Name</td>
+             <td>
+              <input type="text" id="prod_names" class="form-control input-sm" style="width: 100%;" readonly>
+            </td>
+          </tr>
+          <tr>
+           <td>Product Code</td>
+           <td>
+            <input type="text" id="prod_codes" class="form-control input-sm" style="width: 100%;" readonly>
+          </td>
+        </tr>
+        <tr>
+         <td>Formulation</td>
+         <td>
+          <input type="text" id="prod_forms" class="form-control input-sm" style="width: 100%;" readonly>
+        </td>
+      </tr>
+      <tr>
+       <td>
+        <span id="particular">Category</span>
+      </td>
+      <td>
+       <input type="text" id="medicine_cats" class="form-control input-sm" style="width: 100%;" readonly>
+     </td>
+   </tr>
+   <tr>
+     <td>Note</td>
+     <td><textarea name="note" id="notes" class="form-control input-sm" style="width: 100%;" readonly></textarea></td>
+   </tr>
+
+  <tr>
+    <div class="col-xs-18 col-sm-6 col-md-4">
+      <div class="thumbnail" align="middle">
+        <div id="pimage" align="middle">
+          <img src="http://placehold.it/140x100" alt="" align="middle">   
+        </div>    
+      </div>
+    </div>
+  </tr>
+
+</tbody>
+</table>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>
+
+</div>
+<!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+</div>
+<!-- END OF VIEW PRODUCT MODAL -->  
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -277,3 +366,4 @@ $( function() {
 
 </script>
 <script type="text/javascript" src="../js/add_stock.js"></script>
+<script type="text/javascript" src="../js/search_product.js"></script>
