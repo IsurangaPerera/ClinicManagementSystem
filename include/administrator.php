@@ -21,7 +21,7 @@ require('header.php');
     <ul class="treeview-menu">
       <li><a href="#" id="add_user"><i class="fa fa-angle-double-right"></i>Add New User</a></li>
       <li><a href="#" id="user_list"><i class="fa fa-angle-double-right"></i>User Masterlist</a></li>
-      <li><a href="#" id="user_roles"><i class="fa fa-angle-double-right"></i>User Roles</a></li>
+      <!--<li><a href="#" id="user_roles"><i class="fa fa-angle-double-right"></i>User Roles</a></li>-->
     </ul>
   </li>
   <!--END OF USER MANAGEMENT-->
@@ -43,7 +43,7 @@ require('header.php');
     <ul id="slst" class="treeview-menu">
       <li ><a href="#" id="e_prof"><i class="fa fa-angle-double-right"></i>Edit Profile</a></li>
       <li ><a href="#" id="c_pass"><i class="fa fa-angle-double-right"></i>Change Password</a></li>
-      <li ><a href="config/logout.php"><i class="fa fa-angle-double-right"></i>Logout</a></li>
+      <li ><a href="../login/delete/"><i class="fa fa-angle-double-right"></i>Logout</a></li>
     </ul>
   </li>
   <!--END OF USER PROFILE-->
