@@ -15,7 +15,6 @@
           <div class="box">
              <form class="form-search">
                  <div class="box-header">
-                    <h3 class="box-title"><a href="#" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a></h3>
 
                     <div class="box-tools">
                         <div class="input-group">
