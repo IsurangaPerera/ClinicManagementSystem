@@ -16,8 +16,8 @@
 
             <div class="box-footer clearfix">
 
-                <a href="#" class="btn btn-default">Cancel</a>
-                <button class="btn btn-primary" onclick="saveData()"><i class="fa fa-save"></i> Save</button>
+                <a href="" class="btn btn-default">Cancel</a>
+                <button class="btn btn-primary" onclick="saveData()" data-toggle="tooltip" title="add new patient"><i class="fa fa-save"></i> Save</button>
 
             </div>
 
