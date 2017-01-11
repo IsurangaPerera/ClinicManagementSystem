@@ -28,7 +28,6 @@ function applyData(data) {
 }
 
 function addXRay() {
-	alert(id);
 	var formData = new FormData();
 
 	if($("#prod_image")[0].files[0] !== null) {

@@ -12,6 +12,12 @@ $app->get('/all',function(Request $request, Response $response){
 
 });
 
+$app->get('/inactive/{id}',function(Request $request, Response $response){
+	$id = $request->getAttribute('id');
+	userInactive($id);
+
+});
+
 function getGeneralData(){
 	require_once 'db_connection.php';
     $db = db_connect();
@@ -49,6 +55,31 @@ function getGeneralData(){
     }
 
     echo json_encode($results);
+	$stmt->close();
+}
+
+function userInactive($id){
+	require_once 'db_connection.php';
+    $db = db_connect();
+
+	$sql_data = 'UPDATE user_login '.
+				'SET status = ? '.
+				'WHERE nic = ?';
+	
+	$stmt = $db->prepare($sql_data);
+	if($stmt === false) {		
+		trigger_error('Wrong SQL: ' . $sql_data . ' Error: ' . $db->error, E_USER_ERROR);
+	}
+
+	$nn = "Inactive";
+	if(!$stmt->bind_param('ss', $nn, $id)) {
+		echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+	}
+	
+	if (!$stmt->execute()) {
+		echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+	}
+
 	$stmt->close();
 }
 

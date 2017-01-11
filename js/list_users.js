@@ -51,9 +51,9 @@ function setValues(data){
 		cell6.innerHTML = data[i]['status'] + cell6.innerHTML;
 
 		url2 = '../../users/edit/' + data[i]['nic'];
-		url3 = '../../users/inactive' + data[i]['nic'];
-		id2 = '<a href="' + url2 + '">Edit</a>&nbsp|&nbsp;<a href="' + url3 + 
-			  ' class="delete">InActive</a>';
+		url3 = '../../users/inactive/' + data[i]['nic'];
+		id2 = '<a href="' + url2 + '">Suspend</a>&nbsp|&nbsp;<a href="' + url3 + 
+			  ' class="delete" id="'+data[i]['nic']+'">InActive</a>';
 		cell7.innerHTML =  id2 + cell7.innerHTML;
 	}
 }
