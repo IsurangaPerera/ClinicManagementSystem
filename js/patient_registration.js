@@ -17,7 +17,9 @@ function saveData(){
 	gender = $('#gender option:selected').html();
 
 	if(patientId === "" || firstname === "" || gender === ""){
-		alertify.error("Please Fill Required Fields");
+		$("#err_msg").html("Please fill required fields");
+        $("#alert").attr('class', 'alert alert-danger alert-dismissable');
+        $("#alert").show(1000).delay(5000).hide(1000);
 		return;
 	}
 
@@ -76,7 +78,9 @@ function postData(){
 			$("#barimg").hide("1000");
 		},
 		error: function( jqXhr, textStatus, errorThrown ){
-			alertify.success("An Error Occurred");
+			$("#err_msg").html("Failed to complete the operation");
+        	$("#alert").attr('class', 'alert alert-danger alert-dismissable');
+        	$("#alert").show(1000).delay(5000).hide(1000);
 		}
 	});
 }
