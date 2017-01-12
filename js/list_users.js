@@ -1,6 +1,9 @@
 var baseURL = "../../users/all";
 var dataO = null;
 
+/**
+ * get details of all system users
+ */
 function getResult(){
 	if(dataO === null){
 		$.ajax({
@@ -19,6 +22,10 @@ function getResult(){
 	}
 }
 
+/**
+ * Insert user details into table
+ * @param {data} user detals
+ */
 function setValues(data){
 	var table = document.getElementById("u_list");
 	for(i = 0; i < data.length; i++){
@@ -57,6 +64,10 @@ function setValues(data){
 	}
 }
 
+/**
+ * Check if a user is currently active or not
+ * @param {id} NIC of the user
+ */
 function checkIfActive(id){
 	uri = '../../users/ifactive/' + id;
 	im = '#'+id;
@@ -74,6 +85,10 @@ function checkIfActive(id){
 	});
 }
 
+/**
+ * Temporary disable user profiles
+ * @param {id} NIC of the user
+ */
 function setInactive(id){
 	uri = '../../users/inactive/' + id + '/';
 	i = '#'+id;
@@ -98,6 +113,10 @@ function setInactive(id){
 	});
 }
 
+/**
+ * Permanatly disable user profiles
+ * @param {id} NIC of the user
+ */
 function suspend(id){
 	id2 = id.substring(1);
 	uri = '../../users/suspend/' + id2 ;
