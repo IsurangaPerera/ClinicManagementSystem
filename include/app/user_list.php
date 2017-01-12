@@ -1,9 +1,9 @@
  <section class="content-header">
-    <h1>System User</h1>
+    <h1>User Masterlist</h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#">User Management</a></li>
-        <li class="active">System User</li>
+        <li class="active">User Masterlist</li>
     </ol>
 </section>
 
@@ -32,7 +32,7 @@
                <table class="table table-hover table-striped">
                 <thead>
                     <tr>
-                        <th>User ID</th><th>Name</th><th>Designation</th><th>Department</th><th>Email Address</th><th>Status</th><th>Actions</th></tr>
+                        <th>User ID</th><th>Name</th><th>Designation</th><th>Department</th><th>Email Address</th><th>Actions</th></tr>
                     </thead>
                     <tbody id="u_list">
 

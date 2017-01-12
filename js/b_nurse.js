@@ -4,14 +4,17 @@ var patientId;
 var dataO;
 
 function process(id){
+    
     if(id == null || id == "")
         patientId = $("#patient_no").val();
     else
         patientId = id;
     uri = baseURL + "/" + patientId;	
+    
     $.ajax({
         type: "GET",
         url: uri,
+       
         success: function (data) {
             data = JSON.parse(data);
             dataO = data;
