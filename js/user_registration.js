@@ -15,9 +15,9 @@ function saveData(){
 		
 	nic = $('#nic').val();
 	firstname = $('#firstname').val();
-	lastname = $("#user_role option:selected").html();
+	lastname = $('#lastname').val();
 	department = $('#department option:selected').html();
-	role = $('#department option:selected').html();
+	role = $("#user_role option:selected").html();
 
 	if(nic === "" || firstname === "" || lastname === "" || department === "-Department-" || role === "-User Role-"){
 		alertify.error("Please Fill Required Fields");
