@@ -45,14 +45,16 @@
                    <td width="12%">Patient ID</td>
                    <td width="88%"><input class="form-control input-sm" name="patientID" id="patientID" type="text" style="width: 250px;" required readonly></td>
                    <td rowspan="8" valign="top">
+                    
+                    <span id="widget" class="widget">
                     <div class="panel panel-default" style="width:100%" hidden id="barimg">
                       <div class="panel-heading" style="text-align: center; height; 80%;">
                         <h4><em>Central Chest Clinic</em></h4>
                         <h5><em>Baseline Road, Colombo 08</em></h5>
                         <svg id="code128" style="height: 80px; width: 300px;"></svg>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-
                       </div>
+                    </span>
 
                     </td>  
                   </tr>
