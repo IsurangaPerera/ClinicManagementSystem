@@ -2,6 +2,13 @@ var baseURL ="../../patient/medication/prescription";
 var dataO;
 var pid;
 
+/*
+ * Get requests related to prescriptions
+ * if requests available for a particular patient
+ * data is inserted into the modal to be shown
+ * @param {}
+ * @return {}
+ */
 function process(){
 	pid = $('#patient_no').val();
 	if(pid === "")
@@ -23,6 +30,13 @@ function process(){
 	}
 }
 
+/**
+ * If not any requests available 
+ * check if patient Id is valid and 
+ * generate relevant messages
+ * @param {user id}
+ * @return {}
+ */
 function process2(id){
 	url = "../../patient/profile/general/check_exist/" + id;
 	$.ajax({
@@ -46,6 +60,11 @@ function process2(id){
 	});
 }
 
+/**
+ * Insert data into to modal to be displayed 
+ * @param {data}
+ * @return {}
+ */
 function setModal(data){
 	dataO = data;
 	table = document.getElementById("tble_med");
@@ -74,6 +93,11 @@ function setModal(data){
 	$('#modal_med').modal({backdrop: "static"});
 }
 
+/**
+ * Save prescription information
+ * @param {}
+ * @return {}
+ */
 function save(){
 	table = document.getElementById("tble_med");
 	tblLength = dataO.length;
