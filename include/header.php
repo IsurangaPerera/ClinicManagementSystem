@@ -46,8 +46,10 @@
           $("#huname").html(namea);
           $("#huname2").html(name);
           $("#nicc").html(data[0]['nic']);
-          $("#profimage").prop('src', '../'+data[0]['pic_path']);
-          $("#proffimage").prop('src', '../'+data[0]['pic_path']);
+          if(data[0]['pic_path']){
+            $("#profimage").prop('src', '../'+data[0]['pic_path']);
+            $("#proffimage").prop('src', '../'+data[0]['pic_path']);
+          }
         },
         error: function( jqXhr, textStatus, errorThrown ){
         }
