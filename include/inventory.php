@@ -10,7 +10,7 @@
           <div class='alert alert-danger alert-dismissable' hidden="true" id="alert"><i class='fa fa-check'></i>
             <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
             <span id="err_msg"></span></div>
-            <h3>&nbspAdd Stock</h3>
+            <h3>&nbsp&nbspAdd Stock</h3>
           </div>
 
           <div class="box-content" style="text-align=center;">  
