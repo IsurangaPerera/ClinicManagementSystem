@@ -52,7 +52,6 @@
 	<div style="background: transparent url('images/logo.png') no-repeat center; height:111px; margin-bottom:-50px; padding-top:120px;"></div>
 	<div class="account-container">
 		<div class="content clearfix" >
-			<form action="include/config/login.php" method="post" id="frmLogin" name="frmLogin">
 				<h1>Login</h1>		
 				<div class="login-fields">
 					<p>Please provide your details</p>
@@ -60,13 +59,13 @@
 					<div class="field">
 						<label for="username">Username</label>
 
-						<input type="text" name="username" value="" class='login username-field' placeholder='Username' required autofocus />                </div> <!-- /field -->
+						<input type="text" id="username" value="" class='login username-field' placeholder='Username' required autofocus />                </div> <!-- /field -->
 						<div class="field">
 							<label for="password">Password:</label>
-							<input type="password" name="password" class="login password-field" placeholder="Password" required value="" />
+							<input type="password" id="password" class="login password-field" placeholder="Password" required value="" />
 						</div> <!-- /password -->
 						<div class="field">
-							<button class="button btn btn-primary btn-large" type="submit" name="submit">Log In</button>
+							<button class="button btn btn-primary btn-large" onclick="doLogin();" name="submit">Log In</button>
 						</div>
 					</div>
 					<!-- /login-fields -->
@@ -76,9 +75,35 @@
 							<label class="choice" for="Field">Keep me signed in</label>
 						</span>
 					</div>  
-				</form>
 			</div> <!-- /content -->
 		</div> <!-- /account-container -->
 	</div>
+
+	<script type="text/javascript">
+		function doLogin(){
+			username = $("#username").val().trim();
+			pass = $("#password").val().trim();
+			obj = {"user_name" : username, "password" : pass}
+			
+			$.ajax({
+				type: "POST",
+     			url: "user/login/init",
+     			data : JSON.stringify(obj),
+				success: function( data, textStatus, jQxhr ){
+					if(data == 'denied'){
+						alert("Invalid user name or password");
+					}
+					else if(data == 'inactive'){
+						alert("Account is temporary blocked");
+					}
+					else
+						window.location.href = data;
+				},
+				error: function( jqXhr, textStatus, errorThrown ){
+				}
+			});
+		}
+	</script>
+
 </body>
 </html>
