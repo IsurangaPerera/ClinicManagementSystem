@@ -3,6 +3,13 @@ var baseURL = "../patient/investigation_b/blood";
 var patientId;
 var dataO;
 
+/*
+ * Get requests related to FBS and FBC
+ * if requests available for a particular patient
+ * data is inserted into the modal to be shown
+ * @param {user id}
+ * @return {}
+ */
 function process(id){
     
     if(id == null || id == "")
@@ -14,7 +21,6 @@ function process(id){
     $.ajax({
         type: "GET",
         url: uri,
-       
         success: function (data) {
             data = JSON.parse(data);
             dataO = data;
@@ -46,6 +52,13 @@ function process(id){
     });
 }
 
+/**
+ * If not any requests available 
+ * check if patient Id is valid and 
+ * generate relevant messages
+ * @param {user id}
+ * @return {}
+ */
 function process3(id){
     url = "../../patient/profile/general/check_exist/" + id;
     $.ajax({
@@ -69,7 +82,11 @@ function process3(id){
     });
 }
 
-
+/**
+ * Save sample information
+ * @param {}
+ * @return {}
+ */
 function save(){
     for(i = 0; i < dataLength; i++){
         id2 = "#inv_raw" + (i+1) + "_cell1";
