@@ -17,13 +17,14 @@ function getAllData(){
 }
 
 function setData(data){
+	getDoctorsData();
+	if(!data) return;
 	var arr = ALL;
 	for(i = 0; i < data.length; i++){
 		nic = data[i]['nic'];
 		arr[nic] = data[i];
 		//alert(arr['932790092V']);
 	}
-	getDoctorsData();
 }
 
 function getDoctorsData(){
@@ -40,6 +41,7 @@ function getDoctorsData(){
 }
 
 function loadDoctorsIn(data){
+	if(!data) return;
 	var arr = IN;
 	for(i = 0; i < data.length; i++){
 		nic = data[i]['nic'];
