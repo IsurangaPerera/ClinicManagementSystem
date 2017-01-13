@@ -90,6 +90,8 @@ function checkIfActive(id){
  * @param {id} NIC of the user
  */
 function setInactive(id){
+	if(!confirm("Are you sure?"))
+		return;
 	uri = '../../users/inactive/' + id + '/';
 	i = '#'+id;
 	status = $(i).html();
@@ -118,6 +120,8 @@ function setInactive(id){
  * @param {id} NIC of the user
  */
 function suspend(id){
+	if(!confirm("Are you sure?"))
+		return;
 	id2 = id.substring(1);
 	uri = '../../users/suspend/' + id2 ;
 	rid = '#r'+id2;
