@@ -96,7 +96,6 @@ function setCookies($name, $value){
 	$setCookie = SetCookie::create($name)
     ->withValue($value)
     ->withPath('/')
-    ->withDomain('localhost')
     ->withSecure(false)
     ->withHttpOnly(false);
 

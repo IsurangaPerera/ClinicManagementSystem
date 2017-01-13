@@ -2,6 +2,9 @@
 
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
+use \Dflydev\FigCookies\FigResponseCookies;
+use \Dflydev\FigCookies\FigRequestCookies;
+use \Dflydev\FigCookies\SetCookie;
 
 require '../vendor/autoload.php';
 
@@ -29,6 +32,32 @@ $app->get('/suspend/{id}',function(Request $request, Response $response){
 	$id = $request->getAttribute('id');
 	deleteProfile($id);
 
+});
+
+$app->post('/add_data',function(Request $request, Response $response){
+
+	$cookie = FigRequestCookies::get($request, 'USERID');
+	$id = $cookie->getValue();
+
+	$uploads_dir = '/uploads';
+
+	$files = $request->getUploadedFiles();
+	if (empty($files)) {
+        echo('Expected a newfile');
+    }
+
+    $file = $files['file']->{'file'};
+    $file0 = $files['file']->getClientFileName();
+    $file0 = uniqid().$file0;
+
+    $file1 = $_SERVER['DOCUMENT_ROOT']."/uploads/$file0";
+
+    try{
+    	$files['file']->moveTo($file1);
+    } catch(Exception $e){
+    }
+
+	addProfilePicture($id, "uploads/$file0");
 });
 
 function getGeneralData(){
@@ -146,6 +175,30 @@ function deleteProfile($id){
 	}
 
 	if(!$stmt->bind_param('s', $id)) {
+		echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+	}
+	
+	if (!$stmt->execute()) {
+		echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+	}
+
+	$stmt->close();
+}
+
+function addProfilePicture($id, $file){
+	require_once 'db_connection.php';
+  	$db = db_connect();
+
+	$sql_data = 'UPDATE user_data '.
+				'SET pic_path = ? '.
+				'WHERE nic = ?';
+	
+	$stmt = $db->prepare($sql_data);
+	if($stmt === false) {		
+		trigger_error('Wrong SQL: ' . $sql_data . ' Error: ' . $db->error, E_USER_ERROR);
+	}
+
+	if(!$stmt->bind_param('ss', $file, $id)) {
 		echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
 	}
 	

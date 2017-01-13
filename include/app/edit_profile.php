@@ -2,15 +2,23 @@
   <h1>Edit Profile</h1> 
 </section>
 
+<div class='alert alert-success alert-dismissable' id="alert" hidden><i class='fa fa-check'></i>
+  <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+  <span id="err_msg"></span>
+</div>
   <section class="content">
    <div class="row">
     <div class="col-md-12">
-      <form role="form" method="post" action="config/user_profile_update.php" onSubmit="return validate2()">    
+    
         <input class="form-control input-sm" id="userid" type="hidden" style="width: 100px;" required readonly>
         <div class="box">
+          <div class='alert alert-success alert-dismissable' id="alert" hidden><i class='fa fa-check'></i>
+            <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+            <span id="err_msg"></span>
+          </div>
 
          <div class="box-footer clearfix">
-          <button class="btn btn-primary" id="btnSubmit" type="submit"><i class="fa fa-save"></i> Save</button>
+          <button class="btn btn-primary" id="btnSubmit" onclick="addProfilePic();"><i class="fa fa-save"></i> Save</button>
         </div>
 
         <div class="box-body table-responsive">
@@ -147,7 +155,7 @@
       <div class="fileinput fileinput-new" data-provides="fileinput">
         <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
         <div>
-          <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" id="prod_image" name="newfile"></span>
+          <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" id="prodd_image" name="newfile"></span>
           <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
         </div>
       </div>   
@@ -160,10 +168,11 @@
 </div>
 </div>
 </div>
-</form>
+
 </div>
 </section><!-- /.content -->
 <script type="text/javascript" src="../js/userDetails.js"></script>
+<script type="text/javascript" src="../js/edit_profile.js"></script>
 <script type="text/javascript">
 $( function() {
     $( "#birthdate" ).datepicker({
