@@ -46,6 +46,8 @@
           $("#huname").html(namea);
           $("#huname2").html(name);
           $("#nicc").html(data[0]['nic']);
+          $("#profimage").prop('src', '../'+data[0]['pic_path']);
+          $("#proffimage").prop('src', '../'+data[0]['pic_path']);
         },
         error: function( jqXhr, textStatus, errorThrown ){
         }
@@ -87,7 +89,7 @@
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header bg-light-blue">
-               <img src="../images/noavatar.png" class="img-circle" alt="User Image" />
+               <img id="profimage" src="../images/noavatar.png" class="img-circle" alt="User Image" />
                <p id="usrname">
                 
               </p>
@@ -117,7 +119,7 @@
         <div class="pull-left image">
           <div style="display: none; position: absolute; z-index: 110; left: 400; top: 100; width: 15; height: 15" id="preview_div"></div>
 
-          <img src="../images/noavatar.png" class="img-rounded" onmouseover="showtrail('../images/noavatar.png','',400,400)" onmouseout="hidetrail()"/>
+          <img id="proffimage" src="../images/noavatar.png" class="img-rounded" onmouseover="showtrail('../images/noavatar.png','',400,400)" onmouseout="hidetrail()"/>
 
         </div>
         <div class="pull-left info">

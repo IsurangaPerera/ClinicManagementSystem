@@ -149,10 +149,12 @@ function getHeaderData($id){
 	require_once 'db_connection.php';
     $db = db_connect();
 
-	$sql_data = "SELECT user_name.*, user_login.type ".
+	$sql_data = "SELECT user_name.*, user_login.type, user_data.pic_path ".
 				"FROM user_name ".
-				"LEFT JOIN user_login ".
+				"INNER JOIN user_login ".
 				"ON user_name.nic = user_login.nic ".
+				"INNER JOIN user_data ".
+				"ON user_name.nic = user_data.nic ".
 				"WHERE user_name.nic = ?";
 	
 	$stmt = $db->prepare($sql_data);
