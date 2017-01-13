@@ -15,7 +15,7 @@ require('header.php');
   <!--START OF SAMPLE COLLECTION-->
   <li>
     <a href="#" id="s_collection">
-      <i class="fa ion-person-add "></i> <span>Sample Collection</span>
+      <i class="fa ion-android-list "></i> <span>Sample Collection</span>
     </a>
   </li>
   <!--END OF SAMPLE COLLECTION-->

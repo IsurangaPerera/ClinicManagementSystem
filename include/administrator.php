@@ -29,7 +29,7 @@ require('header.php');
   <!--START OF DB BACKUP-->
   <li>
     <a href="#" id="backup_database">
-      <i class="fa fa-dashboard"></i> <span>Backup Database</span>
+      <i class="fa ion-android-checkbox-outline"></i> <span>Backup Database</span>
     </a>
   </li>
   <!--END OF DB BACKUP-->
