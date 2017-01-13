@@ -6,6 +6,11 @@ var dataO = null;
 var dataE = null;
 var table;
 
+/**
+ * Add a new stock to the inventory
+ * @param {}
+ * @return {}
+ */
 function saveStock(){
 	p_code   = $("#p_code").val();
 	p_name   = $("#p_name").val();
@@ -74,6 +79,11 @@ function saveStock(){
 	}
 }
 
+/**
+ * Generate an message to show in case of an error
+ * @param {message} message to be displayed
+ * @return
+ */
 function showMessage(message){
 	msg = $('#err_msg').html() + message + '<br>';
 	$('#err_msg').html(msg);
@@ -108,6 +118,11 @@ function addToTable(arr, tName){
 	}
 }
 
+/**
+ * Get stock details to be loaded into relevant tables
+ * @param {}
+ * @return {}
+ */
 function loadStock(){
 	if(dataO === null){
 		$.ajax({
@@ -126,6 +141,12 @@ function loadStock(){
 		addToTable(dataO, 'tble_stock');
 }
 
+/**
+ * Get expired stock details 
+ * to be loaded into relevant tables
+ * @param {}
+ * @return {}
+ */
 function loadExpiryStock(){
 	if(dataE === null){
 		$.ajax({
@@ -145,6 +166,12 @@ function loadExpiryStock(){
 		addToTable(dataE, 'expire_stock');
 }
 
+/**
+ * Get product details 
+ * to be loaded into relevant tables
+ * @param {}
+ * @return {}
+ */
 function loadProductItem() {
 	
 	if(dataE === null){
@@ -164,7 +191,14 @@ function loadProductItem() {
 		addToTableProduct(dataP);
 }
 
+/**
+ * Load data into stocks table
+ * @param {data}
+ * @return {}
+ */
 function addToTableProduct(dataX){
+	if(!dataX)
+		return;
 	table = document.getElementById('product_item');
 	arr = dataX;
 	console.log(dataX.length);
@@ -185,6 +219,11 @@ function addToTableProduct(dataX){
 	}
 }
 
+/**
+ * Save product details 
+ * @param {}
+ * @return {}
+ */
 function addProduct() {
 	var formData = new FormData();
 
@@ -214,6 +253,11 @@ function addProduct() {
 	}
 }
 
+/**
+ * Load data into products table
+ * @param {data}
+ * @return {}
+ */
 function addInformation(data) {
 	name = $("#prod_name").val();
     code = $("#prod_code").val();
