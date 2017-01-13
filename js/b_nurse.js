@@ -40,11 +40,31 @@ function process(id){
                 }
             $("#modal_blood").modal({backdrop: "static"});   
             }
-            if(data == null){
+            else
+                process3(patientId); 
+        }
+    });
+}
+
+function process3(id){
+    url = "../../patient/profile/general/check_exist/" + id;
+    $.ajax({
+        type: "GET",
+        url: url,
+        success: function( data, textStatus, jQxhr ){
+            if(data == '1'){
                 $("#err_msg").html("No requests at the moment");
                 $("#alert").attr('class', 'alert alert-danger alert-dismissable');
                 $("#alert").show(1000).delay(5000).hide(1000);
-            }    
+            }
+            else{
+                $("#err_msg").html("Invalid Patient ID");
+                $("#alert").attr('class', 'alert alert-danger alert-dismissable');
+                $("#alert").show(1000).delay(5000).hide(1000);
+            }
+        },
+        error: function( jqXhr, textStatus, errorThrown ){
+            console.log( errorThrown );
         }
     });
 }
