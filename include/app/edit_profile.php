@@ -25,6 +25,8 @@
               <li><a href="#tab_3" data-toggle="tab">Profile Picture</a></li>
             </ul>
             <div class="tab-content">
+
+              <!-- START OF GENERAL DETAILS TAB -->
              <div class="tab-pane active" id="tab_1">
                <table cellpadding="3" cellspacing="3" width="100%">
                 <tr>
@@ -98,6 +100,9 @@
          </tr>
        </table>
      </div>
+     <!-- END OF GENERAL DETAILS TAB -->
+
+     <!-- START OF CONTACT DETAILS TAB-->
      <div class="tab-pane" id="tab_2">
        <table cellpadding="3" cellspacing="3" width="100%">
         <tr>
@@ -135,9 +140,20 @@
         </tr>
       </table>
     </div>
+    <!-- END OF CONTACT DETAILS TAB -->
+    
+    <!-- START OF PROFILE PICTURE UPLOAD TAB-->
     <div class="tab-pane" id="tab_3">
-      <iframe width="100%" frameborder="0" height="400" src="app/profile_pic.php"></iframe>
+      <div class="fileinput fileinput-new" data-provides="fileinput">
+        <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+        <div>
+          <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" id="prod_image" name="newfile"></span>
+          <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+        </div>
+      </div>   
     </div>
+    <!-- END OF PROFILE PICTURE UPLOAD TAB-->
+  
   </div>
 </div>
 </div>
