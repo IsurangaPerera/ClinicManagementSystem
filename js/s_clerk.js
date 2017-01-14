@@ -2,15 +2,19 @@ var dataLength;
 var baseURL = "../patient/investigations/sputum";
 var patientId;
 
+/*
+ * Get requests related to sputum tests
+ * if requests available for a particular patient
+ * data is inserted into the modal to be shown
+ * @param {}
+ * @return {}
+ */
 function process(id){
-
     if(id === undefined || id === null)
         patientId = $('#patient_no').val();
     else
         patientId = id;
-    
 	uri = baseURL + "/" + patientId;	
-    alert(uri);
 	
     $.ajax({
     type: "GET",
@@ -40,6 +44,13 @@ function process(id){
 	});
 }
 
+/**
+ * If not any requests available 
+ * check if patient Id is valid and 
+ * generate relevant messages
+ * @param {user id}
+ * @return {}
+ */
 function save(){
     for(i = 0; i < dataLength; i++){
         id2 = "#inv_raw" + (i+1) + "_cell1";
@@ -67,7 +78,6 @@ function save(){
             });
         }
     }
-
     $('#patient_no').val("");
     $('#patient_no').focus();
     $('#modal_sputum').modal('hide');
