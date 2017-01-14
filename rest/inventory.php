@@ -24,6 +24,11 @@ $app->get('/getdata/product/{id}',function(Request $request, Response $response)
     getProductById($id);
 });
 
+$app->get('/getdata/sim_product/{id}',function(Request $request, Response $response){
+    $id = $request->getAttribute('id');
+    getSimProductById($id);
+});
+
 $app->post('/product',function(Request $request, Response $response){
 	$uploads_dir = '/uploads';
 
@@ -163,6 +168,44 @@ function getProductById($id) {
         trigger_error('Wrong SQL: ' . $sql_data . ' Error: ' . $db->error, E_USER_ERROR);
     }
 
+    if(!$stmt->bind_param('s',$id)) 
+        echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+
+    if (!$stmt->execute()) {
+        echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+    }
+
+    $meta = $stmt->result_metadata();
+    while ( $field = $meta->fetch_field() )
+        $parameters[] = &$row[$field->name]; 
+ 
+   call_user_func_array(array($stmt, 'bind_result'), $parameters);
+
+    while ( $stmt->fetch() ) {
+        $x = array();
+        foreach( $row as $key => $val )
+            $x[$key] = $val;
+        $results[] = $x;
+    }
+
+    echo json_encode($results);
+    $stmt->close();
+}
+
+function getSimProductById($id) {
+    require_once 'db_connection.php';
+    $db = db_connect();
+
+    $sql_data = "SELECT * ".
+                "FROM inventory_product ".
+                "WHERE code LIKE ?";
+
+    $stmt = $db->prepare($sql_data);
+    if($stmt === false) {       
+        trigger_error('Wrong SQL: ' . $sql_data . ' Error: ' . $db->error, E_USER_ERROR);
+    }
+
+    $id = "$id%";
     if(!$stmt->bind_param('s',$id)) 
         echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
 

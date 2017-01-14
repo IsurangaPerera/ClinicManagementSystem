@@ -19,7 +19,9 @@
 
            <div class="form-group">
              <label for="p_code">Product Code</label>
-             <input type="text" id="p_code" placeholder="Product Code" class="form-control input-sm">
+             <input type="text" id="p_code" placeholder="Product Code" class="form-control input-sm"
+             onchange="makeChange();"
+                onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();">
            </div>
 
            <div class="form-group">

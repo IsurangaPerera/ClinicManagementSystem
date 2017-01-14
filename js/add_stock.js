@@ -6,6 +6,29 @@ var dataO = null;
 var dataE = null;
 var table;
 
+function makeChange(){
+	value = $("#p_code").val();
+	uri = "../../inventory/getdata/sim_product/" + value;
+	if(value === ""){
+		$("#p_name").val("");
+		$("#formula").val("");
+	}
+	$.ajax({
+		type: "GET",
+		async: false,
+		url: uri,
+		success: function( data, textStatus, jQxhr ){
+			data = JSON.parse(data);
+			if(data[0]){
+				$("#p_name").val(data[0]['name']);
+				$("#formula").val(data[0]['formulation']);
+			}
+		},
+		error: function( jqXhr, textStatus, errorThrown ){
+		}
+	});
+}
+
 /**
  * Add a new stock to the inventory
  * @param {}
