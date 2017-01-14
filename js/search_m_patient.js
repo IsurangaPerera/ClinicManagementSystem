@@ -20,8 +20,11 @@ function getInformation(url){
      	url: url,
 		success: function( data, textStatus, jQxhr ){
 			dataO = JSON.parse(data)
-			if(dataO == null)
-				alertify.error("Invalid Input");
+			if(dataO == null){
+				$("#err_msg").html("Patient doesn't exist");
+                $("#alert").attr('class', 'alert alert-danger alert-dismissable');
+                $("#alert").show(1000).delay(5000).hide(1000);
+			}
 			else
 				organizeData();
 		},

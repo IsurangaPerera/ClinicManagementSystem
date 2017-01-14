@@ -3,6 +3,10 @@
 </section>
 
 <div class="search_patient">
+  <div class='alert alert-success alert-dismissable' id="alert" hidden><i class='fa fa-check'></i>
+    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+    <span id="err_msg"></span>
+  </div>
   <section class="content">
     <div class="row">
       <div class="col-md-4"></div>
@@ -18,9 +22,7 @@
                 </tr>
                 <tr>
                   <td>
-
                     <input type="text" id="keyword" data-toggle="modal" placeholder="ID/Name/DOB" class="form-control input-sm" style="width: 100%; cursor:pointer;" required autofocus>
-
                   </td>
                 </tr>
                 <tr>
@@ -30,15 +32,12 @@
                 </tr>
               </table>
             </div>
-
           </div>
-
         </div>
-
       </div>
     </section><!-- /.content -->
 
-    <!--START OF MODAL-->
+    <!--START OF PATIENT LIST MODAL-->
     <div class="modal fade in" id="patientListModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" hidden>
       <div class="modal-dialog">
         <div class="modal-content">
@@ -60,7 +59,6 @@
               text-align: left;
               overflow: auto">
               <table class="table table-striped table-hover">
-
                 <thead>
                   <tr>
                     <th>Patient No.</th>
@@ -75,19 +73,16 @@
                 </tbody>
               </table>
             </div></span>
-
-
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <!-- <button type="button" class="btn btn-primary" onClick="return addPatient()">Proceed</button>-->
           </div>
-
         </div>
         <!-- /.modal-content -->
       </div>
       <!-- /.modal-dialog -->
-      <!-- END OF MODAL -->
+      <!-- END OF PATIENT LIST MODAL -->
 
       <div id='sample2' hidden>
         <table border='1' align="center">
