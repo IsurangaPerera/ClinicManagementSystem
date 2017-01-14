@@ -21,7 +21,7 @@ function process(id){
         url: uri,
         success: function (data) {
     	    data = JSON.parse(data);
-            if(data !== null){
+            if(data[0]){
                 dataLength = data.length;
         	    for(i = 0; i < 4; i++){
                     id1 = "#investg_raw" + (i+1);
