@@ -54,9 +54,9 @@ function getProductData() {
     require_once 'db_connection.php';
     $db = db_connect();
 
-    $sql_data = "SELECT p_code,p_name,formula,brand_name ".
-                "FROM inventory_data ".
-                "GROUP BY p_code";
+    $sql_data = "SELECT * ".
+                "FROM inventory_product ".
+                "GROUP BY code";
 
     $stmt = $db->prepare($sql_data);
     if($stmt === false) {       

@@ -77,10 +77,6 @@
                  <td><input type="text" class="form-control" id="formula"></td>
                </tr>
                <tr>
-                 <td><label for="dose" hidden>Dosage</label></td>
-                 <td><input type="text" class="form-control"  id="dose"></td>
-               </tr>
-               <tr>
                  <td><label for="batch_no">Batch No</label></td>
                  <td><input type="text" class="form-control"  id="batch_no"></td>
                </tr>

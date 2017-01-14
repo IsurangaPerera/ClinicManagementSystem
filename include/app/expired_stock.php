@@ -33,7 +33,7 @@
       <table class="table table-hover table-striped">
         <thead>
           <tr>
-            <th>Date</th><th>Product Code</th><th>Product Name</th><th>Formulation</th><th>Dosage</th><th>Batch No</th><th>Quantity</th><th>Expiry</th><th>Action</th></tr>
+            <th>Date</th><th>Product Code</th><th>Product Name</th><th>Formulation</th><th>Batch No</th><th>Quantity</th><th>Expiry</th><th>Action</th></tr>
           </thead>
           <tbody id="expire_stock">
           </tbody>

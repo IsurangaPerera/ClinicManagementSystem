@@ -32,11 +32,6 @@
              <input type="text" id="formula" placeholder="Formulation" class="form-control input-sm">
            </div>
 
-           <div class="form-group" hidden="true">
-             <label for="dose">Dosage</label>
-             <input type="text" id="dose" placeholder="Dosage" class="form-control input-sm">
-           </div>
-
            <div class="form-group">
              <label for="batch_no">Batch No.</label>
              <input type="text" placeholder="Batch No." id="batch_no" class="form-control input-sm">
@@ -48,7 +43,7 @@
            </div>
 
            <div class="form-group">
-             <label for="expiry">Expiry</label>
+             <label for="expiry">Expiry Date</label>
              <input type="text" placeholder="Expiry" id="expiry" class="form-control input-sm">
            </div>
 
@@ -83,17 +78,16 @@
          height: 390px;
          text-align: left;
          overflow: auto">
-         <table id="myTable" width="100%" cellpadding="2" cellspacing="2">
+         <table id="myTable" width="100%" cellpadding="2" cellspacing="2" class="table table-striped">
           <thead>
            <tr style="border-bottom:1px #999 solid; border-collapse:collapse">
              <th>Date</th>
              <th>Product Code</th>
              <th>Product Name</th>
              <th>Formulation</th>
-             <th>Dosage</th>
              <th>Batch No</th>
              <th>Quantity</th>
-             <th>Expiry</th>
+             <th>Expiry Date</th>
              <th hidden>Action</th>
            </tr>
          </thead>
@@ -111,17 +105,16 @@
      height: 390px;
      text-align: left;
      overflow: auto">
-     <table id="myTable" width="100%" cellpadding="2" cellspacing="2">
+     <table id="myTable" width="100%" cellpadding="2" cellspacing="2" class="table table-striped">
       <thead>
        <tr style="border-bottom:1px #999 solid; border-collapse:collapse">
          <th>Date</th>
          <th>Product Code</th>
          <th>Product Name</th>
          <th>Formulation</th>
-         <th>Dosage</th>
          <th>Batch No</th>
          <th>Quantity</th>
-         <th>Expiry</th>
+         <th>Expiry Date</th>
          <th hidden>Action</th>
        </tr>
      </thead>
@@ -139,7 +132,7 @@
  height: 390px;
  text-align: left;
  overflow: auto">
- <table id="myTable" width="100%" cellpadding="2" cellspacing="2">
+ <table id="myTable" width="100%" cellpadding="2" cellspacing="2" class="table table-striped">
   <thead>
    <tr style="border-bottom:1px #999 solid; border-collapse:collapse">
      <th>Product Code</th>
