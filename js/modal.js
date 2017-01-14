@@ -10,7 +10,11 @@ var tempC = 0;
 var prepared = getDDetails();
 var tflag = true;
 
-
+/**
+ * Retrive details of the current user
+ * @param {}
+ * @return {user name}
+ */
 function getDDetails() {
 	var name;
 	$.ajax({
@@ -64,6 +68,9 @@ $(function(){
 
 });
 
+/**
+ * Add a new row to the complaints modal
+ */
 function addRow(){
 	var table = document.getElementById("tble1");
 	var row = table.insertRow(table.rows.length);
@@ -75,7 +82,7 @@ function addRow(){
 	ide2 = 'in' + curIdComplaints + '1';
 	ide3 = 'in' + curIdComplaints + '2';
 
-	var newElement1 = '<input list="complaints1" id="'+ide1+'" name="complaints1" class="form-control input-sm"'
+	var newElement1 = '<input list="complaints1" id="'+ide1+'" name="complaints1" class="form-control"'
 	+ 'onchange="setEnable(this.id)" style="height: 100%; cursor:pointer;" autofocus placeholder="Complaint">';
 
 	var newElement2 = '<input type="text" id="'+ide2+'" class="form-control input-sm" style="height: 100%;'
