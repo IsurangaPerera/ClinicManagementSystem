@@ -76,11 +76,12 @@ function setModal(data){
 		var cell3 = row.insertCell(2);
 		var cell4 = row.insertCell(3);
 		var cell5 = row.insertCell(4);
+		var cell6 = row.insertCell(5);
 	
 		cell1.innerHTML = data[i]['date'] + cell1.innerHTML;
 		cell2.innerHTML = data[i]['drug'] + cell2.innerHTML;
 		cell3.innerHTML = data[i]['dosage'] + cell3.innerHTML;
-		element1 = '<input class="form-control input-sm" type="text" style="width: 100px;" id="e1'+ i +'">';
+		element1 = '<input class="form-control input-sm" type="text" style="width: 100px;" id="e1'+ i +'" readonly="false">';
 		cell4.innerHTML = element1 + cell4.innerHTML;
 		element2 = '<select class="form-control input-sm" style="width: 100px;" id="e2'+ i +'">'
                        + '<option>NOT ISSUED</option>'
@@ -88,37 +89,60 @@ function setModal(data){
                        + '<option>CANCELED</option>'
                        + '</select>';
 
-		cell5.innerHTML = element2 + cell5.innerHTML;
+        uri = "../../inventory/getdata/sim_name/" + data[i]['drug'];
+        $.ajax({
+            type: "GET",
+            url: uri,
+            async: false,
+            success : function(data){
+            	if(!parseInt(data) || parseInt(data) <= 0){
+            		dd = '#e1'+i;
+            		$(dd).prop('readonly', 'true');
+            		element2alt = '<span class="label label-danger">Out Of Stock</span>';
+					cell5.innerHTML = element2alt + cell5.innerHTML;
+					element3 = '<input type="text" value="true" id="hidimp'+i+'" hidden/>';
+        			cell6.innerHTML = element3 + cell6.innerHTML;
+            	} else{
+            		cell5.innerHTML = element2 + cell5.innerHTML;
+            		element3 = '<input type="text" value="false" id="hidimp'+i+'" hidden/>';
+        			cell6.innerHTML = element3 + cell6.innerHTML;
+            	}
+            }
+        });   
 	}
 	$('#modal_med').modal({backdrop: "static"});
 }
 
 /**
  * Save prescription information
+ * Print a slip in case of "out of stock" situations
  * @param {}
  * @return {}
  */
 function save(){
 	table = document.getElementById("tble_med");
 	tblLength = dataO.length;
+	var doc = new jsPDF();
+	doc.setFontSize(12);
 
 	for(i = 0; i < tblLength; i++){
-		date = dataO[i]['date'];
-		drug = dataO[i]['drug'];
-		id1 = '#e1' + i;
-		id2 = '#e2' + i + ' option:selected';
-		instruction = $(id1).val().trim();
-		status = $(id2).val();
+		dt = "#hidimp"+i;
+		flag = $(dt).val();
+		if(flag == 'true'){
+			doc.text(20, 20, dataO[i]['drug']+"\n"+dataO[i]['dosage']+"\n");
 
-		json = {
-			"patientId"   : pid,
-			"drug"        : drug,
-			"date"        : date,
-			"instruction" : instruction,
-			"status"      : status
-		};
+			date = dataO[i]['date'];
+			drug = dataO[i]['drug'];
 
-		$.ajax({
+			json = {
+				"patientId"   : pid,
+				"drug"        : drug,
+				"date"        : date,
+				"instruction" : 'NONE',
+				"status"      : 'CANCELED'
+			};
+
+			$.ajax({
                 type: "POST",
                 url: baseURL,
                 data : JSON.stringify(json),
@@ -127,12 +151,38 @@ function save(){
                     $("#alert").attr('class', 'alert alert-success alert-dismissable');
                     $("#alert").show(1000).delay(5000).hide(1000);               
                 }
-        });
+        	});
+
+
+		} else{
+			date = dataO[i]['date'];
+			drug = dataO[i]['drug'];
+			id1 = '#e1' + i;
+			id2 = '#e2' + i + ' option:selected';
+			instruction = $(id1).val().trim();
+			status = $(id2).val();
+
+			json = {
+				"patientId"   : pid,
+				"drug"        : drug,
+				"date"        : date,
+				"instruction" : instruction,
+				"status"      : status
+			};
+
+			$.ajax({
+                type: "POST",
+                url: baseURL,
+                data : JSON.stringify(json),
+                success : function(data){
+                	$("#err_msg").html("Operation Completed Successfully");
+                    $("#alert").attr('class', 'alert alert-success alert-dismissable');
+                    $("#alert").show(1000).delay(5000).hide(1000);               
+                }
+        	});
+		}
 	}
 	$('#modal_med').modal('hide');
-	for(i = 0; i < tblLength; i++){
-		x = document.getElementById("tble_med").rows[i].cells;
-		for(j = 0; j < 5; j++)
-			cells[i].innerHTML = "";
-	}
+	$("#tble_med").html("");
+	doc.save(pid);
 }

@@ -49,7 +49,7 @@
              <input type="text" placeholder="Expiry" id="expiry" class="form-control input-sm">
            </div>
 
-           <div class="form-group">
+           <div class="form-group" hidden="true">
              <label for="exampleInputEmail1">Remarks</label>
              <textarea placeholder="Remarks" class="form-control input-sm" name="remarks" id="remarks" rows="5"></textarea>
            </div>
