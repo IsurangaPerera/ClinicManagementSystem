@@ -7,8 +7,25 @@ var numRowInves = 1;
 var curIdComplaints = 1;
 var curIdMedications = 1;
 var tempC = 0;
-var prepared = document.getElementById('usrname').innerHTML.trim().split("<br>")[0];
+var prepared = getDDetails();
 var tflag = true;
+
+
+function getDDetails() {
+	var name;
+	$.ajax({
+        type: "GET",
+        async: false,
+        url: "../user/header/data",
+        success: function( data, textStatus, jQxhr ){
+          data = JSON.parse(data);
+          name = data[0]['firstname']+"  "+data[0]['lastname'];
+        },
+        error: function( jqXhr, textStatus, errorThrown ){
+        }
+    });
+	return name;
+}
 
 if(sessionStorage.getItem("patientId") !== null)
 	var patientId = sessionStorage.getItem("patientId");
