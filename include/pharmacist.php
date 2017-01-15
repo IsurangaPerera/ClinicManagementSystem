@@ -88,7 +88,7 @@ $(document).ready(function(){
   <div class="modal-dialog">
 
     <!-- Modal content-->
-    <div class="modal-content">
+    <div class="modal-content" style="width: 700px;">
       <div class="modal-header">
       </div>
       <div class="modal-body">

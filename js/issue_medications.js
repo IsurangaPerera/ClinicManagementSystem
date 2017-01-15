@@ -81,7 +81,7 @@ function setModal(data){
 		cell1.innerHTML = data[i]['date'] + cell1.innerHTML;
 		cell2.innerHTML = data[i]['drug'] + cell2.innerHTML;
 		cell3.innerHTML = data[i]['dosage'] + cell3.innerHTML;
-		element1 = '<input class="form-control input-sm" type="text" style="width: 100px;" id="e1'+ i +'" readonly="false">';
+		element1 = '<input class="form-control input-sm" type="text" style="width: 100px;" id="e1'+ i +'">';
 		cell4.innerHTML = element1 + cell4.innerHTML;
 		element2 = '<select class="form-control input-sm" style="width: 100px;" id="e2'+ i +'">'
                        + '<option>NOT ISSUED</option>'
@@ -95,14 +95,17 @@ function setModal(data){
             url: uri,
             async: false,
             success : function(data){
-            	if(!parseInt(data) || parseInt(data) <= 0){
-            		dd = '#e1'+i;
-            		$(dd).prop('readonly', 'true');
+            	data = JSON.parse(data);
+            	if(data == null || parseInt(data) <= 0){
+            		//dd = '#e1'+i;
+            		//$(dd).prop('readonly', 'true');
             		element2alt = '<span class="label label-danger">Out Of Stock</span>';
 					cell5.innerHTML = element2alt + cell5.innerHTML;
 					element3 = '<input type="text" value="true" id="hidimp'+i+'" hidden/>';
         			cell6.innerHTML = element3 + cell6.innerHTML;
             	} else{
+            		//dd = '#e1'+i;
+            		//$(dd).prop('readonly', 'false');
             		cell5.innerHTML = element2 + cell5.innerHTML;
             		element3 = '<input type="text" value="false" id="hidimp'+i+'" hidden/>';
         			cell6.innerHTML = element3 + cell6.innerHTML;
