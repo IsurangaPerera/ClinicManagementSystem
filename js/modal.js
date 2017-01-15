@@ -31,6 +31,32 @@ function getDDetails() {
 	return name;
 }
 
+function updateUserInput(id) {
+	ido = '#'+id;
+	name = $(ido).val();
+
+	if(name){
+		$.ajax({
+		type: "GET",
+		url: '../../inventory/getdata/allbyname/'+name,
+		success: function(data){
+			data = JSON.parse(data);
+
+            $( ido ).autocomplete({
+               source: data
+            });
+            var id1 = '#'+id.substring(0, id.length-1)+'1';
+			$(id1).prop("disabled", false);
+		},
+
+		error: function( jqXhr, textStatus, errorThrown ){
+			alert(jqXhr.status);
+        }
+
+		});
+	}	
+}
+
 if(sessionStorage.getItem("patientId") !== null)
 	var patientId = sessionStorage.getItem("patientId");
 
@@ -107,6 +133,7 @@ function setEnable(id){
 }
 
 function setEnable2(id){
+	//updateUserInput(id);
 	var id1 = '#'+id.substring(0, id.length-1)+'1';
 	$(id1).prop("disabled", false).focus();
 }
@@ -120,11 +147,14 @@ function addRow2(){
 	ide1 = 'im' + curIdMedications + '0';
 	ide2 = 'im' + curIdMedications + '1';
 
-	var newElement1 = '<input id="'+ide1+'" type="text" class="form-control input-sm"'
-	+ 'onchange="setEnable2(this.id)" style="height: 100%; cursor:pointer;" placeholder="Medication">';
+	var newElement1 = '<div class="ui-widget">'
+	+ '<input id="'+ide1+'" type="text" class="form-control input-sm" '
+	+ 'onchange="updateUserInput(this.id);" onkeyup="updateUserInput(this.id);" onpaste="updateUserInput(this.id);" oninput="updateUserInput(this.id);"style="height: 100%; cursor:pointer;" placeholder="Medication">'
+	+ '</div>';
 
-	var newElement2 = '<input id="'+ide2+'" list="dose" name="dose" class="form-control input-sm"'
-	+ 'style="height: 100%; cursor:pointer;" placeholder="Dosage" disabled>';
+	var newElement2 = '<div class="ui-widget">'
+	+ '<input id="'+ide2+'" list="dose" name="dose" class="form-control input-sm"'
+	+ 'style="height: 100%; cursor:pointer;" placeholder="Dosage" disabled></div>';
 
 	cell1.innerHTML = newElement1 + cell1.innerHTML;
 	cell2.innerHTML = newElement2 + cell2.innerHTML;

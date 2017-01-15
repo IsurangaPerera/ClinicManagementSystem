@@ -705,16 +705,20 @@
 									</tr>
 									<tr>
 										<td>
-											<input id="im00" type="text" class="form-control input-sm" onchange="setEnable2(this.id)" style="height: 100%; cursor:pointer;" placeholder="Medication">
+											<div class="ui-widget">
+											<input id="im00" type="text" class="form-control input-sm" onchange="updateUserInput(this.id);" onkeyup="updateUserInput(this.id);" onpaste="updateUserInput(this.id);" oninput="updateUserInput(this.id);" style="height: 100%; cursor:pointer;" placeholder="Medication">
+											</div>
 										</td>
 
 										<td>
+											<div class="ui-widget">
 											<input id="im01" list="dose" name="dose" class="form-control input-sm" style="height: 100%; cursor:pointer;" placeholder="Dosage" disabled>
 											<datalist id="dose">
 												<option value="Dose 0"></option>
 												<option value="Dose 1"></option>
 												<option value="Dose 2"></option>
 											</datalist>
+										</div>
 										</td>
 									</tr>
 								</table>

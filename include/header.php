@@ -31,6 +31,7 @@
   <script type="text/javascript" src="../js/jasny.min.js"></script>
   <script type="text/javascript" src="../js/jspdf-debug.js"></script>
   <script type="text/javascript" src="../js/fileSaver.min.js"></script>
+  <script type="text/javascript" src="../js/bootstrap3-typeahead.min.js"></script>
 
   <script type="text/javascript">
     $(document).ready(function(){
