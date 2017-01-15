@@ -33,7 +33,7 @@ function showGraph(){
       });
       },
       error: function( jqXhr, textStatus, errorThrown ){
-        alertify.error("Try Again");
+        console.log(jqXhr.status);
 
       }
     });
