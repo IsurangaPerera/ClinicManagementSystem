@@ -159,6 +159,7 @@
      <!--<a class="btn btn-app" href="#" onclick="refreshAll();"><i class="fa fa-refresh"></i> Refresh</a>-->
      <a class="btn btn-app" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Add Item</a>
      <a class="btn btn-app" data-toggle="modal" data-target="#myModalView"><i class="fa fa-hand-o-down"></i> View Item</a>
+     <a class="btn btn-app" data-toggle="modal" data-target="#myModalEdit"><i class="fa fa-pencil"></i> Edit Stock</a>
      <!--<a class="btn btn-app" onclick="window.print()"><i class="fa fa-print"></i> Print</a>-->
 
    </div>
@@ -345,6 +346,67 @@
 <!-- /.modal-dialog -->
 </div>
 <!-- END OF VIEW PRODUCT MODAL -->  
+
+<!--START OF STOCK EDIT MODAL-->
+<div class="modal fade" id="myModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Update Stock</h4>
+      </div>
+
+      <div class="modal-body">
+        <div class='alert alert-success alert-dismissable' id="alert2" hidden><i class='fa fa-check'></i>
+          <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+          <span id="err_msg2"></span>
+        </div>
+        <table class="table table-hover">
+          <tbody>
+            <tr>
+             <td>Product Name</td>
+             <td>
+              <input type="text" id="edit_name" placeholder="Name" class="form-control input-sm" style="width: 100%;">
+            </td>
+          </tr>
+          <tr>
+           <td>Product Code</td>
+           <td>
+            <input type="text" id="edit_code" placeholder="Code" class="form-control input-sm" style="width: 100%;">
+          </td>
+        </tr>
+        <tr>
+         <td>Batch NO</td>
+         <td>
+          <input type="text" id="edit_batch" placeholder="Batch No" class="form-control input-sm" style="width: 100%;" 
+          onchange="makeChange2();"
+                onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();">
+        </td>
+      </tr>
+      <tr>
+         <td>Quantity Used</td>
+         <td>
+          <input type="text" id="edit_quantity" placeholder="Quantity" class="form-control input-sm" style="width: 100%;">
+        </td>
+      </tr>
+   <tr>
+     <td>Note</td>
+     <td><textarea name="note" id="edit_note" placeholder="note" class="form-control input-sm" style="width: 100%;"></textarea></td>
+   </tr>
+</tbody>
+</table>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  <button type="button" class="btn btn-primary" onClick="updateProduct()">Save</button>
+</div>
+
+</div>
+<!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+</div>
+<!-- END OF STOCK EDIT MODAL -->
 
 <script type="text/javascript">
 $(document).ready(function(){

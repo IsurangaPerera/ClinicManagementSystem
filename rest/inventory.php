@@ -39,6 +39,11 @@ $app->get('/getdata/sim_name/{id}',function(Request $request, Response $response
     getSimProductByName($id);
 });
 
+$app->get('/getdata/batch_name/{id}',function(Request $request, Response $response){
+    $id = $request->getAttribute('id');
+    getProductByBatch($id);
+});
+
 $app->post('/product',function(Request $request, Response $response){
 	$uploads_dir = '/uploads';
 
@@ -310,6 +315,44 @@ function getAllByName($name) {
         $x = array();
         foreach( $row as $key => $val )
             $results[] = $val;
+    }
+
+    echo json_encode($results);
+    $stmt->close();
+}
+
+function getProductByBatch($id){
+    require_once 'db_connection.php';
+    $db = db_connect();
+
+    $sql_data = "SELECT * ".
+                "FROM inventory_data ".
+                "WHERE batch_no LIKE ?";
+
+    $stmt = $db->prepare($sql_data);
+    if($stmt === false) {       
+        trigger_error('Wrong SQL: ' . $sql_data . ' Error: ' . $db->error, E_USER_ERROR);
+    }
+
+    $id = "$id%";
+    if(!$stmt->bind_param('s',$id)) 
+        echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+
+    if (!$stmt->execute()) {
+        echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+    }
+
+    $meta = $stmt->result_metadata();
+    while ( $field = $meta->fetch_field() )
+        $parameters[] = &$row[$field->name]; 
+ 
+   call_user_func_array(array($stmt, 'bind_result'), $parameters);
+
+    while ( $stmt->fetch() ) {
+        $x = array();
+        foreach( $row as $key => $val )
+            $x[$key] = $val;
+        $results[] = $x;
     }
 
     echo json_encode($results);

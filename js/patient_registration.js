@@ -5,6 +5,12 @@ var objecto = {
 	"patient_data"    : []
 };
 
+/**
+ * Create object containing all patient details
+ * and call postData function
+ * @param {}
+ * @return {}
+ */
 function saveData(){
 	if(!validate()){
 		$('#alert').show('slow');
@@ -60,12 +66,18 @@ function saveData(){
 	postData();
 }
 
+/**
+ * Send object containing patient details to the server
+ * @param {}
+ * @return {}
+ */
 function postData(){
 	$.ajax({
 		type: "POST",
 		url: "../patient/tb/register",
 		data: JSON.stringify(objecto),
 		success: function( data, textStatus, jQxhr ){
+			createCode();
 			$("#err_msg").html("Patient registered successfully");
 			$("#alert").attr("class", "alert alert-success alert-dismissable");
 			$("table tr").each(function () {
@@ -85,6 +97,61 @@ function postData(){
 	});
 }
 
+/**
+ * Create a temporary bar code to be 
+ * printed as a pdf
+ * @param {}
+ * @return {}
+ */
+function createCode(){
+	id = $("#patientID").val();
+	JsBarcode("#printbcode", id, {
+        format: "CODE128",
+        displayValue: true,
+        margin: 10,
+    }); 
+
+    //demoFromHTML();
+}
+
+/*function demoFromHTML() {
+	var pdf = new jsPDF('p', 'in', 'letter');
+
+    source = $('#patients')[0];
+
+    specialElementHandlers = {
+        '#bypassme': function(element, renderer) {
+        	return true
+        }
+    };
+    margins = {
+      	top: 80,
+      	bottom: 100,
+      	left: 120,
+      	width: 300
+    };
+    pdf.fromHTML(
+        source, // HTML string or DOM elem ref.
+
+        margins.left, // x coord
+        margins.top, { // y coord
+        	'width': margins.width, // max width of content on PDF
+        	'elementHandlers': specialElementHandlers
+        },
+
+        function(dispose) {
+            pdf.save('Test2.pdf');
+        }, margins
+    );
+}*/
+
+/**
+ * Validate user information
+ * Incase of validation problem an error message
+ * is displayed to the user
+ * @param {}
+ * @return {}
+ */
 function validate(){
 	phone_office = $('#phone_office').val();
 	phone_home   = $('#phone_home').val();

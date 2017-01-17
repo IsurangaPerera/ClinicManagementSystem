@@ -201,6 +201,13 @@
 </div>
 </section><!-- /.content -->
 
+<div id="patients" hidden>
+  <div class="" >
+    <span >Central Chest Clinic, Borella</span>
+    <img id="printbcode" class="bbcode" hidden="true">
+  </div>
+</div>
+
 <script type="text/javascript">
 flag1 = false;
 flag2 = false;

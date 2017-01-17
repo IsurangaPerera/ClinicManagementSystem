@@ -2,7 +2,11 @@ var ALL = {};
 var IN  = {};
 var OUT = {};
 
-
+/**
+ * Retrieve all data related to
+ * doctors including name, address etc.
+ * @param {}
+ */
 function getAllData(){
 	$.ajax({
 		type: "GET",
@@ -16,6 +20,11 @@ function getAllData(){
 	});
 }
 
+/**
+ * Store all user information an an array
+ * @param {user data}
+ * @return {}
+ */ 
 function setData(data){
 	getDoctorsData();
 	if(!data) return;
@@ -27,6 +36,11 @@ function setData(data){
 	}
 }
 
+/**
+ * Retrieve all data associated with users
+ * @param {}
+ * @return {}
+ */
 function getDoctorsData(){
 	$.ajax({
 		type: "GET",
@@ -40,6 +54,11 @@ function getDoctorsData(){
 	});
 }
 
+/**
+ * Seperate Users online
+ * @param {}
+ * @ return {}
+ */
 function loadDoctorsIn(data){
 	if(!data) return;
 	var arr = IN;
@@ -51,6 +70,11 @@ function loadDoctorsIn(data){
 	addRowIN();
 }
 
+/**
+ * Seperate Users offline
+ * @param {}
+ * @ return {}
+ */
 function loadDoctorsOUT(){
 	var arr = OUT;
 	var al = ALL
@@ -62,6 +86,11 @@ function loadDoctorsOUT(){
 	addRowOUT();
 }
 
+/**
+ * Create table of online users
+ * @param {}
+ * @return {}
+ */
 function addRowIN(){
 	var table = document.getElementById("docin");
 
@@ -78,6 +107,11 @@ function addRowIN(){
 	loadDoctorsOUT();
 }
 
+/**
+ * Create table of offline users
+ * @param {}
+ * @return {}
+ */
 function addRowOUT(){
 	var table = document.getElementById("docout");
 

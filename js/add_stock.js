@@ -6,6 +6,56 @@ var dataO = null;
 var dataE = null;
 var table;
 
+/**
+ * Update stock information
+ * including quantity of a particular stock
+ * @param {}
+ * @return {}
+ */
+function updateProduct(){
+	name = $("#edit_name").val();
+    code = $("#edit_code").val();
+    batch = $("#edit_batch").val();
+    note = $("#edit_note").html();
+    quantity = $("#edit_quantity").val();
+
+    objectO = {"updated_stock" : []};
+
+    objectO.updated_stock.push({
+    	"date"        : getDate(),
+    	"p_name"      : name,
+    	"p_code"      : code,
+    	"batch_no"    : batch,
+    	"quantity"    : quantity,
+    	"note"        : note
+    });
+
+    $.ajax({
+        url: '../patient/tb/register',
+        type: 'POST',
+        data: JSON.stringify(objectO),
+        success: function(data, textStatus, jqXHR)
+        {
+        	$('#myModalEdit').modal('hide');
+        	//$("#err_msg").html("Stock Updated Successfully");
+            //$("#alert").attr('class', 'alert alert-success alert-dismissable');
+            //$("#alert").show(1000).delay(5000).hide(1000);
+        },
+        error: function(jqXHR, textStatus, errorThrown)
+        {
+        	$("#err_msg2").html("Operation Failed");
+            $("#alert2").attr('class', 'alert alert-danger alert-dismissable');
+            $("#alert2").show(1000).delay(5000).hide(1000);
+        }
+    });
+}
+
+/**
+ * Autocomplete relevant fields
+ * when product code is partially or completely given
+ * @param {}
+ * @return {}
+ */
 function makeChange(){
 	value = $("#p_code").val();
 	uri = "../../inventory/getdata/sim_product/" + value;
@@ -19,9 +69,44 @@ function makeChange(){
 		url: uri,
 		success: function( data, textStatus, jQxhr ){
 			data = JSON.parse(data);
-			if(data[0]){
+			if(data[0]['name']){
 				$("#p_name").val(data[0]['name']);
 				$("#formula").val(data[0]['formulation']);
+			} else{
+				$("#p_name").val("");
+				$("#formula").val("");
+			}
+		},
+		error: function( jqXhr, textStatus, errorThrown ){
+		}
+	});
+}
+
+/**
+ * Autocomplete relevant fields
+ * when batch no is partially or completely given
+ * @param {}
+ * @return {}
+ */
+function makeChange2(){
+	value = $("#edit_batch").val();
+	uri = "../../inventory/getdata/batch_name/" + value;
+	if(value === ""){
+		$("#edit_name").val("");
+		$("#edit_code").val("");
+	}
+	$.ajax({
+		type: "GET",
+		async: false,
+		url: uri,
+		success: function( data, textStatus, jQxhr ){
+			data = JSON.parse(data);
+			if(data[0]['p_name']){
+				$("#edit_name").val(data[0]['p_name']);
+				$("#edit_code").val(data[0]['p_code']);
+			} else {
+				$("#edit_name").val("");
+				$("#edit_code").val("");
 			}
 		},
 		error: function( jqXhr, textStatus, errorThrown ){

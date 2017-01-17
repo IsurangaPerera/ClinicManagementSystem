@@ -27,7 +27,7 @@
                 </tr>
                 <tr>
                   <td>
-                    <input value="Submit" class="btn btn-primary" onclick="callSearch()" style="width:250px;">
+                    <input value="Submit" class="btn btn-primary" onclick="callSearch();" style="width:250px;">
                   </td>
                 </tr>
               </table>
