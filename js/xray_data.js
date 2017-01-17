@@ -1,5 +1,13 @@
 var baseUrl2 = "../patient/xray/get_completed_data/";
 var dataO2;
+
+/**
+ * Get all xray request for a user
+ * with a unique id
+ * id is retrieved from sessionStorage
+ * @param {}
+ * @return {}
+ */
 function loadXRayData(){
 	$.ajax({
 		type: "GET",
@@ -14,6 +22,11 @@ function loadXRayData(){
 	});
 }
 
+/**
+ * Create xray modal using data retrieved
+ * @param {}
+ * @return {}
+ */
 function handleXRayData(data){
 	var result = "";
 
@@ -28,6 +41,12 @@ function handleXRayData(data){
 	$('#xray_panel').html(result);
 }
 
+/**
+ * Create pdf using the xray
+ * to be viewed by the doctor
+ * @param {patient id}
+ * @param {}
+ */
 function handleXRayModal(id){
 	url = "../"+dataO2[id]['sample_index'];
 	getImageFromUrl(url, createPDF,id);
