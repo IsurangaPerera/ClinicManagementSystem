@@ -31,7 +31,6 @@
   <script type="text/javascript" src="../js/jasny.min.js"></script>
   <script type="text/javascript" src="../js/jspdf-debug.js"></script>
   <script type="text/javascript" src="../js/fileSaver.min.js"></script>
-  <script type="text/javascript" src="../js/bootstrap3-typeahead.min.js"></script>
 
   <script type="text/javascript">
     $(document).ready(function(){
@@ -61,7 +60,7 @@
 </head>
 
 <body class="skin-blue">
-  <!-- header logo: style can be found in header.less -->
+
   <script language="javascript">
   setTimeout(function timeru(){$('.alert').fadeOut(1000)}, 3000);
   </script> 
@@ -80,6 +79,8 @@
         <span class="icon-bar"></span>
       </a>
       <div class="logo2"> Healthcare Management System</div>
+      
+      <!-- START OF INFORMATION BOX-->
       <div class="navbar-right">
         <ul class="nav navbar-nav">
 
@@ -110,7 +111,9 @@
         </li>
       </ul>
     </div>
+    <!-- END OF NAVIGATION BOX -->
   </nav>
+
 </header>        
 <div class="wrapper row-offcanvas row-offcanvas-left">
   <!-- Left side column. contains the logo and sidebar -->

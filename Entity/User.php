@@ -18,25 +18,27 @@ class User
 	
 	public function createUser($data)
 	{
+		createUserLogin($data['user_login']);
 		createUserName($data['user_name']);
 		createUserAddress($data['user_address']);
 	}
 
 	private function createUserLogin($data)
 	{
-		$sql_data = "INSERT INTO user_name (nic, firstname, middlename, lastname) ".
-	   	   			"VALUES (?, ?, ?, ?)";
+		$sql_data = "INSERT INTO user_login (nic, type, username, password, status) ".
+	   	   			"VALUES (?, ?, ?, ?, ?)";
 
 		$stmt = $this->db->prepare($sql_data);
 		if($stmt === false)	
 			trigger_error('Wrong SQL: ' . $sql_data . ' Error: ' . $this->db->error, E_USER_ERROR);
 
 		$nic = $data['nic'];
-		$firstname = $data['firstname'];
-		$middlename = $data['middlename'];
-		$lastname = $data['lastname'];
+		$type = $data['type'];
+		$username = $data['username'];
+		$password = $data['password'];
+		$status = $data['status'];
 
-		if(!$stmt->bind_param('ssss',$nic, $firstname, $middlename, $lastname)) 
+		if(!$stmt->bind_param('sssss',$nic, $type, $username, $password, $status)) 
 			echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
 	
 		if (!$stmt->execute())
@@ -72,7 +74,7 @@ class User
 
 	private function createUserAddress($data)
 	{
-		$sql_data = "INSERT INTO user_name (nic, address1, address2, city) ".
+		$sql_data = "INSERT INTO user_address (nic, address1, address2, city) ".
 	   	   			"VALUES (?, ?, ?, ?)";
 
 		$stmt = $this->db->prepare($sql_data);
@@ -118,9 +120,41 @@ class User
 
 	}
 
-	public function getRole()
+	public function getRole($nic)
 	{
+		$sql_data = "SELECT type ".
+				    "FROM user_login ".
+				    "WHERE nic = ?";
+	
+		$stmt = $this>db->prepare($sql_data);
+		if($stmt === false) {		
+			trigger_error('Wrong SQL: ' . $sql_data . ' Error: ' . $this->db->error, E_USER_ERROR);
+		}
 
+		if(!$stmt->bind_param('s', $nic)) {
+			echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+		}
+	
+		if (!$stmt->execute()) {
+			echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+		}	
+
+		$meta = $stmt->result_metadata();
+    	while ( $field = $meta->fetch_field() )
+    		$parameters[] = &$row[$field->name]; 
+ 
+   		call_user_func_array(array($stmt, 'bind_result'), $parameters);
+
+    	while ( $stmt->fetch() ) {
+        	$x = array();
+        	foreach( $row as $key => $val )
+        		$results[] = $val;
+    		}
+
+		$stmt->close();
+
+		return $results;
 	}
 }
+
 ?>

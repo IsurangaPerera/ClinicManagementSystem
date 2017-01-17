@@ -10,11 +10,17 @@ require '../vendor/autoload.php';
 
 $app = new \Slim\App;
 
+/**
+ * Get all data associated with all users
+ */
 $app->get('/all',function(Request $request, Response $response){
 	getGeneralData();
 
 });
 
+/**
+ * Set an account temporarily blocked
+ */
 $app->get('/inactive/{id}/{status}',function(Request $request, Response $response){
 	$id = $request->getAttribute('id');
 	$status = $request->getAttribute('status');
@@ -22,18 +28,27 @@ $app->get('/inactive/{id}/{status}',function(Request $request, Response $respons
 
 });
 
+/**
+ * Check whether an account is currently blocked
+ */
 $app->get('/ifactive/{id}',function(Request $request, Response $response){
 	$id = $request->getAttribute('id');
 	getStatus($id);
 
 });
 
+/**
+ * Suspend an account by id
+ */
 $app->get('/suspend/{id}',function(Request $request, Response $response){
 	$id = $request->getAttribute('id');
 	deleteProfile($id);
 
 });
 
+/**
+ * Add a profile picture
+ */
 $app->post('/add_data',function(Request $request, Response $response){
 
 	$cookie = FigRequestCookies::get($request, 'USERID');
