@@ -1,4 +1,10 @@
 var id;
+
+/**
+ * Check availability of xray using patient Id
+ * @param {}
+ * @return {}
+ */
 function checkAvailability() {
 	id = $("#keyword").val().trim();
 	$.ajax({
@@ -19,6 +25,11 @@ function checkAvailability() {
 	});
 }
 
+/**
+ * Apply data to the modal
+ * @param {data set}
+ * @return {}
+ */
 function applyData(data) {
 	options = "";
 	for(i = 0; i < data.length; i++)
@@ -27,6 +38,11 @@ function applyData(data) {
 	$('#myModal').modal({backdrop: "static"});
 }
 
+/**
+ * Add new xray
+ * @param {}
+ * @return {}
+ */
 function addXRay() {
 	var formData = new FormData();
 

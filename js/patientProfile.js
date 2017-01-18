@@ -1,6 +1,12 @@
 var patientId;
 var baseURL = "../../patient/profile/";
 
+/**
+ * Get all results related to a particular
+ * patient
+ * @param {}
+ * @return {}
+ */
 function getResult(){
 	if(sessionStorage.getItem("patientId") === null || sessionStorage.getItem("patientId") === ""){
 		pid = $('#patient_no').val();
@@ -35,6 +41,11 @@ function getResult(){
 	}
 }
 
+/**
+ * Set values of the modal
+ * @param {data set}
+ * @return {}
+ */
 function setValues(data){
 	$("#myModal3").modal('hide');
 
@@ -65,6 +76,11 @@ function setValues(data){
 		$('#phone').html(phone);
 }
 
+/**
+ * Set prescription history  table
+ * @param {data}
+ * @return {}
+ */
 function setPrescriptionHistory(data){
 	try{
 		var tble = ["tblePres", "tblePres2"];
@@ -90,6 +106,11 @@ function setPrescriptionHistory(data){
 	}
 }
 
+/**
+ * Set treatmentplan table
+ * @param {data}
+ * @return {}
+ */
 function setTreatmentPlan(data){
 	try{
 		var tbt = ["tblePlan", "tblePlan2"];

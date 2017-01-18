@@ -1,3 +1,9 @@
+/**
+ * Search for a particular product
+ * and autocomplete fields
+ * @param {}
+ * @return {}
+ */
 function searchProduct(){
 	product = $("#product_search").val();
 	url = "../inventory/getdata/product/" + product;

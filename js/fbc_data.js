@@ -1,5 +1,10 @@
 var baseUrl = "../report/fbc/";
 var dataO;
+
+/** Get FBC result of  patient
+ * @param {}
+ * @return {}
+ */
 function loadFbcData(){
 	$.ajax({
 		type: "GET",
@@ -14,6 +19,11 @@ function loadFbcData(){
 	});
 }
 
+/**
+ * Apply data into the modal and display
+ * @param {data set}
+ * @return {}
+ */
 function handleData(data){
 	var result = "";
 
@@ -28,6 +38,10 @@ function handleData(data){
 	$('#fbc_panel').html(result);
 }
 
+/** Handle modal close event
+ * @param {id}
+ * @return {}
+ */
 function handleModal(id){
 	for(val in dataO[id]){
 		if(val === 'date')

@@ -2,6 +2,11 @@ var objecto;
 var patientId;
 var jsonData;
 
+/**
+ * Save patient registration details
+ * @param {}
+ * @return {}
+ */
 function save(){
 	createObject();
 	patientId = $("#patientID").val();
@@ -16,7 +21,11 @@ function save(){
 	jsonData = JSON.stringify(objecto);
 	postData();
 }
-
+/**
+ * Create object containing all details
+ * @param {}
+ * @return {}
+ */
 function createObject(){
 	objecto = {
 		"patient_name" : [],
@@ -29,7 +38,11 @@ function createObject(){
 		"comorbidies" : []
 	};
 }
-
+/**
+ * Create object containing name
+ * @param {}
+ * @return {}
+ */
 function getName(){
 	objecto.patient_name.push({
 		"patientId" : patientId,
@@ -39,6 +52,11 @@ function getName(){
 	});
 }
 
+/**
+ * Create object containing all addresses
+ * @param {}
+ * @return {}
+ */
 function getAddress(){
 	objecto.patient_address.push({
 		"patientId" : patientId,
@@ -48,6 +66,11 @@ function getAddress(){
 	});
 }
 
+/**
+ * Create object containing all contact details
+ * @param {}
+ * @return {}
+ */
 function getContact(){
 	objecto.patient_contact.push({
 		"patientId"    : patientId,
@@ -58,6 +81,11 @@ function getContact(){
 	});
 }
 
+/**
+ * Get data from input fields
+ * @param {}
+ * @return {}
+ */
 function getData(){
 	objecto.patient_data.push({
 		"nic"         : $("#nic").val(),
@@ -71,6 +99,11 @@ function getData(){
 	});
 }
 
+/**
+ * Get data from input fields
+ * @param {}
+ * @return {}
+ */
 function getCaseInfo(){
 	objecto.case_info.push({
 		"patientId"        : patientId,
@@ -84,6 +117,11 @@ function getCaseInfo(){
 	});
 }
 
+/**
+ * Get data from input fields
+ * @param {}
+ * @return {}
+ */
 function getContactPerson(){
 	objecto.tb_contact_person.push({
 		"patientId" : patientId,
@@ -95,6 +133,11 @@ function getContactPerson(){
 	});
 }
 
+/**
+ * Get data from input fields
+ * @param {}
+ * @return {}
+ */
 function getTbData(){
 	objecto.tb_patient_data.push({
 		"patientId" : patientId,
@@ -112,6 +155,11 @@ function getTbData(){
 	});
 }
 
+/**
+ * Get data from input fields
+ * @param {}
+ * @return {}
+ */
 function getComorbidies(){
 	var ids = ["dm", "copd", "ba", "hiv"];
 
@@ -133,6 +181,11 @@ function getComorbidies(){
 	}
 }
 
+/**
+ * Get data from input fields
+ * @param {}
+ * @return {}
+ */
 function showOther(){
 	if($("#oth").is(":checked"))
 		$("#otherId").prop("hidden", false);
@@ -140,6 +193,11 @@ function showOther(){
 		$("#otherId").prop("hidden", true);
 }
 
+/**
+ * Get data from input fields
+ * @param {}
+ * @return {}
+ */
 function postData(){
 	$.ajax({
 		type: "POST",

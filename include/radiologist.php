@@ -4,6 +4,7 @@ require('config/session_check.php');
 include('config/user_common.php');
 $usr = new User();
 $usr->verifyUser($_SESSION['user_type'], $_SESSION['user_type']);*/
+require_once('config/session_check.php');
 require('header.php');
 ?>
 

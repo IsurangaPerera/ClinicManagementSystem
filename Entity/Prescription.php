@@ -25,9 +25,14 @@ class Prescription
 		$this->pId = $id;
 	}
 
-	public function getDate($id)
+	public function getDate()
 	{
 		return $this->date;
+	}
+
+	public function setDate($date)
+	{
+		$this->date = $date;
 	}
 
 }

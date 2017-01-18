@@ -6,6 +6,11 @@ var objecto = {
 	"user_login"   : []
 };
 
+/**
+ * Save data 
+ * @param {}
+ * @return {}
+ */
 function saveData(){
 	if(!validate()){
 		$('#alert').show('slow');
@@ -66,6 +71,11 @@ function saveData(){
 	postData();
 }
 
+/**
+ * post data to database
+ * @param {}
+ * @return {}
+ */
 function postData(){
 	$.ajax({
 		type: "POST",
@@ -88,6 +98,11 @@ function postData(){
 	});
 }
 
+/**
+ * Validate information
+ * @param {}
+ * @return {}
+ */
 function validate(){
 	phone_home   = $('#phone').val();
 	phone_mobile = $('#phone').val();
@@ -115,12 +130,22 @@ function validate(){
 	return flag;
 }
 
+/**
+ * Validate email
+ * @param {email}
+ * @return {}
+ */
 function checkEmail(mail) {
 	if (mail == "" || /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
 		return (true);   
 	return (false);
 }
 
+/**
+ * Validate phone number
+ * @param {phone number}
+ * @return {}
+ */
 function checkPhone(phone){
 	if(phone == "" || /^\d{10}$/.test(phone))
 		return true;

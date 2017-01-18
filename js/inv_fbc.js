@@ -10,6 +10,11 @@ var fbsMap = new Object();
 
 var index = 0;
 
+/**
+ * FBC Collection data validation
+ * @param {}
+ * @return {}
+ */
 function saveFBC(){
 	$("table tr :input").each(function () {
     	if(this.id === "report_id"){
@@ -35,6 +40,11 @@ function saveFBC(){
 	index = 0;
 }
 
+/**
+ * Send data to server
+ * @param {}
+ * @return {}
+ */
 function postInv(){
 	$.ajax({
 		type: "POST",

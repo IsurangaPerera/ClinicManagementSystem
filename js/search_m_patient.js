@@ -1,4 +1,9 @@
 var dataO;
+/**
+ * Generate required uri
+ * @param {}
+ * @return {}
+ */
 function callSearch(){
 	keyword = $("#keyword").val().trim();
 	len = keyword.length;
@@ -14,6 +19,11 @@ function callSearch(){
 	getInformation(url);
 }
 
+/**
+ * Get information related to patients
+ * @param {uri}
+ * @return {}
+ */
 function getInformation(url){
 	$.ajax({
 		type: "GET",
@@ -34,6 +44,11 @@ function getInformation(url){
 	});
 }
 
+/**
+ * Print id as a barcode
+ * @param {user id}
+ * @return {}
+ */
 function printm(id){
 	var mywindow = window.open('', 'PRINT', 'height=400,width=600');
 	$("#code128").html("");
@@ -52,6 +67,11 @@ function printm(id){
 	$("#barimg").show().printElement();
 }
 
+/**
+ * Organize data into the table
+ * @param {}
+ * @return {}
+ */
 function organizeData(){
 	table = document.getElementById('tbleSearch');
 	$("#tbleSearch").html("");

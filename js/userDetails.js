@@ -1,5 +1,10 @@
 var nic;
 
+/**
+ * Get data related to all tb patients
+ * @param {}
+ * @return {}
+ */
 function getData(){
 	nic = $('#nicc').html().trim();
 
@@ -15,6 +20,11 @@ function getData(){
 	});
 }
 
+/**
+ * Insert acquired data into relevant fields
+ * @param {data}
+ * @return {}
+ */
 function handleData(data){
 	try{
 		name2 = data['user_name'][0];

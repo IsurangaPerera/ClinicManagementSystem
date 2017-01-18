@@ -4,6 +4,11 @@ var patientId, date, investigation, prepared;
 var curSputRow = 0;
 var arr = new Map();
 
+/**
+ * Get current requests
+ * @param {}
+ * @return {}
+ */
 function processData(){
 	$.ajax({
     type: "GET",
@@ -29,6 +34,11 @@ function processData(){
 	setTimeout('processData()', 10000);
 }
 
+/**
+ * Create table containing current requests
+ * @param {}
+ * @return {}
+ */
 function createTable(){
 	id = "sput" + curSputRow;
 	idbtn = "btnsput" + curSputRow;

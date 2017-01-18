@@ -7,6 +7,9 @@ require '../vendor/autoload.php';
 
 $app = new \Slim\App;
 
+/**
+ * Post data to database
+ */
 $app->post('/register',function(Request $request, Response $response){
 	$person = $request->getBody();
 

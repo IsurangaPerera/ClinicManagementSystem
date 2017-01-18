@@ -10,7 +10,11 @@ require '../vendor/autoload.php';
 
 $app = new \Slim\App;
 
+/**
+ * Get URL by Id
+ */
 $app->get('/id/{type}/{id}', function (Request $request, Response $response) {
+
 	$URL_SET = array(
 		"Receptionist" => "include/Receptionist.php",
 		"OPD Doctor" => "include/opd_doctor.php",
@@ -27,7 +31,10 @@ $app->get('/id/{type}/{id}', function (Request $request, Response $response) {
 	$value = $request->getAttribute('id');
 
 	$setCookie = setCookies("USERID", $value);
+	$setCookie2 = setCookies("USERTYPE", $type);
     $response = FigResponseCookies::set($response, $setCookie);
+    $response = FigResponseCookies::set($response, $setCookie2);
+    
 
     saveCookieData($value, $type);
     
@@ -37,6 +44,9 @@ $app->get('/id/{type}/{id}', function (Request $request, Response $response) {
 	return $response->withRedirect($url);
 });
 
+/**
+ * Login function
+ */
 $app->get('/', function (Request $request, Response $response) {
 	
 	$URL_SET = array(
@@ -76,6 +86,9 @@ $app->get('/', function (Request $request, Response $response) {
 	//return $response->withRedirect($url);
 });
 
+/**
+ * Delete a session when logging out
+ */
 $app->get('/delete/', function (Request $request, Response $response) {
 
 	$cookie = FigRequestCookies::get($request, 'USERID');

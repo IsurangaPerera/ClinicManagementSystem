@@ -1,4 +1,6 @@
 <?php
+require_once('config/session_check.php');
+
 require('header.php');
 ?>
 

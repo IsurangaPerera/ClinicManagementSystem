@@ -1,3 +1,9 @@
+
+/**
+ * Date which can be use throughout the program
+ * @param {}
+ * @return {}
+ */
 function getDate(){
 	d = new Date();
 	t = d.getTime().toString();

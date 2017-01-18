@@ -1,5 +1,10 @@
 var baseUrlS = "../patient/investigations/sputum/all/";
 var dataOS;
+/**
+ * Get all sputum data of a patient
+ * @param {}
+ * @return {}
+ */
 function loadSputumData(){
 	$.ajax({
 		type: "GET",
@@ -14,6 +19,11 @@ function loadSputumData(){
 	});
 }
 
+/**
+ * Create composnents based on data acquired
+ * @param {data}
+ * @return {}
+ */
 function handleDataS(data){
 	var result = "";
 
@@ -28,6 +38,11 @@ function handleDataS(data){
 	$('#sputum_panel').html(result);
 }
 
+/**
+ * Insert data into relevant fields
+ * @param {patient Id}
+ * @return {}
+ */
 function handleModalSputum(id){
 	d = dataOS[id];
 

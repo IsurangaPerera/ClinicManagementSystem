@@ -3,6 +3,11 @@ var objecto = {
 	"sputum"        : []
 };
 
+/**
+ * Sputum Collection data validation
+ * @param {}
+ * @return {}
+ */
 function save(){
 	report_id = $('#report_id').val();
 	sample_index = $('#sample_index').val();
@@ -23,6 +28,11 @@ function save(){
 		postData(report_id, sample_index);
 }
 
+/**
+ * Send data to server
+ * @param {id, index}
+ * @return {}
+ */
 function postData(id, index){
 	sp1p = $("#sp1p").val();
 	sp1n = $("#sp1n").val();

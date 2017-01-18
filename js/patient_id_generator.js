@@ -1,4 +1,7 @@
-
+/**
+ * Generate a patient Id based on 
+ * patient's birthdate and gender
+ */
 function generateId(birthdate, gender){
 	date = birthdate.trim();
 	d_temp = date.split('-');
@@ -27,11 +30,21 @@ function generateId(birthdate, gender){
 	$("#barimg").show(1000);
 }
 
+/**
+ * Generate a random number from a given interval
+ * @param {min_val, max_val}
+ * @return {random int}
+ */
 function randomIntFromInterval(min,max){
 
     return Math.floor(Math.random()*(max-min+1)+min);
 }
 
+/**
+ * Pad additional space with bits
+ * @param {n, width, z}
+ * @return {n}
+ */
 function pad(n, width, z){
   z = z || '0';
   n = n + '';

@@ -1,4 +1,5 @@
 <?php
+require_once('config/session_check.php');
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 require("$root/include/header.php");
 ?>

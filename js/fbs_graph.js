@@ -1,5 +1,11 @@
 var fbs_data = [];
 
+/**
+ * Get all data related to FBS 
+ * and create graph containing fbs results
+ * @param {}
+ * @return {}
+ */
 function showGraph(){
     $("#fbs_chart").html(" ");
     var dataO;

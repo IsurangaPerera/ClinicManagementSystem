@@ -3,6 +3,11 @@ var objecto = {
 	"fbs"           : []
 };
 
+/**
+ * Validate data
+ * @param {}
+ * @return {}
+ */
 function save(){
 	report_id = $('#report_id').val();
 	sample_index = $('#sample_index').val();
@@ -28,7 +33,11 @@ function save(){
 	if(flag)
 		postData(report_id, sample_index, result);
 }
-
+/**
+ * Send data to the server to be stored
+ * @param {id, index, result}
+ * @return
+ */
 function postData(id, index, result){
 	objecto.report_details.push({
 		"sample_index" : index,
