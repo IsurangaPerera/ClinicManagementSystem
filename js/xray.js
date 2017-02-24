@@ -7,6 +7,7 @@ var id;
  */
 function checkAvailability() {
 	id = $("#keyword").val().trim();
+	alert(id);
 	$.ajax({
 		type: "GET",
      	url: "../patient/xray/get_data/"+id,
@@ -15,7 +16,7 @@ function checkAvailability() {
 				applyData(JSON.parse(data));
 			} catch(err) {
 				$('#err_msg').html("No requests at the moment");
-				$("#alert").attr("class", "alert alert-danger alert-dismissable");
+				$("#alert").attr("class", "alert alert-info alert-dismissable");
 				$("#alert").show(1000).delay(5000).hide(1000);
 			}	
 		},

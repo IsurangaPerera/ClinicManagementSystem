@@ -4,7 +4,7 @@
 
 <div class="search_patient">
   <section class="content">
-    <div class='alert alert-danger alert-dismissable' hidden="true" id="alert"><i class='fa fa-check'></i>
+    <div class='alert alert-info alert-dismissable' hidden="true" id="alert"><i class='fa fa-check'></i>
       <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
       <span id="err_msg"></span></div>
       <div class="row">

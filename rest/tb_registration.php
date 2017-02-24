@@ -12,7 +12,7 @@ $app = new \Slim\App;
  */
 $app->post('/register',function(Request $request, Response $response){
 	$person = $request->getBody();
-
+	// Define an iterator 
 	$jsonIterator = new RecursiveIteratorIterator(
 		new RecursiveArrayIterator(json_decode($person, TRUE)),
 		RecursiveIteratorIterator::SELF_FIRST);
@@ -22,7 +22,7 @@ $app->post('/register',function(Request $request, Response $response){
 	$query2 = "VALUES (";
 	$a = array();
 	$curKey = 0;
-
+	//iterator for go through all the values acquired
 	foreach ($jsonIterator as $key => $val) {
 
 		if(is_array($val)) {
@@ -61,7 +61,7 @@ $app->post('/register',function(Request $request, Response $response){
 		}
 
 		else {
-			
+			//Insert final results into tables
 			if($query != "INSERT INTO $tableName ("){
 				$query = $query.", ";
 				$query2 = $query2.", ";
@@ -80,6 +80,9 @@ $app->post('/register',function(Request $request, Response $response){
 });
 $app->run();
 
+/**
+ * Add a patient with all his information
+ */
 function addPatient($sql_data, $a_bind_params){
 	require_once 'db_connection.php';
     $db = db_connect();
